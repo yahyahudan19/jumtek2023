@@ -1,0 +1,99 @@
+.dark-version {
+	.header-style-three .header-top-wrapper {
+		background-color: #121e2d;
+	}
+	.header-style-three .header-top-wrapper .header-top-contact a,
+	.header-style-three .header-top-wrapper .header-top-location a {
+		color: #fff;
+	}
+	.slider-style-three .slider-bg-text {
+		left: 0;
+		font-size: 440px;
+	}
+	.slider-style-three .slider-main-wrap .slider-text-wrap h1,
+	.slider-style-three .slider-main-wrap .slider-text-wrap p span {
+		background-color: transparent;
+	}
+	.slider-style-three .slider-banner-img2 {
+		top: -120px;
+		right: 120px;
+	}
+	.slider-style-three .slider-banner-img3 {
+		top: -120px;
+		right: -105px;
+	}
+	.about-section-3 {
+		background-color: #121e2d;
+	}
+	.section-title span {
+		color: $base-color3;
+	}
+	.section-title h2 {
+		color: #fff;
+	}
+	.about-content-3 .about-img-bottom {
+		border: 10px solid rgb(27 43 63);
+	}
+	.about-content-3 .about-text-wrapper .about-text-details,
+	.about-content-3 .about-mission-vission .ab-mission-vission-wrap h3,
+	.about-content-3 .about-mission-vission .ab-mission-vission-wrap p,
+	.service-innerbox-wrap .service-inner-text h3,
+	.skill-text-details,
+	.skill-progress-bar .skill-set-percent h4,
+	.skill-progress-bar .skill-set-percent .progress span,
+	.feature-innerbox-area .feature-box-text {
+		color: #fff;
+	}
+	.service-innerbox-wrap .service-inner-text p  {
+		color: #aebcce;
+	}
+	.service-innerbox-wrap .service-serial {
+		color: #15212f;
+	}
+	.about-content-3 .about-mission-vission .ab-mission-vission-wrap {
+		background-color: #1b2b3f;
+		z-index: 1;
+	}
+	.about-content-3 .about-mission-vission .ab-mission-vission-wrap .icon-bg i {
+		color: #28374a;
+	}
+	.service-section-3 {
+		background-color: #0d1723;
+	}
+	.service-innerbox-wrap {
+		background-color: #121e2d;
+	}
+	.service-innerbox-wrap .service-inner-icon {
+		background-color: #0d1723;
+	}
+	.skill-section {
+		background-color: #121e2d;
+	}
+	.skill-progress-bar .skill-set-percent .progress {
+		border-top: 3px solid #223449
+	}
+	.feature-section-2 {
+		background-color: #121e2d;
+	}
+	.feature-innerbox-area {
+		background-color: #0d1723;
+	}
+	.feature-innerbox-area .icon-bg i {
+		color: #111c29;
+	}
+	.feature-innerbox-area .feature-box-icon:after {
+		background-color: #16202c;
+	}
+	.team-section {
+		background-color: #0d1723;
+	}
+	.testimonial-section-2 {
+		background-color: #121e2d;
+	}
+	.blog-section-2 {
+		background-color: #0d1723;
+	}
+	.blog-img-text-innerbox .blog-text-wrap {
+		background-color: #ffffff;
+	}
+}

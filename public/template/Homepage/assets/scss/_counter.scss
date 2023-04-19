@@ -1,0 +1,118 @@
+.counter-section {
+	padding: 120px 0px 110px;
+	background-image: linear-gradient( -180deg, rgb(238,242,245) 0%, rgb(255,255,255) 100%);
+}
+.counter-boxed {
+	padding-right: 90px;
+	display: inline-block;
+	&:after {
+		top: 40%;
+		right: 45px;
+		width: 2px;
+		content: '';
+		height: 100px;
+		position: absolute;
+		background-color: #d6e0e7;
+		transform: translateY(-50%);
+	}
+	&:nth-child(2) {
+		padding-right: 0;
+		&:after {
+			display: none;
+		}
+	}
+}
+.counter-boxed .graph-outer {
+	width: 200px;
+	height: 200px;
+	text-align: center;
+	position: relative;
+	border-radius: 100%;
+	display: inline-block;
+	background-color: #ffffff;
+
+}
+.counter-boxed .graph-outer h3 {
+	font-size: 18px;
+	font-weight: 700;
+	padding-top: 20px;
+	text-transform: uppercase;
+}
+.counter-boxed .count-box{
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 100%;
+	font-size: 16px;
+	color: #19274d;
+	font-weight: 700;
+	text-align:center;
+	transform: translateY(-50%);
+}
+.counter-boxed .count-box .count-text{
+	position:relative;
+	font-size: 60px;
+	font-weight: 600;
+	font-family: $heading;
+}
+.counter-text-item {
+	margin-top: 15px;
+	h2 {
+		font-size: 30px;
+		font-weight: 700;
+		line-height: 1.333;
+		text-transform: uppercase;
+	}
+	.counter-author {
+		.counter-author-img {
+			width: 80px;
+			height: 80px;
+			overflow: hidden;
+			margin-right: 30px;
+		}
+		.counter-author-text {
+			margin-top: 35px;
+			h3 {
+				font-size: 24px;
+				font-weight: 600;
+				padding-bottom: 5px;
+			}
+			span {
+				font-size: 16px;
+				font-weight: 600;
+				color: $base-color;
+				font-family: $heading;
+			}
+		}
+	}
+}
+// *** counter-section-2 (Home Page 4) ***//
+.counter-section-2 {
+	padding: 115px 0px;
+	background-color: #eff3f6;
+	.section-title {
+		span {
+			color: $base-color4;
+		}
+	}
+	.counter-content {
+		padding-top: 75px;
+		.counter-boxed {
+			display: inherit;
+			text-align: center;
+			padding-right: 0;
+			&:after {
+				right: -10px;
+			}
+		}
+		.col-lg-3 {
+			&:last-child {
+				.counter-boxed {
+					&:after {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}

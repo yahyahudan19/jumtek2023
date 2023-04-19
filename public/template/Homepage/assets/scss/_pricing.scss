@@ -1,0 +1,173 @@
+.pricing-plan-section {
+	padding: 120px 0px;
+	.pricing-plan-text {
+		max-width: 400px;
+		padding-top: 130px;
+		.section-title h2 {
+			font-size: 42px;
+		}
+		.pricing-details {
+			padding-top: 15px;
+		}
+	}
+	.pricing-plan-tab-btn {
+		margin-top: 35px;
+		.nav-tabs {
+			border: none;
+		}
+		.nav-tabs .nav-link.active {
+			background-color: transparent;
+		}
+		.nav {
+			display: inherit;
+		}
+		.nav-tabs .nav-link {
+			border: none;
+			border-radius: 0;
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+		li {
+			font-size: 18px;
+			font-weight: 600;
+			font-family: $heading;
+			margin-bottom: 18px;
+			a {
+				padding-left: 45px;
+				position: relative;
+				&:before {
+					top: 0;
+					left: 0;
+					width: 24px;
+					content: '';
+					height: 24px;
+					position: absolute;
+					border: 2px solid #eaf0f7;
+					transition: .3s all ease-in-out;
+				}
+				&:after {
+					top: 8px;
+					left: 8px;
+					width: 8px;
+					content: '';
+					height: 8px;
+					position: absolute;
+					transform: scale(0);
+					background-color: $base-color;
+					transition: .3s all ease-in-out;
+				}
+				&.active {
+					&:before {
+						border: 2px solid $base-color;
+					}
+					&:after { 
+						transform: scale(1);
+					}
+				}
+			}
+		}
+	}
+}
+.pricing-table-inner {
+	float: left;
+	width: 360px;
+	position: relative;
+	padding: 55px 50px 60px;
+	background-color: $body-color;
+	transition: .4s all ease-in-out;
+	.pricing-value {
+		.package-plan {
+			color: #fff;
+			font-weight: 600;
+			font-family: $heading;
+		}
+		.currency-sign {
+			color: $base-color;
+		}
+		h3 {
+			color: #fff;
+			line-height: 1;
+			font-size: 120px;
+			font-weight: 700;
+			display: inline-block;
+			span {
+				color: #6a798c;
+				font-size: 16px;
+			}
+		}
+	}
+	.pricing-service-list{
+		margin: 45px 0px 50px;
+		li {
+			color: #fff;
+			font-size: 18px;
+			padding-left: 60px;
+			position: relative;
+			margin-bottom: 25px;
+			&:before {
+				left: 0;
+				top: 0;
+				width: 30px;
+				content: '';
+				height: 30px;
+				position: absolute;
+				background-color: #182637;
+			}
+			&:after {
+				top: 0px;
+				left: 7px;
+				font-size: 16px;
+				content: '\f117';
+				position: absolute;
+				color: $base-color;
+				font-family: Flaticon;
+			}
+		}
+	}
+	.taeled-btn {
+		width: 210px;
+		margin: 0 auto;
+	}
+	&:nth-child(1) {
+		z-index: 2;
+		animation: slideInRight 0.5s both .3s;
+	}
+	&:nth-child(2) {
+		z-index: 1;
+		width: 340px;
+		margin-top: 25px;
+		background-color: #eef2f5;
+		padding: 55px 50px 60px 25px;
+		animation: slideInLeft 0.5s both .3s;
+		.pricing-value { 
+			.package-plan {
+				color: $body-color;
+			}
+			h3 {
+				color: $body-color;
+			}
+		}
+		.pricing-service-list {
+			li {
+				color: $body-color;
+			}
+		}
+		.taeled-btn {
+			background-color: #fff;
+		}
+	}
+}
+.pricing-table-wrapper {
+	padding-left: 50px;
+	.tab-content {
+		.active {
+			transition: .4s all ease-in-out;
+			.pricing-table-inner {
+				transform: translateX(0);
+				&:nth-child(2) { 
+					transform: translateY(25px);
+				}
+			}
+		}
+	}
+}

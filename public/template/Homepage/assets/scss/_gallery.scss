@@ -1,0 +1,41 @@
+.gallery-section {
+	margin: 0 auto;
+	max-width: 1920px;
+}
+.gallery-content {
+	margin: 0px -75px;
+}
+.gallery-play-btn {
+	left: 0;
+	top: 50%;
+	right: 0;
+	height: 0;
+	opacity: 0;
+	width: 100px;
+	display: flex;
+	margin: 0 auto;
+	align-items: center;
+	background-color: #fff;
+	justify-content: center;
+	transform: translateY(-50%);
+	transition: .5s all ease-in-out;
+	a {
+		width: 100%;
+		display: block;
+	}
+	h3 {
+		font-size: 16px;
+		font-weight: 600;
+	}
+}
+.gallery-img-text {
+	width: 25%;
+	float: left;
+	padding: 0px 25px;
+	&:hover {
+		.gallery-play-btn {
+			opacity: 1;
+			height: 100px;
+		}
+	}
+}

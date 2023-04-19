@@ -1,0 +1,53 @@
+/*=========
+Font load
+===========*/
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Oswald:wght@400;500;600;700&display=swap');
+
+$body-font: 'Crimson Text', serif;
+$heading: 'Oswald', sans-serif;
+$icon-font: "Font Awesome 5 Free";
+$flaticon: Flaticon;
+
+/*=========
+Color Code
+===========*/
+$body-color: #121e2d;
+$base-color: #ffaea1 ;
+$base-color2: #14cedd; 
+$base-color3: #ff4a17; 
+$base-color4: #00c3ff; 
+
+@-webkit-keyframes fadeInDown {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+%middle_position {
+    left: 0;
+    right: 0;
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+}

@@ -1,0 +1,250 @@
+.about-section {
+	padding: 120px 0px 65px;
+}
+.about-left-text {
+	.about-text-details {
+		max-width: 460px;
+		padding-bottom: 32px;
+	}
+}
+.about-right-img {
+	&:after {
+		top: 50px;
+		width: 0;
+		height: 0;
+		right: 80px;
+		content: '';
+		position: absolute;
+		border-bottom: 155px solid $base-color;
+		border-right: 155px solid transparent;
+	}
+	.about-top-img {
+		left: -65px;
+	}
+	.about-bottom-img {
+		top: -55px;
+		border: 10px solid #fff;
+		box-shadow: 0px 8px 16px 0px rgba(102, 102, 102, 0.1);
+	}
+}
+.about-mission-vission {
+	margin-bottom: 40px;
+	.ab-mission-vission-area {
+		width: 50%;
+		float: left;
+		padding-left: 25px;
+		h3 {
+			font-size: 20px;
+			font-weight: 600;
+			position: relative;
+			padding-bottom: 15px;
+			&:before {
+				top: 10px;
+				left: -25px;
+				width: 6px;
+				content: '';
+				height: 6px;
+				position: absolute;
+				background-color: #e1e7ef;
+			}
+		}
+	}
+} 
+// *** About Section(Home Page 3) ***//
+.about-section-3 {
+	padding: 120px 0px;
+}
+.about-content-3 {
+	.about-img-wrap {
+		z-index: 1;
+		.img-shape {
+			z-index: -1;
+			&:nth-child(1) {
+				top: 50%;
+				left: -60px;
+			}
+			&:nth-child(2) {
+				top: 60px;
+				right: 110px;
+			}
+		}
+	}
+	.about-img-bottom {
+		right: 0;
+		bottom: -70px;
+		position: absolute;
+		border: 10px solid #fff;
+		box-shadow: 0px 8px 16px 0px rgba(102, 102, 102, 0.06);
+	}
+	.about-text-wrapper {
+		padding: 50px 0px 0px 40px;
+		.about-text-details {
+			padding: 25px 0px 45px;
+		}
+	}
+	.about-mission-vission {
+		box-shadow: 0px 8px 16px 0px rgba(102, 102, 102, 0.06);
+		.ab-mission-vission-wrap {
+			width: 50%;
+			float: left;
+			padding: 30px;
+			&:after,
+			&:before {
+				left: 0;
+				bottom: 0;
+				content: '';
+				width: 100%;
+				height: 2px;
+				position: absolute;
+			}
+			&:before {
+				right: 0;
+				width: 0px;
+				z-index: 2;
+				left: auto;
+				background-color: $base-color3;
+				transition: .4s all ease-in-out;
+			}
+			&:hover {
+				&:before {
+					left: 0;
+					right: auto;
+					width: 100%;
+				}
+			}
+			&:after {
+				z-index: 1;
+				background-color: $body-color;
+			}
+			.icon-bg {
+				top: 15px;
+				right: 15px;
+				z-index: -1;
+				line-height: 1;
+				i {
+					color: #f0f0f0;
+					font-size: 80px;
+				}
+			}
+			h3 {
+				font-size: 20px;
+				font-weight: 600;
+				padding-bottom: 18px;
+			}
+			p {
+				max-width: 205px;
+			}
+		}
+	}
+}
+// *** About Section(Home Page 4) ***//
+.about-section-4 {
+	padding-bottom: 120px;
+}
+.about-content-wrapper-4 {
+	.about-text-wrapper {
+		padding-top: 45px;
+		.section-title {
+			span {
+				color: $base-color4;
+			}
+		}
+		.about-text-details {
+			padding-bottom: 30px;
+		}
+		.about-mission-vission .ab-mission-vission-area h3:before {
+			background-color: $base-color4;
+		}
+		.taeled-btn {
+			@extend%gradiant-1;
+			a {
+				color: #fff;
+			}
+			i {
+				color: $body-color;
+				background-color: #fff;
+			}
+		}
+	}
+}
+/*About Page*/
+/*---------------*/
+.about-page-about-section {
+	padding: 120px 0px;
+	.about-page-about-img {
+		.about-page-img2 {
+			right: 0;
+			top: 220px;
+			position: absolute
+		}
+	}
+	.about-page-text-wrapper {
+		padding-top: 35px;
+		padding-left: 30px;
+		.about-page-text {
+			margin-top: 25px;
+			p {
+				padding-bottom: 30px;
+			}
+		}
+		.about-award-icon-text {
+			width: 50%;
+			float: left;
+			margin-top: 10px;
+			position: relative;
+			&:after {
+				top: 10px;
+				right: 25px;
+				width: 2px;
+				content: '';
+				height: 70px;
+				position: absolute;
+				background-color: #fcf5f5;
+			}
+			&:last-child {
+				&:after {
+					display: none;
+				}
+				.about-award-icon {
+					&:after {
+						top: -10px;
+						left: auto;
+						right: -10px;
+					}
+				}
+			}
+			.about-award-icon {
+				margin-right: 20px;
+				position: relative;
+				z-index: 1;
+				&:after {
+					left: -10px;
+					bottom: 10px;
+					width: 80px;
+					content: '';
+					height: 80px;
+					z-index: -1;
+					position: absolute;
+					border-radius: 100%;
+					background-color: #ffe4dd;
+				}
+				i {
+					line-height: 1;
+					font-size: 100px;
+					color: $base-color3;
+				}
+			}
+			.about-award-text {
+				padding-top: 22px;
+				h4 {
+					font-size: 30px;
+					font-weight: 700;
+					color: $base-color3;
+				}
+				p {
+					font-weight: 500;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,239 @@
+.slider-wrapper {
+	margin: 0 auto;
+	max-width: 1920px;
+}
+.slider-main-wrap {
+	.slider-text-wrap {
+		max-width: 850px;
+		.slider-tag-item {
+			opacity: 0;
+			transform: translateX(-50px);
+			span {
+				color: #fff;
+				font-size: 18px;
+				position: relative;
+				padding-right: 40px;
+				&:after {
+					top: 5px;
+					width: 2px;
+					right: 15px;
+					content: '';
+					height: 15px;
+					position: absolute;
+					background-color:  #293c53;
+				}
+				&:last-child {
+					&:after {
+						display: none;
+					}
+				}
+			}
+		}
+		h1 {
+			opacity: 0;
+			color: #fff;
+			font-size: 100px;
+			font-weight: 700;
+			line-height: 1.1;
+			padding: 15px 0px 30px;
+			text-transform: uppercase;
+			transform: translateY(30px);
+		}
+		p {
+			opacity: 0;
+			font-size: 18px;
+			max-width: 630px;
+			padding-bottom: 35px;
+			transform: translateX(50px)
+		}
+		.slider-btn {
+			opacity: 0;
+			transform: translateY(50px);
+			.taeled-btn {
+				margin-right: 18px;
+				display: inline-block;
+			}
+		}
+	}
+}
+.slider-bg-text {
+	left: 0;
+	color: #fff;
+	bottom: 0px;
+	line-height: 1;
+	font-size: 440px;
+	font-weight: 700;
+	font-family: $heading;
+	transform: rotate(-30deg);
+}
+.slider-deco1 {
+	top: 250px;
+	left: 105px;
+}
+.slider-deco2 { 
+	z-index: 1;
+	top: 180px;
+	right: 45%;
+}
+.slider-deco3 { 
+	left: 45%;
+	bottom: 80px;
+	transform: translateX(-50%);
+}
+.slider-style-one {
+	padding: 380px 0px 260px;
+	background-color: $body-color;
+	.slider-img-wrap {
+		top: -90px;
+		right: 230px;
+		position: absolute;
+		animation: fadeInRight 0.9s both 1s;
+		span {
+			top: 55px;
+			z-index: -1;
+			position: absolute;
+			&.img-circle-shape1 {
+				right: -80px;
+			}
+			&.img-circle-shape2 {
+				top: 30px;
+				right: -50px; 
+			}
+		}
+	}
+	.slider-deco4 {
+		top: 0;
+		right: 0;
+		animation: slideInRight 1.8s both 1s;
+	}
+	.slider-deco5 { 
+		left: -50px;
+		bottom: -80px;
+		animation: zoomIn 1.7s both 0.3s;
+	}
+}
+.slider-style-two {
+	padding: 380px 0px 260px;
+	background-color: #eef2f5;
+	.slider-main-wrap {
+		.slider-text-wrap {
+			.slider-tag-item { 
+				span {
+					color: $body-color;
+					&:after {
+						background-color: $base-color;
+					}
+				}
+			}
+			h1 {
+				color: $body-color;
+				padding-bottom: 10px;
+			}
+			.slider-btn {
+				.taeled-btn {
+					background-color: $body-color;
+					a {
+						color: #fff;
+					}
+					i {
+						background-color: #fff;
+						color: $body-color;
+					}
+				}
+			}
+		}
+	}
+	.slider-main-img {
+		top: 0;
+		right: 70px;
+		position: absolute;
+		animation: zoomIn 1.7s both 0.3s;
+	}
+}
+.slider-style-three {
+	z-index: 1;
+	background-color: $base-color3;
+	.slider-wrapper-three {
+		margin: 0 auto;
+		max-width: 1920px;
+		padding: 370px 0px 240px;
+	}
+	.slider-bg-text {
+		left: -100px;
+		color: #ef4211;
+		z-index: -1;
+		font-size: 300px;
+	}
+	.slider-banner-img {
+		right: 0;
+		top: 40px;
+		z-index: -1;
+		&:after {
+			top: 0;
+			left: 0;
+			content: '';
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			background-color: rgba(0, 0, 0, 0.5);
+		}
+	}
+	.slider-main-wrap .slider-text-wrap .slider-tag-item span:after {
+		background-color: #fff;
+	}
+	.slider-main-wrap .slider-text-wrap {
+		p {
+			color: #fff;
+			span {
+				display: inline-block;
+				padding: 0px 10px 5px 0px;
+				background-color: $base-color3;
+			}
+		}
+		h1 {
+			display: inline-block;
+			margin-bottom: 10px;
+			padding: 15px 15px 20px 0px;
+			background-color: $base-color3;
+		}
+	}
+}
+.slider-style-four {
+	padding: 290px 0px 360px;
+	.slider-main-wrap .slider-text-wrap {
+		margin: 0 auto;
+		p {
+			color: #fff;
+			margin: 0 auto;
+		}
+	}
+}
+#slider-main {
+	.owl-item.active {
+		.slider-tag-item { 
+			opacity: 1;
+			transform: translateX(0);
+			transition: all 1500ms ease;
+			transition-delay: 1200ms;
+		}
+		p { 
+			opacity: 1;
+			transform: translateX(0);
+			transition: all 1500ms ease;
+			transition-delay: 1500ms;
+		}
+		h1 {
+			opacity: 1;
+			transform: translateY(0);
+			transition: all 1500ms ease;
+			transition-delay: 900ms;
+		}
+		.slider-btn {
+			opacity: 1;
+			transform: translateY(0);
+			transition: all 1500ms ease;
+			transition-delay: 2100ms;
+		}
+
+	}
+}
