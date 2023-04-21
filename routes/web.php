@@ -13,6 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// MAIN ROUTES //
 Route::get('/', function () {
     return view('welcome');
 });
+
+// AUTH ROUTES //
+Route::get('/login','\App\Http\Controllers\AuthController@index');
+Route::get('/register','\App\Http\Controllers\AuthController@register');
+
+// DASHBOARD ROUTES //
+Route::get('/dashboard','\App\Http\Controllers\PanitiaController@index');
+
+

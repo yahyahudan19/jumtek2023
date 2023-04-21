@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Jumtek 2023 - Login Page</title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
-    <link href="./css/style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('template/dashboard/images/logopng.png')}}">
+    <link href="{{asset('template/dashboard/css/style.css')}}" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 
@@ -22,13 +22,13 @@
                             <div class="col-xl-12">
                                 <div class="auth-form">
 									<div class="text-center mb-3">
-										<a href="index.html"><img src="images/logo-full.png" alt=""></a>
+										<a href="index.html"><img src="{{asset('template/dashboard/images/logo-jumtek-white.png')}}" alt="" width="140px" height="140px"></a>
 									</div>
                                     <h4 class="text-center mb-4 text-white">Sign in your account</h4>
                                     <form action="index.html">
                                         <div class="form-group">
                                             <label class="mb-1 text-white"><strong>Email</strong></label>
-                                            <input type="email" class="form-control" value="hello@example.com">
+                                            <input type="email" class="form-control" value="pmi@example.com">
                                         </div>
                                         <div class="form-group">
                                             <label class="mb-1 text-white"><strong>Password</strong></label>
@@ -42,15 +42,15 @@
 												</div>
                                             </div>
                                             <div class="form-group">
-                                                <a class="text-white" href="page-forgot-password.html">Forgot Password?</a>
+                                                <a class="text-white" href="page-forgot-password.html">Lupa Password ?</a>
                                             </div>
                                         </div>
                                         <div class="text-center">
-                                            <button type="submit" class="btn bg-white text-primary btn-block">Sign Me In</button>
+                                            <button type="submit" class="btn bg-white text-primary btn-block">Login</button>
                                         </div>
                                     </form>
                                     <div class="new-account mt-3">
-                                        <p class="text-white">Don't have an account? <a class="text-white" href="./page-register.html">Sign up</a></p>
+                                        <p class="text-white">Belum Punya Akun ? <a class="text-white" href="/register">Sign up</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -66,9 +66,9 @@
         Scripts
     ***********************************-->
     <!-- Required vendors -->
-    <script src="./vendor/global/global.min.js"></script>
-    <script src="./js/custom.min.js"></script>
-    <script src="./js/deznav-init.js"></script>
+    <script src="{{asset('template/dashboard/vendor/global/global.min.js')}}"></script>
+    <script src="{{asset('template/dashboard/js/custom.min.js')}}"></script>
+    <script src="{{asset('template/dashboard/js/deznav-init.js')}}"></script>
 
 </body>
 

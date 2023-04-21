@@ -9617,10 +9617,11 @@ a {
   transition: all .2s ease;
   z-index: 5; }
   .nav-header .logo-abbr {
-    max-width: 52px; }
+    /* max-width: 52px;  */
+  }
     @media only screen and (max-width: 575px) {
       .nav-header .logo-abbr {
-        max-width: 40px; } }
+        max-width: 90px; } }
   .nav-header .logo-compact {
     display: none; }
   @media only screen and (min-width: 1200px) and (max-width: 1400px) {
