@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register | Jumtek <?php echo date("Y");?></title>
-    <link rel="stylesheet" type="text/css" href="{{asset('template/form/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('template/form/css/fontawesome-all.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('template/form/css/iofrm-style.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('template/form/css/iofrm-theme24.css')}}">
+    <title>iofrm</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" type="text/css" href="css/iofrm-style.css">
+    <link rel="stylesheet" type="text/css" href="css/iofrm-theme23.css">
 </head>
 <body>
-    <div class="form-body on-top">
+    <div class="form-body on-top-mobile">
         <div class="website-logo">
-            <a href="#">
-                <div class="">
-                    <img class="logo-size" src="{{asset('template/dashboard/images/logo-jumtek-white.png')}}" alt="">
+            <a href="index.html">
+                <div class="logo">
+                    <img class="logo-size" src="images/logo-light.svg" alt="">
                 </div>
             </a>
         </div>
@@ -22,9 +22,9 @@
             <div class="img-holder">
                 <div class="bg"></div>
                 <div class="info-holder simple-info">
-                    <div><img src="{{asset('template/form/images/graphic6.svg')}}" alt=""></div>
-                    <div><h3>Selamat Datang di Jumtek <?php echo date("Y");?>!</h3></div>
-                    <div><p>Untuk Melakukan Pendaftaran akun Jumtek 2023, Silahkan Isi Form dibawah ini ya !</p></div>
+                    <div><img src="images/graphic6.svg" alt=""></div>
+                    <div><h3>We’re Accepting applications!</h3></div>
+                    <div><p>Fill the form, attach your  latest CV <br>and portfolio to get listed.</p></div>
                 </div>
             </div>
             <div class="form-holder">
@@ -33,62 +33,62 @@
                         <form>
                             <div class="row">
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control" placeholder="Nama Lengkap">
+                                    <input type="text" class="form-control" placeholder="First name">
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control" placeholder="MIS PMI">
+                                    <input type="text" class="form-control" placeholder="Last name">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control" placeholder="E-mail">
+                                    <input type="text" class="form-control" placeholder="E-mail Address">
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control" placeholder="No. Telp">
+                                    <input type="text" class="form-control" placeholder="Phone Number">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control" placeholder="Unit PMI">
+                                    <input type="text" class="form-control" placeholder="Country">
                                 </div>
-                                {{-- <div class="col-12 col-sm-6">
+                                <div class="col-12 col-sm-6">
                                     <input type="text" class="form-control" placeholder="Linkedin link">
-                                </div> --}}
+                                </div>
                             </div>
-                            {{-- <div class="row">
+                            <div class="row">
                                 <div class="col-12 col-sm-6">
                                     <input type="text" class="form-control" placeholder="Website, other links">
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <input type="text" class="form-control" placeholder="Website, other links">
                                 </div>
-                            </div> --}}
-                            {{-- <div class="row">
+                            </div>
+                            <div class="row">
                                 <div class="col-12">
                                     <textarea class="form-control" placeholder="Tell us about yourself.."></textarea>
                                 </div>
-                            </div> --}}
+                            </div>
                             <div class="row">
                                 <div class="col-12 col-sm-6">
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" id="validatedCustomFile">
-                                        <label class="custom-file-label" for="validatedCustomFile">File KTP</label>
+                                        <label class="custom-file-label" for="validatedCustomFile">CV (Resume)</label>
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" id="validatedCustomFile">
-                                        <label class="custom-file-label" for="validatedCustomFile">Pas Foto</label>
+                                        <label class="custom-file-label" for="validatedCustomFile">Other attachments</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="row top-padding">
                                 <div class="col-12 col-sm-6">
-                                    <input type="checkbox" id="chk1" required><label for="chk1">I agree on <a href="#">terms & conditions</a> of jumtek 2023</label>
+                                    <input type="checkbox" id="chk1" required><label for="chk1">I agree on <a href="#">terms & conditions</a> of iofrm</label>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-button text-right">
-                                        <button id="submit" type="submit" class="ibtn less-padding">Register</button>
+                                        <button id="submit" type="submit" class="ibtn less-padding">Submit Application</button>
                                     </div>
                                 </div>
                             </div>
@@ -98,9 +98,9 @@
             </div>
         </div>
     </div>
-<script src="{{asset('template/form/js/jquery.min.js')}}"></script>
-<script src="{{asset('template/form/js/popper.min.js')}}"></script>
-<script src="{{asset('template/form/js/bootstrap.min.js')}}"></script>
-<script src="{{asset('template/form/js/main.js')}}"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

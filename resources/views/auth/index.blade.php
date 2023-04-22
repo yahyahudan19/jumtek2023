@@ -1,75 +1,58 @@
 <!DOCTYPE html>
-<html lang="en" class="h-100">
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Jumtek 2023 - Login Page</title>
-    <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('template/dashboard/images/logopng.png')}}">
-    <link href="{{asset('template/dashboard/css/style.css')}}" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Jumtek <?php echo date("Y");?></title>
+    <link rel="stylesheet" type="text/css" href="{{asset('template/form/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('template/form/css/fontawesome-all.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('template/form/css/iofrm-style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('template/form/css/iofrm-theme22.css')}}">
 </head>
-
-<body class="h-100">
-    <div class="authincation h-100">
-        <div class="container h-100">
-            <div class="row justify-content-center h-100 align-items-center">
-                <div class="col-md-6">
-                    <div class="authincation-content">
-                        <div class="row no-gutters">
-                            <div class="col-xl-12">
-                                <div class="auth-form">
-									<div class="text-center mb-3">
-										<a href="index.html"><img src="{{asset('template/dashboard/images/logo-jumtek-white.png')}}" alt="" width="140px" height="140px"></a>
-									</div>
-                                    <h4 class="text-center mb-4 text-white">Sign in your account</h4>
-                                    <form action="index.html">
-                                        <div class="form-group">
-                                            <label class="mb-1 text-white"><strong>Email</strong></label>
-                                            <input type="email" class="form-control" value="pmi@example.com">
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="mb-1 text-white"><strong>Password</strong></label>
-                                            <input type="password" class="form-control" value="Password">
-                                        </div>
-                                        <div class="form-row d-flex justify-content-between mt-4 mb-2">
-                                            <div class="form-group">
-                                               <div class="custom-control custom-checkbox ml-1 text-white">
-													<input type="checkbox" class="custom-control-input" id="basic_checkbox_1">
-													<label class="custom-control-label" for="basic_checkbox_1">Remember my preference</label>
-												</div>
-                                            </div>
-                                            <div class="form-group">
-                                                <a class="text-white" href="page-forgot-password.html">Lupa Password ?</a>
-                                            </div>
-                                        </div>
-                                        <div class="text-center">
-                                            <button type="submit" class="btn bg-white text-primary btn-block">Login</button>
-                                        </div>
-                                    </form>
-                                    <div class="new-account mt-3">
-                                        <p class="text-white">Belum Punya Akun ? <a class="text-white" href="/register">Sign up</a></p>
-                                    </div>
-                                </div>
+<body>
+    <div class="form-body without-side">
+        <div class="website-logo">
+            <a href="index.html">
+                <div class="logo">
+                    <img class="logo-size" src="{{asset('template/form/images/logo-light.svg')}}" alt="">
+                </div>
+            </a>
+        </div>
+        <div class="row">
+            <div class="img-holder">
+                <div class="bg"></div>
+                <div class="info-holder">
+                    <img src="{{asset('template/form/images/graphic3.svg')}}" alt="">
+                </div>
+            </div>
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>Login Jumtek <?php echo date("Y");?></h3>
+                        <p>Silahkan Login menggunakan Akun yang telah terdaftar di web jumtek 2023!</p>
+                        <form>
+                            <input class="form-control" type="text" name="username" placeholder="E-mail Address" required>
+                            <input class="form-control" type="password" name="password" placeholder="Password" required>
+                            <div class="form-button">
+                                <a href="/dashboard" type="button" class="ibtn">Login</a><a href="#l">Lupa Password?</a>
+                                {{-- <button id="submit" type="submit" class="ibtn">Login</button> <a href="#l">Lupa Password?</a> --}}
                             </div>
+                        </form>
+                        <div class="other-links">
+                            {{-- <div class="text">Belum Punya Akun ?</div> --}}
+                            {{-- <a href="#"><i class="fab fa-facebook-f"></i>Facebook</a><a href="#"><i class="fab fa-google"></i>Google</a><a href="#"><i class="fab fa-linkedin-in"></i>Linkedin</a> --}}
+                        </div>
+                        <div class="page-links">
+                            <a href="/register">Register new account !</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-    <!--**********************************
-        Scripts
-    ***********************************-->
-    <!-- Required vendors -->
-    <script src="{{asset('template/dashboard/vendor/global/global.min.js')}}"></script>
-    <script src="{{asset('template/dashboard/js/custom.min.js')}}"></script>
-    <script src="{{asset('template/dashboard/js/deznav-init.js')}}"></script>
-
+<script src="{{asset('template/form/js/jquery.min.js')}}"></script>
+<script src="{{asset('template/form/js/popper.min.js')}}"></script>
+<script src="{{asset('template/form/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('template/form/js/main.js')}}"></script>
 </body>
-
 </html>
