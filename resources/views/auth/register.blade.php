@@ -88,7 +88,8 @@
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-button text-right">
-                                        <button id="submit" type="submit" class="ibtn less-padding">Register</button>
+                                        {{-- <button id="submit" type="submit" class="ibtn less-padding">Register</button> --}}
+                                        <a href="/login" class="ibtn less-padding">Register</a>
                                     </div>
                                 </div>
                             </div>
@@ -98,6 +99,7 @@
             </div>
         </div>
     </div>
+@include('sweetalert::alert')
 <script src="{{asset('template/form/js/jquery.min.js')}}"></script>
 <script src="{{asset('template/form/js/popper.min.js')}}"></script>
 <script src="{{asset('template/form/js/bootstrap.min.js')}}"></script>
