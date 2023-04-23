@@ -43,16 +43,20 @@
                                             <li class="active has-sub"><a href="#home">Home</a>
 											</li>
                                             <li class="has-sub">
-												<a href="about.html">About</a>												
+												<a href="/about">About</a>												
 											</li>
                                              <li class="has-sub">
-												<a href="#">Lomba +</a>
+												<a href="#">Kegiatan +</a>
 												<ul>
-													<li><a href="speakers.html">Speakers Page</a></li>
-													<li><a href="speaker-details.html">Speakers Details</a></li>
+													<li><a href="#">Bidang Jumpa</a></li>
+													<li><a href="#">Bidang Bakti</a></li>
+													<li><a href="#">Bidang Gembira</a></li>
 												</ul>
 											</li>
-                                            <li><a href="blog.html">Persyaratan</a></li>
+                                            <li><a href="/persyaratan">Persyaratan</a></li>
+                                            <li class="has-sub">
+												<a href="/blog">Blog</a>												
+											</li>
                                         </ul>
                                     </nav>
                                 </div>
@@ -86,8 +90,8 @@
                                 <div class="col-8">
                                     <div class="slider-content second-slider-content">
                                         <ul data-animation="fadeInUp animated" data-delay=".2s">
-											<li><i class="fas fa-map-marker-alt"></i> Markas PMI Kabupaten Malang</li>
-											<li><i class="far fa-clock"></i>  5 - 7 Juli 2023, </li>
+											<li><i class="fas fa-map-marker-alt"></i> Selorejo, Ngantang</li>
+											<li><i class="far fa-clock"></i>  24 - 27 Juni 2023, </li>
 										</ul>
                                         <h2 data-animation="fadeInUp animated" data-delay=".4s">Jumbara dan Temu Karya <span>2023</span></h2> 
 										<div countdown class="conterdown wow fadeInDown animated" data-animation="fadeInDown animated" data-delay=".2s" data-date="Jul 5 2023 00:00:00">
@@ -137,21 +141,21 @@
 								<img src="{{asset('template/homepage/img/icon_2.png')}}" alt="icon">
 								<span>2</span>
 							</div>
-							<h4>New Speaker</h4>
+							<h4>Keahlian</h4>
 						 </div>
 						   <div class="feature-box wow fadeInDown animated" data-animation="fadeInDown animated" data-delay=".2s">
 							<div class="crl mb-30">
 								<img src="{{asset('template/homepage/img/icon_3.png')}}" alt="icon">
 								<span>3</span>
 							</div>
-							<h4>Food Court</h4>
+							<h4>Pengalaman</h4>
 						 </div>
 						   <div class="feature-box wow fadeInDown animated" data-animation="fadeInDown animated" data-delay=".2s">
 							<div class="crl mb-30">
 								<img src="{{asset('template/homepage/img/icon_4.png')}}" alt="icon">
 								<span>4</span>
 							</div>
-							<h4>Have Fun</h4>
+							<h4>Perlombaan</h4>
 						 </div>
                         </div>
                         <div class="col-lg-6">
@@ -160,13 +164,13 @@
 								<div class="text-outline wow fadeInUp animated" data-animation="fadeInUp animated" data-delay=".2s">
 										<span>Event</span>
 									</div>
-                                    <span class="wow fadeInUp animated" data-animation="fadeInUp animated" data-delay=".3s">Why Join Ovent</span>
-                                    <h2 class="wow fadeInUp animated" data-animation="fadeInUp animated" data-delay=".4s">Why You Should Join Event</h2>
-                                    <h5 class="wow fadeInUp animated" data-animation="fadeInUp animated" data-delay=".5s"><span></span>Shift your perspective on digital business</h5>
+                                    <span class="wow fadeInUp animated" data-animation="fadeInUp animated" data-delay=".3s">Jumtek PMI Kabupaten Malang 2023</span>
+                                    <h2 class="wow fadeInUp animated" data-animation="fadeInUp animated" data-delay=".4s">Kenapa Harus Ikut Jumtek 2023</h2>
+                                    <h5 class="wow fadeInUp animated" data-animation="fadeInUp animated" data-delay=".5s"><span></span>Siamo Tutti Fratelli !</h5>
                                 </div>
 								<div class="wow fadeInDown animated" data-animation="fadeInUp animated" data-delay=".2s">
-									<p>Study in a newly-refreshed campus located in the heart of Berlin, Europe's start-up capital. Berlin is a fantastic place to study as there are excellent travel.</p>
-									 <p>The process of planning and coordinating the event is usually referred to as event planning and which can include budgeting, scheduling, site selection, acquiring necessary permits, coordinating transportation and parking, arranging for speakers or entertainers.</p>
+									<p>Menjalin silaturahmi antar anggota PMR serta mendidik generasi PMR menjadi relawan yang berkarakter.</p>
+									 <p>Memberikan wadah bagi generasi PMR Kabupaten Malang dalam meningkatkan skill/kompetensi di bidang 7 materi dasar PMR.</p>
 								   <a href="#" class="btn mt-20"><i class="far fa-ticket-alt"></i> Daftar Sekarang !</a>
 							   </div>
                             </div>
@@ -357,42 +361,42 @@
                     <div class="row">
                         <div class="col-lg-6 col-sm-6">
                            <div class="about-title second-atitle">							
-                                    <span class="wow fadeInUp animated" data-animation="fadeInUp animated" data-delay=".2s">Why Join Ovent</span>
-                                    <h2 class="wow fadeInUp animated" data-animation="fadeInUp animated" data-delay=".2s">Join us at 110th oVent Expo.</h2>
-                                    <h5 class="wow fadeInUp animated" data-animation="fadeInUp animated" data-delay=".2s">Shift your perspective on digital business</h5>
+                                    <span class="wow fadeInUp animated" data-animation="fadeInUp animated" data-delay=".2s">Jumtek PMI Kabupaten Malang 2023</span>
+                                    <h2 class="wow fadeInUp animated" data-animation="fadeInUp animated" data-delay=".2s">Kegiatan Apa Saja di Jumtek 2023 ?</h2>
+                                    <h5 class="wow fadeInUp animated" data-animation="fadeInUp animated" data-delay=".2s">Siamo Tutti Fratelli !</h5>
                                 </div>
-								<ul class="wow fadeInDown animated" data-animation="fadeInDown animated" data-delay=".2s">
+								{{-- <ul class="wow fadeInDown animated" data-animation="fadeInDown animated" data-delay=".2s">
 									<li>
-										<img src="img/calendar.png" alt="img"> 
+										<img src="{{asset('template/homepage/img/calendar.png')}}" alt="img"> 
 										<span>Study in a newly-refreshed campus located in the heart of Berlin, Europe's start-up capital. Berlin is a fantastic place to study as there</span>
 									</li>
 									<li>
-										<img src="img/comments.png" alt="img"> 
+										<img src="{{asset('template/homepage/img/comments.png')}}" alt="img"> 
 										<span>Study in a newly-refreshed campus located in the heart of Berlin, Europe's start-up capital. Berlin is a fantastic place to study as there</span>
 									</li>
-								</ul>
+								</ul> --}}
                         </div>
                         <div class="col-lg-6 col-sm-6">
 						 <div class="single-counter text-center mb-30 cr1">
                                 <div class="counter p-relative">
-                                    <span class="count">20</span>
+                                    <span class="count">10</span>
                                     <small>+</small>
                                 </div>
-                                <p>Sponsors</p>
+                                <p>Kegiatan</p>
                             </div>
                             <div class="single-counter text-center mb-30 cr2">
                                 <div class="counter p-relative">
                                     <span class="count">100</span>
                                     <small>+</small>
                                 </div>
-                                <p>Cool Speakers</p>
+                                <p>Kontingen PMR</p>
                             </div>
 							<div class="single-counter text-center mb-30 cr3">
                                 <div class="counter p-relative">
-                                    <span class="count">5</span>
+                                    <span class="count">10</span>
                                     <small>+</small>
                                 </div>
-                                <p>Happy People</p>
+                                <p>Kontingen KSR</p>
                             </div>
 							<div class="cr4"></div>
 							<div class="cr5"></div>
@@ -409,8 +413,8 @@
 			 <div class="row justify-content-center">
                         <div class="col-xl-6 col-lg-8">
                             <div class="section-title text-center mb-80">
-                                <span class="wow fadeInUp animated" data-animation="fadeInUp animated" data-delay=".2s">Event</span>
-                                <h2 class="wow fadeInUp animated" data-animation="fadeInUp animated" data-delay=".2s">Event On Trend</h2>
+                                <span class="wow fadeInUp animated" data-animation="fadeInUp animated" data-delay=".2s">Jumtek 2023</span>
+                                <h2 class="wow fadeInUp animated" data-animation="fadeInUp animated" data-delay=".2s">Kegiatan Jumtek 2023</h2>
                             </div>
                         </div>
                     </div>
@@ -420,62 +424,66 @@
                   <nav class="wow fadeInDown animated" data-animation="fadeInDown animated" data-delay=".2s">
                      <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
                         <a class="nav-item nav-link active show" id="nav-home-tab" data-toggle="tab" href="#one" role="tab" aria-selected="true">
-						<img src="img/t-icon.png" alt="img" class="drk-icon">		
-						<img src="img/t-w-icon1.png" alt="img" class="lgt-icon">  
+						<img src="{{asset('template/homepage/img/t-icon.png')}}" alt="img" class="drk-icon">		
+						<img src="{{asset('template/homepage/img/t-w-icon1.png')}}" alt="img" class="lgt-icon">  
 						<div class="nav-content">
-							<strong>First Day</strong>
-							<span>10th January 2019</span>
+							<strong>Bidang Jumpa</strong>
+							{{-- <span>24 Juni 2023</span> --}}
 						</div>
 						</a>
-                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#two" role="tab" aria-selected="false"><img src="img/t-icon.png" alt="img" class="drk-icon">		
-						<img src="img/t-w-icon1.png" alt="img" class="lgt-icon"> 
+                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#two" role="tab" aria-selected="false"><img src="{{asset('template/homepage/img/t-icon.png')}}" alt="img" class="drk-icon">		
+						<img src="{{asset('template/homepage/img/t-w-icon1.png')}}" alt="img" class="lgt-icon"> 
 						<div class="nav-content">
-							<strong>Second Day</strong>
-							<span>10th January 2019</span>
+							<strong>Bidang Bhakti</strong>
+							{{-- <span>25 Juni 2023</span> --}}
 						</div>
 						</a>
-                        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#three" role="tab" aria-selected="false"><img src="img/t-icon.png" alt="img" class="drk-icon">		
-						<img src="img/t-w-icon1.png" alt="img" class="lgt-icon"> 
+                        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#three" role="tab" aria-selected="false"><img src="{{asset('template/homepage/img/t-icon.png')}}" alt="img" class="drk-icon">		
+						<img src="{{asset('template/homepage/img/t-w-icon1.png')}}" alt="img" class="lgt-icon"> 
 						<div class="nav-content">
-							<strong>Third Day</strong>
-							<span>10th January 2019</span>
+							<strong>Bidang Gembira</strong>
+							{{-- <span>26 Juni 2023</span> --}}
 						</div>
 						</a>
-						<a class="nav-item nav-link" id="nav-contact-tab2" data-toggle="tab" href="#four" role="tab" aria-selected="false"><img src="img/t-icon.png" alt="img" class="drk-icon">		
-						<img src="img/t-w-icon1.png" alt="img" class="lgt-icon"> 
+						{{-- <a class="nav-item nav-link" id="nav-contact-tab2" data-toggle="tab" href="#four" role="tab" aria-selected="false"><img src="{{asset('template/homepage/img/t-icon.png')}}" alt="img" class="drk-icon">		
+						<img src="{{asset('template/homepage/img/t-w-icon1.png')}}" alt="img" class="lgt-icon"> 
 						<div class="nav-content">
 							<strong>Fourth Day</strong>
-							<span>10th January 2019</span>
+							<span>27 Juni 2023</span>
 						</div>
-						</a>
+						</a> --}}
                      </div>
                   </nav>
                   <div class="tab-content py-3 px-3 px-sm-0 wow fadeInDown animated" data-animation="fadeInDown animated" data-delay=".2s" id="nav-tabContent">
-                     <div class="tab-pane fade active show" id="one" role="tabpanel" aria-labelledby="nav-home-tab">
+                    
+                      <div class="tab-pane fade active show" id="one" role="tabpanel" aria-labelledby="nav-home-tab">
+                        {{-- BIDANG JUMPA --}}
+
 						<!-- row loop -->
                         <div class="row mb-30">
                            <div class="col-lg-2">
 							  <div class="user">
 								  <div class="title">  
-									  <img src="img/event_avatar_1.png" alt="img">							  
-									 <h5>Rosalina William</h5>
-									 <p>UX Deisgn</p>
+									  <img src="{{asset('template/homepage/img/event_avatar_1.png')}}" alt="img">							  
+									 <h5>Panitia Bidang</h5>
+									 <p>Fasilitator Provinsi Jawa Timur</p>
 								  </div>
 								  <ul>
                                  <li><i class="fal fa-coffee"></i> Coffe & Snacks</li>
-                                 <li><i class="fal fa-video"></i> Video Streming</li>
+                                 <li><i class="fal fa-video"></i> Video Edukatif</li>
                               </ul>
 							  </div>
                            </div>
                            <div class="col-lg-10">
                               <div class="event-list-content fix">
                                  <ul data-animation="fadeInUp animated" data-delay=".2s" style="animation-delay: 0.2s;" class="">
-									<li><i class="fas fa-map-marker-alt"></i> Waterfront Hotel, London</li>
+									<li><i class="fas fa-map-marker-alt"></i>Selorejo, Ngantang</li>
 									<li><i class="far fa-clock"></i> 9.30 - 10.30 AM</li>
 								 </ul>
-								 <h2>UX Design Trend Party 2019</h2>
-								 <p>In order to save time you have to break down the content strategy for the event or conference you are planning step by step. Creating this process from scratch will take the longest amount of time to build, but once you have content production foundation.</p>
-								 <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
+								 <h2>Latihan Gabungan <br> Kepalangmerahan</h2>
+								 <p>Memberikan wadah bagi generasi PMR Kabupaten Malang dalam meningkatkan 
+                                    skill/kompetensi di bidang 7 materi dasar PMR </p>
+								 {{-- <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a> --}}
 								 <a href="#" class="btn mt-20">Read More</a>
 								 <div class="crical"><i class="fal fa-video"></i> </div>
                               </div>
@@ -487,24 +495,25 @@
                            <div class="col-lg-2">
 							  <div class="user">
 								  <div class="title">  
-									  <img src="img/event_avatar_2.png" alt="img">							  
-									 <h5>Kelian M. Bappe</h5>
-									 <p>youtubing</p>
+									  <img src="{{asset('template/homepage/img/event_avatar_2.png')}}" alt="img">							  
+									 <h5>Pengurus PMI</h5>
+									 <p>Kabupaten Malang dan Provinsi Jawa Timur</p>
 								  </div>
 								  <ul>
-                                 <li><i class="fal fa-coffee"></i> Coffe & Snacks</li>
-                                 <li><i class="fal fa-video"></i> Video Streming</li>
+                                 <li><i class="fal fa-list"></i> Print Out Program</li>
+                                 <li><i class="fal fa-film"></i> PPT Materi</li>
                               </ul>
 							  </div>
                            </div>
                            <div class="col-lg-10">
                               <div class="event-list-content fix">
                                  <ul data-animation="fadeInUp animated" data-delay=".2s" style="animation-delay: 0.2s;" class="">
-									<li><i class="fas fa-map-marker-alt"></i> Waterfront Hotel, London</li>
+									<li><i class="fas fa-map-marker-alt"></i>Selorejo, Ngantang</li>
 									<li><i class="far fa-clock"></i> 9.30 - 10.30 AM</li>
 								 </ul>
-								 <h2>Rokolo DJ Dancing 2019</h2>
-								 <p>In order to save time you have to break down the content strategy for the event or conference you are planning step by step. Creating this process from scratch will take the longest amount of time to build, but once you have content production foundation.</p>
+								 <h2>Lokakarya Pembinaan <br>dan Manajemen PMR</h2>
+								 <p>Meningkatkan kemampuan pembina PMR dalam melaksanakan proses pembinaan yang baik di sekolah melalui kegiatan yang menyenangkan, bervariasi dan mengikuti perkembangan zaman.
+                                </p>
 								 <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
 								 <a href="#" class="btn mt-20">Read More</a>
 								 <div class="crical"><i class="fal fa-magic"></i> </div>
@@ -514,57 +523,58 @@
 						<!-- row loop -->
 						<!-- row loop -->
                         <div class="row mb-30">
-                           <div class="col-lg-2">
-							  <div class="user">
-								  <div class="title">  
-									  <img src="img/event_avatar_3.png" alt="img">							  
-									 <h5>Hiliniam Nelson</h5>
-									 <p>UX Deisgn</p>
-								  </div>
-								  <ul>
-                                 <li><i class="fal fa-coffee"></i> Coffe & Snacks</li>
-                                 <li><i class="fal fa-video"></i> Video Streming</li>
-                              </ul>
-							  </div>
-                           </div>
-                           <div class="col-lg-10">
-                              <div class="event-list-content fix">
-                                 <ul data-animation="fadeInUp animated" data-delay=".2s" style="animation-delay: 0.2s;" class="">
-									<li><i class="fas fa-map-marker-alt"></i> Waterfront Hotel, London</li>
-									<li><i class="far fa-clock"></i>  9.30 - 10.30 AM</li>
-								 </ul>
-								 <h2>Google Youtube Stratigic Party</h2>
-								 <p>In order to save time you have to break down the content strategy for the event or conference you are planning step by step. Creating this process from scratch will take the longest amount of time to build, but once you have content production foundation.</p>
-								 <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
-								 <a href="#" class="btn mt-20">Read More</a>
-								 <div class="crical"><i class="far fa-cogs"></i> </div>
-                              </div>
-                           </div>
-                        </div>
+                            <div class="col-lg-2">
+                               <div class="user">
+                                   <div class="title">  
+                                       <img src="{{asset('template/homepage/img/event_avatar_4.png')}}" alt="img">							  
+                                       <h5>Ninik Trimariya, M.Pd.</h5>
+                                       <p>Guru Penulis MTsN 1 Malang</p>
+                                   </div>
+                                   <ul>
+                                  <li><i class="fal fa-coffee"></i> Coffe & Snacks</li>
+                                  <li><i class="fal fa-video"></i> Video Streming</li>
+                               </ul>
+                               </div>
+                            </div>
+                            <div class="col-lg-10">
+                               <div class="event-list-content fix">
+                                  <ul data-animation="fadeInUp animated" data-delay=".2s" style="animation-delay: 0.2s;" class="">
+                                     <li><i class="fas fa-map-marker-alt"></i>Selorejo, Ngantang</li>
+                                     <li><i class="far fa-clock"></i> 9.30 - 10.30 AM</li>
+                                  </ul>
+                                  <h2>Lokakarya Penulisan</h2>
+                                  <p>Meneladani tokoh sejarah Gerakan Palang Merah Dunia, Bapak Jean Henry Dunant dalam bidang kepenulisan dan karya buku yang mengubah peradaban.</p>
+                                  <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
+                                  <a href="#" class="btn mt-20">Read More</a>
+                                  <div class="crical"><i class="fal fa-ban"></i></div>
+                               </div>
+                            </div>
+                         </div>
 						<!-- row loop -->
+						
 						<!-- row loop -->
                         <div class="row mb-30">
                            <div class="col-lg-2">
 							  <div class="user">
-								  <div class="title">  
-									  <img src="img/event_avatar_4.png" alt="img">							  
-									 <h5>Kimjing J. Jalim</h5>
-									 <p>UX Deisgn</p>
+								  {{-- <div class="title">  
+									  <img src="{{asset('template/homepage/img/event_avatar_4.png')}}" alt="img">							  
+                                      <h5>Ninik Trimariya, M.Pd.</h5>
+                                      <p>Guru Penulis MTsN 1 Malang</p>
 								  </div>
 								  <ul>
                                  <li><i class="fal fa-coffee"></i> Coffe & Snacks</li>
-                                 <li><i class="fal fa-video"></i> Video Streming</li>
+                                 <li><i class="fal fa-video"></i> Video Streming</li> --}}
                               </ul>
 							  </div>
                            </div>
                            <div class="col-lg-10">
                               <div class="event-list-content fix">
                                  <ul data-animation="fadeInUp animated" data-delay=".2s" style="animation-delay: 0.2s;" class="">
-									<li><i class="fas fa-map-marker-alt"></i> Waterfront Hotel, London</li>
-									<li><i class="far fa-clock"></i>  9.30 - 10.30 AM</li>
+									<li><i class="fas fa-map-marker-alt"></i>Selorejo, Ngantang</li>
+									<li><i class="far fa-clock"></i> 9.30 - 10.30 AM</li>
 								 </ul>
-								 <h2>Intro Jiknim Jikis 2019</h2>
-								 <p>In order to save time you have to break down the content strategy for the event or conference you are planning step by step. Creating this process from scratch will take the longest amount of time to build, but once you have content production foundation.</p>
+                                 <h2>Kunjungan Persahabatan</h2>
+								 <p>Menjalin silaturahmi antar anggota PMI baik PMR, KSR, dan TSR serta Memperluas jaringan dan menambah relasi untuk mengembangkan PMR di Kabupaten Malang</p>
 								 <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
 								 <a href="#" class="btn mt-20">Read More</a>
 								 <div class="crical"><i class="fal fa-ban"></i></div>
@@ -572,32 +582,64 @@
                            </div>
                         </div>
 						<!-- row loop -->
-						
+						<!-- row loop -->
+                        <div class="row mb-30">
+                            <div class="col-lg-2">
+                               <div class="user">
+                                   <div class="title">  
+                                       <img src="{{asset('template/homepage/img/event_avatar_4.png')}}" alt="img">							  
+                                       <h5>Fasilitator PMI</h5>
+                                       <p>dan Alumni FORPIS</p>
+                                   </div>
+                                   <ul>
+                                  <li><i class="fal fa-coffee"></i> Coffe & Snacks</li>
+                                  <li><i class="fal fa-video"></i> Video Streming</li>
+                               </ul>
+                               </div>
+                            </div>
+                            <div class="col-lg-10">
+                               <div class="event-list-content fix">
+                                  <ul data-animation="fadeInUp animated" data-delay=".2s" style="animation-delay: 0.2s;" class="">
+                                     <li><i class="fas fa-map-marker-alt"></i>Selorejo, Ngantang</li>
+                                     <li><i class="far fa-clock"></i> 9.30 - 10.30 AM</li>
+                                  </ul>
+                                  <h2>Forum Remaja Palang Merah Indonesia</h2>
+                                  <p>Meningkatkan peran aktif PMR dalam proses pengambilan keputusan dan kepemimpinan.</p>
+                                  <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
+                                  <a href="#" class="btn mt-20">Read More</a>
+                                  <div class="crical"><i class="fal fa-ban"></i></div>
+                               </div>
+                            </div>
+                         </div>
+						<!-- row loop -->
                      </div>
+
+
+                     {{-- BIDANG BHAKTI  --}}
                      <div class="tab-pane fade" id="two" role="tabpanel" aria-labelledby="nav-profile-tab">
                         <!-- row loop -->
                         <div class="row mb-30">
                            <div class="col-lg-2">
 							  <div class="user">
 								  <div class="title">  
-									  <img src="img/event_avatar_1.png" alt="img">							  
-									 <h5>Rosalina William</h5>
-									 <p>UX Deisgn</p>
+									  <img src="{{asset('template/homepage/img/event_avatar_1.png')}}" alt="img">							  
+									 <h5>Seluruh Peserta.</h5>
+									 <p>PMR Mula, Madya dan Wira</p>
 								  </div>
 								  <ul>
-                                 <li><i class="fal fa-coffee"></i> Coffe & Snacks</li>
-                                 <li><i class="fal fa-video"></i> Video Streming</li>
+                                 <li><i class="fal fa-tree"></i> Penamaman Pohon </li>
+                                 <li><i class="fal fa-leaf"></i> Penghijauan</li>
                               </ul>
 							  </div>
                            </div>
                            <div class="col-lg-10">
                               <div class="event-list-content fix">
                                  <ul data-animation="fadeInUp animated" data-delay=".2s" style="animation-delay: 0.2s;" class="">
-									<li><i class="fas fa-map-marker-alt"></i> Waterfront Hotel, London</li>
+									<li><i class="fas fa-map-marker-alt"></i>Selorejo, Ngantang</li>
 									<li><i class="far fa-clock"></i> 9.30 - 10.30 AM</li>
 								 </ul>
-								 <h2>UX Design Trend Party 2019</h2>
-								 <p>In order to save time you have to break down the content strategy for the event or conference you are planning step by step. Creating this process from scratch will take the longest amount of time to build, but once you have content production foundation.</p>
+								 <h2>Penghijauan</h2>
+								 <p>Menumbuhkan jiwa kepedulian terhadap lingkungan hidup serta Melaksanakan Tri Bakti PMR ke-2, yaitu : Berkarya dan Berbakti di Masyarakat.</p>
 								 <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
 								 <a href="#" class="btn mt-20">Read More</a>
 								 <div class="crical"><i class="fal fa-video"></i> </div>
@@ -610,84 +652,23 @@
                            <div class="col-lg-2">
 							  <div class="user">
 								  <div class="title">  
-									  <img src="img/event_avatar_2.png" alt="img">							  
-									 <h5>Kelian M. Bappe</h5>
-									 <p>youtubing</p>
+									  <img src="{{asset('template/homepage/img/event_avatar_1.png')}}" alt="img">							  
+									 <h5>Seluruh Peserta.</h5>
+									 <p>PMR Mula, Madya dan Wira</p>
 								  </div>
 								  <ul>
-                                 <li><i class="fal fa-coffee"></i> Coffe & Snacks</li>
-                                 <li><i class="fal fa-video"></i> Video Streming</li>
+                                 <li><i class="fal fa-home"></i> Bersih Lingkungan </li>
                               </ul>
 							  </div>
                            </div>
                            <div class="col-lg-10">
                               <div class="event-list-content fix">
                                  <ul data-animation="fadeInUp animated" data-delay=".2s" style="animation-delay: 0.2s;" class="">
-									<li><i class="fas fa-map-marker-alt"></i> Waterfront Hotel, London</li>
+									<li><i class="fas fa-map-marker-alt"></i>Selorejo, Ngantang</li>
 									<li><i class="far fa-clock"></i> 9.30 - 10.30 AM</li>
 								 </ul>
-								 <h2>Rokolo DJ Dancing 2019</h2>
-								 <p>In order to save time you have to break down the content strategy for the event or conference you are planning step by step. Creating this process from scratch will take the longest amount of time to build, but once you have content production foundation.</p>
-								 <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
-								 <a href="#" class="btn mt-20">Read More</a>
-								 <div class="crical"><i class="fal fa-video"></i> </div>
-                              </div>
-                           </div>
-                        </div>
-						<!-- row loop -->
-						<!-- row loop -->
-                        <div class="row mb-30">
-                           <div class="col-lg-2">
-							  <div class="user">
-								  <div class="title">  
-									  <img src="img/event_avatar_3.png" alt="img">							  
-									 <h5>Hiliniam Nelson</h5>
-									 <p>UX Deisgn</p>
-								  </div>
-								  <ul>
-                                 <li><i class="fal fa-coffee"></i> Coffe & Snacks</li>
-                                 <li><i class="fal fa-video"></i> Video Streming</li>
-                              </ul>
-							  </div>
-                           </div>
-                           <div class="col-lg-10">
-                              <div class="event-list-content fix">
-                                 <ul data-animation="fadeInUp animated" data-delay=".2s" style="animation-delay: 0.2s;" class="">
-									<li><i class="fas fa-map-marker-alt"></i> Waterfront Hotel, London</li>
-									<li><i class="far fa-clock"></i>  9.30 - 10.30 AM</li>
-								 </ul>
-								 <h2>Google Youtube Stratigic Party</h2>
-								 <p>In order to save time you have to break down the content strategy for the event or conference you are planning step by step. Creating this process from scratch will take the longest amount of time to build, but once you have content production foundation.</p>
-								 <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
-								 <a href="#" class="btn mt-20">Read More</a>
-								 <div class="crical"><i class="fal fa-video"></i> </div>
-                              </div>
-                           </div>
-                        </div>
-						<!-- row loop -->
-						<!-- row loop -->
-                        <div class="row mb-30">
-                           <div class="col-lg-2">
-							  <div class="user">
-								  <div class="title">  
-									  <img src="img/event_avatar_4.png" alt="img">							  
-									 <h5>Kimjing J. Jalim</h5>
-									 <p>UX Deisgn</p>
-								  </div>
-								  <ul>
-                                 <li><i class="fal fa-coffee"></i> Coffe & Snacks</li>
-                                 <li><i class="fal fa-video"></i> Video Streming</li>
-                              </ul>
-							  </div>
-                           </div>
-                           <div class="col-lg-10">
-                              <div class="event-list-content fix">
-                                 <ul data-animation="fadeInUp animated" data-delay=".2s" style="animation-delay: 0.2s;" class="">
-									<li><i class="fas fa-map-marker-alt"></i> Waterfront Hotel, London</li>
-									<li><i class="far fa-clock"></i>  9.30 - 10.30 AM</li>
-								 </ul>
-								 <h2>Intro Jiknim Jikis 2019</h2>
-								 <p>In order to save time you have to break down the content strategy for the event or conference you are planning step by step. Creating this process from scratch will take the longest amount of time to build, but once you have content production foundation.</p>
+								 <h2>Bhakti Lingkungan</h2>
+								 <p>Meningkatkan kepedulian anggota PMR terhadap kebersihan lingkungan hidup serta Mempererat persahabatan dan kerja sama anggota PMR.</p>
 								 <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
 								 <a href="#" class="btn mt-20">Read More</a>
 								 <div class="crical"><i class="fal fa-video"></i> </div>
@@ -696,13 +677,15 @@
                         </div>
 						<!-- row loop -->
                      </div>
+
+                     {{-- BIDANG GEMBIRA  --}}
                      <div class="tab-pane fade" id="three" role="tabpanel" aria-labelledby="nav-contact-tab">
                         <!-- row loop -->
                         <div class="row mb-30">
                            <div class="col-lg-2">
 							  <div class="user">
 								  <div class="title">  
-									  <img src="img/event_avatar_1.png" alt="img">							  
+									  <img src="{{asset('template/homepage/img/event_avatar_1.png')}}" alt="img">							  
 									 <h5>Rosalina William</h5>
 									 <p>UX Deisgn</p>
 								  </div>
@@ -715,10 +698,10 @@
                            <div class="col-lg-10">
                               <div class="event-list-content fix">
                                  <ul data-animation="fadeInUp animated" data-delay=".2s" style="animation-delay: 0.2s;" class="">
-									<li><i class="fas fa-map-marker-alt"></i> Waterfront Hotel, London</li>
+									<li><i class="fas fa-map-marker-alt"></i>Selorejo, Ngantang</li>
 									<li><i class="far fa-clock"></i> 9.30 - 10.30 AM</li>
 								 </ul>
-								 <h2>UX Design Trend Party 2019</h2>
+								 <h2>Pentas Seni</h2>
 								 <p>In order to save time you have to break down the content strategy for the event or conference you are planning step by step. Creating this process from scratch will take the longest amount of time to build, but once you have content production foundation.</p>
 								 <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
 								 <a href="#" class="btn mt-20">Read More</a>
@@ -731,24 +714,24 @@
                         <div class="row mb-30">
                            <div class="col-lg-2">
 							  <div class="user">
-								  <div class="title">  
-									  <img src="img/event_avatar_2.png" alt="img">							  
-									 <h5>Kelian M. Bappe</h5>
-									 <p>youtubing</p>
+								 <div class="title">  
+									  <img src="{{asset('template/homepage/img/event_avatar_1.png')}}" alt="img">							  
+									 <h5>Seluruh Peserta.</h5>
+									 <p>PMR Mula, Madya dan Wira</p>
 								  </div>
 								  <ul>
-                                 <li><i class="fal fa-coffee"></i> Coffe & Snacks</li>
-                                 <li><i class="fal fa-video"></i> Video Streming</li>
+                                 <li><i class="fal fa-tree"></i> Penamaman Pohon </li>
+                                 <li><i class="fal fa-leaf"></i> Penghijauan</li>
                               </ul>
 							  </div>
                            </div>
                            <div class="col-lg-10">
                               <div class="event-list-content fix">
                                  <ul data-animation="fadeInUp animated" data-delay=".2s" style="animation-delay: 0.2s;" class="">
-									<li><i class="fas fa-map-marker-alt"></i> Waterfront Hotel, London</li>
+									<li><i class="fas fa-map-marker-alt"></i>Selorejo, Ngantang</li>
 									<li><i class="far fa-clock"></i> 9.30 - 10.30 AM</li>
 								 </ul>
-								 <h2>Rokolo DJ Dancing 2019</h2>
+								 <h2>OLahraga / Outbound</h2>
 								 <p>In order to save time you have to break down the content strategy for the event or conference you are planning step by step. Creating this process from scratch will take the longest amount of time to build, but once you have content production foundation.</p>
 								 <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
 								 <a href="#" class="btn mt-20">Read More</a>
@@ -761,176 +744,24 @@
                         <div class="row mb-30">
                            <div class="col-lg-2">
 							  <div class="user">
-								  <div class="title">  
-									  <img src="img/event_avatar_3.png" alt="img">							  
-									 <h5>Hiliniam Nelson</h5>
-									 <p>UX Deisgn</p>
-								  </div>
-								  <ul>
-                                 <li><i class="fal fa-coffee"></i> Coffe & Snacks</li>
-                                 <li><i class="fal fa-video"></i> Video Streming</li>
+                                <div class="title">  
+                                    <img src="{{asset('template/homepage/img/event_avatar_1.png')}}" alt="img">							  
+                                   <h5>Seluruh Peserta.</h5>
+                                   <p>PMR Mula, Madya dan Wira</p>
+                                </div>
+                                <ul>
+                               <li><i class="fal fa-tree"></i> Penamaman Pohon </li>
+                               <li><i class="fal fa-leaf"></i> Penghijauan</li>
                               </ul>
 							  </div>
                            </div>
                            <div class="col-lg-10">
                               <div class="event-list-content fix">
                                  <ul data-animation="fadeInUp animated" data-delay=".2s" style="animation-delay: 0.2s;" class="">
-									<li><i class="fas fa-map-marker-alt"></i> Waterfront Hotel, London</li>
-									<li><i class="far fa-clock"></i>  9.30 - 10.30 AM</li>
-								 </ul>
-								 <h2>Google Youtube Stratigic Party</h2>
-								 <p>In order to save time you have to break down the content strategy for the event or conference you are planning step by step. Creating this process from scratch will take the longest amount of time to build, but once you have content production foundation.</p>
-								 <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
-								 <a href="#" class="btn mt-20">Read More</a>
-								 <div class="crical"><i class="fal fa-video"></i> </div>
-                              </div>
-                           </div>
-                        </div>
-						<!-- row loop -->
-						<!-- row loop -->
-                        <div class="row mb-30">
-                           <div class="col-lg-2">
-							  <div class="user">
-								  <div class="title">  
-									  <img src="img/event_avatar_4.png" alt="img">							  
-									 <h5>Kimjing J. Jalim</h5>
-									 <p>UX Deisgn</p>
-								  </div>
-								  <ul>
-                                 <li><i class="fal fa-coffee"></i> Coffe & Snacks</li>
-                                 <li><i class="fal fa-video"></i> Video Streming</li>
-                              </ul>
-							  </div>
-                           </div>
-                           <div class="col-lg-10">
-                              <div class="event-list-content fix">
-                                 <ul data-animation="fadeInUp animated" data-delay=".2s" style="animation-delay: 0.2s;" class="">
-									<li><i class="fas fa-map-marker-alt"></i> Waterfront Hotel, London</li>
-									<li><i class="far fa-clock"></i>  9.30 - 10.30 AM</li>
-								 </ul>
-								 <h2>Intro Jiknim Jikis 2019</h2>
-								 <p>In order to save time you have to break down the content strategy for the event or conference you are planning step by step. Creating this process from scratch will take the longest amount of time to build, but once you have content production foundation.</p>
-								 <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
-								 <a href="#" class="btn mt-20">Read More</a>
-								 <div class="crical"><i class="fal fa-video"></i> </div>
-                              </div>
-                           </div>
-                        </div>
-						<!-- row loop -->
-                     </div>
-					 <div class="tab-pane fade" id="four" role="tabpanel" aria-labelledby="nav-contact-tab">
-                        <!-- row loop -->
-                        <div class="row mb-30">
-                           <div class="col-lg-2">
-							  <div class="user">
-								  <div class="title">  
-									  <img src="img/event_avatar_1.png" alt="img">							  
-									 <h5>Rosalina William</h5>
-									 <p>UX Deisgn</p>
-								  </div>
-								  <ul>
-                                 <li><i class="fal fa-coffee"></i> Coffe & Snacks</li>
-                                 <li><i class="fal fa-video"></i> Video Streming</li>
-                              </ul>
-							  </div>
-                           </div>
-                           <div class="col-lg-10">
-                              <div class="event-list-content fix">
-                                 <ul data-animation="fadeInUp animated" data-delay=".2s" style="animation-delay: 0.2s;" class="">
-									<li><i class="fas fa-map-marker-alt"></i> Waterfront Hotel, London</li>
+									<li><i class="fas fa-map-marker-alt"></i>Selorejo, Ngantang</li>
 									<li><i class="far fa-clock"></i> 9.30 - 10.30 AM</li>
 								 </ul>
-								 <h2>UX Design Trend Party 2019</h2>
-								 <p>In order to save time you have to break down the content strategy for the event or conference you are planning step by step. Creating this process from scratch will take the longest amount of time to build, but once you have content production foundation.</p>
-								 <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
-								 <a href="#" class="btn mt-20">Read More</a>
-								 <div class="crical"><i class="fal fa-video"></i> </div>
-                              </div>
-                           </div>
-                        </div>
-						<!-- row loop -->
-						<!-- row loop -->
-                        <div class="row mb-30">
-                           <div class="col-lg-2">
-							  <div class="user">
-								  <div class="title">  
-									  <img src="img/event_avatar_2.png" alt="img">							  
-									 <h5>Kelian M. Bappe</h5>
-									 <p>youtubing</p>
-								  </div>
-								  <ul>
-                                 <li><i class="fal fa-coffee"></i> Coffe & Snacks</li>
-                                 <li><i class="fal fa-video"></i> Video Streming</li>
-                              </ul>
-							  </div>
-                           </div>
-                           <div class="col-lg-10">
-                              <div class="event-list-content fix">
-                                 <ul data-animation="fadeInUp animated" data-delay=".2s" style="animation-delay: 0.2s;" class="">
-									<li><i class="fas fa-map-marker-alt"></i> Waterfront Hotel, London</li>
-									<li><i class="far fa-clock"></i> 9.30 - 10.30 AM</li>
-								 </ul>
-								 <h2>Rokolo DJ Dancing 2019</h2>
-								 <p>In order to save time you have to break down the content strategy for the event or conference you are planning step by step. Creating this process from scratch will take the longest amount of time to build, but once you have content production foundation.</p>
-								 <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
-								 <a href="#" class="btn mt-20">Read More</a>
-								 <div class="crical"><i class="fal fa-video"></i> </div>
-                              </div>
-                           </div>
-                        </div>
-						<!-- row loop -->
-						<!-- row loop -->
-                        <div class="row mb-30">
-                           <div class="col-lg-2">
-							  <div class="user">
-								  <div class="title">  
-									  <img src="img/event_avatar_3.png" alt="img">							  
-									 <h5>Hiliniam Nelson</h5>
-									 <p>UX Deisgn</p>
-								  </div>
-								  <ul>
-                                 <li><i class="fal fa-coffee"></i> Coffe & Snacks</li>
-                                 <li><i class="fal fa-video"></i> Video Streming</li>
-                              </ul>
-							  </div>
-                           </div>
-                           <div class="col-lg-10">
-                              <div class="event-list-content fix">
-                                 <ul data-animation="fadeInUp animated" data-delay=".2s" style="animation-delay: 0.2s;" class="">
-									<li><i class="fas fa-map-marker-alt"></i> Waterfront Hotel, London</li>
-									<li><i class="far fa-clock"></i>  9.30 - 10.30 AM</li>
-								 </ul>
-								 <h2>Google Youtube Stratigic Party</h2>
-								 <p>In order to save time you have to break down the content strategy for the event or conference you are planning step by step. Creating this process from scratch will take the longest amount of time to build, but once you have content production foundation.</p>
-								 <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
-								 <a href="#" class="btn mt-20">Read More</a>
-								 <div class="crical"><i class="fal fa-video"></i> </div>
-                              </div>
-                           </div>
-                        </div>
-						<!-- row loop -->
-						<!-- row loop -->
-                        <div class="row mb-30">
-                           <div class="col-lg-2">
-							  <div class="user">
-								  <div class="title">  
-									  <img src="img/event_avatar_4.png" alt="img">							  
-									 <h5>Kimjing J. Jalim</h5>
-									 <p>UX Deisgn</p>
-								  </div>
-								  <ul>
-                                 <li><i class="fal fa-coffee"></i> Coffe & Snacks</li>
-                                 <li><i class="fal fa-video"></i> Video Streming</li>
-                              </ul>
-							  </div>
-                           </div>
-                           <div class="col-lg-10">
-                              <div class="event-list-content fix">
-                                 <ul data-animation="fadeInUp animated" data-delay=".2s" style="animation-delay: 0.2s;" class="">
-									<li><i class="fas fa-map-marker-alt"></i> Waterfront Hotel, London</li>
-									<li><i class="far fa-clock"></i>  9.30 - 10.30 AM</li>
-								 </ul>
-								 <h2>Intro Jiknim Jikis 2019</h2>
+								 <h2>Permainan Tradisional</h2>
 								 <p>In order to save time you have to break down the content strategy for the event or conference you are planning step by step. Creating this process from scratch will take the longest amount of time to build, but once you have content production foundation.</p>
 								 <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
 								 <a href="#" class="btn mt-20">Read More</a>
@@ -943,7 +774,7 @@
                   </div>
                </div>
 			   <div class="col-lg-12 justify-content-center text-center">
-				<a href="#" class="btn mt-20 mr-10">More Program  +</a>
+				<a href="#" class="btn mt-20 mr-10">Kegiatan Lainnya  +</a>
 			   </div>
 			   </div>
             </div>
@@ -956,26 +787,26 @@
 			 <div class="row justify-content-center">
                         <div class="col-xl-8 col-lg-8">
                             <div class="section-title mb-80">
-                                <span class="wow fadeInUp animated" data-animation="fadeInUp animated" data-delay=".2s">Sponsors</span>
-                                <h2 class="wow fadeInUp animated" data-animation="fadeInUp animated" data-delay=".2s">Happy Sponsors</h2>
+                                <span class="wow fadeInUp animated" data-animation="fadeInUp animated" data-delay=".2s">Sponsors Jumtek 2023</span>
+                                <h2 class="wow fadeInUp animated" data-animation="fadeInUp animated" data-delay=".2s">Sponsor Kegiatan</h2>
                             </div>
                         </div>
 						<div class="col-xl-4 col-lg-4 text-right">
-                            <a href="#" class="btn wow fadeInUp animated" data-animation="fadeInUp animated" data-delay=".2s"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
+                            <a href="#" class="btn wow fadeInUp animated" data-animation="fadeInUp animated" data-delay=".2s"><i class="far fa-ticket-alt"></i> Daftar !</a>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12 col-md-12 text-center">
                             <ul class="wow fadeInDown animated" data-animation="fadeInDown animated" data-delay=".2s">
-								<li><a href="#"><img src="img/sponsors_1.png" alt="img"></a></li>
-								<li><a href="#"><img src="img/sponsors_2.png" alt="img"></a></li>
-								<li><a href="#"><img src="img/sponsors_3.png" alt="img"></a></li>
-								<li><a href="#"><img src="img/sponsors_4.png" alt="img"></a></li>
-								<li><a href="#"><img src="img/sponsors_5.png" alt="img"></a></li>
-								<li><a href="#"><img src="img/sponsors_6.png" alt="img"></a></li>
-								<li><a href="#"><img src="img/sponsors_7.png" alt="img"></a></li>
-								<li><a href="#"><img src="img/sponsors_8.png" alt="img"></a></li>
-								<li><a href="#"><img src="img/sponsors_9.png" alt="img"></a></li>
+								<li><a href="#"><img src="{{asset('template/homepage/img/sponsors_1.png')}}" alt="img"></a></li>
+								<li><a href="#"><img src="{{asset('template/homepage/img/sponsors_2.png')}}" alt="img"></a></li>
+								<li><a href="#"><img src="{{asset('template/homepage/img/sponsors_3.png')}}" alt="img"></a></li>
+								<li><a href="#"><img src="{{asset('template/homepage/img/sponsors_4.png')}}" alt="img"></a></li>
+								<li><a href="#"><img src="{{asset('template/homepage/img/sponsors_5.png')}}" alt="img"></a></li>
+								<li><a href="#"><img src="{{asset('template/homepage/img/sponsors_6.png')}}" alt="img"></a></li>
+								<li><a href="#"><img src="{{asset('template/homepage/img/sponsors_7.png')}}" alt="img"></a></li>
+								<li><a href="#"><img src="{{asset('template/homepage/img/sponsors_8.png')}}" alt="img"></a></li>
+								<li><a href="#"><img src="{{asset('template/homepage/img/sponsors_9.png')}}" alt="img"></a></li>
 							</ul>
                         </div>
                     </div>
@@ -983,9 +814,9 @@
                         <div class="col-12">
                             <div class="s-video-wrap wow fadeInUp animated" data-animation="fadeInUp animated" data-delay=".2s" style="background-image:url(img/video_bg.png)">
                                 <div class="s-video-content mb-80">
-                                    <a href="https://www.youtube.com/watch?v=7e90gBu4pas" class="popup-video mb-50"><i class="fas fa-play"></i></a>
-                                    <h2>Intro Video</h2>
-                                    <p>The issue with any content strategy is time.</p>
+                                    <a href="https://www.youtube.com/watch?v=4PYVPTaq-G8" class="popup-video mb-50"><i class="fas fa-play"></i></a>
+                                    <h2>Trailer Jumtek 2023</h2>
+                                    <p>Siamo Tutti Fratelli ! </p>
                                 </div>
                             </div>
                         </div>
@@ -1106,7 +937,8 @@
                                     <a href="#"><img src="{{asset('template/dashboard/images/logo-jumtek-white.png')}}" height="100px" width="100px" alt="logo"></a>
                                 </div>
                                 <div class="footer-text mb-20">
-                                    <p>The issue with any content strategy is time. Time to sit down and think about what kind of content should be created, time to stop and write, or record, edit and publish, and time to engage with your audience to promote the content you created.</p>
+                                    <p>Memberikan wadah bagi generasi PMR Kabupaten Malang dalam meningkatkan skill/kompetensi di bidang 7 materi dasar PMR serta Menjalin silaturahmi antar anggota PMR serta mendidik generasi PMR menjadi  
+                                        relawan yang berkarakter .</p>
                                 </div>
                                 <div class="footer-social">                                    
                                     <a href="#"><i class="fab fa-facebook-f"></i></a>
