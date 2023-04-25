@@ -24,5 +24,8 @@ Route::get('/register','\App\Http\Controllers\AuthController@register');
 
 // DASHBOARD ROUTES //
 Route::get('/dashboard','\App\Http\Controllers\PanitiaController@index');
+Route::get('/dashboard/peserta','\App\Http\Controllers\PanitiaController@peserta');
+Route::get('/dashboard/lomba','\App\Http\Controllers\PanitiaController@lomba');
+Route::get('/dashboard/profile','\App\Http\Controllers\PanitiaController@profile');
 
 

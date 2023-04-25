@@ -32,11 +32,8 @@
                     <div class="form-items">
                         <form>
                             <div class="row">
-                                <div class="col-12 col-sm-6">
+                                <div class="col-12 col-sm-12">
                                     <input type="text" class="form-control" placeholder="Nama Lengkap">
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control" placeholder="MIS PMI">
                                 </div>
                             </div>
                             <div class="row">
@@ -51,34 +48,22 @@
                                 <div class="col-12 col-sm-6">
                                     <input type="text" class="form-control" placeholder="Unit PMI">
                                 </div>
-                                {{-- <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control" placeholder="Linkedin link">
-                                </div> --}}
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control" placeholder="MIS PMI">
+                                </div>
                             </div>
-                            {{-- <div class="row">
-                                <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control" placeholder="Website, other links">
+                            <div class="form-group">
+                                <center>KSR / PMR </center>
+                                <div class="custom-options">
+                                    <input type="radio" id="rad1" name="rad"><label for="rad1">KSR</label>
+                                    <input type="radio" id="rad2" name="rad"><label for="rad2">PMR</label>
                                 </div>
-                                <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control" placeholder="Website, other links">
-                                </div>
-                            </div> --}}
-                            {{-- <div class="row">
-                                <div class="col-12">
-                                    <textarea class="form-control" placeholder="Tell us about yourself.."></textarea>
-                                </div>
-                            </div> --}}
+                            </div>
                             <div class="row">
-                                <div class="col-12 col-sm-6">
+                                <div class="col-12 col-sm-12">
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" id="validatedCustomFile">
-                                        <label class="custom-file-label" for="validatedCustomFile">File KTP</label>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="validatedCustomFile">
-                                        <label class="custom-file-label" for="validatedCustomFile">Pas Foto</label>
+                                        <label class="custom-file-label" for="validatedCustomFile">File Kartu Anggota</label>
                                     </div>
                                 </div>
                             </div>

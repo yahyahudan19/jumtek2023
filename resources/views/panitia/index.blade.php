@@ -35,49 +35,22 @@
             </div>
         </div>
         <div class="row">
-            {{-- <div class="col-xl-3 col-xxl-4">
+            <div class="col-xl-6 col-xxl-6">
                 <div class="row">
                     <div class="col-xl-12 col-md-8">
-                        <div class="card">
-                            <div class="card-header border-0 pb-0">
-                                <h4 class="fs-20">Kota/Kabupaten Pendaftar</h4>
-                                <select class="form-control style-1 default-select ">
-                                    <option>This Week</option>
-                                    <option>Next Week</option>
-                                    <option>This Month</option>
-                                    <option>Next Month</option>
-                                </select>
+                        <div class="card text-white bg-danger">
+                            {{-- <div class="card-header">
+                                <h5 class="card-title text-white">Selamat Datang !</h5>
+                            </div> --}}
+                            <div class="card-body mb-0">
+                                <p class="card-text"></p>Halo, Selamat Datang <a href="javascript:void(0)" class="btn btn-danger light btn-card">Administrator !</a>
                             </div>
-                            <div class="card-body">
-                                <div id="donutChart"></div>
-                                <div class="d-flex justify-content-between mt-4">
-                                    <div class="pr-2">
-                                        <svg width="20" height="8" viewBox="0 0 20 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <rect width="20" height="8" rx="4" fill="#214BB8"/>
-                                        </svg>
-                                        <h4 class="fs-18 text-black mb-1 font-w600">21,512</h4>
-                                        <span class="fs-14">Kota Malang</span>
-                                    </div>
-                                    <div class="pr-2">
-                                        <svg width="20" height="8" viewBox="0 0 20 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <rect width="20" height="8" rx="4" fill="#FE634E"/>
-                                        </svg>
-                                        <h4 class="fs-18 text-black mb-1 font-w600">45,612</h4>
-                                        <span class="fs-14">Kabupaten Malang</span>
-                                    </div>
-                                    <div class="">
-                                        <svg width="20" height="8" viewBox="0 0 20 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <rect width="20" height="8" rx="4" fill="#45ADDA"/>
-                                        </svg>
-                                        <h4 class="fs-18 text-black mb-1 font-w600">275</h4>
-                                        <span class="fs-14">Lain-Lain</span>
-                                    </div>
-                                </div>
+                            {{-- <div class="card-footer bg-transparent border-0 text-white">Last updateed 3 min ago --}}
                             </div>
                         </div>
                     </div>
                 </div>
-            </div> --}}
+            </div>
             <div class="col-xl-12 col-xxl-12">
                 <div class="row">
                     <div class="col-xl-4 col-xxl-4 col-lg-4 col-sm-6">

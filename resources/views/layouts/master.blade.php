@@ -12,6 +12,8 @@
 	<link href="{{asset('template/dashboard/vendor/owl-carousel/owl.carousel.css')}}" rel="stylesheet">
     <link href="{{asset('template/dashboard/css/style.css')}}" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+	 <!-- Datatable -->
+	 <link href="{{asset('template/dashboard/vendor/datatables/css/jquery.dataTables.min.css')}}" rel="stylesheet">
 </head>
 <body>
 
@@ -625,6 +627,10 @@
 	
 	<!-- Dashboard 1 -->
 	<script src="{{asset('template/dashboard/js/dashboard/dashboard-1.js')}}"></script>
+
+	 <!-- Datatable -->
+	 <script src="{{asset('template/dashboard/vendor/datatables/js/jquery.dataTables.min.js')}}"></script>
+	 <script src="{{asset('template/dashboard/js/plugins-init/datatables.init.js')}}"></script>
 	
 	<script>
 		function carouselReview(){
