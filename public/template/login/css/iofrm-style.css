@@ -63,7 +63,7 @@ html, body {
 
 .website-logo .logo {
     display: inline-block;
-    background-image: url("../images/logo-light.svg");
+    background-image: url("../images/logo-jumtek-white.png");
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -90,7 +90,7 @@ html, body {
 
 .website-logo-inside .logo {
     display: inline-block;
-    background-image: url("../images/logo-light.svg");
+    background-image: url("../images/logo-jumtek-white.png");
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -245,7 +245,6 @@ html, body {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: #dc3545;
     background-image: url("../images/img1.jpg");
     background-size: cover;
     background-position: center;
@@ -730,7 +729,7 @@ html, body {
     border: 0;
     padding: 6px 28px;
     background-color: #fff;
-    color: #dc3545;
+    color: #29A4FF;
     font-size: 14px;
     font-weight: 700;
     text-decoration: none;
@@ -1438,7 +1437,7 @@ input.sm-content {
 }
 
 .form-body.without-side .website-logo-inside .logo {
-    background-image: url("../images/logo-dark.svg");
+    background-image: url("../images/logo-jumtek-white.png");
 }
 
 .form-body.without-side .form-holder .form-content ::-webkit-input-placeholder {
@@ -1638,7 +1637,7 @@ input.sm-content {
 }
 
 .form-body.without-side .form-content .form-button .ibtn {
-    background-color: #dc3545;
+    background-color: #29A4FF;
     color: #fff;
     -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0.16);
     box-shadow: 0 0 0 rgba(0, 0, 0, 0.16);
@@ -1767,7 +1766,7 @@ input.sm-content {
     }
 
     .website-logo .logo {
-        background-image: url("../images/logo-light.svg");
+        background-image: url("../images/logo-jumtek-white.png");
     }
 
     .form-body.without-side .img-holder {
@@ -1775,7 +1774,7 @@ input.sm-content {
     }
 
     .form-body.without-side .website-logo .logo {
-        background-image: url("../images/logo-light.svg");
+        background-image: url("../images/logo-jumtek-white.png");
     }
 
     .form-body.without-side .form-holder .form-content {

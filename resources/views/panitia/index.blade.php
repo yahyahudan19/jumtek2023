@@ -43,7 +43,7 @@
                                 <h5 class="card-title text-white">Selamat Datang !</h5>
                             </div> --}}
                             <div class="card-body mb-0">
-                                <p class="card-text"></p>Halo, Selamat Datang <a href="javascript:void(0)" class="btn btn-danger light btn-card">Administrator !</a>
+                                <p class="card-text"></p>Halo, Selamat Datang <a href="javascript:void(0)" class="btn btn-danger light btn-card">{{auth()->user()->name}} !</a>
                             </div>
                             {{-- <div class="card-footer bg-transparent border-0 text-white">Last updateed 3 min ago --}}
                             </div>

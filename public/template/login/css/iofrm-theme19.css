@@ -15,11 +15,11 @@
     1 - General Styles
 ------------------------------------*/
 body {
-    background-color: #fff;
+    background-color: #FF5733;
 }
 
 .form-body {
-    background-color: #fff;
+    background-color: #FF5733;
 }
 
 .website-logo {
@@ -35,7 +35,7 @@ body {
 }
 
 .website-logo .logo {
-    background-image: url("../images/logo-dark.svg");
+    background-image: url("../images/logo-jumtek-white.png");
 }
 
 .website-logo .logo img {
@@ -47,7 +47,7 @@ body {
 }
 
 .website-logo-inside .logo {
-    background-image: url("../images/logo-dark.svg");
+    background-image: url("../images/logo-jumtek-white.png");
 }
 
 .website-logo-inside .logo img {
@@ -125,7 +125,7 @@ body {
 }
 
 .form-content .form-icon .icon-holder {
-    background-color: #4A77F7;
+    background-color: #FF5733;
 }
 
 .form-content h3 {
@@ -148,7 +148,8 @@ body {
 }
 
 .form-content .page-links a:after {
-    background-color: rgba(222, 222, 222, 0.7);
+    /* background-color: rgba(222, 222, 222, 0.7); */
+    background-color: #FF5733   ;
 }
 
 .form-content .page-links a.active:after {
@@ -533,10 +534,10 @@ body {
     }
 
     .website-logo .logo {
-        background-image: url("../images/logo-dark.svg");
+        background-image: url("../images/logo-jumtek-white.png");
     }
 
     .form-body.without-side .website-logo .logo {
-        background-image: url("../images/logo-dark.svg");
+        background-image: url("../images/logo-jumtek-white.png");
     }
 }

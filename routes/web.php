@@ -18,14 +18,21 @@ Route::get('/', function () {
     return view('homepage.index');
 });
 
-// AUTH ROUTES //
-Route::get('/login','\App\Http\Controllers\AuthController@index');
-Route::get('/register','\App\Http\Controllers\AuthController@register');
-
+Route::middleware(['auth'])->group(function () {
 // DASHBOARD ROUTES //
 Route::get('/dashboard','\App\Http\Controllers\PanitiaController@index');
 Route::get('/dashboard/peserta','\App\Http\Controllers\PanitiaController@peserta');
 Route::get('/dashboard/lomba','\App\Http\Controllers\PanitiaController@lomba');
 Route::get('/dashboard/profile','\App\Http\Controllers\PanitiaController@profile');
+
+});
+
+// AUTH ROUTES //
+Route::get('/login','\App\Http\Controllers\AuthController@index')->name('login');
+Route::get('/logout','\App\Http\Controllers\AuthController@logout')->name('logout');
+Route::post('/auth','\App\Http\Controllers\AuthController@login');
+Route::get('/register','\App\Http\Controllers\AuthController@register');
+Route::post('/doregister','\App\Http\Controllers\AuthController@doRegister');
+
 
 
