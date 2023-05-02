@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Jumtek <?php echo date("Y");?></title>
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('template/dashboard/images/logopng.png')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('template/login/css/bootstrap.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('template/login/css/fontawesome-all.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('template/login/css/iofrm-style.css')}}">
@@ -52,5 +53,6 @@
 <script src="{{asset('template/login/js/popper.min.js')}}"></script>
 <script src="{{asset('template/login/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('template/login/js/main.js')}}"></script>
+@include('sweetalert::alert')
 </body>
 </html>

@@ -15,6 +15,7 @@
                     <li><a href="reviews.html">Reviews</a></li>
                 </ul>
             </li> --}}
+            @if(auth()->user()->role == 'Panitia')
             <li><a href="/dashboard" class="ai-icon" aria-expanded="false">
                     <i class="flaticon-381-networking"></i>
                     <span class="nav-text">Dashboard</span>
@@ -35,6 +36,19 @@
                     <span class="nav-text">Profile</span>
                 </a>
             </li>
+            @endif
+            @if(auth()->user()->role == 'Peserta')
+            <li><a href="/dashboard" class="ai-icon" aria-expanded="false">
+                    <i class="flaticon-381-networking"></i>
+                    <span class="nav-text">Dashboard</span>
+                </a>
+            </li>
+            <li><a href="/dashboard/profile" class="ai-icon" aria-expanded="false">
+                    <i class="flaticon-381-user-2"></i>
+                    <span class="nav-text">Profile</span>
+                </a>
+            </li>
+            @endif
         </ul>
         {{-- <div class="copyright">
             <p><strong>Jumtek <?php echo date("Y");?> Dashboard</strong> © <?php echo date("Y");?> All Rights Reserved</p>

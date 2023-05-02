@@ -94,7 +94,7 @@
 							<div id="progressbar"></div>
 						</div>
 						<!-- /top-wizard -->
-						<form method="POST" action="/doregister">
+						<form method="POST" action="/doregister" enctype="multipart/form-data">
 							{{ csrf_field() }}
 							<input id="website" name="website" type="text" value="">
 							<!-- Leave for security protection, read docs for details -->
@@ -147,7 +147,7 @@
 								</div>
 								<!-- /step-->
 
-								<div class="step">
+								 <div class="step">
 									<h3 class="main_question"><strong>2/3</strong>Informasi Keanggotaan</h3>
 									<div class="row">
 										<div class="col-md-12">
@@ -174,14 +174,14 @@
 										</div>
 									</div>
 									<!-- /row -->
-								</div>
+								</div> 
 								<!-- /step-->
 
 								<div class="submit step">
 									<h3 class="main_question"><strong>3/3</strong>Upload File</h3>
 									<div class="col-md-12">
                                         <div class="form-group">
-                                            <input type="file" name="kta_peserta" class="form-control" placeholder="Upload File KTA">
+                                            <input type="file" name="kta_peserta" id="kta_peserta" class="form-control" placeholder="Upload File KTA">
                                         </div>
                                     </div>
 									<div class="form-group terms">
@@ -287,6 +287,7 @@
 	<script src="{{asset('template/form/js/main.js')}}"></script>
 	<!-- Theme script -->
 	<script src="{{asset('template/form/js/functions.js')}}"></script>
-
+	<!-- Sweet Alert script -->
+	@include('sweetalert::alert')
 </body>
 </html>

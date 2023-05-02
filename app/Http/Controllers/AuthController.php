@@ -7,6 +7,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 
 use App\Models\User;
@@ -31,6 +32,7 @@ class AuthController extends Controller
         if(Auth::attempt($request->only('email','password'))){
             return redirect('/dashboard');
         }else{
+            Alert::error('Login Gagal','Cek Login Kamu ya !');
             return redirect('/login');
         }
     }
@@ -46,29 +48,69 @@ class AuthController extends Controller
 
         // dd($request);
 
-        $user = User::create([
-            "role" => "Panitia",
-            "name" => $request->nama_peserta,
-            "email" => $request->email_peserta,
-            // "token" => str_random(10),
-            "password" => Hash::make($request->password),
-        ]);
+        $cekPeserta = User::where([
+            ['email', '=', $request->email_peserta],
+            ['name', '=', $request->nama_peserta],
+        ])->first();
 
-        $userID = DB::getPdo()->lastInsertId();
+        if($cekPeserta){
+            Alert::error('Register Gagal !','Kamu Sudah Daftar Sepertinya !');
+            return redirect()->back();
+        }else{
+            if($request->hasFile('kta_peserta')) {
 
-        $peserta = Peserta::create([
-            "user_id" => $userID,
-            "nama_peserta" => $request->nama_peserta,
-            "alamat_peserta" => $request->alamat_peserta,
-            "jenisk_peserta" => $request->jenisk_peserta,
-            "unit_id" => $request->unit_id,
-            "mis_peserta" => $request->mis_peserta,
-            "status_mentee" => "Tidak Aktif",
-            // "kta_peserta" => $request->kta_peserta,
-            "kta_peserta" => "Sementara Gaada Ges",
-        ]);
+                $request->validate([
+                    'kta_peserta' => 'required|max:2048|mimes:png,jpg,jpg,jpeg'
+                ]);
+    
+                $request->file('kta_peserta')->move('file_kta/',$request->file('kta_peserta')->getClientOriginalName());
+                
+                $token = Str::random(10);
+                
+                $user = User::create([
+                    "role" => "Peserta",
+                    "name" => $request->nama_peserta,
+                    "email" => $request->email_peserta,
+                    "remember_token" => $token,
+                    "password" => Hash::make($request->password),
+                ]);
+    
+                if($user){
 
-        return redirect('/login');
+                    $userID = DB::getPdo()->lastInsertId();
+    
+                    $peserta = Peserta::create([
+                        "user_id" => $userID,
+                        "nama_peserta" => $request->nama_peserta,
+                        "alamat_peserta" => $request->alamat_peserta,
+                        "jenisk_peserta" => $request->jenisk_peserta,
+                        "unit_id" => $request->unit_id,
+                        "mis_peserta" => $request->mis_peserta,
+                        "status_peserta" => "Tidak Aktif",
+                        "kta_peserta" =>  $request->file('kta_peserta')->getClientOriginalName(),
+                    ]);
+                    
+                    // dd($peserta);
+
+                    Alert::success('Register Berhasil','Silahkan Login Ya ');
+                    
+                    return redirect('/login');
+                }else{
+                    Alert::error('Register Gagal','Pastikan Data Lengkap Ya !');
+                    return redirect()->back();
+                }
+    
+            }else{
+                
+                Alert::error('Belum Upload KTA','Hayoo Upload File KTA dulu yaa !');
+                return redirect()->back();
+                
+            }
+        }
+        
+       
+
+       
 
         
     }

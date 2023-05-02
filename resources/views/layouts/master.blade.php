@@ -675,5 +675,6 @@
 			}, 1000); 
 		});
 	</script>
+	@include('sweetalert::alert')
 </body>
 </html>
