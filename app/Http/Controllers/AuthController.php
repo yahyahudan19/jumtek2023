@@ -12,6 +12,8 @@ use Illuminate\Support\Str;
 
 use App\Models\User;
 use App\Models\Peserta;
+use Illuminate\Support\Facades\Storage;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class AuthController extends Controller
 {
@@ -78,7 +80,16 @@ class AuthController extends Controller
                 if($user){
 
                     $userID = DB::getPdo()->lastInsertId();
-    
+                    
+                    // Generate QR Code format PNG/JPG to file public
+
+                    $image = QrCode::format('png')
+                    ->size(400)->errorCorrection('H')
+                    ->generate($request->mis_peserta);
+                    $qrcode_peserta = '/qr-code/img/img-' .$request->mis_peserta . '.png';
+                    Storage::disk('public')->put($qrcode_peserta, $image); 
+
+
                     $peserta = Peserta::create([
                         "user_id" => $userID,
                         "nama_peserta" => $request->nama_peserta,
@@ -86,6 +97,7 @@ class AuthController extends Controller
                         "jenisk_peserta" => $request->jenisk_peserta,
                         "unit_id" => $request->unit_id,
                         "mis_peserta" => $request->mis_peserta,
+                        "qrcode_peserta" => $qrcode_peserta,
                         "status_peserta" => "Tidak Aktif",
                         "kta_peserta" =>  $request->file('kta_peserta')->getClientOriginalName(),
                     ]);

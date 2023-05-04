@@ -26,6 +26,11 @@
                     <span class="nav-text">Peserta</span>
                 </a>
             </li>
+            <li><a href="/dashboard/unit" class="ai-icon" aria-expanded="false">
+                    <i class="flaticon-381-id-card-1"></i>
+                    <span class="nav-text">Unit</span>
+                </a>
+            </li>
             <li><a href="/dashboard/lomba" class="ai-icon" aria-expanded="false">
                     <i class="flaticon-381-blueprint"></i>
                     <span class="nav-text">Lomba</span>

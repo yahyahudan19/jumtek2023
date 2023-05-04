@@ -22,6 +22,7 @@ return new class extends Migration
             $table->integer('unit_id')->unsigned();
             $table->string('mis_peserta')->unique();
             $table->string('kta_peserta');
+            $table->string('qrcode_peserta');
             $table->enum('status_peserta', ['Aktif', 'Tidak Aktif']);
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('unit_id')->references('id_unit')->on('units');

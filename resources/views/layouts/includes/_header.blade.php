@@ -53,6 +53,7 @@
                     </li> --}}
                     <li class="nav-item dropdown header-profile">
                         <a class="nav-link" href="javascript:void(0)" role="button" data-toggle="dropdown">
+                            {{-- <img src="{{asset('template/dashboard/images/profile/17.jpg')}}" width="20" alt=""/> --}}
                             <img src="{{asset('template/dashboard/images/profile/17.jpg')}}" width="20" alt=""/>
                             <!-- <div class="header-info">
                                 <span class="text-black"><strong>Brian Lee</strong></span>

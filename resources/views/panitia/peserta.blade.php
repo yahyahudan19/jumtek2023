@@ -10,7 +10,7 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div>
                                         <p class="fs-14 mb-1">Jumlah Peserta</p>
-                                        <span class="fs-35 text-black font-w600">856
+                                        <span class="fs-35 text-black font-w600">{{$jumlah_peserta}}
                                             <svg class="ml-1" width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M2.00401 11.1924C0.222201 11.1924 -0.670134 9.0381 0.589795 7.77817L7.78218 0.585786C8.56323 -0.195262 9.82956 -0.195262 10.6106 0.585786L17.803 7.77817C19.0629 9.0381 18.1706 11.1924 16.3888 11.1924H2.00401Z" fill="#33C25B"/>
                                             </svg>
@@ -36,7 +36,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-xxl-3 col-lg-3 col-sm-6">
+                    {{-- <div class="col-xl-3 col-xxl-3 col-lg-3 col-sm-6">
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex justify-content-center align-items-center">
@@ -47,13 +47,13 @@
                                         <br><br>
                                         {{-- <button type="button" class="btn btn-rounded btn-success" data-toggle="modal" data-target="#importModalPeserta"><span
                                             class="btn-icon-left text-success"><i class="fa fa-cloud-upload color-success"></i>
-                                        </span>Import</button> --}}
+                                        </span>Import</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         
-                    </div>
+                    </div> --}}
                     {{-- Modal Tambah Peserta  --}}
                     <div class="modal fade" id="tambahModalPeserta">
                         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -124,6 +124,7 @@
                             </div>
                         </div>
                     </div>
+                    
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
@@ -134,43 +135,42 @@
                                     <table id="example3" class="display min-w850">
                                         <thead>
                                             <tr>
+                                                <th>MIS PMI</th>
                                                 <th>Nama</th>
                                                 <th>Unit PMI</th>
-                                                <th>MIS PMI</th>
-                                                <th>File KTA</th>
+                                                <th>KTA</th>
+                                                <th>QR Code</th>
                                                 <th>Status</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @foreach ($data_peserta as $peserta)
                                             <tr>
-                                                <td>A. Yahya Hudan Permana</td>
-                                                <td>KSR Gondanglegi</td>
-                                                <td>357304100323004</a></td>
-                                                <td><a href="javascript:void(0);"><span class="badge badge-info"><i class="fa fa-plus color-info"></i>File KTA</span></a></td>
+                                                <td>{{$peserta->mis_peserta}}</a></td>
+                                                <td>{{$peserta->nama_peserta}}</td>
+                                                <td>{{$peserta->unit->nama_unit}}</td>
+                                                {{-- <td><a href="/file_kta/{{$peserta->kta_peserta}}" target="_blank"><span class="badge badge-info"><i class="fa fa-eye color-info"></i></span></a></td> --}}
+												<td><a href="/file_kta/{{$peserta->kta_peserta}}"target="_blank" class="btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-eye color-info"></i></a></td>		
+												<td><a href="/storage{{$peserta->qrcode_peserta}}"target="_blank" class="btn btn-success shadow btn-xs sharp mr-1"><i class="fa fa-eye color-success"></i></a></td>		
+                                                @if ($peserta->status_peserta == 'Aktif')
                                                 <td><a href="javascript:void(0);"><span class="badge badge-success"></i>Validasi</span></a></td>
+                                                @else
+                                                <td><a href="javascript:void(0);"><span class="badge badge-danger"></i>Tidak Valid</span></a></td>
+                                                @endif
                                                 <td>
 													<div class="d-flex">
 														<a href="#" class="btn btn-info shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-														<a href="#" class="btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-trash"></i></a>
-														<a href="#" class="btn btn-success shadow btn-xs sharp"><i class="fa fa-check-circle-o"></i></a>
+														<a href="/peserta/delete/{{$peserta->id_peserta}}" class="btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-trash"></i></a>
+                                                        @if ($peserta->status_peserta == 'Tidak Aktif')
+                                                            <a href="/peserta/validasi/{{$peserta->id_peserta}}" class="btn btn-success shadow btn-xs sharp"><i class="fa fa-check-circle-o"></i></a>
+														@else 
+                                                            <a href="/peserta/unvalidasi/{{$peserta->id_peserta}}" class="btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-times"></i></a>
+                                                        @endif
 													</div>												
 												</td>												
                                             </tr>
-                                            <tr>
-                                                <td>Ahmad Naufal Y.P</td>
-                                                <td>KSR Gondanglegi</td>
-                                                <td>357304100323004</a></td>
-                                                <td><a href="javascript:void(0);"><span class="badge badge-info"><i class="fa fa-plus color-info"></i> File KTA</span></a></td>
-                                                <td><a href="javascript:void(0);"><span class="badge badge-warning mr-1"></i> Pending</span></a></td>
-                                                <td>
-													<div class="d-flex">
-														<a href="#" class="btn btn-info shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-														<a href="#" class="btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-trash"></i></a>
-														<a href="#" class="btn btn-success shadow btn-xs sharp"><i class="fa fa-check-circle-o"></i></a>
-													</div>												
-												</td>												
-                                            </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>
