@@ -76,7 +76,7 @@
         <!-- main-area -->
         <main>
             <!-- slider-area -->
-            <section id="parallax" class="slider-area slider-bg second-slider-bg d-flex align-items-center justify-content-center fix" style="background-image:url(img/header1_bg_img.jpg)">
+            <section id="parallax" class="slider-area slider-bg second-slider-bg d-flex align-items-center justify-content-center fix" style="background-image:url({{asset('template/homepage/img/header1_bg_img.jpg')}})">
                 <div class="slider-shape ss-one layer" data-depth="0.10"><img src="{{asset('template/homepage/img/shape/slider_shape01.png')}}" alt="shape"></div>
                 <div class="slider-shape ss-two layer" data-depth="0.30"><img src="{{asset('template/homepage/img/shape/slider_shape02.png')}}" alt="shape"></div>
                 <div class="slider-shape ss-three layer" data-depth="0.40"><img src="{{asset('template/homepage/img/shape/slider_shape03.png')}}" alt="shape"></div>
@@ -357,7 +357,7 @@
             <!-- team-area-end -->
             
              <!-- counter-area -->
-            <div class="counter-area pt-120 pb-120" style="background-image:url(img/counter_bg.jpg);background-size: cover;">
+            <div class="counter-area pt-120 pb-120" style="background-image:url({{asset('template/homepage/img/counter_bg.jpg')}});background-size: cover;">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6 col-sm-6">
@@ -906,7 +906,7 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <div class="s-video-wrap wow fadeInUp animated" data-animation="fadeInUp animated" data-delay=".2s" style="background-image:url(img/video_bg.png)">
+                            <div class="s-video-wrap wow fadeInUp animated" data-animation="fadeInUp animated" data-delay=".2s" style="background-image:url({{asset('template/homepage/img/video_bg.png')}})">
                                 <div class="s-video-content mb-80">
                                     <a href="https://www.youtube.com/watch?v=4PYVPTaq-G8" class="popup-video mb-50"><i class="fas fa-play"></i></a>
                                     <h2>Trailer Jumtek 2023</h2>
@@ -1020,7 +1020,7 @@
         </main>
         <!-- main-area-end -->
         <!-- footer -->
-        <footer class="footer-bg footer-p" style="background-image:url(img/footer_bg_img.jpg);background-size: cover;">
+        <footer class="footer-bg footer-p" style="background-image:url({{asset('template/homepage/img/footer_bg_img.jpg')}});background-size: cover;">
           
             <div class="footer-top">
                 <div class="container">

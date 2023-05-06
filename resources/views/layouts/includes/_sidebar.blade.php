@@ -31,9 +31,9 @@
                     <span class="nav-text">Unit</span>
                 </a>
             </li>
-            <li><a href="/dashboard/lomba" class="ai-icon" aria-expanded="false">
+            <li><a href="/dashboard/kegiatan" class="ai-icon" aria-expanded="false">
                     <i class="flaticon-381-blueprint"></i>
-                    <span class="nav-text">Lomba</span>
+                    <span class="nav-text">Kegiatan</span>
                 </a>
             </li>
             <li><a href="/dashboard/profile" class="ai-icon" aria-expanded="false">

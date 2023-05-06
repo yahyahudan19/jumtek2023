@@ -161,7 +161,7 @@
                                                 <td>
                                                     @if ($peserta->user->role == 'Peserta')
                                                         <div class="d-flex">
-                                                            <a href="#" class="btn btn-info shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                            <a href="/dashboard/peserta/{{$peserta->id_peserta}}" class="btn btn-info shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
                                                             <a href="/peserta/delete/{{$peserta->id_peserta}}" class="btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-trash"></i></a>
                                                             @if ($peserta->status_peserta == 'Tidak Aktif')
                                                             <a href="/peserta/validasi/{{$peserta->id_peserta}}" class="btn btn-success shadow btn-xs sharp"><i class="fa fa-check-circle-o"></i></a>

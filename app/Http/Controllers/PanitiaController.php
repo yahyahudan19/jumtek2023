@@ -30,7 +30,7 @@ class PanitiaController extends Controller
         $jumlah_peserta = Peserta::all()->count();
         $data_peserta = Peserta::all();
         $jumlah_unit = Unit::all()->count();
-        return view('panitia.peserta',compact(['data_peserta','jumlah_peserta','jumlah_unit']));
+        return view('panitia.peserta.index',compact(['data_peserta','jumlah_peserta','jumlah_unit']));
     }
     // Hapus Peserta //
     public function hapusPeserta($id_peserta){
@@ -65,6 +65,21 @@ class PanitiaController extends Controller
         ]);
         Alert::success('Berhasil !','Peserta Tidak Divalidasi !');
         return redirect()->back();
+    }
+    // Detail Peserta Page
+    public function detailPeserta($id_peserta){
+        $data_unit = Unit::all()->all();
+        $peserta = Peserta::where('id_peserta',$id_peserta)->get()->first();
+
+        return view('panitia.peserta.edit',compact('peserta','data_unit'));
+    }
+
+    // Update Peserta Page
+    public function updatePeserta(Request $request){
+        $id = $request->id_peserta_edit;
+        $peserta = Peserta::where('id_peserta',$id)->get()->first();
+
+        return redirect()->back();  
     }
 
     // Lomba page ==================================================================

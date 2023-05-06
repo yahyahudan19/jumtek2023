@@ -42,6 +42,11 @@ Route::get('/peserta/delete/{id_peserta}','\App\Http\Controllers\PanitiaControll
 Route::get('/peserta/validasi/{id_peserta}','\App\Http\Controllers\PanitiaController@validasiPeserta');
 //VALIDASI Peserta
 Route::get('/peserta/unvalidasi/{id_peserta}','\App\Http\Controllers\PanitiaController@unvalidasiPeserta');
+//DETAIL Peserta
+Route::get('dashboard/peserta/{id}','\App\Http\Controllers\PanitiaController@detailPeserta');
+//UPDATE Peserta
+Route::put('/peserta/update/{id}','\App\Http\Controllers\PanitiaController@updatePeserta');
+
 });
 
 // AUTH ROUTES //

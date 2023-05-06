@@ -731,7 +731,7 @@ content: "|";
 	top: 0;
 	height: 100%;
 	width: 100%;
-	background: url(../img/header-overla.png);
+	background: url(../img/red.jpg);
 	opacity: .6;
 	z-index: -1;
 }

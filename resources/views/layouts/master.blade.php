@@ -631,6 +631,11 @@
 	 <!-- Datatable -->
 	 <script src="{{asset('template/dashboard/vendor/datatables/js/jquery.dataTables.min.js')}}"></script>
 	 <script src="{{asset('template/dashboard/js/plugins-init/datatables.init.js')}}"></script>
+
+	  <!-- Jquery Validation -->
+	  <script src="{{asset('template/dashboard/vendor/jquery-validation/jquery.validate.min.js')}}"></script>
+	  <!-- Form validate init -->
+	  <script src="{{asset('template/dashboard/js/plugins-init/jquery.validate-init.js')}}"></script>
 	
 	<script>
 		function carouselReview(){
