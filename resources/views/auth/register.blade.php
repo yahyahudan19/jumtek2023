@@ -164,10 +164,13 @@
 												<div class="styled-select">
 													<select class="required" name="unit_id" id="unit_id">
 														<option value="" selected>Unit PMI</option>
-														<option value="1">KSR Kecamatan Gondanglegi</option>
+														@foreach ($data_unit as $unit)
+															<option value="{{$unit->id_unit}}">{{$unit->nama_unit}}</option>
+														@endforeach
+														{{-- <option value="1">KSR Kecamatan Gondanglegi</option>
 														<option value="2">KSR Kecamatan Bululawang</option>
 														<option value="3">KSR Kecamatan Singosari</option>
-														<option value="4">KSR Kecamatan Turen</option>
+														<option value="4">KSR Kecamatan Turen</option> --}}
 													</select>
 												</div>
 											</div>

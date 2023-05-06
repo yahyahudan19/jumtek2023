@@ -26,7 +26,7 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div>
                                         <p class="fs-14 mb-1">Jumlah Kontingen</p>
-                                        <span class="fs-35 text-black font-w600">856
+                                        <span class="fs-35 text-black font-w600">{{$jumlah_unit}}
                                             <svg class="ml-1" width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M2.00401 11.1924C0.222201 11.1924 -0.670134 9.0381 0.589795 7.77817L7.78218 0.585786C8.56323 -0.195262 9.82956 -0.195262 10.6106 0.585786L17.803 7.77817C19.0629 9.0381 18.1706 11.1924 16.3888 11.1924H2.00401Z" fill="#33C25B"/>
                                             </svg>
@@ -159,15 +159,19 @@
                                                 <td><a href="javascript:void(0);"><span class="badge badge-danger"></i>Tidak Valid</span></a></td>
                                                 @endif
                                                 <td>
-													<div class="d-flex">
-														<a href="#" class="btn btn-info shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-														<a href="/peserta/delete/{{$peserta->id_peserta}}" class="btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-trash"></i></a>
-                                                        @if ($peserta->status_peserta == 'Tidak Aktif')
+                                                    @if ($peserta->user->role == 'Peserta')
+                                                        <div class="d-flex">
+                                                            <a href="#" class="btn btn-info shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                            <a href="/peserta/delete/{{$peserta->id_peserta}}" class="btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-trash"></i></a>
+                                                            @if ($peserta->status_peserta == 'Tidak Aktif')
                                                             <a href="/peserta/validasi/{{$peserta->id_peserta}}" class="btn btn-success shadow btn-xs sharp"><i class="fa fa-check-circle-o"></i></a>
-														@else 
+                                                            @else 
                                                             <a href="/peserta/unvalidasi/{{$peserta->id_peserta}}" class="btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-times"></i></a>
-                                                        @endif
-													</div>												
+                                                            @endif
+                                                        </div>
+                                                    @else
+                                                        <a href="javascript:void(0);"><span class="badge badge-info"></i>Panitia</span></a>												
+                                                    @endif
 												</td>												
                                             </tr>
                                             @endforeach

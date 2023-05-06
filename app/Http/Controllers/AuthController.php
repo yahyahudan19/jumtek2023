@@ -12,6 +12,7 @@ use Illuminate\Support\Str;
 
 use App\Models\User;
 use App\Models\Peserta;
+use App\Models\Unit;
 use Illuminate\Support\Facades\Storage;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
@@ -25,7 +26,9 @@ class AuthController extends Controller
 
     // View Register Page
     public function register(){
-        return view('auth.register');
+
+        $data_unit = Unit::all();
+        return view('auth.register',compact('data_unit'));
     }
 
     //Login Process
@@ -55,7 +58,11 @@ class AuthController extends Controller
             ['name', '=', $request->nama_peserta],
         ])->first();
 
-        if($cekPeserta){
+        $cekMIS = Peserta::where([
+            ['mis_peserta','=',$request->mis_peserta]
+        ])->first();
+
+        if($cekPeserta || $cekMIS){
             Alert::error('Register Gagal !','Kamu Sudah Daftar Sepertinya !');
             return redirect()->back();
         }else{

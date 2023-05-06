@@ -29,7 +29,10 @@ Route::get('/dashboard/unit','\App\Http\Controllers\PanitiaController@unit');
 //TAMBAH Unit
 Route::post('/unit/tambah','\App\Http\Controllers\PanitiaController@tambahUnit');
 //DELETE Unit
-Route::get('/unit/delete/{id_unit}','\App\Http\Controllers\PanitiaController@deleteUnit');
+Route::get('/unit/hapus/{id_unit}','\App\Http\Controllers\PanitiaController@hapusUnit');
+//IMPORT Unit
+Route::post('/unit/import','\App\Http\Controllers\PanitiaController@importUnit');
+
 
 //GET Peserta
 Route::get('/dashboard/peserta','\App\Http\Controllers\PanitiaController@peserta');

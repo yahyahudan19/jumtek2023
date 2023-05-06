@@ -15,8 +15,13 @@ class PanitiaController extends Controller
     // View Login Page =============================================================
     public function index()
     {   
+        $jumlah_peserta = Peserta::all()->count();
+        $jumlah_unit = Unit::all()->count();
+        $jumlah_ksr = Unit::where(['status_unit' => 'KSR'])->count();
+        $jumlah_pmr = Unit::where(['status_unit' => 'PMR'])->count();
+
         $data_peserta = Peserta::where('user_id', auth()->user()->id)->first();
-        return view('panitia.index',compact(['data_peserta']));
+        return view('panitia.index',compact(['data_peserta','jumlah_peserta','jumlah_unit','jumlah_ksr','jumlah_pmr']));
     }
     
     // Peserta page ================================================================
@@ -24,7 +29,8 @@ class PanitiaController extends Controller
     {
         $jumlah_peserta = Peserta::all()->count();
         $data_peserta = Peserta::all();
-        return view('panitia.peserta',compact(['data_peserta','jumlah_peserta']));
+        $jumlah_unit = Unit::all()->count();
+        return view('panitia.peserta',compact(['data_peserta','jumlah_peserta','jumlah_unit']));
     }
     // Hapus Peserta //
     public function hapusPeserta($id_peserta){
@@ -107,6 +113,22 @@ class PanitiaController extends Controller
             }
         }
     }
+
+    // Delete Unit
+    public function hapusUnit($id_unit){
+        $data_unit = Unit::where('id_unit',$id_unit)->get()->first();
+
+        $data_unit->delete($data_unit);
+
+        if($data_unit){
+            Alert::success('Yeay Berhasil !', 'Unit Berhasil dihapus !');
+            return redirect()->back();
+        }else{
+            Alert::error('Unit Gagal Dihapus', 'Sepertinya Masih ada yang nyantol !');
+            return redirect()->back();
+        }
+    }
+
     // Profile page ================================================================
     public function profile()
     {

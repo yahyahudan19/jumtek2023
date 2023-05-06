@@ -36,7 +36,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-xxl-3 col-lg-3 col-sm-6">
+                    {{-- <div class="col-xl-3 col-xxl-3 col-lg-3 col-sm-6">
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between align-items-center">
@@ -51,8 +51,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xl-3 col-xxl-3 col-lg-3 col-sm-6">
+                    </div> --}}
+                    <div class="col-xl-6 col-xxl-6 col-lg-6 col-sm-6">
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex justify-content-center align-items-center">
@@ -86,13 +86,13 @@
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
                                                     <label>Nama Unit</label>
-                                                    <input type="text" name="nama_unit" class="form-control" placeholder="Nama Unit">
+                                                    <input type="text" name="nama_unit" class="form-control" placeholder="Nama Unit" required>
                                                 </div>
                                             </div>
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
                                                     <label>KSR/PMR</label>
-                                                    <select id="status_unit" name="status_unit" class="btn btn-primary light btn-rounded form-control default-select">
+                                                    <select id="status_unit" name="status_unit" class="btn btn-primary light btn-rounded form-control default-select" required>
                                                         <option selected>Choose...</option>
                                                         <option value="KSR">KSR</option>
                                                         <option value="PMR">PMR</option>
@@ -111,17 +111,33 @@
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title">Modal title</h5>
+                                    <h5 class="modal-title">Import Data Unit </h5>
                                     <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                                     </button>
                                 </div>
-                                <div class="modal-body">
-                                    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger light" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                </div>
+                                <form action="/unit/import" method="POST">
+                                    {{ csrf_field() }}
+                                    <div class="modal-body">
+                                        <p>Silahkan Pilih File : </p>
+                                        <div class="basic-form custom_file_input">
+                                            {{-- <form action="#"> --}}
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <button class="btn btn-primary btn-sm" type="button">Button</button>
+                                                    </div>
+                                                    <div class="custom-file">
+                                                        <input type="file" class="custom-file-input" name="import_unit" id="import_unit">
+                                                        <label class="custom-file-label">Choose file</label>
+                                                    </div>
+                                                </div>
+                                            {{-- </form> --}}
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger light" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary">Upload</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -148,7 +164,7 @@
                                                 <td>
 													<div class="d-flex">
 														<a href="#" class="btn btn-info shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-														<a href="/unit/delete/{{$unit->id_unit}}" class="btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-trash"></i></a>
+														<a href="/unit/hapus/{{$unit->id_unit}}" class="btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-trash"></i></a>
 													</div>												
 												</td>												
                                             </tr>

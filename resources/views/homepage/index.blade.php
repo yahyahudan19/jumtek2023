@@ -95,7 +95,7 @@
 											<li><i class="far fa-clock"></i>  24 - 27 Juni 2023, </li>
 										</ul>
                                         <h2 data-animation="fadeInUp animated" data-delay=".4s">Jumbara dan Temu Karya <span>2023</span></h2> 
-										<div countdown class="conterdown wow fadeInDown animated" data-animation="fadeInDown animated" data-delay=".2s" data-date="Jul 5 2023 00:00:00">
+										<div countdown class="conterdown wow fadeInDown animated" data-animation="fadeInDown animated" data-delay=".2s" data-date="Jun 24 2023 00:00:00">
 										 <div class="timer">										 
 											<div class="timer-outer bdr1">												
 											   <span class="days" data-days>0</span> 
