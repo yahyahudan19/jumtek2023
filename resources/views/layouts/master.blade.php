@@ -40,8 +40,8 @@
             Nav header start
         ***********************************-->
         <div class="nav-header">
-            <a href="index.html" class="brand-logo">
-                <img class="logo-abbr" src="{{asset('template/dashboard/images/logopng.png')}}" alt="" height="80px" width="80px">
+            <a href="/dashboard" class="brand-logo">
+                <img class="logo-abbr" src="{{asset('template/dashboard/images/pmilogo.png')}}" alt="" height="55px" width="70px">
                 <img class="logo-compact" src="{{asset('template/dashboard/images/jumtek.png')}}" alt="">
                 <img class="brand-title" src="{{asset('template/dashboard/images/jumtek.png')}}" alt="">
             </a>

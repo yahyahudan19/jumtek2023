@@ -8,22 +8,18 @@
         <!-- Add Order -->
         <div class="row">
             <div class="col-xl-6 col-xxl-6">
-                <div class="row">
-                    <div class="col-xl-12 col-md-8">
-                        <div class="card text-white bg-info">
-                            {{-- <div class="card-header">
-                                <h5 class="card-title text-white">Selamat Datang !</h5>
-                            </div> --}}
-                            <div class="card-body mb-0">
-                                <p class="card-text"></p>Halo, Selamat Datang <a href="javascript:void(0)" class="btn btn-info light btn-card">{{auth()->user()->name}} !</a>
-                            </div>
-                            {{-- <div class="card-footer bg-transparent border-0 text-white">Last updateed 3 min ago --}}
-                            </div>
-                        </div>
+                <div class="card text-white bg-info">
+                    {{-- <div class="card-header">
+                        <h5 class="card-title text-white">Selamat Datang !</h5>
+                    </div> --}}
+                    <div class="card-body mb-0">
+                        <p class="card-text"></p>Halo, Selamat Datang <a href="javascript:void(0)" class="btn btn-info light btn-card">{{auth()->user()->name}} !</a>
+                    </div>
+                    {{-- <div class="card-footer bg-transparent border-0 text-white">Last updateed 3 min ago --}}
                     </div>
                 </div>
             </div>
-             <div class="row">
+            <div class="row">
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-body">
@@ -61,7 +57,45 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-xl-3 col-lg-6  col-md-6 col-xxl-5 ">
+                                        <!-- Tab panes -->
+                                        <div class="tab-content">
+                                            <div role="tabpanel" class="tab-pane fade show active" id="first">
+                                                <img class="img-fluid" src="/template/dashboard/images/exam.png" alt="" >
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Tab slider End-->
+                                    <div class="col-xl-9 col-lg-6  col-md-6 col-xxl-7 col-sm-12">
+                                        <div class="product-detail-content">
+                                            <!--Product details-->
+                                            {{-- <br> --}}
+                                            <div class="new-arrival-content pr">
+                                                <h4>Login Moodle : </h4>
+                                                <div class="comment-review star-rating">
+													<span class="review-text">{{$data_peserta->user->email}}</span>
+												</div>
+												<div class="d-table mb-2">
+													<p class="price float-left d-block">{{$data_peserta->mis_peserta}}</p>
+                                                </div>
+                                                <div>
+                                                    <a href="https://ujian.pmikabmalang.or.id/login" target="_blank"><td class="py-2 text-right"><span class="badge badge-info">Test Sekarang<span
+                                                        class="ml-1 fa fa-pencil-square-o"></span></span>
+                                                    </td></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="row">
                 <div class="col-xl-12 col-xxl-12">
                     <div class="row">
                         <div class="col-xl-12">
@@ -170,6 +204,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
     </div>
 </div>

@@ -8,7 +8,7 @@
                 </a>
                 <ul aria-expanded="false">
                     <li><a href="index.html">Dashboard</a></li>
-                    <li><a href="event.html">Event</a></li>
+                <li><a href="event.html">Event</a></li>
                     <li><a href="event-detail.html">Event Detail</a></li>
                     <li><a href="customers.html">Customers</a></li>
                     <li><a href="analytics.html">Analytics</a></li>
