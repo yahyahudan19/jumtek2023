@@ -28,7 +28,6 @@ Route::middleware(['auth','checkRole:Peserta,Panitia'])->group(function () {
 Route::middleware(['auth','checkRole:Panitia'])->group(function () {
 // DASHBOARD ROUTES //
 Route::get('/dashboard/lomba','\App\Http\Controllers\PanitiaController@lomba');
-Route::get('/dashboard/profile','\App\Http\Controllers\PanitiaController@profile');
 
 //GET Unit
 Route::get('/dashboard/unit','\App\Http\Controllers\PanitiaController@unit');
