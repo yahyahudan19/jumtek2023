@@ -37,6 +37,15 @@ class PanitiaController extends Controller
         $data_peserta = Peserta::where('id_peserta',$id_peserta)->get()->first();
         $data_user = User::where('id',$data_peserta->user_id)->get()->first();
 
+        // Delete File KTA
+        $file_kta = $data_peserta->kta_peserta;
+        $file_path_kta = public_path('file_kta/' . $file_kta);
+        unlink($file_path_kta);
+        // Delete File QR Code
+        $file_qr = $data_peserta->qrcode_peserta;
+        $file_path_qr = public_path('storage/' . $file_qr);
+        unlink($file_path_qr);
+
         $data_peserta->delete($data_peserta);
         $data_user->delete($data_user);
         
@@ -74,11 +83,42 @@ class PanitiaController extends Controller
         return view('panitia.peserta.edit',compact('peserta','data_unit'));
     }
 
-    // Update Peserta Page
+    // Update Peserta
     public function updatePeserta(Request $request){
-        $id = $request->id_peserta_edit;
-        $peserta = Peserta::where('id_peserta',$id)->get()->first();
+        
+        $data_peserta = Peserta::where('mis_peserta',$request->mis_peserta)->get()->first();
+        
+        if($request->hasFile('file_kta')){
+            // dd($request->all());
+            
+            $request->validate([
+                'file_kta' => 'required|max:2048|mimes:png,jpg,jpg,jpeg'
+            ]);
 
+            // Delete File KTA
+            $file_kta = $data_peserta->kta_peserta;
+            $file_path_kta = public_path('file_kta/' . $file_kta);
+            unlink($file_path_kta);
+
+            //Move File KTA 
+            $request->file('file_kta')->move('file_kta/',$request->file('file_kta')->getClientOriginalName());
+            
+            $data_peserta->update([
+                "nama_peserta" => $request->nama_peserta,
+                "unit_id" => $request->unit_id,
+                "alamat_peserta" => $request->alamat_peserta,
+                "kta_peserta" => $request->file('file_kta')->getClientOriginalName()
+            ]);
+
+            Alert::success('Update Berhasil !','Peserta Berhasil Diupdate !');
+            return redirect()->back();
+
+        } else {
+            dd($request->all());
+            $data_peserta->update($request->all());
+        }
+
+        Alert::success('Update Berhasil !','Peserta Berhasil Diupdate !');
         return redirect()->back();  
     }
 
@@ -91,7 +131,10 @@ class PanitiaController extends Controller
     // Unit page ==================================================================
     public function unit()
     {
-        $data_unit = Unit::all();
+        $data_unit_ksr = Unit::where(['status_unit' =>'KSR'])->get()->all();
+        $data_unit_pmr = Unit::where(['status_unit' =>'PMR'])->get()->all();
+
+
         $jumlah_unit = Unit::all()->count();
         $jumlah_ksr = Unit::where([
             'status_unit' => 'KSR'
@@ -101,7 +144,7 @@ class PanitiaController extends Controller
         ])->count();
         $jumlah_peserta = Peserta::all()->count();
 
-        return view('panitia.unit',compact('data_unit','jumlah_unit','jumlah_peserta','jumlah_ksr','jumlah_pmr'));
+        return view('panitia.unit',compact('data_unit_ksr','data_unit_pmr','jumlah_unit','jumlah_peserta','jumlah_ksr','jumlah_pmr'));
     }
     // Tambah Unit 
     public function tambahUnit(Request $request){

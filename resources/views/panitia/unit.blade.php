@@ -144,7 +144,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Data Unit</h4>
+                                <h4 class="card-title">Data Unit KSR</h4>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -157,7 +157,41 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($data_unit as $unit)
+                                            @foreach ($data_unit_ksr as $unit)
+                                            <tr>
+                                                <td>{{$unit->nama_unit}}</a></td>
+                                                <td>{{$unit->status_unit}}</td>
+                                                <td>
+													<div class="d-flex">
+														<a href="#" class="btn btn-info shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+														<a href="/unit/hapus/{{$unit->id_unit}}" class="btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-trash"></i></a>
+													</div>												
+												</td>												
+                                            </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Data Unit PMR</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table id="example3" class="display min-w850">
+                                        <thead>
+                                            <tr>
+                                                <th>Nama Unit</th>
+                                                <th>KSR/PMR</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($data_unit_pmr as $unit)
                                             <tr>
                                                 <td>{{$unit->nama_unit}}</a></td>
                                                 <td>{{$unit->status_unit}}</td>

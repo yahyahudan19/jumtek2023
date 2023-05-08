@@ -40,13 +40,19 @@
                                     <div class="col-xl-9 col-lg-6  col-md-6 col-xxl-7 col-sm-12">
                                         <div class="product-detail-content">
                                             <!--Product details-->
+                                            {{-- <br> --}}
                                             <div class="new-arrival-content pr">
-                                                <h4>QR Code : </h4>
+                                                <h4>{{$data_peserta->nama_peserta}} </h4>
                                                 <div class="comment-review star-rating">
 													<span class="review-text">{{$data_peserta->unit->nama_unit}}</span>
 												</div>
 												<div class="d-table mb-2">
 													<p class="price float-left d-block">{{$data_peserta->mis_peserta}}</p>
+                                                </div>
+                                                <div>
+                                                    <a href="/storage{{$data_peserta->qrcode_peserta}}" download=""><td class="py-2 text-right"><span class="badge badge-success">Download QR<span
+                                                        class="ml-1 fa fa-download"></span></span>
+                                                    </td></a>
                                                 </div>
                                             </div>
                                         </div>

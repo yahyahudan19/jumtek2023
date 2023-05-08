@@ -18,7 +18,14 @@ Route::get('/', function () {
     return view('homepage.index');
 });
 
-Route::middleware(['auth'])->group(function () {
+// PESERTA ROUTES
+Route::middleware(['auth','checkRole:Peserta,Panitia'])->group(function () {
+    Route::get('/dashboard','\App\Http\Controllers\PanitiaController@index');
+    Route::get('/dashboard/profile','\App\Http\Controllers\PanitiaController@profile');
+});
+
+// PANITIA ROUTES
+Route::middleware(['auth','checkRole:Panitia'])->group(function () {
 // DASHBOARD ROUTES //
 Route::get('/dashboard','\App\Http\Controllers\PanitiaController@index');
 Route::get('/dashboard/lomba','\App\Http\Controllers\PanitiaController@lomba');
@@ -45,9 +52,11 @@ Route::get('/peserta/unvalidasi/{id_peserta}','\App\Http\Controllers\PanitiaCont
 //DETAIL Peserta
 Route::get('dashboard/peserta/{id}','\App\Http\Controllers\PanitiaController@detailPeserta');
 //UPDATE Peserta
-Route::put('/peserta/update/{id}','\App\Http\Controllers\PanitiaController@updatePeserta');
+Route::post('/peserta/update','\App\Http\Controllers\PanitiaController@updatePeserta');
 
 });
+
+
 
 // AUTH ROUTES //
 Route::get('/login','\App\Http\Controllers\AuthController@index')->name('login');

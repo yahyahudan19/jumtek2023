@@ -154,9 +154,13 @@
 												<td><a href="/file_kta/{{$peserta->kta_peserta}}"target="_blank" class="btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-eye color-info"></i></a></td>		
 												<td><a href="/storage{{$peserta->qrcode_peserta}}"target="_blank" class="btn btn-success shadow btn-xs sharp mr-1"><i class="fa fa-eye color-success"></i></a></td>		
                                                 @if ($peserta->status_peserta == 'Aktif')
-                                                <td><a href="javascript:void(0);"><span class="badge badge-success"></i>Validasi</span></a></td>
+                                                <td class="py-2 text-right"><span class="badge badge-success">Valid<span
+                                                    class="ml-1 fa fa-check"></span></span>
+                                                </td>
                                                 @else
-                                                <td><a href="javascript:void(0);"><span class="badge badge-danger"></i>Tidak Valid</span></a></td>
+                                                <td class="py-2 text-right"><span class="badge badge-danger">Tidak Valid<span
+                                                    class="ml-1 fa fa-times"></span></span>
+                                                </td>
                                                 @endif
                                                 <td>
                                                     @if ($peserta->user->role == 'Peserta')

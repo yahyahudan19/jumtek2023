@@ -35,7 +35,7 @@
         </div>
         <div class="page-titles">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="javascript:void(0)">Peserta</a></li>
+                <li class="breadcrumb-item"><a href="/dashboard/peserta">Peserta</a></li>
                 <li class="breadcrumb-item active"><a href="javascript:void(0)">Detail</a></li>
             </ol>
         </div>
@@ -48,7 +48,8 @@
                     </div>
                     <div class="card-body">
                         <div class="form-validation">
-                            <form class="form-valide" action="#" method="post">
+                            <form class="form-valide" action="/peserta/update/" method="POST" enctype="multipart/form-data">
+                                {{ csrf_field() }}
                                 <div class="row">
                                     <div class="col-xl-12">
                                         <div class="form-group row">
@@ -67,11 +68,11 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="unit_peserta">Unit PMI
+                                            <label class="col-lg-4 col-form-label" for="unit_id">Unit PMI
                                             </label>
                                             <div class="col-lg-6">
-                                                <select class="form-control default-select" id="unit_peserta" name="unit_peserta">
-                                                    <option value="{{$peserta->unit->id_unit}}">{{$peserta->unit->nama_unit}} || Unit Saat Ini</option>
+                                                <select class="form-control default-select" id="unit_id" name="unit_id">
+                                                    <option value="{{$peserta->unit->id_unit}}">{{$peserta->unit->nama_unit}}</option>
                                                     @foreach ($data_unit as $unit)
                                                         <option value="{{$unit->id_unit}}">{{$unit->nama_unit}}</option>
                                                     @endforeach
@@ -79,10 +80,17 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="kta_peserta">KTA Peserta
+                                            <label class="col-lg-4 col-form-label" for="alamat_peserta">Alamat
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="file" class="form-control" id="kta_peserta" name="kta_peserta" value="..and confirm it!">
+                                                <input type="text" class="form-control" id="alamat_peserta" name="alamat_peserta" value="{{$peserta->alamat_peserta}}">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="file_kta">KTA Peserta
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="file" class="form-control" id="file_kta" name="file_kta" value="..and confirm it!">
                                             </div>
                                         </div>
                                         <div class="form-group row">
