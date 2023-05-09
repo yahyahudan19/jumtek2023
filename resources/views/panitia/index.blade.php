@@ -133,86 +133,45 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="event-bx owl-carousel">
-                                        <div class="items">
-                                            <div class="image-bx">
-                                                <img src="{{asset('template/dashboard/images/events/1.png')}}" alt="">
-                                                <div class="info">
-                                                    <p class="fs-18 font-w600"><a href="event-detail.html" class="text-black">International Live Choice Festivals (2020)</a></p>
-                                                    <span class="fs-14 text-black d-block mb-3">Manchester, London</span>
-                                                    <p class="fs-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mini</p>
-                                                    <ul>
-                                                        <li><i class="las la-dollar-sign"></i>$124,00</li>
-                                                        <li><i class="las la-calendar"></i>June 20, 2020</li>
-                                                        <li><i class="fa fa-ticket"></i>561 pcs</li>
-                                                        <li><i class="las la-clock"></i>08:35 AM</li>
-                                                    </ul>
+                                        @if ($data_peserta->unit->status_unit == 'KSR')
+                                            @foreach ($data_kegiatan_ksr as $kegiatan)
+                                                <div class="items">
+                                                    <div class="image-bx">
+                                                        <img src="{{asset('template/dashboard/images/events/1.png')}}" alt="">
+                                                        <div class="info">
+                                                            <p class="fs-18 font-w600"><a href="event-detail.html" class="text-black">{{$kegiatan->nama_kegiatan}}</a></p>
+                                                            <span class="fs-14 text-black d-block mb-3">{{$kegiatan->jenis_kegiatan}} | 
+                                                                <td class="py-2 text-right"><span class="badge badge-info">{{$kegiatan->tingkat_kegiatan}}<span class="ml-1 fa fa-check"></span></span><td>
+                                                            </span>
+                                                            <p class="fs-12">{{$kegiatan->detail_kegiatan}}</p>
+                                                            <ul>
+                                                                <li><i class="las la-calendar"></i>{{ \Carbon\Carbon::parse($kegiatan->tanggal_kegiatan)->locale('id_ID')->isoFormat('dddd, D MMMM Y') }}</li>
+                                                                <li><i class="las la-clock"></i>{{ \Carbon\Carbon::parse($kegiatan->tanggal_kegiatan)->locale('id_ID')->translatedFormat('H:i') }} WIB</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="items">
-                                            <div class="image-bx">
-                                                <img src="{{asset('template/dashboard/images/events/3.png')}}" alt="">
-                                                <div class="info">
-                                                    <p class="fs-18 font-w600"><a href="event-detail.html" class="text-black">Envato Atuhor Community Fun Hiking at Sibayak Mt.</a></p>
-                                                    <span class="fs-14 text-black d-block mb-3">London, United Kingdom</span>
-                                                    <p class="fs-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mini</p>
-                                                    <ul>
-                                                        <li><i class="las la-dollar-sign"></i>$124,00</li>
-                                                        <li><i class="las la-calendar"></i>June 20, 2020</li>
-                                                        <li><i class="fa fa-ticket"></i>561 pcs</li>
-                                                        <li><i class="las la-clock"></i>08:35 AM</li>
-                                                    </ul>
+                                            @endforeach
+                                        @else
+                                            @foreach ($data_kegiatan_pmr as $kegiatan)
+                                                <div class="items">
+                                                    <div class="image-bx">
+                                                        <img src="{{asset('template/dashboard/images/events/1.png')}}" alt="">
+                                                        <div class="info">
+                                                            <p class="fs-18 font-w600"><a href="event-detail.html" class="text-black">{{$kegiatan->nama_kegiatan}}</a></p>
+                                                            <span class="fs-14 text-black d-block mb-3">{{$kegiatan->jenis_kegiatan}} | 
+                                                                <td class="py-2 text-right"><span class="badge badge-success">{{$kegiatan->tingkat_kegiatan}}<span class="ml-1 fa fa-plus"></span></span><td>
+                                                            </span>
+                                                            <p class="fs-12">{{$kegiatan->detail_kegiatan}}</p>
+                                                            <ul>
+                                                                <li><i class="las la-calendar"></i>{{ \Carbon\Carbon::parse($kegiatan->tanggal_kegiatan)->locale('id_ID')->isoFormat('dddd, D MMMM Y') }}</li>
+                                                                <li><i class="las la-clock"></i>{{ \Carbon\Carbon::parse($kegiatan->tanggal_kegiatan)->locale('id_ID')->translatedFormat('H:i') }} WIB</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="items">
-                                            <div class="image-bx">
-                                                <img src="{{asset('template/dashboard/images/events/1.png')}}" alt="">
-                                                <div class="info">
-                                                    <p class="fs-18 font-w600"><a href="event-detail.html" class="text-black">International Live Choice Festivals (2020)</a></p>
-                                                    <span class="fs-14 text-black d-block mb-3">Manchester, London</span>
-                                                    <p class="fs-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mini</p>
-                                                    <ul>
-                                                        <li><i class="las la-dollar-sign"></i>$124,00</li>
-                                                        <li><i class="las la-calendar"></i>June 20, 2020</li>
-                                                        <li><i class="fa fa-ticket"></i>561 pcs</li>
-                                                        <li><i class="las la-clock"></i>08:35 AM</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="items">
-                                            <div class="image-bx">
-                                                <img src="{{asset('template/dashboard/images/events/2.png')}}" alt="">
-                                                <div class="info">
-                                                    <p class="fs-18 font-w600"><a href="event-detail.html" class="text-black">Envato Indonesian Authors Meetup 2020</a></p>
-                                                    <span class="fs-14 text-black d-block mb-3">Medan, Indonesia</span>
-                                                    <p class="fs-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mini</p>
-                                                    <ul>
-                                                        <li><i class="las la-dollar-sign"></i>$124,00</li>
-                                                        <li><i class="las la-calendar"></i>June 20, 2020</li>
-                                                        <li><i class="fa fa-ticket"></i>561 pcs</li>
-                                                        <li><i class="las la-clock"></i>08:35 AM</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="items">
-                                            <div class="image-bx">
-                                                <img src="{{asset('template/dashboard/images/events/3.png')}}" alt="">
-                                                <div class="info">
-                                                    <p class="fs-18 font-w600"><a href="event-detail.html" class="text-black">Envato Atuhor Community Fun Hiking at Sibayak Mt.</a></p>
-                                                    <span class="fs-14 text-black d-block mb-3">London, United Kingdom</span>
-                                                    <p class="fs-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mini</p>
-                                                    <ul>
-                                                        <li><i class="las la-dollar-sign"></i>$124,00</li>
-                                                        <li><i class="las la-calendar"></i>June 20, 2020</li>
-                                                        <li><i class="fa fa-ticket"></i>561 pcs</li>
-                                                        <li><i class="las la-clock"></i>08:35 AM</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
+                                            @endforeach
+                                         @endif
                                     </div>
                                 </div>
                             </div>
@@ -255,7 +214,7 @@
                                 <div class="d-flex align-items-end">
                                     <div>
                                         <p class="fs-14 mb-1">Jumlah Kegiatan</p>
-                                        <span class="fs-35 text-black font-w600">93
+                                        <span class="fs-35 text-black font-w600">{{$jumlah_kegiatan}}
                                             <svg class="ml-1" width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M2.00401 11.1924C0.222201 11.1924 -0.670134 9.0381 0.589795 7.77817L7.78218 0.585786C8.56323 -0.195262 9.82956 -0.195262 10.6106 0.585786L17.803 7.77817C19.0629 9.0381 18.1706 11.1924 16.3888 11.1924H2.00401Z" fill="#33C25B"/>
                                             </svg>
@@ -333,86 +292,29 @@
                             </div>
                             <div class="card-body">
                                 <div class="event-bx owl-carousel">
+                                    @foreach ($data_kegiatan as $kegiatan)
                                     <div class="items">
                                         <div class="image-bx">
                                             <img src="{{asset('template/dashboard/images/events/1.png')}}" alt="">
                                             <div class="info">
-                                                <p class="fs-18 font-w600"><a href="event-detail.html" class="text-black">International Live Choice Festivals (2020)</a></p>
-                                                <span class="fs-14 text-black d-block mb-3">Manchester, London</span>
-                                                <p class="fs-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mini</p>
+                                                <p class="fs-18 font-w600"><a href="event-detail.html" class="text-black">{{$kegiatan->nama_kegiatan}}</a></p>
+                                                <span class="fs-14 text-black d-block mb-3">{{$kegiatan->jenis_kegiatan}} | 
+                                                    @if ($kegiatan->tingkat_kegiatan == 'PMR')
+                                                        <td class="py-2 text-right"><span class="badge badge-success">{{$kegiatan->tingkat_kegiatan}}<span class="ml-1 fa fa-check"></span></span><td>
+                                                    @else
+                                                        <td class="py-2 text-right"><span class="badge badge-info">{{$kegiatan->tingkat_kegiatan}}<span class="ml-1 fa fa-check"></span></span><td>
+                                                    @endif
+                                                </span>
+                                                <p class="fs-12">{{$kegiatan->detail_kegiatan}}</p>
                                                 <ul>
-                                                    <li><i class="las la-dollar-sign"></i>$124,00</li>
-                                                    <li><i class="las la-calendar"></i>June 20, 2020</li>
-                                                    <li><i class="fa fa-ticket"></i>561 pcs</li>
-                                                    <li><i class="las la-clock"></i>08:35 AM</li>
+                                                    <li><i class="las la-calendar"></i>{{ \Carbon\Carbon::parse($kegiatan->tanggal_kegiatan)->format('d M Y') }}</li>
+                                                    <li><i class="las la-clock"></i>{{ \Carbon\Carbon::parse($kegiatan->tanggal_kegiatan)->format('H:i') }}</li>
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="items">
-                                        <div class="image-bx">
-                                            <img src="{{asset('template/dashboard/images/events/3.png')}}" alt="">
-                                            <div class="info">
-                                                <p class="fs-18 font-w600"><a href="event-detail.html" class="text-black">Envato Atuhor Community Fun Hiking at Sibayak Mt.</a></p>
-                                                <span class="fs-14 text-black d-block mb-3">London, United Kingdom</span>
-                                                <p class="fs-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mini</p>
-                                                <ul>
-                                                    <li><i class="las la-dollar-sign"></i>$124,00</li>
-                                                    <li><i class="las la-calendar"></i>June 20, 2020</li>
-                                                    <li><i class="fa fa-ticket"></i>561 pcs</li>
-                                                    <li><i class="las la-clock"></i>08:35 AM</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="items">
-                                        <div class="image-bx">
-                                            <img src="{{asset('template/dashboard/images/events/1.png')}}" alt="">
-                                            <div class="info">
-                                                <p class="fs-18 font-w600"><a href="event-detail.html" class="text-black">International Live Choice Festivals (2020)</a></p>
-                                                <span class="fs-14 text-black d-block mb-3">Manchester, London</span>
-                                                <p class="fs-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mini</p>
-                                                <ul>
-                                                    <li><i class="las la-dollar-sign"></i>$124,00</li>
-                                                    <li><i class="las la-calendar"></i>June 20, 2020</li>
-                                                    <li><i class="fa fa-ticket"></i>561 pcs</li>
-                                                    <li><i class="las la-clock"></i>08:35 AM</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="items">
-                                        <div class="image-bx">
-                                            <img src="{{asset('template/dashboard/images/events/2.png')}}" alt="">
-                                            <div class="info">
-                                                <p class="fs-18 font-w600"><a href="event-detail.html" class="text-black">Envato Indonesian Authors Meetup 2020</a></p>
-                                                <span class="fs-14 text-black d-block mb-3">Medan, Indonesia</span>
-                                                <p class="fs-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mini</p>
-                                                <ul>
-                                                    <li><i class="las la-dollar-sign"></i>$124,00</li>
-                                                    <li><i class="las la-calendar"></i>June 20, 2020</li>
-                                                    <li><i class="fa fa-ticket"></i>561 pcs</li>
-                                                    <li><i class="las la-clock"></i>08:35 AM</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="items">
-                                        <div class="image-bx">
-                                            <img src="{{asset('template/dashboard/images/events/3.png')}}" alt="">
-                                            <div class="info">
-                                                <p class="fs-18 font-w600"><a href="event-detail.html" class="text-black">Envato Atuhor Community Fun Hiking at Sibayak Mt.</a></p>
-                                                <span class="fs-14 text-black d-block mb-3">London, United Kingdom</span>
-                                                <p class="fs-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mini</p>
-                                                <ul>
-                                                    <li><i class="las la-dollar-sign"></i>$124,00</li>
-                                                    <li><i class="las la-calendar"></i>June 20, 2020</li>
-                                                    <li><i class="fa fa-ticket"></i>561 pcs</li>
-                                                    <li><i class="las la-clock"></i>08:35 AM</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @endforeach
+                                   
                                 </div>
                             </div>
                         </div>

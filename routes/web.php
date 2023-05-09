@@ -53,6 +53,11 @@ Route::get('dashboard/peserta/{id}','\App\Http\Controllers\PanitiaController@det
 //UPDATE Peserta
 Route::post('/peserta/update','\App\Http\Controllers\PanitiaController@updatePeserta');
 
+
+//GET Kegiatan
+Route::get('/dashboard/kegiatan','\App\Http\Controllers\PanitiaController@kegiatan');
+
+
 });
 
 

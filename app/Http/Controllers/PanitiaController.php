@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kegiatan;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Peserta;
@@ -19,9 +20,19 @@ class PanitiaController extends Controller
         $jumlah_unit = Unit::all()->count();
         $jumlah_ksr = Unit::where(['status_unit' => 'KSR'])->count();
         $jumlah_pmr = Unit::where(['status_unit' => 'PMR'])->count();
+        $jumlah_kegiatan = Kegiatan::all()->count();
+
+
+        $data_kegiatan = Kegiatan::all();
+        $data_kegiatan_ksr = Kegiatan::where(['tingkat_kegiatan' => 'KSR'])->get();
+        $data_kegiatan_pmr = Kegiatan::where(['tingkat_kegiatan' => 'PMR'])->get();
 
         $data_peserta = Peserta::where('user_id', auth()->user()->id)->first();
-        return view('panitia.index',compact(['data_peserta','jumlah_peserta','jumlah_unit','jumlah_ksr','jumlah_pmr']));
+
+        return view('panitia.index',compact([
+            'data_peserta','jumlah_peserta','jumlah_unit','jumlah_ksr','jumlah_pmr','jumlah_kegiatan','data_kegiatan_ksr',
+            'data_kegiatan_pmr'
+        ]));
     }
     
     // Peserta page ================================================================
@@ -122,10 +133,12 @@ class PanitiaController extends Controller
         return redirect()->back();  
     }
 
-    // Lomba page ==================================================================
-    public function lomba()
+    // Kegiatan page ==================================================================
+    public function kegiatan()
     {
-        return view('panitia.lomba');
+        $data_kegiatan = Kegiatan::all();
+        $jumlah_kegiatan = Kegiatan::all()->count();
+        return view('panitia.kegiatan.index',compact('data_kegiatan','jumlah_kegiatan'));
     }
 
     // Unit page ==================================================================

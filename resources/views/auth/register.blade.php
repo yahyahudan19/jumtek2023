@@ -100,7 +100,7 @@
 							<!-- Leave for security protection, read docs for details -->
 							<div id="middle-wizard">
 
-								{{-- <div class="step">
+								<div class="step">
 									<h3 class="main_question"><strong>1/3</strong>Masukkan Data Diri Anda</h3>
 									<div class="row">
 										<div class="col-md-6">
@@ -144,7 +144,7 @@
 										</div>
 									</div>
 									<!-- /row -->
-								</div> --}}
+								</div>
 								<!-- /step-->
 
 								 <div class="step">

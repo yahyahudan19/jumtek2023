@@ -428,28 +428,14 @@
 						<img src="{{asset('template/homepage/img/t-icon.png')}}" alt="img" class="drk-icon">		
 						<img src="{{asset('template/homepage/img/t-w-icon1.png')}}" alt="img" class="lgt-icon">  
 						<div class="nav-content">
-							<strong>Bidang Jumpa</strong>
+							<strong>Bidang Jumbara</strong>
 							{{-- <span>24 Juni 2023</span> --}}
-						</div>
-						</a>
-                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#two" role="tab" aria-selected="false"><img src="{{asset('template/homepage/img/t-icon.png')}}" alt="img" class="drk-icon">		
-						<img src="{{asset('template/homepage/img/t-w-icon1.png')}}" alt="img" class="lgt-icon"> 
-						<div class="nav-content">
-							<strong>Bidang Bhakti</strong>
-							{{-- <span>25 Juni 2023</span> --}}
-						</div>
-						</a>
-                        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#three" role="tab" aria-selected="false"><img src="{{asset('template/homepage/img/t-icon.png')}}" alt="img" class="drk-icon">		
-						<img src="{{asset('template/homepage/img/t-w-icon1.png')}}" alt="img" class="lgt-icon"> 
-						<div class="nav-content">
-							<strong>Bidang Gembira</strong>
-							{{-- <span>26 Juni 2023</span> --}}
 						</div>
 						</a>
 						<a class="nav-item nav-link" id="nav-contact-tab2" data-toggle="tab" href="#four" role="tab" aria-selected="false"><img src="{{asset('template/homepage/img/t-icon.png')}}" alt="img" class="drk-icon">		
 						<img src="{{asset('template/homepage/img/t-w-icon1.png')}}" alt="img" class="lgt-icon"> 
 						<div class="nav-content">
-							<strong>Temu Karya</strong>
+							<strong>Bidang Temu Karya</strong>
 							{{-- <span>27 Juni 2023</span> --}}
 						</div>
 						</a>
@@ -611,167 +597,159 @@
                                   <div class="crical"><i class="fal fa-ban"></i></div>
                                </div>
                             </div>
+                        </div>
+						<!-- row loop -->
+                        <!-- row loop -->
+                        <div class="row mb-30">
+                            <div class="col-lg-2">
+                               <div class="user">
+                                   <div class="title">  
+                                       <img src="{{asset('template/homepage/img/event_avatar_1.png')}}" alt="img">							  
+                                      <h5>Seluruh Peserta.</h5>
+                                      <p>PMR Mula, Madya dan Wira</p>
+                                   </div>
+                                   <ul>
+                                  <li><i class="fal fa-tree"></i> Penamaman Pohon </li>
+                                  <li><i class="fal fa-leaf"></i> Penghijauan</li>
+                               </ul>
+                               </div>
+                            </div>
+                            <div class="col-lg-10">
+                               <div class="event-list-content fix">
+                                  <ul data-animation="fadeInUp animated" data-delay=".2s" style="animation-delay: 0.2s;" class="">
+                                     <li><i class="fas fa-map-marker-alt"></i>Selorejo, Ngantang</li>
+                                     <li><i class="far fa-clock"></i> 9.30 - 10.30 AM</li>
+                                  </ul>
+                                  <h2>Penghijauan</h2>
+                                  <p>Menumbuhkan jiwa kepedulian terhadap lingkungan hidup serta Melaksanakan Tri Bakti PMR ke-2, yaitu : Berkarya dan Berbakti di Masyarakat.</p>
+                                  <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
+                                  <a href="#" class="btn mt-20">Read More</a>
+                                  <div class="crical"><i class="fal fa-video"></i> </div>
+                               </div>
+                            </div>
+                        </div>
+                         <!-- row loop -->
+                         <!-- row loop -->
+                         <div class="row mb-30">
+                            <div class="col-lg-2">
+                               <div class="user">
+                                   <div class="title">  
+                                       <img src="{{asset('template/homepage/img/event_avatar_1.png')}}" alt="img">							  
+                                      <h5>Seluruh Peserta.</h5>
+                                      <p>PMR Mula, Madya dan Wira</p>
+                                   </div>
+                                   <ul>
+                                  <li><i class="fal fa-home"></i> Bersih Lingkungan </li>
+                               </ul>
+                               </div>
+                            </div>
+                            <div class="col-lg-10">
+                               <div class="event-list-content fix">
+                                  <ul data-animation="fadeInUp animated" data-delay=".2s" style="animation-delay: 0.2s;" class="">
+                                     <li><i class="fas fa-map-marker-alt"></i>Selorejo, Ngantang</li>
+                                     <li><i class="far fa-clock"></i> 9.30 - 10.30 AM</li>
+                                  </ul>
+                                  <h2>Bhakti Lingkungan</h2>
+                                  <p>Meningkatkan kepedulian anggota PMR terhadap kebersihan lingkungan hidup serta Mempererat persahabatan dan kerja sama anggota PMR.</p>
+                                  <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
+                                  <a href="#" class="btn mt-20">Read More</a>
+                                  <div class="crical"><i class="fal fa-video"></i> </div>
+                               </div>
+                            </div>
                          </div>
-						<!-- row loop -->
+                         <!-- row loop -->
+                         <!-- row loop -->
+                        <div class="row mb-30">
+                            <div class="col-lg-2">
+                               <div class="user">
+                                  <div class="title">  
+                                       <img src="{{asset('template/homepage/img/event_avatar_1.png')}}" alt="img">							  
+                                      <h5>Seluruh Peserta.</h5>
+                                      <p>PMR Mula, Madya dan Wira</p>
+                                   </div>
+                                   <ul>
+                                  <li><i class="fal fa-tree"></i> Penamaman Pohon </li>
+                                  <li><i class="fal fa-leaf"></i> Penghijauan</li>
+                               </ul>
+                               </div>
+                            </div>
+                            <div class="col-lg-10">
+                               <div class="event-list-content fix">
+                                  <ul data-animation="fadeInUp animated" data-delay=".2s" style="animation-delay: 0.2s;" class="">
+                                     <li><i class="fas fa-map-marker-alt"></i>Selorejo, Ngantang</li>
+                                     <li><i class="far fa-clock"></i> 9.30 - 10.30 AM</li>
+                                  </ul>
+                                  <h2>Pentas Seni</h2>
+                                  <p>In order to save time you have to break down the content strategy for the event or conference you are planning step by step. Creating this process from scratch will take the longest amount of time to build, but once you have content production foundation.</p>
+                                  <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
+                                  <a href="#" class="btn mt-20">Read More</a>
+                                  <div class="crical"><i class="fal fa-video"></i> </div>
+                               </div>
+                            </div>
+                        </div>
+                         <!-- row loop -->
+                         <!-- row loop -->
+                         <div class="row mb-30">
+                            <div class="col-lg-2">
+                               <div class="user">
+                                  <div class="title">  
+                                       <img src="{{asset('template/homepage/img/event_avatar_1.png')}}" alt="img">							  
+                                      <h5>Seluruh Peserta.</h5>
+                                      <p>PMR Mula, Madya dan Wira</p>
+                                   </div>
+                                   <ul>
+                                  <li><i class="fal fa-tree"></i> Penamaman Pohon </li>
+                                  <li><i class="fal fa-leaf"></i> Penghijauan</li>
+                               </ul>
+                               </div>
+                            </div>
+                            <div class="col-lg-10">
+                               <div class="event-list-content fix">
+                                  <ul data-animation="fadeInUp animated" data-delay=".2s" style="animation-delay: 0.2s;" class="">
+                                     <li><i class="fas fa-map-marker-alt"></i>Selorejo, Ngantang</li>
+                                     <li><i class="far fa-clock"></i> 9.30 - 10.30 AM</li>
+                                  </ul>
+                                  <h2>OLahraga / Outbound</h2>
+                                  <p>In order to save time you have to break down the content strategy for the event or conference you are planning step by step. Creating this process from scratch will take the longest amount of time to build, but once you have content production foundation.</p>
+                                  <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
+                                  <a href="#" class="btn mt-20">Read More</a>
+                                  <div class="crical"><i class="fal fa-video"></i> </div>
+                               </div>
+                            </div>
+                         </div>
+                         <!-- row loop -->
+                         <!-- row loop -->
+                         <div class="row mb-30">
+                            <div class="col-lg-2">
+                               <div class="user">
+                                 <div class="title">  
+                                     <img src="{{asset('template/homepage/img/event_avatar_1.png')}}" alt="img">							  
+                                    <h5>Seluruh Peserta.</h5>
+                                    <p>PMR Mula, Madya dan Wira</p>
+                                 </div>
+                                 <ul>
+                                <li><i class="fal fa-tree"></i> Penamaman Pohon </li>
+                                <li><i class="fal fa-leaf"></i> Penghijauan</li>
+                               </ul>
+                               </div>
+                            </div>
+                            <div class="col-lg-10">
+                               <div class="event-list-content fix">
+                                  <ul data-animation="fadeInUp animated" data-delay=".2s" style="animation-delay: 0.2s;" class="">
+                                     <li><i class="fas fa-map-marker-alt"></i>Selorejo, Ngantang</li>
+                                     <li><i class="far fa-clock"></i> 9.30 - 10.30 AM</li>
+                                  </ul>
+                                  <h2>Permainan Tradisional</h2>
+                                  <p>In order to save time you have to break down the content strategy for the event or conference you are planning step by step. Creating this process from scratch will take the longest amount of time to build, but once you have content production foundation.</p>
+                                  <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
+                                  <a href="#" class="btn mt-20">Read More</a>
+                                  <div class="crical"><i class="fal fa-video"></i> </div>
+                               </div>
+                            </div>
+                         </div>
+                         <!-- row loop -->
                      </div>
-
-                     {{-- BIDANG BHAKTI  --}}
-                     <div class="tab-pane fade" id="two" role="tabpanel" aria-labelledby="nav-profile-tab">
-                        <!-- row loop -->
-                        <div class="row mb-30">
-                           <div class="col-lg-2">
-							  <div class="user">
-								  <div class="title">  
-									  <img src="{{asset('template/homepage/img/event_avatar_1.png')}}" alt="img">							  
-									 <h5>Seluruh Peserta.</h5>
-									 <p>PMR Mula, Madya dan Wira</p>
-								  </div>
-								  <ul>
-                                 <li><i class="fal fa-tree"></i> Penamaman Pohon </li>
-                                 <li><i class="fal fa-leaf"></i> Penghijauan</li>
-                              </ul>
-							  </div>
-                           </div>
-                           <div class="col-lg-10">
-                              <div class="event-list-content fix">
-                                 <ul data-animation="fadeInUp animated" data-delay=".2s" style="animation-delay: 0.2s;" class="">
-									<li><i class="fas fa-map-marker-alt"></i>Selorejo, Ngantang</li>
-									<li><i class="far fa-clock"></i> 9.30 - 10.30 AM</li>
-								 </ul>
-								 <h2>Penghijauan</h2>
-								 <p>Menumbuhkan jiwa kepedulian terhadap lingkungan hidup serta Melaksanakan Tri Bakti PMR ke-2, yaitu : Berkarya dan Berbakti di Masyarakat.</p>
-								 <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
-								 <a href="#" class="btn mt-20">Read More</a>
-								 <div class="crical"><i class="fal fa-video"></i> </div>
-                              </div>
-                           </div>
-                        </div>
-						<!-- row loop -->
-						<!-- row loop -->
-                        <div class="row mb-30">
-                           <div class="col-lg-2">
-							  <div class="user">
-								  <div class="title">  
-									  <img src="{{asset('template/homepage/img/event_avatar_1.png')}}" alt="img">							  
-									 <h5>Seluruh Peserta.</h5>
-									 <p>PMR Mula, Madya dan Wira</p>
-								  </div>
-								  <ul>
-                                 <li><i class="fal fa-home"></i> Bersih Lingkungan </li>
-                              </ul>
-							  </div>
-                           </div>
-                           <div class="col-lg-10">
-                              <div class="event-list-content fix">
-                                 <ul data-animation="fadeInUp animated" data-delay=".2s" style="animation-delay: 0.2s;" class="">
-									<li><i class="fas fa-map-marker-alt"></i>Selorejo, Ngantang</li>
-									<li><i class="far fa-clock"></i> 9.30 - 10.30 AM</li>
-								 </ul>
-								 <h2>Bhakti Lingkungan</h2>
-								 <p>Meningkatkan kepedulian anggota PMR terhadap kebersihan lingkungan hidup serta Mempererat persahabatan dan kerja sama anggota PMR.</p>
-								 <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
-								 <a href="#" class="btn mt-20">Read More</a>
-								 <div class="crical"><i class="fal fa-video"></i> </div>
-                              </div>
-                           </div>
-                        </div>
-						<!-- row loop -->
-                     </div>
-
-                     {{-- BIDANG GEMBIRA  --}}
-                     <div class="tab-pane fade" id="three" role="tabpanel" aria-labelledby="nav-contact-tab">
-                        <!-- row loop -->
-                        <div class="row mb-30">
-                           <div class="col-lg-2">
-							  <div class="user">
-								 <div class="title">  
-									  <img src="{{asset('template/homepage/img/event_avatar_1.png')}}" alt="img">							  
-									 <h5>Seluruh Peserta.</h5>
-									 <p>PMR Mula, Madya dan Wira</p>
-								  </div>
-								  <ul>
-                                 <li><i class="fal fa-tree"></i> Penamaman Pohon </li>
-                                 <li><i class="fal fa-leaf"></i> Penghijauan</li>
-                              </ul>
-							  </div>
-                           </div>
-                           <div class="col-lg-10">
-                              <div class="event-list-content fix">
-                                 <ul data-animation="fadeInUp animated" data-delay=".2s" style="animation-delay: 0.2s;" class="">
-									<li><i class="fas fa-map-marker-alt"></i>Selorejo, Ngantang</li>
-									<li><i class="far fa-clock"></i> 9.30 - 10.30 AM</li>
-								 </ul>
-								 <h2>Pentas Seni</h2>
-								 <p>In order to save time you have to break down the content strategy for the event or conference you are planning step by step. Creating this process from scratch will take the longest amount of time to build, but once you have content production foundation.</p>
-								 <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
-								 <a href="#" class="btn mt-20">Read More</a>
-								 <div class="crical"><i class="fal fa-video"></i> </div>
-                              </div>
-                           </div>
-                        </div>
-						<!-- row loop -->
-						<!-- row loop -->
-                        <div class="row mb-30">
-                           <div class="col-lg-2">
-							  <div class="user">
-								 <div class="title">  
-									  <img src="{{asset('template/homepage/img/event_avatar_1.png')}}" alt="img">							  
-									 <h5>Seluruh Peserta.</h5>
-									 <p>PMR Mula, Madya dan Wira</p>
-								  </div>
-								  <ul>
-                                 <li><i class="fal fa-tree"></i> Penamaman Pohon </li>
-                                 <li><i class="fal fa-leaf"></i> Penghijauan</li>
-                              </ul>
-							  </div>
-                           </div>
-                           <div class="col-lg-10">
-                              <div class="event-list-content fix">
-                                 <ul data-animation="fadeInUp animated" data-delay=".2s" style="animation-delay: 0.2s;" class="">
-									<li><i class="fas fa-map-marker-alt"></i>Selorejo, Ngantang</li>
-									<li><i class="far fa-clock"></i> 9.30 - 10.30 AM</li>
-								 </ul>
-								 <h2>OLahraga / Outbound</h2>
-								 <p>In order to save time you have to break down the content strategy for the event or conference you are planning step by step. Creating this process from scratch will take the longest amount of time to build, but once you have content production foundation.</p>
-								 <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
-								 <a href="#" class="btn mt-20">Read More</a>
-								 <div class="crical"><i class="fal fa-video"></i> </div>
-                              </div>
-                           </div>
-                        </div>
-						<!-- row loop -->
-						<!-- row loop -->
-                        <div class="row mb-30">
-                           <div class="col-lg-2">
-							  <div class="user">
-                                <div class="title">  
-                                    <img src="{{asset('template/homepage/img/event_avatar_1.png')}}" alt="img">							  
-                                   <h5>Seluruh Peserta.</h5>
-                                   <p>PMR Mula, Madya dan Wira</p>
-                                </div>
-                                <ul>
-                               <li><i class="fal fa-tree"></i> Penamaman Pohon </li>
-                               <li><i class="fal fa-leaf"></i> Penghijauan</li>
-                              </ul>
-							  </div>
-                           </div>
-                           <div class="col-lg-10">
-                              <div class="event-list-content fix">
-                                 <ul data-animation="fadeInUp animated" data-delay=".2s" style="animation-delay: 0.2s;" class="">
-									<li><i class="fas fa-map-marker-alt"></i>Selorejo, Ngantang</li>
-									<li><i class="far fa-clock"></i> 9.30 - 10.30 AM</li>
-								 </ul>
-								 <h2>Permainan Tradisional</h2>
-								 <p>In order to save time you have to break down the content strategy for the event or conference you are planning step by step. Creating this process from scratch will take the longest amount of time to build, but once you have content production foundation.</p>
-								 <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
-								 <a href="#" class="btn mt-20">Read More</a>
-								 <div class="crical"><i class="fal fa-video"></i> </div>
-                              </div>
-                           </div>
-                        </div>
-						<!-- row loop -->
-                     </div>
-
+                    
                      {{-- TEMU KARYA  --}}
                      <div class="tab-pane fade" id="four" role="tabpanel" aria-labelledby="nav-contact-tab">
                         <!-- row loop -->
