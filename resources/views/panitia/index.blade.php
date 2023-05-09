@@ -8,6 +8,7 @@
         <!-- Add Order -->
         <div class="row">
             <div class="col-xl-6 col-xxl-6">
+                @if ($data_peserta->status_peserta == 'Aktif')
                 <div class="card text-white bg-info">
                     {{-- <div class="card-header">
                         <h5 class="card-title text-white">Selamat Datang !</h5>
@@ -18,8 +19,21 @@
                     {{-- <div class="card-footer bg-transparent border-0 text-white">Last updateed 3 min ago --}}
                     </div>
                 </div>
+                @else
+                <div class="card text-white bg-danger">
+                    {{-- <div class="card-header">
+                        <h5 class="card-title text-white">Selamat Datang !</h5>
+                    </div> --}}
+                    <div class="card-body mb-0">
+                        <p class="card-text"></p>Akun-mu Belum Aktif, Segera <a href="javascript:void(0)" class="btn btn-danger light btn-card">Hubungi Panitia !</a>
+                    </div>
+                    {{-- <div class="card-footer bg-transparent border-0 text-white">Last updateed 3 min ago --}}
+                    </div>
+                </div>
+                @endif
             </div>
             <div class="row">
+                    @if ($data_peserta->status_peserta == 'Aktif')
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-body">
@@ -94,6 +108,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
             </div>
             <div class="row">
                 <div class="col-xl-12 col-xxl-12">

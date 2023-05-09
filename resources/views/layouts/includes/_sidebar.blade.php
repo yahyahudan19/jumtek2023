@@ -48,11 +48,13 @@
                     <span class="nav-text">Dashboard</span>
                 </a>
             </li>
+            @if (auth()->user()->peserta->status_peserta == 'Aktif')
             <li><a href="/dashboard/profile" class="ai-icon" aria-expanded="false">
                     <i class="flaticon-381-user-2"></i>
                     <span class="nav-text">Profile</span>
                 </a>
             </li>
+            @endif
             @endif
         </ul>
         {{-- <div class="copyright">

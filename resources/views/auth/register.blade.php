@@ -100,7 +100,7 @@
 							<!-- Leave for security protection, read docs for details -->
 							<div id="middle-wizard">
 
-								<div class="step">
+								{{-- <div class="step">
 									<h3 class="main_question"><strong>1/3</strong>Masukkan Data Diri Anda</h3>
 									<div class="row">
 										<div class="col-md-6">
@@ -144,17 +144,29 @@
 										</div>
 									</div>
 									<!-- /row -->
-								</div>
+								</div> --}}
 								<!-- /step-->
 
 								 <div class="step">
-									<h3 class="main_question"><strong>2/3</strong>Informasi Keanggotaan</h3>
+									<h3 class="main_question"><strong>2/3</strong>Informasi Keanggotaan PMI</h3>
 									<div class="row">
 										<div class="col-md-12">
 											<div class="form-group">
-												<input type="text" name="mis_peserta" class="form-control required" placeholder="MIS PMI">
+												<div class="styled-select">
+													<select class="required" name="role_peserta" id="role_peserta" required>
+														<option value="">-- PILIH PESERTA/PEMBINA --</option>
+														<option value="Peserta">PESERTA</option>
+														<option value="Pembina">PEMBINA</option>
+													</select>
+												</div>
 											</div>
 										</div>
+										{{-- <div class="col-md-6">
+											<div class="form-group radio_input">
+												<label><input type="radio" value="Peserta" checked name="role_peserta" class="icheck">PESERTA</label>
+												<label><input type="radio" value="Pembina" name="role_peserta" class="icheck">PEMBINA</label>
+											</div>
+										</div> --}}
 										<!-- /col-sm-12 -->
 									</div>
 									<!-- /row -->
@@ -162,18 +174,39 @@
 										<div class="col-md-12">
 											<div class="form-group">
 												<div class="styled-select">
-													<select class="required" name="unit_id" id="unit_id">
-														<option value="" selected>Unit PMI</option>
-														@foreach ($data_unit as $unit)
-															<option value="{{$unit->id_unit}}">{{$unit->nama_unit}}</option>
-														@endforeach
-														{{-- <option value="1">KSR Kecamatan Gondanglegi</option>
-														<option value="2">KSR Kecamatan Bululawang</option>
-														<option value="3">KSR Kecamatan Singosari</option>
-														<option value="4">KSR Kecamatan Turen</option> --}}
+													<select class="required" name="status_unit" id="status_unit">
+														<option value="">-- PILIH KSR/MULA/MADYA/WIRA --</option>
+														<option value="KSR">KSR</option>
+														<option value="MULA">MULA</option>
+														<option value="MADYA">MADYA</option>
+														<option value="WIRA">WIRA</option>
 													</select>
 												</div>
 											</div>
+										</div>
+										<div class="col-md-12">
+											<div class="form-group">
+												<div class="styled-select">
+													<select class="required" name="unit_id" id="unit_id">
+														<option value="" selected>-- PILIH KONTINGEN PMI --</option>
+														@foreach ($data_unit as $unit)
+															<option value="{{$unit->id_unit}}">{{$unit->nama_unit}}</option>
+														@endforeach
+													</select>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">											
+											<div class="form-group">
+												<input type="text" name="mis_peserta" class="form-control required" placeholder="MIS PMI">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">
+											<span>*Jika Kontingen Tidak Ada, <b>Segera Hubungi Panitia !</b></span>
 										</div>
 									</div>
 									<!-- /row -->
@@ -181,15 +214,23 @@
 								<!-- /step-->
 
 								<div class="submit step">
-									<h3 class="main_question"><strong>3/3</strong>Upload File</h3>
+									<h3 class="main_question"><strong>3/3</strong>Upload File*</h3>
 									<div class="col-md-12">
                                         <div class="form-group">
+											<span>1. File Surat Tugas <b>*Khusus Pembina Kontingen</b></span><br>
                                             <input type="file" name="kta_peserta" id="kta_peserta" class="form-control" placeholder="Upload File KTA">
+                                        </div>
+                                    </div>
+									<div class="col-md-12">
+                                        <div class="form-group">
+											<span>2. File Surat Keterangan Sehat</span><br>
+                                            <input type="file" name="suratsehat_peserta" id="suratsehat_peserta" class="form-control" placeholder="Upload File KTA" required>
                                         </div>
                                     </div>
 									<div class="form-group terms">
 										<input name="terms" type="checkbox" class="icheck required" value="yes">
 										<label>Please accept <a href="#" data-bs-toggle="modal" data-bs-target="#terms-txt">terms and conditions</a> ?</label>
+										<br><br><span><b>*Lek guduk pembina gausa ngeyel upload surat tugas sat !</b></span>
 									</div>
 								</div>
 								<!-- /step-->
@@ -219,7 +260,8 @@
 		</ul>
 	</footer>
 	<!-- end footer-->
-	
+
+
 	<div class="cd-overlay-nav">
 		<span></span>
 	</div>
@@ -292,5 +334,38 @@
 	<script src="{{asset('template/form/js/functions.js')}}"></script>
 	<!-- Sweet Alert script -->
 	@include('sweetalert::alert')
+	<!-- JS Select Unit -->
+	<script>
+		$("select#status_unit").change(function(event){
+			event.preventDefault();
+			var status = $(this).children("option:selected").val();
+			$.ajax({
+				url: "/unit/getUnitByStatusUnits/"+status,
+				method: 'GET',
+				success: function(data){
+					// console.log(data);
+					var select = document.getElementById("unit_id");
+					var length = select.options.length;
+					for (i = length-1; i >= 0; i--){
+						select.options[i] = null;
+					}
+					$('select[name="unit_id"]')
+						.append($('<option />') // create new <option> element
+							.text("-- PILIH KONTINGEN PMI --")
+							.prop('selected', false) // Mark it Selected
+						);
+					for (a = 0; a <data.length; a++){
+						console.log(data[a].unit_id);
+						$('select[name="unit_id"]')
+							.append($('<option />')
+							.val(data[a].id_unit)
+							.text(data[a].nama_unit)
+							.prop('selected',false)
+						);
+					}
+				}
+			});
+		});
+	</script>
 </body>
 </html>

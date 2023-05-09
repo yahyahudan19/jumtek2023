@@ -51,7 +51,7 @@ class AuthController extends Controller
     //Register Process
     public function doregister(Request $request){
 
-        // dd($request);
+        // dd($request->all());
 
         $cekPeserta = User::where([
             ['email', '=', $request->email_peserta],
@@ -77,7 +77,7 @@ class AuthController extends Controller
                 $token = Str::random(10);
                 
                 $user = User::create([
-                    "role" => "Peserta",
+                    "role" => $request->role_peserta,
                     "name" => $request->nama_peserta,
                     "email" => $request->email_peserta,
                     "remember_token" => $token,
@@ -126,11 +126,13 @@ class AuthController extends Controller
                 
             }
         }
-        
-       
-
-       
 
         
+    }
+    
+    // GET Units by Status Units
+    public function getUnitsByStatus($status_units){
+        $unit = Unit::where('status_units',$status_units)->get();
+        return $unit;
     }
 }

@@ -132,7 +132,10 @@ class PanitiaController extends Controller
     public function unit()
     {
         $data_unit_ksr = Unit::where(['status_unit' =>'KSR'])->get()->all();
-        $data_unit_pmr = Unit::where(['status_unit' =>'PMR'])->get()->all();
+
+        $data_unit_mula = Unit::where(['status_units' =>'MULA'])->get()->all();
+        $data_unit_wira = Unit::where(['status_units' =>'MADYA'])->get()->all();
+        $data_unit_madya = Unit::where(['status_units' =>'WIRA'])->get()->all();
 
 
         $jumlah_unit = Unit::all()->count();
@@ -144,13 +147,13 @@ class PanitiaController extends Controller
         ])->count();
         $jumlah_peserta = Peserta::all()->count();
 
-        return view('panitia.unit',compact('data_unit_ksr','data_unit_pmr','jumlah_unit','jumlah_peserta','jumlah_ksr','jumlah_pmr'));
+        return view('panitia.unit',compact('data_unit_ksr','data_unit_mula','data_unit_madya','data_unit_wira','jumlah_unit','jumlah_peserta','jumlah_ksr','jumlah_pmr'));
     }
     // Tambah Unit 
     public function tambahUnit(Request $request){
         $cek_unit = Unit::where([
             ['nama_unit','=', $request->nama_unit],
-            ['status_unit','=', $request->status_unit]
+            ['status_unit','=', $request->status_units]
         ])->first();  
         
         if($cek_unit){
@@ -159,7 +162,7 @@ class PanitiaController extends Controller
         }else{
             $unit = Unit::create([
                 "nama_unit" => $request->nama_unit,
-                "status_unit" => $request->status_unit,
+                "status_unit" => $request->status_units,
             ]);
 
             if($unit){

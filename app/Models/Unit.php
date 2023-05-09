@@ -11,7 +11,7 @@ class Unit extends Model
 
     protected $table = 'units';
     protected $primaryKey = 'id_unit';
-    protected $fillable = ['nama_unit','status_unit'];
+    protected $fillable = ['nama_unit','status_units'];
     
     public function peserta()
     {
