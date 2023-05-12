@@ -42,6 +42,7 @@
                 </a>
             </li>
             @endif
+
             @if(auth()->user()->role == 'Peserta')
             <li><a href="/dashboard" class="ai-icon" aria-expanded="false">
                     <i class="flaticon-381-networking"></i>
@@ -56,6 +57,21 @@
             </li>
             @endif
             @endif
+
+
+            @if(auth()->user()->role == 'Pembina')
+            <li><a href="/dashboard" class="ai-icon" aria-expanded="false">
+                    <i class="flaticon-381-networking"></i>
+                    <span class="nav-text">Dashboard</span>
+                </a>
+            </li>
+            <li><a href="/dashboard/pembina/peserta" class="ai-icon" aria-expanded="false">
+                    <i class="flaticon-381-user-9"></i>
+                    <span class="nav-text">Peserta</span>
+                </a>
+            </li>
+            @endif
+
         </ul>
         {{-- <div class="copyright">
             <p><strong>Jumtek <?php echo date("Y");?> Dashboard</strong> © <?php echo date("Y");?> All Rights Reserved</p>

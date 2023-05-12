@@ -11,6 +11,6 @@ class Kegiatan extends Model
 
     protected $table = 'kegiatans';
     protected $primaryKey = 'id_kegiatan';
-    protected $fillable = ['nama_kegiatan','jenis_kegiatan','waktu_kegiatan','lokasi_kegiatan','detail_kegiatan'];
+    protected $fillable = ['nama_kegiatan','jenis_kegiatan','tingkat_kegiatan','tanggal_kegiatan','waktu_kegiatan','detail_kegiatan','status_kegiatan'];
 
 }

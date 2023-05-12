@@ -19,9 +19,16 @@ Route::get('/', function () {
 });
 
 // PESERTA ROUTES
-Route::middleware(['auth','checkRole:Peserta,Panitia'])->group(function () {
+Route::middleware(['auth','checkRole:Peserta,Panitia,Pembina'])->group(function () {
     Route::get('/dashboard','\App\Http\Controllers\PanitiaController@index');
     Route::get('/dashboard/profile','\App\Http\Controllers\PanitiaController@profile');
+});
+
+// PEMBINA ROUTES
+Route::middleware(['auth','checkRole:Pembina'])->group(function () {
+
+    //GET Peserta By Unit
+    Route::get('/dashboard/pembina/peserta','\App\Http\Controllers\PembinaController@peserta');
 });
 
 // PANITIA ROUTES
@@ -37,7 +44,8 @@ Route::post('/unit/tambah','\App\Http\Controllers\PanitiaController@tambahUnit')
 Route::get('/unit/hapus/{id_unit}','\App\Http\Controllers\PanitiaController@hapusUnit');
 //IMPORT Unit
 Route::post('/unit/import','\App\Http\Controllers\PanitiaController@importUnit');
-
+//DETAIL Unit
+Route::get('/dashboard/unit/{id_unit}','\App\Http\Controllers\PanitiaController@detailUnit');
 
 
 //GET Peserta
@@ -56,7 +64,9 @@ Route::post('/peserta/update','\App\Http\Controllers\PanitiaController@updatePes
 
 //GET Kegiatan
 Route::get('/dashboard/kegiatan','\App\Http\Controllers\PanitiaController@kegiatan');
-
+Route::post('/kegiatan/tambah','\App\Http\Controllers\PanitiaController@tambahKegiatan');
+Route::get('/kegiatan/aktif/{id}','\App\Http\Controllers\PanitiaController@aktifKegiatan');
+Route::get('/kegiatan/nonaktif/{id}','\App\Http\Controllers\PanitiaController@nonaktifKegiatan');
 
 });
 

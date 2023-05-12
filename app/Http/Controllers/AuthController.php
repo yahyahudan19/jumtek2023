@@ -51,7 +51,7 @@ class AuthController extends Controller
     //Register Process
     public function doregister(Request $request){
 
-        // dd($request->all());
+        // dd($request->all());    
 
         $cekPeserta = User::where([
             ['email', '=', $request->email_peserta],
@@ -66,13 +66,13 @@ class AuthController extends Controller
             Alert::error('Register Gagal !','Kamu Sudah Daftar Sepertinya !');
             return redirect()->back();
         }else{
-            if($request->hasFile('kta_peserta')) {
+            if($request->hasFile('suratsehat_peserta')) {
 
                 $request->validate([
-                    'kta_peserta' => 'required|max:2048|mimes:png,jpg,jpg,jpeg'
+                    'suratsehat_peserta' => 'required|max:2048|mimes:png,jpg,jpg,jpeg'
                 ]);
     
-                $request->file('kta_peserta')->move('file_kta/',$request->file('kta_peserta')->getClientOriginalName());
+                $request->file('suratsehat_peserta')->move('file_suratsehat/',$request->file('suratsehat_peserta')->getClientOriginalName());
                 
                 $token = Str::random(10);
                 
@@ -96,23 +96,49 @@ class AuthController extends Controller
                     $qrcode_peserta = '/qr-code/img/img-' .$request->mis_peserta . '.png';
                     Storage::disk('public')->put($qrcode_peserta, $image); 
 
+                    if($request->role_peserta == 'Peserta'){
+                        $peserta = Peserta::create([
+                            "user_id" => $userID,
+                            "nama_peserta" => $request->nama_peserta,
+                            "alamat_peserta" => $request->alamat_peserta,
+                            "role_peserta" => $request->role_peserta,
+                            "jenisk_peserta" => $request->jenisk_peserta,
+                            "unit_id" => $request->unit_id,
+                            "mis_peserta" => $request->mis_peserta,
+                            "qrcode_peserta" => $qrcode_peserta,
+                            "status_peserta" => "Tidak Aktif",
+                            "suratsehat_peserta" =>  $request->file('suratsehat_peserta')->getClientOriginalName(),
+                        ]);
+                        Alert::success('Register Berhasil','Silahkan Login Ya ');
+                        return redirect('/login');
+                    }else{
 
-                    $peserta = Peserta::create([
-                        "user_id" => $userID,
-                        "nama_peserta" => $request->nama_peserta,
-                        "alamat_peserta" => $request->alamat_peserta,
-                        "jenisk_peserta" => $request->jenisk_peserta,
-                        "unit_id" => $request->unit_id,
-                        "mis_peserta" => $request->mis_peserta,
-                        "qrcode_peserta" => $qrcode_peserta,
-                        "status_peserta" => "Tidak Aktif",
-                        "kta_peserta" =>  $request->file('kta_peserta')->getClientOriginalName(),
-                    ]);
-                    
+                        // dd($request->all());    
+                        
+                        // $request->validate([
+                        //     'surattugas_pembina' => 'required|max:2048|mimes:png,jpg,jpg,jpeg'
+                        // ]);
+            
+                        $request->file('surattugas_pembina')->move('file_surattugas/',$request->file('surattugas_pembina')->getClientOriginalName());
+
+                        $peserta = Peserta::create([
+                            "user_id" => $userID,
+                            "nama_peserta" => $request->nama_peserta,
+                            "alamat_peserta" => $request->alamat_peserta,
+                            "jenisk_peserta" => $request->jenisk_peserta,
+                            "role_peserta" => $request->role_peserta,
+                            "unit_id" => $request->unit_id,
+                            "mis_peserta" => $request->mis_peserta,
+                            "qrcode_peserta" => $qrcode_peserta,
+                            "status_peserta" => "Aktif",
+                            "suratsehat_peserta" =>  $request->file('suratsehat_peserta')->getClientOriginalName(),
+                            "surattugas_pembina" =>  $request->file('surattugas_pembina')->getClientOriginalName(),
+                        ]);
+                        Alert::success('Register Berhasil','Silahkan Login Ya ');
+                        return redirect('/login');
+                    }
                     // dd($peserta);
-
                     Alert::success('Register Berhasil','Silahkan Login Ya ');
-                    
                     return redirect('/login');
                 }else{
                     Alert::error('Register Gagal','Pastikan Data Lengkap Ya !');

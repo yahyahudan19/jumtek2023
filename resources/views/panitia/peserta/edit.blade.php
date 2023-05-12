@@ -2,41 +2,13 @@
 @section('content')
 <div class="content-body">
     <div class="container-fluid">
-        <!-- Add Order -->
-        <div class="modal fade" id="addOrderModalside">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Add Event</h5>
-                        <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="form-group">
-                                <label class="text-black font-w500">Event Name</label>
-                                <input type="text" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label class="text-black font-w500">Event Date</label>
-                                <input type="date" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label class="text-black font-w500">Description</label>
-                                <input type="text" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <button type="button" class="btn btn-primary">Create</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="page-titles">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/dashboard/peserta">Peserta</a></li>
                 <li class="breadcrumb-item active"><a href="javascript:void(0)">Detail</a></li>
+                <li class="breadcrumb-item" ><a href="/dashboard/peserta"><td class="py-2 text-right"><span class="badge badge-warning">Kembali<span
+                    class="ml-1 fa fa-arrow-left"></span></span></a>
+                </td></li>
             </ol>
         </div>
         <!-- row -->
@@ -51,7 +23,7 @@
                             <form class="form-valide" action="/peserta/update/" method="POST" enctype="multipart/form-data">
                                 {{ csrf_field() }}
                                 <div class="row">
-                                    <div class="col-xl-12">
+                                    <div class="col-xl-8">
                                         <div class="form-group row">
                                             <label class="col-lg-4 col-form-label" for="mis_peserta">MIS PMI
                                                 <span class="text-danger">*</span>
@@ -87,10 +59,10 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="file_kta">KTA Peserta
+                                            <label class="col-lg-4 col-form-label" for="file_suratsehat">Surat Sehat
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="file" class="form-control" id="file_kta" name="file_kta" value="..and confirm it!">
+                                                <input type="file" class="form-control" id="file_suratsehat" name="file_suratsehat" value="..and confirm it!">
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -99,94 +71,17 @@
                                             </div>
                                         </div>
                                     </div>
-                                    {{-- <div class="col-xl-6">
+                                    <div class="col-xl-4">
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val-skill">Best Skill
-                                                <span class="text-danger">*</span>
-                                            </label>
-                                            <div class="col-lg-6">
-                                                <select class="form-control default-select" id="val-skill" name="val-skill">
-                                                    <option value="">Please select</option>
-                                                    <option value="html">HTML</option>
-                                                    <option value="css">CSS</option>
-                                                    <option value="javascript">JavaScript</option>
-                                                    <option value="angular">Angular</option>
-                                                    <option value="angular">React</option>
-                                                    <option value="vuejs">Vue.js</option>
-                                                    <option value="ruby">Ruby</option>
-                                                    <option value="php">PHP</option>
-                                                    <option value="asp">ASP.NET</option>
-                                                    <option value="python">Python</option>
-                                                    <option value="mysql">MySQL</option>
-                                                </select>
-                                            </div>
+                                            <label class="col-lg-4 col-form-label" for="val-skill">QR Code</label>
+                                            <a href="/storage{{$peserta->qrcode_peserta}}" target="_blank"><span class="badge badge-danger">Lihat<span class="ml-1 fa fa-eye"></span></span></a>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val-currency">Currency
-                                                <span class="text-danger">*</span>
-                                            </label>
-                                            <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val-currency" name="val-currency" placeholder="$21.60">
-                                            </div>
+                                            <label class="col-lg-4 col-form-label" for="val-skill">Surat Sehat</label>
+                                            <a href="/file_suratsehat/{{$peserta->suratsehat_peserta}}" target="_blank"><span class="badge badge-warning">Lihat<span class="ml-1 fa fa-eye"></span></span></a>
                                         </div>
-                                        <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val-website">Website
-                                                <span class="text-danger">*</span>
-                                            </label>
-                                            <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val-website" name="val-website" placeholder="http://example.com">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val-phoneus">Phone (US)
-                                                <span class="text-danger">*</span>
-                                            </label>
-                                            <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val-phoneus" name="val-phoneus" placeholder="212-999-0000">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val-digits">Digits <span
-                                                    class="text-danger">*</span>
-                                            </label>
-                                            <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val-digits" name="val-digits" placeholder="5">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val-number">Number <span
-                                                    class="text-danger">*</span>
-                                            </label>
-                                            <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val-number" name="val-number" placeholder="5.0">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val-range">Range [1, 5]
-                                                <span class="text-danger">*</span>
-                                            </label>
-                                            <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val-range" name="val-range" placeholder="4">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label"><a
-                                                    href="javascript:void()">Terms &amp; Conditions</a> <span
-                                                    class="text-danger">*</span>
-                                            </label>
-                                            <div class="col-lg-8">
-                                                <label class="css-control css-control-primary css-checkbox" for="val-terms">
-                                                    <input type="checkbox" class="css-control-input mr-2"
-                                                        id="val-terms" name="val-terms" value="1">
-                                                    <span class="css-control-indicator"></span> I agree to the
-                                                    terms</label>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-lg-8 ml-auto">
-                                                <button type="submit" class="btn btn-primary">Submit</button>
-                                            </div>
-                                        </div>
+                                    </div>
+                                    {{-- <div class="col-xl-4">
                                     </div> --}}
                                 </div>
                             </form>

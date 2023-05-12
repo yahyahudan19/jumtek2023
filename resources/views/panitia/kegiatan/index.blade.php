@@ -55,8 +55,8 @@
                     
                 </div>
                 {{-- Modal Tambah Unit  --}}
-                <div class="modal fade" id="tambahModalPeserta">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
+                {{-- <div class="modal fade" id="tambahModalPeserta">
+                    <div class="modal-dialog modal-dialog-centered-lg" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title">Tambah Unit</h5>
@@ -65,28 +65,112 @@
                             </div>
                             <div class="card-body">
                                 <div class="basic-form">
-                                    <form method="POST" action="/unit/tambah">
+                                    <form>
                                         {{ csrf_field() }}
                                         <div class="form-row">
-                                            <div class="form-group col-md-12">
-                                                <label>Nama Unit</label>
-                                                <input type="text" name="nama_unit" class="form-control" placeholder="Nama Unit" required>
+                                            <div class="form-group col-md-6">
+                                                <label>First Name</label>
+                                                <input type="text" class="form-control" placeholder="1234 Main St">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label>Email</label>
+                                                <input type="email" class="form-control" placeholder="Email">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label>Password</label>
+                                                <input type="password" class="form-control" placeholder="Password">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label>City</label>
+                                                <input type="text" class="form-control">
                                             </div>
                                         </div>
                                         <div class="form-row">
-                                            <div class="form-group col-md-12">
-                                                <label>KSR/PMR</label>
-                                                <select id="status_unit" name="status_unit" class="btn btn-primary light btn-rounded form-control default-select" required>
+                                            <div class="form-group col-md-4">
+                                                <label>State</label>
+                                                <select id="inputState" class="btn btn-primary light btn-rounded form-control default-select">
                                                     <option selected>Choose...</option>
-                                                    <option value="KSR">KSR</option>
-                                                    <option value="PMR">PMR</option>
+                                                    <option>Option 1</option>
+                                                    <option>Option 2</option>
+                                                    <option>Option 3</option>
                                                 </select>
                                             </div>
+                                            <div class="form-group col-md-2">
+                                                <label>Zip</label>
+                                                <input type="text" class="form-control">
+                                            </div>
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Tambah</button>
+                                        <div class="form-group">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox">
+                                                <label class="form-check-label">
+                                                    Check me out
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Sign in</button>
                                     </form>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div> --}}
+
+                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" id="tambahModalPeserta">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <form method="POST" action="/kegiatan/tambah">
+                                {{ csrf_field() }}
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Form Tambah Kegiatan</h5>
+                                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                                    </button>
+                                </div>
+                                <div class="card-body">
+                                    <div class="basic-form">
+                                            <div class="form-row">
+                                                <div class="form-group col-md-12">
+                                                    <label>Nama Kegiatan</label>
+                                                    <input type="text" class="form-control" id="nama_kegiatan" name="nama_kegiatan" required>
+                                                </div>
+                                                <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
+                                                    <label>Tanggal Kegiatan</label>
+                                                    <input type="text" id="mdate" name="tanggal_kegiatan" class="form-control" placeholder="Ini Tanggal">
+                                                </div>
+                                                <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
+                                                    <label>Waktu Kegiatan</label>
+                                                    <input type="text" id="timepicker" name="waktu_kegiatan" class="form-control" placeholder="Ini Waktu">
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label>Jenis Kegiatan</label>
+                                                    <select id="jenis_kegiatan" name="jenis_kegiatan" class="btn btn-primary light btn-rounded form-control default-select" required>
+                                                        <option selected>Choose...</option>
+                                                        <option value="Jumbara">Jumbara</option>
+                                                        <option value="Temu Karya">Temu Karya</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label>Tingkat Kegiatan</label>
+                                                    <select id="jenis_kegiatan" name="jenis_kegiatan" class="btn btn-primary light btn-rounded form-control default-select" required>
+                                                        <option selected>Choose...</option>
+                                                        <option value="KSR">KSR</option>
+                                                        <option value="WIRA">WIRA</option>
+                                                        <option value="MADYA">MADYA</option>
+                                                        <option value="MULA">MULA</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group col-md-12">
+                                                    <label>Detail Kegiatan</label>
+                                                    <textarea type="text" class="form-control" name="detail_kegiatan" required></textarea>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger light" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Tambah</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -137,6 +221,7 @@
                                         <tr>
                                             <th>Nama</th>
                                             <th>Jenis</th>
+                                            <th>Tanggal</th>
                                             <th>Waktu</th>
                                             <th>Tingkat</th>
                                             <th>Status</th>
@@ -148,7 +233,8 @@
                                         <tr>
                                             <td>{{$kegiatan->nama_kegiatan}}</a></td>
                                             <td>{{$kegiatan->jenis_kegiatan}}</td>
-                                            <td>{{ \Carbon\Carbon::parse($kegiatan->tanggal_kegiatan)->format('d M Y H:i') }}</td>
+                                            <td>{{ \Carbon\Carbon::parse($kegiatan->tanggal_kegiatan)->format('d M Y') }}</td>
+                                            <td>{{ \Carbon\Carbon::parse($kegiatan->waktu_kegiatan)->format('H:i')}} WIB</td>
                                             <td>{{$kegiatan->tingkat_kegiatan}}</td>
                                             @if (($kegiatan->status_kegiatan == 'Aktif'))
                                                 <td class="py-2 text-right"><span class="badge badge-success">Aktif<span class="ml-1 fa fa-check"></span></span></td>                                                

@@ -14,6 +14,19 @@
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 	 <!-- Datatable -->
 	 <link href="{{asset('template/dashboard/vendor/datatables/css/jquery.dataTables.min.css')}}" rel="stylesheet">
+	 <!-- Pick date -->
+	 <link rel="stylesheet" href="{{asset('template/dashboard/vendor/pickadate/themes/default.css')}}">
+	 <link rel="stylesheet" href="{{asset('template/dashboard/vendor/pickadate/themes/default.date.css')}}">
+	<!-- Daterange picker -->
+    <link href="{{asset('template/dashboard/vendor/bootstrap-daterangepicker/daterangepicker.css')}}" rel="stylesheet">
+    <!-- Clockpicker -->
+    <link href="{{asset('template/dashboard/vendor/clockpicker/css/bootstrap-clockpicker.min.css')}}" rel="stylesheet">
+    <!-- asColorpicker -->
+    <link href="{{asset('template/dashboard/vendor/jquery-asColorPicker/css/asColorPicker.min.css')}}" rel="stylesheet">
+    <!-- Material color picker -->
+    <link href="{{asset('template/dashboard/vendor/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css')}}" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 <body>
 
@@ -636,6 +649,36 @@
 	  <script src="{{asset('template/dashboard/vendor/jquery-validation/jquery.validate.min.js')}}"></script>
 	  <!-- Form validate init -->
 	  <script src="{{asset('template/dashboard/js/plugins-init/jquery.validate-init.js')}}"></script>
+
+	 <!-- Daterangepicker -->
+    <!-- momment js is must -->
+    <script src="{{asset('template/dashboard/vendor/moment/moment.min.js')}}"></script>
+    <script src="{{asset('template/dashboard/vendor/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
+    <!-- clockpicker -->
+    <script src="{{asset('template/dashboard/vendor/clockpicker/js/bootstrap-clockpicker.min.js')}}"></script>
+    <!-- asColorPicker -->
+    <script src="{{asset('template/dashboard/vendor/jquery-asColor/jquery-asColor.min.js')}}"></script>
+    <script src="{{asset('template/dashboard/vendor/jquery-asGradient/jquery-asGradient.min.js')}}"></script>
+    <script src="{{asset('template/dashboard/vendor/jquery-asColorPicker/js/jquery-asColorPicker.min.js')}}"></script>
+    <!-- Material color picker -->	
+    <script src="{{asset('template/dashboard/vendor/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js')}}"></script>
+    <!-- pickdate -->
+    <script src="{{asset('template/dashboard/vendor/pickadate/picker.js')}}"></script>
+    <script src="{{asset('template/dashboard/vendor/pickadate/picker.time.js')}}"></script>
+    <script src="{{asset('template/dashboard/vendor/pickadate/picker.date.js')}}"></script>
+
+
+
+    <!-- Daterangepicker -->
+    <script src="{{asset('template/dashboard/js/plugins-init/bs-daterange-picker-init.js')}}"></script>
+    <!-- Clockpicker init -->
+    <script src="{{asset('template/dashboard/js/plugins-init/clock-picker-init.js')}}"></script>
+    <!-- asColorPicker init -->
+    <script src="{{asset('template/dashboard/js/plugins-init/jquery-asColorPicker.init.js')}}"></script>
+    <!-- Material color picker init -->
+    <script src="{{asset('template/dashboard/js/plugins-init/material-date-picker-init.js')}}"></script>
+    <!-- Pickdate -->
+    <script src="{{asset('template/dashboard/js/plugins-init/pickadate-init.js')}}"></script>
 	
 	<script>
 		function carouselReview(){

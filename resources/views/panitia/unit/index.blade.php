@@ -99,6 +99,17 @@
                                                     </select>
                                                 </div>
                                             </div>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-12">
+                                                    <label>*Jika PMR</label>
+                                                    <select id="status_units" name="status_units" class="btn btn-primary light btn-rounded form-control default-select" required>
+                                                        <option selected>Choose...</option>
+                                                        <option value="MULA">MULA</option>
+                                                        <option value="MADYA">MADYA</option>
+                                                        <option value="WIRA">WIRA</option>
+                                                    </select>
+                                                </div>
+                                            </div>
                                             <button type="submit" class="btn btn-primary">Tambah</button>
                                         </form>
                                     </div>
@@ -163,6 +174,7 @@
                                                 <td>{{$unit->status_unit}}</td>
                                                 <td>
 													<div class="d-flex">
+                                                        <a href="/dashboard/unit/{{$unit->id_unit}}" class="btn btn-success shadow btn-xs sharp mr-1"><i class="fa fa-eye color-success"></i></a>
 														<a href="#" class="btn btn-info shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
 														<a href="/unit/hapus/{{$unit->id_unit}}" class="btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-trash"></i></a>
 													</div>												
@@ -196,8 +208,9 @@
                                                 <td>{{$unit->nama_unit}}</a></td>
                                                 <td>{{$unit->status_unit}}</td>
                                                 <td>
-													<div class="d-flex">
-														<a href="#" class="btn btn-info shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+													<div class="d-flex">					
+														<a href="/dashboard/unit/{{$unit->id_unit}}" class="btn btn-success shadow btn-xs sharp mr-1"><i class="fa fa-eye color-success"></i></a>
+                                                        <a href="#" class="btn btn-info shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
 														<a href="/unit/hapus/{{$unit->id_unit}}" class="btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-trash"></i></a>
 													</div>												
 												</td>												
@@ -231,6 +244,7 @@
                                                 <td>{{$unit->status_unit}}</td>
                                                 <td>
 													<div class="d-flex">
+                                                        <a href="/dashboard/unit/{{$unit->id_unit}}" class="btn btn-success shadow btn-xs sharp mr-1"><i class="fa fa-eye color-success"></i></a>
 														<a href="#" class="btn btn-info shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
 														<a href="/unit/hapus/{{$unit->id_unit}}" class="btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-trash"></i></a>
 													</div>												
@@ -265,6 +279,7 @@
                                                 <td>{{$unit->status_unit}}</td>
                                                 <td>
 													<div class="d-flex">
+                                                        <a href="/dashboard/unit/{{$unit->id_unit}}" class="btn btn-success shadow btn-xs sharp mr-1"><i class="fa fa-eye color-success"></i></a>
 														<a href="#" class="btn btn-info shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
 														<a href="/unit/hapus/{{$unit->id_unit}}" class="btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-trash"></i></a>
 													</div>												

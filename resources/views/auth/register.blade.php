@@ -206,7 +206,7 @@
 									</div>
 									<div class="row">
 										<div class="col-md-12">
-											<span>*Jika Kontingen Tidak Ada, <b>Segera Hubungi Panitia !</b></span>
+											<span>*Jika Kontingen Tidak Ada, <br><b>Segera Hubungi Panitia !</b></span>
 										</div>
 									</div>
 									<!-- /row -->
@@ -218,19 +218,19 @@
 									<div class="col-md-12">
                                         <div class="form-group">
 											<span>1. File Surat Tugas <b>*Khusus Pembina Kontingen</b></span><br>
-                                            <input type="file" name="kta_peserta" id="kta_peserta" class="form-control" placeholder="Upload File KTA">
+                                            <input type="file" name="surattugas_pembina" id="surattugas_pembina" class="form-control" placeholder="Upload Surat Tugas">
                                         </div>
                                     </div>
 									<div class="col-md-12">
                                         <div class="form-group">
 											<span>2. File Surat Keterangan Sehat</span><br>
-                                            <input type="file" name="suratsehat_peserta" id="suratsehat_peserta" class="form-control" placeholder="Upload File KTA" required>
+                                            <input type="file" name="suratsehat_peserta" id="suratsehat_peserta" class="form-control" placeholder="Upload Surat Sehat	" required>
                                         </div>
                                     </div>
 									<div class="form-group terms">
 										<input name="terms" type="checkbox" class="icheck required" value="yes">
 										<label>Please accept <a href="#" data-bs-toggle="modal" data-bs-target="#terms-txt">terms and conditions</a> ?</label>
-										<br><br><span><b>*Lek guduk pembina gausa ngeyel upload surat tugas sat !</b></span>
+										{{-- <br><br><span><b>*Lek guduk pembina gausa ngeyel upload surat tugas sat !</b></span> --}}
 									</div>
 								</div>
 								<!-- /step-->
