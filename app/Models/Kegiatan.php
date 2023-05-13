@@ -13,4 +13,9 @@ class Kegiatan extends Model
     protected $primaryKey = 'id_kegiatan';
     protected $fillable = ['nama_kegiatan','jenis_kegiatan','tingkat_kegiatan','tanggal_kegiatan','waktu_kegiatan','detail_kegiatan','status_kegiatan'];
 
+    public function kegiatan_peserta()
+    {
+        return $this->hasMany(Kegiatan_Peserta::class);
+    }
+
 }

@@ -163,7 +163,6 @@
                                         <thead>
                                             <tr>
                                                 <th>Nama Unit</th>
-                                                <th>KSR/PMR</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -171,7 +170,6 @@
                                             @foreach ($data_unit_ksr as $unit)
                                             <tr>
                                                 <td>{{$unit->nama_unit}}</a></td>
-                                                <td>{{$unit->status_unit}}</td>
                                                 <td>
 													<div class="d-flex">
                                                         <a href="/dashboard/unit/{{$unit->id_unit}}" class="btn btn-success shadow btn-xs sharp mr-1"><i class="fa fa-eye color-success"></i></a>
@@ -198,7 +196,6 @@
                                         <thead>
                                             <tr>
                                                 <th>Nama Unit</th>
-                                                <th>KSR/PMR</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -206,7 +203,6 @@
                                             @foreach ($data_unit_mula as $unit)
                                             <tr>
                                                 <td>{{$unit->nama_unit}}</a></td>
-                                                <td>{{$unit->status_unit}}</td>
                                                 <td>
 													<div class="d-flex">					
 														<a href="/dashboard/unit/{{$unit->id_unit}}" class="btn btn-success shadow btn-xs sharp mr-1"><i class="fa fa-eye color-success"></i></a>
@@ -233,7 +229,6 @@
                                         <thead>
                                             <tr>
                                                 <th>Nama Unit</th>
-                                                <th>KSR/PMR</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -241,7 +236,6 @@
                                             @foreach ($data_unit_madya as $unit)
                                             <tr>
                                                 <td>{{$unit->nama_unit}}</a></td>
-                                                <td>{{$unit->status_unit}}</td>
                                                 <td>
 													<div class="d-flex">
                                                         <a href="/dashboard/unit/{{$unit->id_unit}}" class="btn btn-success shadow btn-xs sharp mr-1"><i class="fa fa-eye color-success"></i></a>
@@ -268,7 +262,6 @@
                                         <thead>
                                             <tr>
                                                 <th>Nama Unit</th>
-                                                <th>KSR/PMR</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -276,7 +269,6 @@
                                             @foreach ($data_unit_wira as $unit)
                                             <tr>
                                                 <td>{{$unit->nama_unit}}</a></td>
-                                                <td>{{$unit->status_unit}}</td>
                                                 <td>
 													<div class="d-flex">
                                                         <a href="/dashboard/unit/{{$unit->id_unit}}" class="btn btn-success shadow btn-xs sharp mr-1"><i class="fa fa-eye color-success"></i></a>

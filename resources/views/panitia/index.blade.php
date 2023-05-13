@@ -17,7 +17,7 @@
                 @else
                 <div class="card text-white bg-danger">
                     <div class="card-body mb-0">
-                        <p class="card-text"></p>Akun-mu Belum Aktif, Segera <a href="javascript:void(0)" class="btn btn-danger light btn-card">Hubungi Panitia !</a>
+                        <p class="card-text"></p>Akunmu Belum Aktif  <a href="javascript:void(0)" class="btn btn-danger light btn-card"> Masih dalam Proses Verifikasi !</a>
                     </div>
                 </div>
                 @endif
@@ -113,6 +113,7 @@
                     </div>
                 @endif
             </div>
+            @if ($data_peserta->status_peserta == 'Aktif')
             <div class="row">
                 <div class="col-xl-12 col-xxl-12">
                     <div class="row">
@@ -182,6 +183,7 @@
                     </div>
                 </div>
             </div>
+            @endif
     </div>
 </div>
 @endif
@@ -314,10 +316,10 @@
                                             <div class="info">
                                                 <p class="fs-18 font-w600"><a href="event-detail.html" class="text-black">{{$kegiatan->nama_kegiatan}}</a></p>
                                                 <span class="fs-14 text-black d-block mb-3">{{$kegiatan->jenis_kegiatan}} | 
-                                                    @if ($kegiatan->tingkat_kegiatan == 'PMR')
-                                                        <td class="py-2 text-right"><span class="badge badge-success">{{$kegiatan->tingkat_kegiatan}}<span class="ml-1 fa fa-check"></span></span><td>
+                                                    @if ($kegiatan->tingkat_kegiatan == 'KSR')
+                                                        <td class="py-2 text-right"><span class="badge badge-success">{{$kegiatan->tingkat_kegiatan}}<span class="ml-1 fa fa-plus"></span></span><td>
                                                     @else
-                                                        <td class="py-2 text-right"><span class="badge badge-info">{{$kegiatan->tingkat_kegiatan}}<span class="ml-1 fa fa-check"></span></span><td>
+                                                        <td class="py-2 text-right"><span class="badge badge-info">{{$kegiatan->tingkat_kegiatan}}<span class="ml-1 fa fa-plus"></span></span><td>
                                                     @endif
                                                 </span>
                                                 <p class="fs-12">{{$kegiatan->detail_kegiatan}}</p>
@@ -448,12 +450,12 @@
                                                 <p class="fs-18 font-w600"><a href="event-detail.html" class="text-black">{{$kegiatan->nama_kegiatan}}</a></p>
                                                 <span class="fs-14 text-black d-block mb-3">{{$kegiatan->jenis_kegiatan}} | 
                                                     @if ($kegiatan->tingkat_kegiatan == 'PMR')
-                                                        <td class="py-2 text-right"><span class="badge badge-success">{{$kegiatan->tingkat_kegiatan}}<span class="ml-1 fa fa-check"></span></span><td>
+                                                        <td class="py-2 text-right"><span class="badge badge-success">{{$kegiatan->tingkat_kegiatan}}<span class="ml-1 fa fa-plus"></span></span><td>
                                                     @else
-                                                        <td class="py-2 text-right"><span class="badge badge-info">{{$kegiatan->tingkat_kegiatan}}<span class="ml-1 fa fa-check"></span></span><td>
+                                                        <td class="py-2 text-right"><span class="badge badge-info">{{$kegiatan->tingkat_kegiatan}}<span class="ml-1 fa fa-plus"></span></span><td>
                                                     @endif
                                                     @if ($kegiatan->status_kegiatan == 'Aktif')
-                                                        <td class="py-2 text-right"><span class="badge badge-success">Sedang Berjalan<span class="ml-1 fa fa-check"></span></span><td>
+                                                        <td class="py-2 text-right"><span class="badge badge-success">Sedang Berjalan<span class="ml-1 fa fa-plus"></span></span><td>
                                                     @endif
                                                 </span>
                                                 <p class="fs-12">{{$kegiatan->detail_kegiatan}}</p>

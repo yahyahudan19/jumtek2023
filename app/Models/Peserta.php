@@ -25,5 +25,10 @@ class Peserta extends Model
     {
         return $this->hasMany(Absensi::class);
     }
+    public function kegiatan_peserta()
+    {
+        return $this->hasMany(Kegiatan_Peserta::class);
+    }
+    
 }
 

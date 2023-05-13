@@ -55,6 +55,11 @@
                     <span class="nav-text">Profile</span>
                 </a>
             </li>
+             <li><a href="/dashboard/kegiatan/peserta" class="ai-icon" aria-expanded="false">
+                    <i class="flaticon-381-blueprint"></i>
+                    <span class="nav-text">Kegiatan</span>
+                </a>
+            </li>
             @endif
             @endif
 
