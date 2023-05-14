@@ -86,8 +86,10 @@ Route::post('/auth','\App\Http\Controllers\AuthController@login');
 Route::get('/register','\App\Http\Controllers\AuthController@register');
 Route::post('/doregister','\App\Http\Controllers\AuthController@doRegister');
 
+
 //GET Unit by StatusUnis
 Route::get('/unit/getUnitByStatusUnits/{status_units}','\App\Http\Controllers\AuthController@getUnitsByStatus')->name('getUnitsByStatus');
 
+Route::get('/qrgenerator','\App\Http\Controllers\AuthController@qrgenerator');
 
 

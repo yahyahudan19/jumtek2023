@@ -59,10 +59,10 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="file_suratsehat">Surat Sehat
+                                            <label class="col-lg-4 col-form-label" for="foto_peserta">Surat Sehat
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="file" class="form-control" id="file_suratsehat" name="file_suratsehat" value="..and confirm it!">
+                                                <input type="file" class="form-control" id="foto_peserta" name="foto_peserta" value="..and confirm it!">
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -77,8 +77,8 @@
                                             <a href="/storage{{$peserta->qrcode_peserta}}" target="_blank"><span class="badge badge-danger">Lihat<span class="ml-1 fa fa-eye"></span></span></a>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val-skill">Surat Sehat</label>
-                                            <a href="/file_suratsehat/{{$peserta->suratsehat_peserta}}" target="_blank"><span class="badge badge-warning">Lihat<span class="ml-1 fa fa-eye"></span></span></a>
+                                            <label class="col-lg-4 col-form-label" for="val-skill">Foto </label>
+                                            <a href="/file_foto/{{$peserta->foto_peserta}}" target="_blank"><span class="badge badge-warning">Lihat<span class="ml-1 fa fa-eye"></span></span></a>
                                         </div>
                                     </div>
                                     {{-- <div class="col-xl-4">

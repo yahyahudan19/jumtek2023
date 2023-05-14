@@ -154,7 +154,7 @@
                                                 <th>MIS PMI</th>
                                                 <th>Nama</th>
                                                 <th>Unit PMI</th>
-                                                <th>Surat Sehat</th>
+                                                <th>Foto</th>
                                                 {{-- <th>QR Code</th> --}}
                                                 <th>Status</th>
                                                 <th>Role</th>
@@ -169,7 +169,7 @@
                                                 <td>{{$peserta->unit->nama_unit}}</td>
                                                 {{-- <td><a href="/file_kta/{{$peserta->kta_peserta}}" target="_blank"><span class="badge badge-info"><i class="fa fa-eye color-info"></i></span></a></td> --}}
 												{{-- <td><a href="/file_suratsehat/{{$peserta->suratsehat_peserta}}"target="_blank" class="btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-eye color-info"></i></a></td> --}}
-                                                <td class="py-2 text-right"><a href="/file_suratsehat/{{$peserta->suratsehat_peserta}}" target="_blank"><span class="badge badge-danger">Lihat<span class="ml-1 fa fa-eye"></span></span></a>
+                                                <td class="py-2 text-right"><a href="/file_foto/{{$peserta->foto_peserta}}" target="_blank"><span class="badge badge-danger">Lihat<span class="ml-1 fa fa-eye"></span></span></a>
                                                 </td>		
 												{{-- <td><a href="/storage{{$peserta->qrcode_peserta}}"target="_blank" class="btn btn-success shadow btn-xs sharp mr-1"><i class="fa fa-eye color-success"></i></a></td>		 --}}
                                                 @if ($peserta->status_peserta == 'Aktif')

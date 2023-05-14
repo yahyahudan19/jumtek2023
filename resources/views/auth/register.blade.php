@@ -154,20 +154,14 @@
 											<div class="form-group">
 												<div class="styled-select">
 													<select class="required" name="role_peserta" id="role_peserta" required>
-														<option value="">-- PILIH PESERTA/PEMBINA --</option>
+														<option value="">-- PILIH PESERTA/PEMBINA/PIMPINAN --</option>
 														<option value="Peserta">PESERTA</option>
 														<option value="Pembina">PEMBINA</option>
+														<option value="Pimpinan">PIMPINAN</option>
 													</select>
 												</div>
 											</div>
 										</div>
-										{{-- <div class="col-md-6">
-											<div class="form-group radio_input">
-												<label><input type="radio" value="Peserta" checked name="role_peserta" class="icheck">PESERTA</label>
-												<label><input type="radio" value="Pembina" name="role_peserta" class="icheck">PEMBINA</label>
-											</div>
-										</div> --}}
-										<!-- /col-sm-12 -->
 									</div>
 									<!-- /row -->
 									<div class="row">
@@ -176,7 +170,7 @@
 												<div class="styled-select">
 													<select class="required" name="status_unit" id="status_unit">
 														<option value="">-- PILIH KSR/MULA/MADYA/WIRA --</option>
-														<option value="KSR">KSR</option>
+														<option value="KSR">KSR/TSR/SIBAT</option>
 														<option value="MULA">MULA</option>
 														<option value="MADYA">MADYA</option>
 														<option value="WIRA">WIRA</option>
@@ -223,8 +217,8 @@
                                     </div>
 									<div class="col-md-12">
                                         <div class="form-group">
-											<span>2. File Surat Keterangan Sehat</span><br>
-                                            <input type="file" name="suratsehat_peserta" id="suratsehat_peserta" class="form-control" placeholder="Upload Surat Sehat	" required>
+											<span>2. File Foto</span> <b>*Foto 4x6 dan Maksimal : 2 Mb</b><br>
+                                            <input type="file" name="foto_peserta" id="foto_peserta" class="form-control" placeholder="Upload Foto	" required>
                                         </div>
                                     </div>
 									<div class="form-group terms">

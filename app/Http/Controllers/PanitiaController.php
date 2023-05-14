@@ -54,10 +54,10 @@ class PanitiaController extends Controller
 
 
         try{
-            // Delete File Surat Sehat
-            $file_suratsehat = $data_peserta->suratsehat_peserta;
-            $file_path_suratsehat = public_path('file_suratsehat/' . $file_suratsehat);
-            unlink($file_path_suratsehat);
+            // Delete File Foto
+            $file_foto = $data_peserta->foto_peserta;
+            $file_path_foto= public_path('file_foto/' . $file_foto);
+            unlink($file_path_foto);
             // Delete File QR Code
             $file_qr = $data_peserta->qrcode_peserta;
             $file_path_qr = public_path('storage/' . $file_qr);

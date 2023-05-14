@@ -82,7 +82,7 @@
                                             <td>{{$peserta->mis_peserta}}</a></td>
                                             <td>{{$peserta->nama_peserta}}</td>
                                             {{-- <td><a href="/file_kta/{{$peserta->kta_peserta}}" target="_blank"><span class="badge badge-info"><i class="fa fa-eye color-info"></i></span></a></td> --}}
-                                            <td><a href="/file_suratsehat/{{$peserta->suratsehat_peserta}}"target="_blank" class="btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-eye color-info"></i></a></td>		
+                                            <td><a href="/file_foto/{{$peserta->foto_peserta}}"target="_blank" class="btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-eye color-info"></i></a></td>		
                                             <td><a href="/storage{{$peserta->qrcode_peserta}}"target="_blank" class="btn btn-success shadow btn-xs sharp mr-1"><i class="fa fa-eye color-success"></i></a></td>		
                                             @if ($peserta->status_peserta == 'Aktif')
                                             <td class="py-2 text-right"><span class="badge badge-success">Valid<span

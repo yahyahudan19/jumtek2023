@@ -66,13 +66,13 @@ class AuthController extends Controller
             Alert::error('Register Gagal !','Kamu Sudah Daftar Sepertinya !');
             return redirect()->back();
         }else{
-            if($request->hasFile('suratsehat_peserta')) {
+            if($request->hasFile('foto_peserta')) {
 
                 $request->validate([
-                    'suratsehat_peserta' => 'required|max:2048|mimes:png,jpg,jpg,jpeg'
+                    'foto_peserta' => 'required|max:2048|mimes:png,jpg,jpg,jpeg'
                 ]);
     
-                $request->file('suratsehat_peserta')->move('file_suratsehat/',$request->file('suratsehat_peserta')->getClientOriginalName());
+                $request->file('foto_peserta')->move('file_foto/',$request->file('foto_peserta')->getClientOriginalName());
                 
                 $token = Str::random(10);
                 
@@ -88,13 +88,40 @@ class AuthController extends Controller
 
                     $userID = DB::getPdo()->lastInsertId();
                     
-                    // Generate QR Code format PNG/JPG to file public
+                    // Generate QR Code format PNG/JPG to file public sesuai Tingkatan
+                    if ($request->status_unit == 'KSR') {
+                        $image = QrCode::format('png')
+                        ->size(400)->errorCorrection('H')
+                        ->color(255, 61, 40) // Merah
+                        ->generate($request->nama_peserta);
+                        $qrcode_peserta = '/qr-code/img/qrcode_peserta-' .$request->nama_peserta . '.png';
+                        Storage::disk('public')->put($qrcode_peserta, $image); 
 
-                    $image = QrCode::format('png')
-                    ->size(400)->errorCorrection('H')
-                    ->generate($request->mis_peserta);
-                    $qrcode_peserta = '/qr-code/img/img-' .$request->mis_peserta . '.png';
-                    Storage::disk('public')->put($qrcode_peserta, $image); 
+                    } elseif($request->status_unit == 'WIRA') {
+                        $image = QrCode::format('png')
+                        ->size(400)->errorCorrection('H')
+                        ->color(255, 245, 88) // Kuning
+                        ->generate($request->nama_peserta);
+                        $qrcode_peserta = '/qr-code/img/qrcode_peserta-' .$request->nama_peserta . '.png';
+                        Storage::disk('public')->put($qrcode_peserta, $image); 
+
+                    } elseif($request->status_unit == 'MADYA'){
+                        $image = QrCode::format('png')
+                        ->size(400)->errorCorrection('H')
+                        ->color(50, 50, 255) // Biru
+                        ->generate($request->nama_peserta);
+                        $qrcode_peserta = '/qr-code/img/qrcode_peserta-' .$request->nama_peserta . '.png';
+                        Storage::disk('public')->put($qrcode_peserta, $image); 
+
+                    } else {
+                        $image = QrCode::format('png')
+                        ->size(400)->errorCorrection('H')
+                        ->color(29, 236, 70) // Hijau
+                        ->generate($request->nama_peserta);
+                        $qrcode_peserta = '/qr-code/img/qrcode_peserta-' .$request->nama_peserta . '.png';
+                        Storage::disk('public')->put($qrcode_peserta, $image); 
+                    }
+                    
 
                     if($request->role_peserta == 'Peserta'){
                         $peserta = Peserta::create([
@@ -107,7 +134,7 @@ class AuthController extends Controller
                             "mis_peserta" => $request->mis_peserta,
                             "qrcode_peserta" => $qrcode_peserta,
                             "status_peserta" => "Tidak Aktif",
-                            "suratsehat_peserta" =>  $request->file('suratsehat_peserta')->getClientOriginalName(),
+                            "foto_peserta" =>  $request->file('foto_peserta')->getClientOriginalName(),
                         ]);
                         Alert::success('Register Berhasil','Silahkan Login Ya ');
                         return redirect('/login');
@@ -131,7 +158,7 @@ class AuthController extends Controller
                             "mis_peserta" => $request->mis_peserta,
                             "qrcode_peserta" => $qrcode_peserta,
                             "status_peserta" => "Aktif",
-                            "suratsehat_peserta" =>  $request->file('suratsehat_peserta')->getClientOriginalName(),
+                            "foto_peserta" =>  $request->file('foto_peserta')->getClientOriginalName(),
                             "surattugas_pembina" =>  $request->file('surattugas_pembina')->getClientOriginalName(),
                         ]);
                         Alert::success('Register Berhasil','Silahkan Login Ya ');
@@ -147,7 +174,7 @@ class AuthController extends Controller
     
             }else{
                 
-                Alert::error('Belum Upload KTA','Hayoo Upload File KTA dulu yaa !');
+                Alert::error('Belum Upload Foto','Hayoo Upload Foto dulu yaa !');
                 return redirect()->back();
                 
             }
@@ -160,5 +187,22 @@ class AuthController extends Controller
     public function getUnitsByStatus($status_units){
         $unit = Unit::where('status_units',$status_units)->get();
         return $unit;
+    }
+
+    // QR Generator 
+    public function qrgenerator(){
+
+        $colorBlue = '#007bff';
+        // Warna hijau
+        $colorGreen = '#28a745';
+    
+        // Membuat instance QR code KSR
+        $qrCode = QrCode::size(150)
+            ->backgroundColor(0,0,0)
+            ->color(255, 245, 88)
+            ->generate('Contoh QR Code');   
+       
+            
+        return view('auth.qr',compact('qrCode'));
     }
 }

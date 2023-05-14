@@ -103,8 +103,8 @@
                                         @foreach ($data_kegiatan_ikut as $kegiatan)
                                         <tr>
                                             <td>{{$kegiatan->kegiatan->nama_kegiatan}}</a></td>
-                                            <td>{{ \Carbon\Carbon::parse($kegiatan->tanggal_kegiatan)->format('d M Y') }}</td>
-                                            <td>{{ \Carbon\Carbon::parse($kegiatan->waktu_kegiatan)->format('H:i')}} WIB</td>
+                                            <td>{{ \Carbon\Carbon::parse($kegiatan->kegiatan->tanggal_kegiatan)->format('d M Y') }}</td>
+                                            <td>{{ \Carbon\Carbon::parse($kegiatan->kegiatan->waktu_kegiatan)->format('H:i')}} WIB</td>
                                         </tr>
                                         @endforeach
                                     </tbody>
