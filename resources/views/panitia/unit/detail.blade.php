@@ -13,7 +13,7 @@
             </div>
             <div class="col-xl-12 col-xxl-12">
                 <div class="row">
-                    <div class="col-xl-3 col-xxl-3 col-lg-3 col-sm-6">
+                    <div class="col-xl-4 col-xxl-4 col-lg-4 col-sm-6">
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between align-items-center">
@@ -29,16 +29,32 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-6 col-xxl-6 col-lg-6 col-sm-6">
+                    <div class="col-xl-4 col-xxl-4 col-lg-4 col-sm-6">
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div>
-                                        <p class="fs-14 mb-1">Ketua Kontingen</p>
+                                        <p class="fs-14 mb-1">Pimpinan Kontingen</p>
                                         @if ($data_pembina)
-                                            <span class="fs-20 text-black font-w600">{{$data_pembina->nama_peserta}}
+                                            <span class="badge badge-info">{{$data_pembina->nama_peserta}}</span>
                                         @else
-                                        <span class="fs-20 text-black font-w600">Pembina Belum Terdaftar !</span>
+                                            <span class="badge badge-warning">Pimpinan Belum Terdaftar <span class="ml-1 fa fa-exclamation"></span></span>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-xxl-4 col-lg-4 col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="fs-14 mb-1">Pembina Kontingen</p>
+                                        @if ($data_pembina)
+                                            <span class="badge badge-success">{{$data_pembina->nama_peserta}}</span>
+                                        @else
+                                           <span class="badge badge-warning">Pembina Belum Terdaftar <span class="ml-1 fa fa-exclamation"></span></span>
                                         @endif
                                         </span>
                                     </div>
@@ -65,7 +81,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Data Peserta : <b>{{$data_unit->nama_unit}}</b> </h4>
+                                <h4 class="card-title">Daftar Peserta : <b>{{$data_unit->nama_unit}}</b> </h4>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">

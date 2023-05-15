@@ -68,10 +68,11 @@ class PesertaController extends Controller
         ])->get()->first();
 
         if ($cek == NULL) {
-
+            // dd($request->all());
             $kegiatan_peserta = Kegiatan_Peserta::create([
                 'peserta_id' => auth()->user()->peserta->id_peserta,
-                'kegiatan_id' => $request->id_kegiatan
+                'kegiatan_id' => $request->id_kegiatan,
+                'unit_id' => auth()->user()->peserta->unit->id_unit
             ]);
 
             Alert::success('Yeay Berhasil !','Kegiatan Berhasil Ditambahkan !');

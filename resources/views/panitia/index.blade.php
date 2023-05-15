@@ -166,6 +166,9 @@
                                                             <span class="fs-14 text-black d-block mb-3">{{$kegiatan->jenis_kegiatan}} | 
                                                                 <td class="py-2 text-right"><span class="badge badge-success">{{$kegiatan->tingkat_kegiatan}}<span class="ml-1 fa fa-plus"></span></span><td>
                                                             </span>
+                                                            @if ($kegiatan->status_kegiatan == 'Aktif')
+                                                            <td class="py-2 text-right"><span class="badge badge-success">Sedang Berjalan<span class="ml-1 fa fa-spinner"></span></span><td>
+                                                            @endif
                                                             <p class="fs-12">{{$kegiatan->detail_kegiatan}}</p>
                                                             <ul>
                                                                 <li><i class="las la-calendar"></i>{{ \Carbon\Carbon::parse($kegiatan->tanggal_kegiatan)->locale('id_ID')->isoFormat('dddd, D MMMM Y') }}</li>
@@ -292,7 +295,7 @@
                     <div class="col-xl-12">
                         <div class="card">
                             <div class="card-header border-0 pb-sm-0 pb-5">
-                                <h4 class="fs-20">List Kegiatan</h4>
+                                <h4 class="fs-20">List Kegiatan Temu Karya : </h4>
                                 <div class="dropdown custom-dropdown mb-0">
                                     <div data-toggle="dropdown">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -309,7 +312,57 @@
                             </div>
                             <div class="card-body">
                                 <div class="event-bx owl-carousel">
-                                    @foreach ($data_kegiatan as $kegiatan)
+                                    @foreach ($data_kegiatan_ksr as $kegiatan)
+                                    <div class="items">
+                                        <div class="image-bx">
+                                            <img src="{{asset('template/dashboard/images/events/1.png')}}" alt="">
+                                            <div class="info">
+                                                <p class="fs-18 font-w600"><a href="event-detail.html" class="text-black">{{$kegiatan->nama_kegiatan}}</a></p>
+                                                <span class="fs-14 text-black d-block mb-3">{{$kegiatan->jenis_kegiatan}} | 
+                                                    @if ($kegiatan->tingkat_kegiatan == 'KSR')
+                                                        <td class="py-2 text-right"><span class="badge badge-success">{{$kegiatan->tingkat_kegiatan}}<span class="ml-1 fa fa-plus"></span></span><td>
+                                                    @else
+                                                        <td class="py-2 text-right"><span class="badge badge-info">{{$kegiatan->tingkat_kegiatan}}<span class="ml-1 fa fa-plus"></span></span><td>
+                                                    @endif
+                                                    @if ($kegiatan->status_kegiatan == 'Aktif')
+                                                        <td class="py-2 text-right"><span class="badge badge-success">Sedang Berjalan<span class="ml-1 fa fa-spinner"></span></span><td>
+                                                    @endif
+                                                </span>
+                                                <p class="fs-12">{{$kegiatan->detail_kegiatan}}</p>
+                                                <ul>
+                                                    <li><i class="las la-calendar"></i>{{ \Carbon\Carbon::parse($kegiatan->tanggal_kegiatan)->locale('id_ID')->isoFormat('dddd, D MMMM Y') }}</li>
+                                                    <li><i class="las la-clock"></i>{{ \Carbon\Carbon::parse($kegiatan->waktu_kegiatan)->locale('id_ID')->translatedFormat('H:i') }} WIB</li> 
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @endforeach
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-12">
+                        <div class="card">
+                            <div class="card-header border-0 pb-sm-0 pb-5">
+                                <h4 class="fs-20">List Kegiatan Jumbara : </h4>
+                                <div class="dropdown custom-dropdown mb-0">
+                                    <div data-toggle="dropdown">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 12.9999C12.5523 12.9999 13 12.5522 13 11.9999C13 11.4477 12.5523 10.9999 12 10.9999C11.4477 10.9999 11 11.4477 11 11.9999C11 12.5522 11.4477 12.9999 12 12.9999Z" stroke="#7E7E7E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M12 5.99994C12.5523 5.99994 13 5.55222 13 4.99994C13 4.44765 12.5523 3.99994 12 3.99994C11.4477 3.99994 11 4.44765 11 4.99994C11 5.55222 11.4477 5.99994 12 5.99994Z" stroke="#7E7E7E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M12 19.9999C12.5523 19.9999 13 19.5522 13 18.9999C13 18.4477 12.5523 17.9999 12 17.9999C11.4477 17.9999 11 18.4477 11 18.9999C11 19.5522 11.4477 19.9999 12 19.9999Z" stroke="#7E7E7E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" href="javascript:void(0);">Details</a>
+                                        <a class="dropdown-item text-danger" href="javascript:void(0);">Cancel</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="event-bx owl-carousel">
+                                    @foreach ($data_kegiatan_pmr as $kegiatan)
                                     <div class="items">
                                         <div class="image-bx">
                                             <img src="{{asset('template/dashboard/images/events/1.png')}}" alt="">
@@ -455,7 +508,7 @@
                                                         <td class="py-2 text-right"><span class="badge badge-info">{{$kegiatan->tingkat_kegiatan}}<span class="ml-1 fa fa-plus"></span></span><td>
                                                     @endif
                                                     @if ($kegiatan->status_kegiatan == 'Aktif')
-                                                        <td class="py-2 text-right"><span class="badge badge-success">Sedang Berjalan<span class="ml-1 fa fa-plus"></span></span><td>
+                                                        <td class="py-2 text-right"><span class="badge badge-success">Sedang Berjalan<span class="ml-1 fa fa-spinner"></span></span><td>
                                                     @endif
                                                 </span>
                                                 <p class="fs-12">{{$kegiatan->detail_kegiatan}}</p>

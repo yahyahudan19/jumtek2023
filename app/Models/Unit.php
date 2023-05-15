@@ -17,4 +17,8 @@ class Unit extends Model
     {
         return $this->hasMany(Peserta::class);
     }
+    public function unit()
+    {
+        return $this->hasMany(Unit::class);
+    }
 }

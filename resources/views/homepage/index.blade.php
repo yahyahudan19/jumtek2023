@@ -501,7 +501,7 @@
 								 <h2>Lokakarya Pembinaan <br>dan Manajemen PMR</h2>
 								 <p>Meningkatkan kemampuan pembina PMR dalam melaksanakan proses pembinaan yang baik di sekolah melalui kegiatan yang menyenangkan, bervariasi dan mengikuti perkembangan zaman.
                                 </p>
-								 <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
+								 {{-- <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a> --}}
 								 <a href="#" class="btn mt-20">Read More</a>
 								 <div class="crical"><i class="fal fa-magic"></i> </div>
                               </div>
@@ -531,7 +531,7 @@
                                   </ul>
                                   <h2>Lokakarya Penulisan</h2>
                                   <p>Meneladani tokoh sejarah Gerakan Palang Merah Dunia, Bapak Jean Henry Dunant dalam bidang kepenulisan dan karya buku yang mengubah peradaban.</p>
-                                  <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
+                                  {{-- <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a> --}}
                                   <a href="#" class="btn mt-20">Read More</a>
                                   <div class="crical"><i class="fal fa-ban"></i></div>
                                </div>
@@ -562,7 +562,7 @@
 								 </ul>
                                  <h2>Kunjungan Persahabatan</h2>
 								 <p>Menjalin silaturahmi antar anggota PMI baik PMR, KSR, dan TSR serta Memperluas jaringan dan menambah relasi untuk mengembangkan PMR di Kabupaten Malang</p>
-								 <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
+								 {{-- <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a> --}}
 								 <a href="#" class="btn mt-20">Read More</a>
 								 <div class="crical"><i class="fal fa-ban"></i></div>
                               </div>
@@ -592,7 +592,7 @@
                                   </ul>
                                   <h2>Forum Remaja Palang Merah Indonesia</h2>
                                   <p>Meningkatkan peran aktif PMR dalam proses pengambilan keputusan dan kepemimpinan.</p>
-                                  <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
+                                  {{-- <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a> --}}
                                   <a href="#" class="btn mt-20">Read More</a>
                                   <div class="crical"><i class="fal fa-ban"></i></div>
                                </div>
@@ -622,7 +622,7 @@
                                   </ul>
                                   <h2>Penghijauan</h2>
                                   <p>Menumbuhkan jiwa kepedulian terhadap lingkungan hidup serta Melaksanakan Tri Bakti PMR ke-2, yaitu : Berkarya dan Berbakti di Masyarakat.</p>
-                                  <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
+                                  {{-- <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a> --}}
                                   <a href="#" class="btn mt-20">Read More</a>
                                   <div class="crical"><i class="fal fa-video"></i> </div>
                                </div>
@@ -651,7 +651,7 @@
                                   </ul>
                                   <h2>Bhakti Lingkungan</h2>
                                   <p>Meningkatkan kepedulian anggota PMR terhadap kebersihan lingkungan hidup serta Mempererat persahabatan dan kerja sama anggota PMR.</p>
-                                  <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
+                                  {{-- <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a> --}}
                                   <a href="#" class="btn mt-20">Read More</a>
                                   <div class="crical"><i class="fal fa-video"></i> </div>
                                </div>
@@ -681,7 +681,7 @@
                                   </ul>
                                   <h2>Pentas Seni</h2>
                                   <p>In order to save time you have to break down the content strategy for the event or conference you are planning step by step. Creating this process from scratch will take the longest amount of time to build, but once you have content production foundation.</p>
-                                  <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
+                                  {{-- <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a> --}}
                                   <a href="#" class="btn mt-20">Read More</a>
                                   <div class="crical"><i class="fal fa-video"></i> </div>
                                </div>
@@ -711,7 +711,7 @@
                                   </ul>
                                   <h2>OLahraga / Outbound</h2>
                                   <p>In order to save time you have to break down the content strategy for the event or conference you are planning step by step. Creating this process from scratch will take the longest amount of time to build, but once you have content production foundation.</p>
-                                  <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
+                                  {{-- <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a> --}}
                                   <a href="#" class="btn mt-20">Read More</a>
                                   <div class="crical"><i class="fal fa-video"></i> </div>
                                </div>
@@ -741,7 +741,7 @@
                                   </ul>
                                   <h2>Permainan Tradisional</h2>
                                   <p>In order to save time you have to break down the content strategy for the event or conference you are planning step by step. Creating this process from scratch will take the longest amount of time to build, but once you have content production foundation.</p>
-                                  <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
+                                  {{-- <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a> --}}
                                   <a href="#" class="btn mt-20">Read More</a>
                                   <div class="crical"><i class="fal fa-video"></i> </div>
                                </div>
@@ -775,7 +775,7 @@
 								 </ul>
 								 <h2>Pentas Seni</h2>
 								 <p>In order to save time you have to break down the content strategy for the event or conference you are planning step by step. Creating this process from scratch will take the longest amount of time to build, but once you have content production foundation.</p>
-								 <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
+								 {{-- <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a> --}}
 								 <a href="#" class="btn mt-20">Read More</a>
 								 <div class="crical"><i class="fal fa-video"></i> </div>
                               </div>
@@ -805,7 +805,7 @@
 								 </ul>
 								 <h2>OLahraga / Outbound</h2>
 								 <p>In order to save time you have to break down the content strategy for the event or conference you are planning step by step. Creating this process from scratch will take the longest amount of time to build, but once you have content production foundation.</p>
-								 <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
+								 {{-- <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a> --}}
 								 <a href="#" class="btn mt-20">Read More</a>
 								 <div class="crical"><i class="fal fa-video"></i> </div>
                               </div>
@@ -835,7 +835,7 @@
 								 </ul>
 								 <h2>Permainan Tradisional</h2>
 								 <p>In order to save time you have to break down the content strategy for the event or conference you are planning step by step. Creating this process from scratch will take the longest amount of time to build, but once you have content production foundation.</p>
-								 <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
+								 {{-- <a href="#" class="btn mt-20 mr-10"><i class="far fa-ticket-alt"></i> Buy Ticket</a> --}}
 								 <a href="#" class="btn mt-20">Read More</a>
 								 <div class="crical"><i class="fal fa-video"></i> </div>
                               </div>

@@ -11,7 +11,7 @@ class Kegiatan_Peserta extends Model
 
     protected $table = 'kegiatan_pesertas';
     protected $primaryKey = 'id_kegiatan_peserta';
-    protected $fillable = ['peserta_id','kegiatan_id'];
+    protected $fillable = ['peserta_id','kegiatan_id','unit_id'];
 
     public function kegiatan()
     {
@@ -20,5 +20,9 @@ class Kegiatan_Peserta extends Model
     public function peserta()
     {
         return $this->belongsTo(Peserta::class,'peserta_id');
+    }
+    public function unit()
+    {
+        return $this->belongsTo(Unit::class,'unit_id');
     }
 }

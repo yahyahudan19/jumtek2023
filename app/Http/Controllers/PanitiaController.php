@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kegiatan;
+use App\Models\Kegiatan_Peserta;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Peserta;
@@ -148,9 +149,18 @@ class PanitiaController extends Controller
     // Kegiatan page ==================================================================
     public function kegiatan()
     {
-        $data_kegiatan = Kegiatan::all();
-        $jumlah_kegiatan = Kegiatan::all()->count();
-        return view('panitia.kegiatan.index',compact('data_kegiatan','jumlah_kegiatan'));
+        $data_kegiatan_jumbara = Kegiatan::where([
+            'jenis_kegiatan' => 'Jumbara'
+        ])->orderBy('id_kegiatan')->get()->all();
+        $data_kegiatan_temu_karya = Kegiatan::where([
+            'jenis_kegiatan' => 'Temu Karya'
+        ])->orderBy('id_kegiatan')->get()->all();
+
+        $jumlah_kegiatan_jumbara = Kegiatan::where(['jenis_kegiatan' => 'Jumbara'])->count();
+        $jumlah_kegiatan_temu_karya = Kegiatan::where(['jenis_kegiatan' => 'Temu Karya'])->count();
+        $jumlah_kegiatan_semua = Kegiatan::all()->count();
+
+        return view('panitia.kegiatan.index',compact('data_kegiatan_jumbara','data_kegiatan_temu_karya','jumlah_kegiatan_semua','jumlah_kegiatan_jumbara','jumlah_kegiatan_temu_karya'));
     }
     // Update Aktif Kegiatan
     public function aktifKegiatan($id_kegiatan){
@@ -208,7 +218,61 @@ class PanitiaController extends Controller
             return redirect()->back();
         }
         
+    }
+    // Hapus Kegiatan 
+    public function hapusKegiatan($id_kegiatan){
+        $data_kegiatan = Kegiatan::where('id_kegiatan',$id_kegiatan)->get()->first();
 
+        try {
+            $data_kegiatan->delete($data_kegiatan);
+            Alert::success('Yeay Berhasil !', 'Kegiatan Berhasil dihapus !');
+            return redirect()->back();
+        } catch (QueryException $e) {
+            Alert::error('Yaah Gagal', 'Kegiatan Gagal dihapus !');
+            return redirect()->back();
+        }
+    }
+    //Detail & Edit Kegiatan
+    public function detailKegiatan($id_kegiatan){
+        $data_kegiatan = Kegiatan::where('id_kegiatan',$id_kegiatan)->get()->first();
+        $data_peserta = Kegiatan_Peserta::where('kegiatan_id',$id_kegiatan)->get()->all();
+        $jumlah_peserta = Kegiatan_Peserta::where('kegiatan_id',$id_kegiatan)->count();
+        
+        if($data_kegiatan){
+            return view('panitia.kegiatan.detail',compact('data_kegiatan','data_peserta','jumlah_peserta'));
+        }else {
+            Alert::error('Kegiatan Tidak Ada', 'Data Kegiatan Tidak Ditemukan !');
+            return redirect()->back();
+        }
+        
+    }
+    //Update Kegiatan
+    public function updateKegiatan(Request $request,$id_kegiatan){
+        // dd($request->all());
+        $data_kegiatan = Kegiatan::where('id_kegiatan',$id_kegiatan)->get()->first();
+
+        try {
+            $data_kegiatan->update($request->all());
+            Alert::success('Update Berhasil !','Peserta Berhasil Diupdate !');
+            return redirect()->back();
+        } catch (QueryException $e) {
+            Alert::error('Yaah Gagal', 'Kegiatan Gagal Diupdate !');
+            return redirect()->back();
+        }
+    }
+    //Hapus Peserta Kegiatan
+    public function hapusPesertaKegiatan($id_peserta){
+        $data_peserta_kegiatan = Kegiatan_Peserta::where('peserta_id',$id_peserta)->get()->first();
+        // dd($data_peserta_kegiatan);
+        
+        try {
+            $data_peserta_kegiatan->delete($data_peserta_kegiatan);
+            Alert::success('Yeay Berhasil !', 'Kegiatan Berhasil dihapus !');
+            return redirect()->back();
+        } catch (QueryException $e) {
+            Alert::error('Yaah Gagal', 'Kegiatan Gagal dihapus !');
+            return redirect()->back();
+        }
     }
 
     // Unit page ==================================================================
@@ -218,8 +282,8 @@ class PanitiaController extends Controller
         $data_unit_ksr = Unit::where(['status_unit' =>'KSR'])->get()->all();
 
         $data_unit_mula = Unit::where(['status_units' =>'MULA'])->get()->all();
-        $data_unit_wira = Unit::where(['status_units' =>'MADYA'])->get()->all();
-        $data_unit_madya = Unit::where(['status_units' =>'WIRA'])->get()->all();
+        $data_unit_wira = Unit::where(['status_units' =>'WIRA'])->get()->all();
+        $data_unit_madya = Unit::where(['status_units' =>'MADYA'])->get()->all();
 
 
         $jumlah_unit = Unit::all()->count();

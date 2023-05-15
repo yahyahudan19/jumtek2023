@@ -17,8 +17,10 @@ return new class extends Migration
             $table->increments('id_kegiatan_peserta');
             $table->integer('peserta_id')->unsigned();
             $table->integer('kegiatan_id')->unsigned();
+            $table->integer('unit_id')->unsigned();
             $table->foreign('peserta_id')->references('id_peserta')->on('pesertas');
             $table->foreign('kegiatan_id')->references('id_kegiatan')->on('kegiatans');
+            $table->foreign('unit_id')->references('id_unit')->on('units');
             $table->timestamps();
         });
     }

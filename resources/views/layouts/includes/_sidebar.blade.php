@@ -36,11 +36,6 @@
                     <span class="nav-text">Kegiatan</span>
                 </a>
             </li>
-            <li><a href="/dashboard/profile" class="ai-icon" aria-expanded="false">
-                    <i class="flaticon-381-user-2"></i>
-                    <span class="nav-text">Profile</span>
-                </a>
-            </li>
             @endif
 
             @if(auth()->user()->role == 'Peserta')
@@ -50,14 +45,14 @@
                 </a>
             </li>
             @if (auth()->user()->peserta->status_peserta == 'Aktif')
-            <li><a href="/dashboard/profile" class="ai-icon" aria-expanded="false">
-                    <i class="flaticon-381-user-2"></i>
-                    <span class="nav-text">Profile</span>
-                </a>
-            </li>
              <li><a href="/dashboard/kegiatan/peserta" class="ai-icon" aria-expanded="false">
                     <i class="flaticon-381-blueprint"></i>
                     <span class="nav-text">Kegiatan</span>
+                </a>
+            </li>
+             <li><a href="/dashboard/profile" class="ai-icon" aria-expanded="false">
+                    <i class="flaticon-381-user-2"></i>
+                    <span class="nav-text">Profile</span>
                 </a>
             </li>
             @endif
@@ -73,6 +68,11 @@
             <li><a href="/dashboard/pembina/peserta" class="ai-icon" aria-expanded="false">
                     <i class="flaticon-381-user-9"></i>
                     <span class="nav-text">Peserta</span>
+                </a>
+            </li>
+            <li><a href="/dashboard/pembina/kegiatan" class="ai-icon" aria-expanded="false">
+                    <i class="flaticon-381-blueprint"></i>
+                    <span class="nav-text">Kegiatan</span>
                 </a>
             </li>
             @endif

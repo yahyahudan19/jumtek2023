@@ -36,6 +36,10 @@ Route::middleware(['auth','checkRole:Pembina'])->group(function () {
 
     //GET Peserta By Unit
     Route::get('/dashboard/pembina/peserta','\App\Http\Controllers\PembinaController@peserta');
+    //Get Kegiatan By Unit
+    Route::get('/dashboard/pembina/kegiatan','\App\Http\Controllers\PembinaController@kegiatan');
+    //Get Detail Kegiatan
+    Route::get('/dashboard/pembina/kegiatan/{id}','\App\Http\Controllers\PembinaController@detailKegiatan');
 });
 
 // PANITIA ROUTES
@@ -61,7 +65,7 @@ Route::get('/dashboard/peserta','\App\Http\Controllers\PanitiaController@peserta
 Route::get('/peserta/delete/{id_peserta}','\App\Http\Controllers\PanitiaController@hapusPeserta');
 //VALIDASI Peserta
 Route::get('/peserta/validasi/{id_peserta}','\App\Http\Controllers\PanitiaController@validasiPeserta');
-//VALIDASI Peserta
+//UNVALIDASI Peserta
 Route::get('/peserta/unvalidasi/{id_peserta}','\App\Http\Controllers\PanitiaController@unvalidasiPeserta');
 //DETAIL Peserta
 Route::get('dashboard/peserta/{id}','\App\Http\Controllers\PanitiaController@detailPeserta');
@@ -71,9 +75,20 @@ Route::post('/peserta/update','\App\Http\Controllers\PanitiaController@updatePes
 
 //GET Kegiatan
 Route::get('/dashboard/kegiatan','\App\Http\Controllers\PanitiaController@kegiatan');
+//Detail Kegiatan
+Route::get('/dashboard/kegiatan/{id}','\App\Http\Controllers\PanitiaController@detailKegiatan');
+//Update Kegiatan
+Route::post('/kegiatan/update/{id}','\App\Http\Controllers\PanitiaController@updateKegiatan');
+//Tambah Kegiatan
 Route::post('/kegiatan/tambah','\App\Http\Controllers\PanitiaController@tambahKegiatan');
+//Hapus Kegiatan
+Route::get('/kegiatan/hapus/{id}','\App\Http\Controllers\PanitiaController@hapusKegiatan');
+//Aktif Kegiatan
 Route::get('/kegiatan/aktif/{id}','\App\Http\Controllers\PanitiaController@aktifKegiatan');
+//Non Aktif Kegiatan
 Route::get('/kegiatan/nonaktif/{id}','\App\Http\Controllers\PanitiaController@nonaktifKegiatan');
+//Hapus Peserta Kegiatan
+Route::get('/kegiatan/hapus/peserta/{id_peserta}','\App\Http\Controllers\PanitiaController@hapusPesertaKegiatan');
 
 });
 
