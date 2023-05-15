@@ -32,7 +32,7 @@
                         <div class="row align-items-center">
                             <div class="col-xl-3 col-lg-3">
                                 <div class="logo">
-                                    <a href="index.html"><img src="{{asset('template/dashboard/images/logo-jumtek-white.png')}}"  height="100px" width="100px" alt="logo"></a>
+                                    <a href="#"><img src="{{asset('template/dashboard/images/logojumtek_putih.png')}}"  height="80px" width="70px" alt="logo"></a>
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-9">
@@ -43,7 +43,7 @@
                                             <li class="active has-sub"><a href="#home">Home</a>
 											</li>
                                             <li class="has-sub">
-												<a href="/about">About</a>												
+												<a href="/contact">Contact</a>												
 											</li>
                                              <li class="has-sub">
 												<a href="#">Kegiatan +</a>
@@ -83,7 +83,7 @@
                 <div class="slider-shape ss-four layer" data-depth="0.60"><img src="{{asset('template/homepage/img/shape/slider_shape04.png')}}" alt="shape"></div>
                 <div class="slider-shape ss-five layer" data-depth="0.20"><img src="{{asset('template/homepage/img/shape/slider_shape05.png')}}" alt="shape"></div>
                 <div class="slider-shape ss-six layer" data-depth="0.15"><img src="{{asset('template/homepage/img/shape/slider_shape06.png')}}" alt="shape"></div>
-     			 <div class="slider-shape ss-eight layer" data-depth="0.50"><img src="{{asset('template/homepage/img/man_header.png')}}" alt="shape"></div>
+     			 <div class="slider-shape ss-eight layer" data-depth="0.50"><img src="{{asset('template/homepage/img/bu_jajuk.png')}}" alt="shape" width="500px"></div>
                 <div class="slider-active">
                     <div class="single-slider">
                         <div class="container">
@@ -851,6 +851,60 @@
 			   </div>
             </div>
             </div>
+            <div class="contact-area pt-120 pb-90" style="background-image:url({{asset('template/homepage/img/map.png')}});background-size: cover;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-12">
+                           <div class="about-title second-atitle">							
+                                    <span class="wow fadeInUp animated" data-animation="fadeInUp animated" data-delay=".2s">Kontak Kami</span>
+                                    <h2 class="wow fadeInUp animated" data-animation="fadeInUp animated" data-delay=".2s">Kontak Panitia Jumtek 2023</h2>
+                                </div>
+								<div class="feature-box text-left wow fadeInDown animated" data-animation="fadeInDown animated" data-delay=".2s">
+							<div class="icon">
+								<i class="fal fa-map-marker-alt"></i>
+							</div>
+							<div class="content">
+								<h5>Lokasi</h5>
+								{{-- <p>Selorejo, Ngantang</p> --}}
+								<p><a href="#" class="btn mt-10" target="_blank">Selorejo, Ngantang</a></p>
+							</div>
+						 </div>
+						<div class="feature-box text-left wow fadeInDown animated" data-animation="fadeInDown animated" data-delay=".2s">
+							<div class="icon">
+								<i class="far fa-phone"></i>
+							</div>
+							<div class="content">
+								<h5>Contact Person</h5>
+								<p><a href="https://wa.wizard.id/87a46f" class="btn mt-10" target="_blank">+62 857-5588-9388 | Nur Aisyah</a></p>
+								<p><b>*Silahkan Klik Tombol Diatas</b></p>
+							</div>
+						 </div>
+						
+						 <div class="feature-box text-left wow fadeInDown animated" data-animation="fadeInDown animated" data-delay=".2s">
+							<div class="icon">
+								<i class="fal fa-globe"></i>
+							</div>
+							<div class="content">
+								<h5>Register Website</h5>
+								{{-- <p>jumtek.pmikabmalang.or.id</p> --}}
+                                <p><a href="https://jumtek.pmikabmalang.or.id/register  " class="btn mt-10" target="_blank">jumtek.pmikabmalang.or.id</a></p>
+							</div>
+						 </div>
+						
+                        </div>
+                       <div class="col-lg-6 col-sm-12">
+							<div class="contact-circal">
+								<div class="in-circal1 item-zoom-inout"></div>
+								<div class="in-circal2 item-zoom-inout"></div>
+								<div class="in-circal3 item-zoom-inout"></div>
+								<div class="in-circal4 item-zoom-inout"></div>
+								<div class="in-circal5 item-zoom-inout"></div>
+							</div>
+                        </div>
+                                             
+                    </div>
+                </div>
+            </div>
             <!-- counter-area-end -->
             <!-- Sponsors-area -->
             <section class="sponsors services-bg pt-113 fix">
@@ -994,6 +1048,8 @@
                 </div>
             </section> --}}
             <!-- blog-area-end -->
+             <!-- counter-area -->
+            
 
         </main>
         <!-- main-area-end -->

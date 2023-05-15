@@ -81,8 +81,8 @@
 			<div class="row">
 				<div class="col-lg-5">
 					<div id="left_form">
-						<figure><img src="{{asset('template/form/img/registration_bg.svg')}}" alt=""></figure>
-						<h2>Selamat Datang di Jumtek 2023 !</h2>
+						<figure><img src="{{asset('template/form/img/logojumtek_putihh.png')}}" alt="" width="250px"></figure>
+						{{-- <h2>Selamat Datang di Jumtek 2023 !</h2> --}}
 						<p>Untuk Melakukan Pendaftaran akun Jumtek 2023, Silahkan Lengkapi Form ini ya !</p>
 						<a href="#0" id="more_info" data-bs-toggle="modal" data-bs-target="#more-info"><i class="pe-7s-info"></i></a>
 					</div>

@@ -17,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('homepage.index');
 });
+Route::get('/contact', function () {
+    return view('homepage.kontak');
+});
+
 
 // PESERTA ROUTES
 Route::middleware(['auth','checkRole:Peserta,Panitia,Pembina'])->group(function () {

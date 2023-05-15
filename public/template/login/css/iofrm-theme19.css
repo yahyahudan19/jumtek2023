@@ -35,7 +35,7 @@ body {
 }
 
 .website-logo .logo {
-    background-image: url("../images/logo-jumtek-white.png");
+    background-image: url("../images/logojumtek_primer.png");
 }
 
 .website-logo .logo img {
@@ -47,7 +47,7 @@ body {
 }
 
 .website-logo-inside .logo {
-    background-image: url("../images/logo-jumtek-white.png");
+    background-image: url("../images/logojumtek_primer.png");
 }
 
 .website-logo-inside .logo img {
@@ -534,10 +534,10 @@ body {
     }
 
     .website-logo .logo {
-        background-image: url("../images/logo-jumtek-white.png");
+        background-image: url("../images/logojumtek_primer.png");
     }
 
     .form-body.without-side .website-logo .logo {
-        background-image: url("../images/logo-jumtek-white.png");
+        background-image: url("../images/logojumtek_primer.png");
     }
 }

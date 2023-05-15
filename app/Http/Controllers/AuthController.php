@@ -205,4 +205,5 @@ class AuthController extends Controller
             
         return view('auth.qr',compact('qrCode'));
     }
+
 }
