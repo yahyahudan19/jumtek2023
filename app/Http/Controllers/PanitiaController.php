@@ -34,12 +34,13 @@ class PanitiaController extends Controller
         $jumlah_kegiatan_pmr = Kegiatan::where(['jenis_kegiatan' => 'Jumbara'])->count();
 
         $data_peserta = Peserta::where('user_id', auth()->user()->id)->first();
-
-        $jumlah_peserta_kontingen = Peserta::where(['unit_id' => auth()->user()->peserta->unit->unit_id])->get()->count();
+        
+        // $jumlah_peserta_kontingen = Peserta::where(['unit_id' => auth()->user()->peserta->unit->unit_id])->get()->count();
 
         return view('panitia.index',compact([
             'data_peserta','jumlah_peserta','jumlah_unit','jumlah_ksr','jumlah_pmr','jumlah_kegiatan','data_kegiatan_ksr',
-            'data_kegiatan_pmr','data_kegiatan','jumlah_kegiatan_ksr','jumlah_kegiatan_pmr','jumlah_peserta_kontingen'
+            'data_kegiatan_pmr','data_kegiatan','jumlah_kegiatan_ksr','jumlah_kegiatan_pmr',
+            // 'jumlah_peserta_kontingen'
         ]));
     }
     
@@ -66,10 +67,19 @@ class PanitiaController extends Controller
             $file_qr = $data_peserta->qrcode_peserta;
             $file_path_qr = public_path('storage/' . $file_qr);
             unlink($file_path_qr);
-    
-            $data_peserta->delete($data_peserta);
-            $data_user->delete($data_user);
             
+            if ($data_peserta->surattugas_pembina == NULL) {
+                $data_peserta->delete($data_peserta);
+                $data_user->delete($data_user);
+            } else {
+                // Delete File Surat Tugas
+                $file_surattugas = $data_peserta->surattugas_pembina;
+                $file_path_surattugas = public_path('file_surattugas/' . $file_surattugas);
+                unlink($file_path_surattugas);
+
+                $data_peserta->delete($data_peserta);
+                $data_user->delete($data_user);
+            }
             Alert::success('Yeay Berhasil !', 'Peserta Berhasil dihapus !');
             return redirect()->back();
             

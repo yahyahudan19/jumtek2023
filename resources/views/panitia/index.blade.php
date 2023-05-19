@@ -143,7 +143,7 @@
                                                     <div class="image-bx">
                                                         <img src="{{asset('template/dashboard/images/events/1.png')}}" alt="">
                                                         <div class="info">
-                                                            <p class="fs-18 font-w600"><a href="event-detail.html" class="text-black">{{$kegiatan->nama_kegiatan}}</a></p>
+                                                            <p class="fs-18 font-w600"><a href="#" class="text-black">{{$kegiatan->nama_kegiatan}}</a></p>
                                                             <span class="fs-14 text-black d-block mb-3">{{$kegiatan->jenis_kegiatan}} | 
                                                                 <td class="py-2 text-right"><span class="badge badge-info">{{$kegiatan->tingkat_kegiatan}}<span class="ml-1 fa fa-check"></span></span><td>
                                                             </span>
@@ -162,7 +162,7 @@
                                                     <div class="image-bx">
                                                         <img src="{{asset('template/dashboard/images/events/1.png')}}" alt="">
                                                         <div class="info">
-                                                            <p class="fs-18 font-w600"><a href="event-detail.html" class="text-black">{{$kegiatan->nama_kegiatan}}</a></p>
+                                                            <p class="fs-18 font-w600"><a href="#" class="text-black">{{$kegiatan->nama_kegiatan}}</a></p>
                                                             <span class="fs-14 text-black d-block mb-3">{{$kegiatan->jenis_kegiatan}} | 
                                                                 <td class="py-2 text-right"><span class="badge badge-success">{{$kegiatan->tingkat_kegiatan}}<span class="ml-1 fa fa-plus"></span></span><td>
                                                             </span>
@@ -216,7 +216,7 @@
                                 <span class="fs-20 text-black font-w600">YO NDAK TAU KOK TANYA SAYA</span>
                             </div> --}}
                             <div class="media align-items-center">
-                                <img class="img-fluid rounded mr-3 d-none d-xl-inline-block" width="70" src="{{asset('template/dashboard/images/avatar/1.jpg')}}" alt="DexignZone">
+                                <img class="img-fluid rounded mr-3 d-none d-xl-inline-block" width="70" src="{{asset('template/dashboard/images/avatar/profileges.jpg')}}" alt="DexignZone">
                                 <div class="media-body">
                                     <h4 class="font-w600 mb-1 wspace-no"><a href="javascript:void(0)" class="text-black">Semangat Panitiaku :)</a></h4>
                                     <span>{{ \Carbon\Carbon::now()->locale('id_ID')->isoFormat('dddd, D MMMM Y') }} - {{ \Carbon\Carbon::now('Asia/Jakarta')->format('H:i') }} WIB</span>
@@ -317,7 +317,7 @@
                                         <div class="image-bx">
                                             <img src="{{asset('template/dashboard/images/events/1.png')}}" alt="">
                                             <div class="info">
-                                                <p class="fs-18 font-w600"><a href="event-detail.html" class="text-black">{{$kegiatan->nama_kegiatan}}</a></p>
+                                                <p class="fs-18 font-w600"><a href="/dashboard/kegiatan/{{$kegiatan->id_kegiatan}}" class="text-black">{{$kegiatan->nama_kegiatan}}</a></p>
                                                 <span class="fs-14 text-black d-block mb-3">{{$kegiatan->jenis_kegiatan}} | 
                                                     @if ($kegiatan->tingkat_kegiatan == 'KSR')
                                                         <td class="py-2 text-right"><span class="badge badge-success">{{$kegiatan->tingkat_kegiatan}}<span class="ml-1 fa fa-plus"></span></span><td>
@@ -367,7 +367,7 @@
                                         <div class="image-bx">
                                             <img src="{{asset('template/dashboard/images/events/1.png')}}" alt="">
                                             <div class="info">
-                                                <p class="fs-18 font-w600"><a href="event-detail.html" class="text-black">{{$kegiatan->nama_kegiatan}}</a></p>
+                                                <p class="fs-18 font-w600"><a href="/dashboard/kegiatan/{{$kegiatan->id_kegiatan}}" class="text-black">{{$kegiatan->nama_kegiatan}}</a></p>
                                                 <span class="fs-14 text-black d-block mb-3">{{$kegiatan->jenis_kegiatan}} | 
                                                     @if ($kegiatan->tingkat_kegiatan == 'KSR')
                                                         <td class="py-2 text-right"><span class="badge badge-success">{{$kegiatan->tingkat_kegiatan}}<span class="ml-1 fa fa-plus"></span></span><td>
@@ -450,7 +450,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-xxl-3 col-lg-3 col-sm-6">
+                    {{-- <div class="col-xl-3 col-xxl-3 col-lg-3 col-sm-6">
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between align-items-center">
@@ -465,7 +465,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     {{-- <div class="col-xl-6 col-xxl-6 col-lg-6 col-sm-6">
                         <div class="card">
                             <div class="card-body">
@@ -504,7 +504,7 @@
                                         <div class="image-bx">
                                             <img src="{{asset('template/dashboard/images/events/1.png')}}" alt="">
                                             <div class="info">
-                                                <p class="fs-18 font-w600"><a href="event-detail.html" class="text-black">{{$kegiatan->nama_kegiatan}}</a></p>
+                                                <p class="fs-18 font-w600"><a href="#" class="text-black">{{$kegiatan->nama_kegiatan}}</a></p>
                                                 <span class="fs-14 text-black d-block mb-3">{{$kegiatan->jenis_kegiatan}} | 
                                                     @if ($kegiatan->tingkat_kegiatan == 'PMR')
                                                         <td class="py-2 text-right"><span class="badge badge-success">{{$kegiatan->tingkat_kegiatan}}<span class="ml-1 fa fa-plus"></span></span><td>
