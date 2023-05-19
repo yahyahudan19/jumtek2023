@@ -93,6 +93,8 @@
                                         <ul data-animation="fadeInUp animated" data-delay=".2s">
 											<li><i class="fas fa-map-marker-alt"></i> Selorejo, Ngantang</li>
 											<li><i class="far fa-clock"></i>  24 - 27 Juni 2023, </li>
+											<li><i class="far fa-bell"></i><b>Pendaftaran : 20 Mei - 10 Juni 2023</b></li>
+											{{-- <li><p><a href="#" class="btn mt-10"><b>Pendaftaran : 20 Mei - 10 Juni 2023</b></a></p></li> --}}
 										</ul>
                                         <h2 data-animation="fadeInUp animated" data-delay=".4s">Jumbara dan Temu Karya <span>2023</span></h2> 
 										<div countdown class="conterdown wow fadeInDown animated" data-animation="fadeInDown animated" data-delay=".2s" data-date="Jun 24 2023 00:00:00">

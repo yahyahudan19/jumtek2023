@@ -151,6 +151,7 @@
                                     <table id="example3" class="display min-w850">
                                         <thead>
                                             <tr>
+                                                <th>Email</th>
                                                 <th>MIS PMI</th>
                                                 <th>Nama</th>
                                                 <th>Unit PMI</th>
@@ -164,12 +165,18 @@
                                         <tbody>
                                             @foreach ($data_peserta as $peserta)
                                             <tr>
-                                                <td>{{$peserta->mis_peserta}}</a></td>
+                                                <td>{{$peserta->user->email}}</td>
+                                                <td>
+                                                    @if ($peserta->mis_peserta == NULL)
+                                                        MIS Tidak Ada
+                                                    @endif
+                                                    {{$peserta->mis_peserta}}
+                                                </td>
                                                 <td>{{$peserta->nama_peserta}}</td>
                                                 <td>{{$peserta->unit->nama_unit}}</td>
                                                 {{-- <td><a href="/file_kta/{{$peserta->kta_peserta}}" target="_blank"><span class="badge badge-info"><i class="fa fa-eye color-info"></i></span></a></td> --}}
 												{{-- <td><a href="/file_suratsehat/{{$peserta->suratsehat_peserta}}"target="_blank" class="btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-eye color-info"></i></a></td> --}}
-                                                <td class="py-2 text-right"><a href="/file_foto/{{$peserta->foto_peserta}}" target="_blank"><span class="badge badge-danger">Lihat<span class="ml-1 fa fa-eye"></span></span></a>
+                                                <td class="py-2 text-right"><a href="/file_foto/{{$peserta->foto_peserta}}" target="_blank"><span class="badge badge-success">Lihat<span class="ml-1 fa fa-eye"></span></span></a>
                                                 </td>		
 												{{-- <td><a href="/storage{{$peserta->qrcode_peserta}}"target="_blank" class="btn btn-success shadow btn-xs sharp mr-1"><i class="fa fa-eye color-success"></i></a></td>		 --}}
                                                 @if ($peserta->status_peserta == 'Aktif')
@@ -181,10 +188,12 @@
                                                     class="ml-1 fa fa-times"></span></span>
                                                 </td>
                                                 @endif
-                                                @if ($peserta->user->role == 'Peserta')
+                                                @if ($peserta->role_peserta == 'Peserta')
                                                 <td class="py-2 text-right"><span class="badge badge-success">Peserta</span></td>
-                                                @elseif($peserta->user->role == 'Pembina')
+                                                @elseif($peserta->role_peserta == 'Pembina')
                                                 <td class="py-2 text-right"><span class="badge badge-warning">Pembina</span></td>
+                                                @elseif($peserta->role_peserta == 'Pimpinan')
+                                                <td class="py-2 text-right"><span class="badge badge-danger">Pimpinan</span></td>
                                                 @else
                                                 <td class="py-2 text-right"><span class="badge badge-info">Panitia</span></td>
                                                 @endif

@@ -194,7 +194,7 @@
 									<div class="row">
 										<div class="col-md-12">											
 											<div class="form-group">
-												<input type="text" name="mis_peserta" class="form-control required" placeholder="MIS PMI">
+												<input type="text" name="mis_peserta" class="form-control" placeholder="MIS PMI">
 											</div>
 										</div>
 									</div>

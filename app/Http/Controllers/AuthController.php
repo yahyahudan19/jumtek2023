@@ -54,16 +54,16 @@ class AuthController extends Controller
         // dd($request->all());    
 
         $cekPeserta = User::where([
-            ['email', '=', $request->email_peserta],
-            ['name', '=', $request->nama_peserta],
+            ['email', '=', $request->email_peserta]
+            // ['name', '=', $request->nama_peserta],
         ])->first();
 
-        $cekMIS = Peserta::where([
-            ['mis_peserta','=',$request->mis_peserta]
-        ])->first();
+        // $cekMIS = Peserta::where([
+        //     ['mis_peserta','=',$request->mis_peserta]
+        // ])->first();
 
-        if($cekPeserta || $cekMIS){
-            Alert::error('Register Gagal !','Kamu Sudah Daftar Sepertinya !');
+        if($cekPeserta){
+            Alert::error('Register Gagal !','Email Kamu Sudah terdaftar, Gunakan Email Lain !');
             return redirect()->back();
         }else{
             if($request->hasFile('foto_peserta')) {
@@ -76,52 +76,35 @@ class AuthController extends Controller
                 
                 $token = Str::random(10);
                 
-                $user = User::create([
-                    "role" => $request->role_peserta,
-                    "name" => $request->nama_peserta,
-                    "email" => $request->email_peserta,
-                    "remember_token" => $token,
-                    "password" => Hash::make($request->password),
-                ]);
+                if($request->role_peserta == 'Pimpinan'){
+                    
+                    $user = User::create([
+                        "role" => 'Pembina',
+                        "name" => $request->nama_peserta,
+                        "email" => $request->email_peserta,
+                        "remember_token" => $token,
+                        "password" => Hash::make($request->password),
+                    ]);
+                }else {
+
+                    $user = User::create([
+                        "role" => $request->role_peserta,
+                        "name" => $request->nama_peserta,
+                        "email" => $request->email_peserta,
+                        "remember_token" => $token,
+                        "password" => Hash::make($request->password),
+                    ]);
+                }
     
                 if($user){
 
                     $userID = DB::getPdo()->lastInsertId();
                     
-                    // Generate QR Code format PNG/JPG to file public sesuai Tingkatan
-                    if ($request->status_unit == 'KSR') {
-                        $image = QrCode::format('png')
+                    $image = QrCode::format('png')
                         ->size(400)->errorCorrection('H')
-                        ->color(255, 61, 40) // Merah
                         ->generate($request->nama_peserta);
-                        $qrcode_peserta = '/qr-code/img/qrcode_peserta-' .$request->nama_peserta . '.png';
-                        Storage::disk('public')->put($qrcode_peserta, $image); 
-
-                    } elseif($request->status_unit == 'WIRA') {
-                        $image = QrCode::format('png')
-                        ->size(400)->errorCorrection('H')
-                        ->color(255, 245, 88) // Kuning
-                        ->generate($request->nama_peserta);
-                        $qrcode_peserta = '/qr-code/img/qrcode_peserta-' .$request->nama_peserta . '.png';
-                        Storage::disk('public')->put($qrcode_peserta, $image); 
-
-                    } elseif($request->status_unit == 'MADYA'){
-                        $image = QrCode::format('png')
-                        ->size(400)->errorCorrection('H')
-                        ->color(50, 50, 255) // Biru
-                        ->generate($request->nama_peserta);
-                        $qrcode_peserta = '/qr-code/img/qrcode_peserta-' .$request->nama_peserta . '.png';
-                        Storage::disk('public')->put($qrcode_peserta, $image); 
-
-                    } else {
-                        $image = QrCode::format('png')
-                        ->size(400)->errorCorrection('H')
-                        ->color(29, 236, 70) // Hijau
-                        ->generate($request->nama_peserta);
-                        $qrcode_peserta = '/qr-code/img/qrcode_peserta-' .$request->nama_peserta . '.png';
-                        Storage::disk('public')->put($qrcode_peserta, $image); 
-                    }
-                    
+                    $qrcode_peserta = '/qr-code/img/qrcode_peserta-' .$request->nama_peserta . '.png';
+                    Storage::disk('public')->put($qrcode_peserta, $image); 
 
                     if($request->role_peserta == 'Peserta'){
                         $peserta = Peserta::create([
@@ -140,27 +123,38 @@ class AuthController extends Controller
                         return redirect('/login');
                     }else{
 
-                        // dd($request->all());    
-                        
-                        // $request->validate([
-                        //     'surattugas_pembina' => 'required|max:2048|mimes:png,jpg,jpg,jpeg'
-                        // ]);
-            
-                        $request->file('surattugas_pembina')->move('file_surattugas/',$request->file('surattugas_pembina')->getClientOriginalName());
+                        if ($request->hasFile('surattugas_pembina')) {
+                            $request->file('surattugas_pembina')->move('file_surattugas/',$request->file('surattugas_pembina')->getClientOriginalName());
+                            $peserta = Peserta::create([
+                                "user_id" => $userID,
+                                "nama_peserta" => $request->nama_peserta,
+                                "alamat_peserta" => $request->alamat_peserta,
+                                "jenisk_peserta" => $request->jenisk_peserta,
+                                "role_peserta" => $request->role_peserta,
+                                "unit_id" => $request->unit_id,
+                                "mis_peserta" => $request->mis_peserta,
+                                "qrcode_peserta" => $qrcode_peserta,
+                                "status_peserta" => "Aktif",
+                                "foto_peserta" =>  $request->file('foto_peserta')->getClientOriginalName(),
+                                "surattugas_pembina" =>  $request->file('surattugas_pembina')->getClientOriginalName(),
+                            ]);
+                        } else {
+                            $peserta = Peserta::create([
+                                "user_id" => $userID,
+                                "nama_peserta" => $request->nama_peserta,
+                                "alamat_peserta" => $request->alamat_peserta,
+                                "jenisk_peserta" => $request->jenisk_peserta,
+                                "role_peserta" => $request->role_peserta,
+                                "unit_id" => $request->unit_id,
+                                "mis_peserta" => $request->mis_peserta,
+                                "qrcode_peserta" => $qrcode_peserta,
+                                "status_peserta" => "Aktif",
+                                "foto_peserta" =>  $request->file('foto_peserta')->getClientOriginalName(),
+                                // "surattugas_pembina" =>  $request->file('surattugas_pembina')->getClientOriginalName(),
+                            ]);
 
-                        $peserta = Peserta::create([
-                            "user_id" => $userID,
-                            "nama_peserta" => $request->nama_peserta,
-                            "alamat_peserta" => $request->alamat_peserta,
-                            "jenisk_peserta" => $request->jenisk_peserta,
-                            "role_peserta" => $request->role_peserta,
-                            "unit_id" => $request->unit_id,
-                            "mis_peserta" => $request->mis_peserta,
-                            "qrcode_peserta" => $qrcode_peserta,
-                            "status_peserta" => "Aktif",
-                            "foto_peserta" =>  $request->file('foto_peserta')->getClientOriginalName(),
-                            "surattugas_pembina" =>  $request->file('surattugas_pembina')->getClientOriginalName(),
-                        ]);
+                        }
+                        
                         Alert::success('Register Berhasil','Silahkan Login Ya ');
                         return redirect('/login');
                     }

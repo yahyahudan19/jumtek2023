@@ -32,6 +32,8 @@ Route::middleware(['auth','checkRole:Peserta,Panitia,Pembina'])->group(function 
     Route::get('/dashboard/kegiatan/peserta','\App\Http\Controllers\PesertaController@kegiatan');
     //POST Kegiatan Peserta
     Route::post('/kegiatan/peserta/tambah','\App\Http\Controllers\PesertaController@tambahKegiatan');
+    //UPDATE Surat Tugas
+    Route::post('/pembina/surattugas','\App\Http\Controllers\PembinaController@updateSuratTugas');
 
 });
 
@@ -75,6 +77,10 @@ Route::get('/peserta/unvalidasi/{id_peserta}','\App\Http\Controllers\PanitiaCont
 Route::get('dashboard/peserta/{id}','\App\Http\Controllers\PanitiaController@detailPeserta');
 //UPDATE Peserta
 Route::post('/peserta/update','\App\Http\Controllers\PanitiaController@updatePeserta');
+//UPDATE Surat Tugas
+Route::post('/peserta/surattugas','\App\Http\Controllers\PanitiaController@updateSuratTugas');
+// UPDATE Password User
+Route::post('/peserta/password','\App\Http\Controllers\PanitiaController@updatePassword');
 
 
 //GET Kegiatan

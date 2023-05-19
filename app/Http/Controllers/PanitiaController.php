@@ -10,6 +10,7 @@ use App\Models\Peserta;
 use App\Models\User;
 use App\Models\Unit;
 use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
@@ -34,9 +35,11 @@ class PanitiaController extends Controller
 
         $data_peserta = Peserta::where('user_id', auth()->user()->id)->first();
 
+        $jumlah_peserta_kontingen = Peserta::where(['unit_id' => auth()->user()->peserta->unit->unit_id])->get()->count();
+
         return view('panitia.index',compact([
             'data_peserta','jumlah_peserta','jumlah_unit','jumlah_ksr','jumlah_pmr','jumlah_kegiatan','data_kegiatan_ksr',
-            'data_kegiatan_pmr','data_kegiatan','jumlah_kegiatan_ksr','jumlah_kegiatan_pmr'
+            'data_kegiatan_pmr','data_kegiatan','jumlah_kegiatan_ksr','jumlah_kegiatan_pmr','jumlah_peserta_kontingen'
         ]));
     }
     
@@ -110,28 +113,30 @@ class PanitiaController extends Controller
     // Update Peserta
     public function updatePeserta(Request $request){
         
-        $data_peserta = Peserta::where('mis_peserta',$request->mis_peserta)->get()->first();
+        $data_peserta = Peserta::where('id_peserta',$request->id_peserta)->get()->first();
+        // dd($data_peserta);
         
-        if($request->hasFile('file_kta')){
+        if($request->hasFile('foto_peserta')){
             // dd($request->all());
             
             $request->validate([
-                'file_kta' => 'required|max:2048|mimes:png,jpg,jpg,jpeg'
+                'foto_peserta' => 'required|max:2048|mimes:png,jpg,jpg,jpeg'
             ]);
+            
+            // Delete File Foto Peserta
+            $file_foto = $data_peserta->foto_peserta;
+            $file_path_foto = public_path('file_foto/' . $file_foto);
+            unlink($file_path_foto);
 
-            // Delete File KTA
-            $file_kta = $data_peserta->kta_peserta;
-            $file_path_kta = public_path('file_kta/' . $file_kta);
-            unlink($file_path_kta);
-
-            //Move File KTA 
-            $request->file('file_kta')->move('file_kta/',$request->file('file_kta')->getClientOriginalName());
+            //Move File Peserta
+            $request->file('foto_peserta')->move('file_foto/',$request->file('foto_peserta')->getClientOriginalName());
             
             $data_peserta->update([
                 "nama_peserta" => $request->nama_peserta,
                 "unit_id" => $request->unit_id,
                 "alamat_peserta" => $request->alamat_peserta,
-                "kta_peserta" => $request->file('file_kta')->getClientOriginalName()
+                "role_peserta" => $request->role_peserta,
+                "foto_peserta" => $request->file('foto_peserta')->getClientOriginalName()
             ]);
             
             Alert::success('Update Berhasil !','Peserta Berhasil Diupdate !');
@@ -144,6 +149,60 @@ class PanitiaController extends Controller
 
         Alert::success('Update Berhasil !','Peserta Berhasil Diupdate !');
         return redirect()->back();  
+    }
+
+    // Update SuratTugas
+    public function updateSuratTugas(Request $request){
+        
+        $data_peserta = Peserta::where('id_peserta',$request->id_peserta)->get()->first();
+        // dd($data_peserta);
+        
+        if($request->hasFile('surattugas_pembina')){
+            // dd($request->all());
+            
+            $request->validate([
+                'surattugas_pembina' => 'required|max:2048|mimes:png,jpg,jpg,jpeg'
+            ]);
+            
+            // Delete File Surat Tugas
+            $file_surattugas = $data_peserta->surattugas_pembina;
+            $file_path_surattugas = public_path('file_surattugas/' . $file_surattugas);
+            unlink($file_path_surattugas);
+
+            //Move File Peserta
+            $request->file('surattugas_pembina')->move('file_surattugas/',$request->file('surattugas_pembina')->getClientOriginalName());
+            
+            $data_peserta->update([
+                "surattugas_pembina" => $request->file('surattugas_pembina')->getClientOriginalName()
+            ]);
+
+            Alert::success('Upload Berhasil !','Surat Tugas Berhasil Diupload !');
+            return redirect()->back();
+
+        } else {
+            // dd($request->all());
+            Alert::error('Upload Gagal','Silahkan Cek Ketentuan Surat Tugas !');
+            return redirect()->back();  
+        }
+
+   
+    }
+
+    // Update Password
+    public function updatePassword(Request $request){
+        $data_user = User::where('id',$request->user_id)->get()->first();
+
+        if ($data_user == NULL) {
+            Alert::error('Update Gagal','Silahkan Update Password Lain !');
+            return redirect()->back();  
+        } else {
+            $data_user->update([
+                "password" => Hash::make($request->password)
+            ]);
+            Alert::success('Update Password Berhasil','Silahkan Coba Login Ya!');
+            return redirect()->back(); 
+        }
+        
     }
 
     // Kegiatan page ==================================================================
@@ -353,7 +412,12 @@ class PanitiaController extends Controller
             'role_peserta' => 'Pembina'
         ])->get()->first();
 
-        return view('panitia.unit.detail',compact('data_peserta','jumlah_peserta','data_unit','data_pembina'));
+        $data_pimpinan = Peserta::where([
+            'unit_id' => $id_unit,
+            'role_peserta' => 'Pimpinan'
+        ])->get()->first();
+
+        return view('panitia.unit.detail',compact('data_peserta','jumlah_peserta','data_unit','data_pembina','data_pimpinan'));
     }
 
     // Profile page ================================================================

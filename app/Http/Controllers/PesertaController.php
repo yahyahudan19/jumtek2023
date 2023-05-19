@@ -6,43 +6,75 @@ use App\Models\Kegiatan;
 use App\Models\Kegiatan_Peserta;
 use App\Models\Peserta;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class PesertaController extends Controller
 {
     // Update Peserta
     public function updatePeserta(Request $request){
         
-        $data_peserta = Peserta::where('mis_peserta',$request->mis_peserta)->get()->first();
+        $data_peserta = Peserta::where('id_peserta',auth()->user()->peserta->id_peserta)->get()->first();
         
-        if($request->hasFile('file_kta')){
-            // dd($request->all());
+
+        if($request->hasFile('foto_peserta')){
             
             $request->validate([
-                'file_kta' => 'required|max:2048|mimes:png,jpg,jpg,jpeg'
+                'foto_peserta' => 'required|max:2048|mimes:png,jpg,jpg,jpeg'
             ]);
 
             // Delete File KTA
-            $file_kta = $data_peserta->kta_peserta;
-            $file_path_kta = public_path('file_kta/' . $file_kta);
-            unlink($file_path_kta);
+            $foto_peserta = $data_peserta->foto_peserta;
+            $file_path_foto = public_path('file_foto/' . $foto_peserta);
+            unlink($file_path_foto);
 
             //Move File KTA 
-            $request->file('file_kta')->move('file_kta/',$request->file('file_kta')->getClientOriginalName());
-            
+            $request->file('foto_peserta')->move('file_foto/',$request->file('foto_peserta')->getClientOriginalName());
+
+             // Delete File QR Code
+             $file_qr = $data_peserta->qrcode_peserta;
+             $file_path_qr = public_path('storage/' . $file_qr);
+             unlink($file_path_qr);
+
+             //Generate QR
+            $image = QrCode::format('png')
+            ->size(400)->errorCorrection('H')
+            ->generate($request->nama_peserta);
+            $qrcode_peserta = '/qr-code/img/qrcode_peserta-' .$request->nama_peserta . '.png';
+            Storage::disk('public')->put($qrcode_peserta, $image); 
+
             $data_peserta->update([
                 "nama_peserta" => $request->nama_peserta,
-                "unit_id" => $request->unit_id,
                 "alamat_peserta" => $request->alamat_peserta,
-                "kta_peserta" => $request->file('file_kta')->getClientOriginalName()
+                "foto_peserta" => $request->file('foto_peserta')->getClientOriginalName(),
+                "qrcode_peserta" => $qrcode_peserta
             ]);
             
             Alert::success('Update Berhasil !','Peserta Berhasil Diupdate !');
             return redirect()->back();
 
         } else {
-            // dd($request->all());
-            $data_peserta->update($request->all());
+             // Delete File QR Code
+             $file_qr = $data_peserta->qrcode_peserta;
+             $file_path_qr = public_path('storage/' . $file_qr);
+             unlink($file_path_qr);
+
+             //Generate QR
+            $image = QrCode::format('png')
+            ->size(400)->errorCorrection('H')
+            ->generate($request->nama_peserta);
+            $qrcode_peserta = '/qr-code/img/qrcode_peserta-' .$request->nama_peserta . '.png';
+            Storage::disk('public')->put($qrcode_peserta, $image); 
+
+            $data_peserta->update([
+                "nama_peserta" => $request->nama_peserta,
+                "alamat_peserta" => $request->alamat_peserta,
+                "qrcode_peserta" => $qrcode_peserta
+            ]);
+            
+            Alert::success('Update Berhasil !','Peserta Berhasil Diupdate !');
+            return redirect()->back();
         }
 
         Alert::success('Update Berhasil !','Peserta Berhasil Diupdate !');

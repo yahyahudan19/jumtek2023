@@ -30,6 +30,7 @@
                                             </label>
                                             <div class="col-lg-6">
                                                 <input type="text" class="form-control" id="mis_peserta" name="mis_peserta" value="{{$peserta->mis_peserta}}" readonly>
+                                                <input type="text" class="form-control" id="id_peserta" name="id_peserta" value="{{$peserta->id_peserta}}" hidden>
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -59,10 +60,22 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="file_suratsehat">Surat Sehat
+                                            <label class="col-lg-4 col-form-label" for="role_peserta">Role
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="file" class="form-control" id="file_suratsehat" name="file_suratsehat" value="..and confirm it!">
+                                                <select class="form-control default-select" id="role_peserta" name="role_peserta">
+                                                    <option value="{{$peserta->role_peserta}}">{{$peserta->role_peserta}}</option>
+                                                    <option value="Peserta">Peserta</option>
+                                                    <option value="Pembina">Pembina</option>
+                                                    <option value="Pimpinan">Pimpinan</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="foto_peserta">Foto
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="file" class="form-control" id="foto_peserta" name="foto_peserta" value="..and confirm it!">
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -77,12 +90,90 @@
                                             <a href="/storage{{$peserta->qrcode_peserta}}" target="_blank"><span class="badge badge-danger">Lihat<span class="ml-1 fa fa-eye"></span></span></a>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val-skill">Surat Sehat</label>
-                                            <a href="/file_suratsehat/{{$peserta->suratsehat_peserta}}" target="_blank"><span class="badge badge-warning">Lihat<span class="ml-1 fa fa-eye"></span></span></a>
+                                            <label class="col-lg-4 col-form-label" for="val-skill">Foto</label>
+                                            <a href="/file_foto/{{$peserta->foto_peserta}}" target="_blank"><span class="badge badge-warning">Lihat<span class="ml-1 fa fa-eye"></span></span></a>
                                         </div>
+                                        @if ($peserta->role_peserta == 'Peserta')
+                                        @else
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-skill">Surat Tugas </label>
+                                            <a href="/file_surattugas/{{$peserta->surattugas_pembina}}" target="_blank"><span class="badge badge-success">Lihat<span class="ml-1 fa fa-eye"></span></span></a>
+                                        </div>
+                                        @endif
                                     </div>
                                     {{-- <div class="col-xl-4">
                                     </div> --}}
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @if ($peserta->role_peserta == 'Peserta')
+        @else
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Surat Tugas</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-validation">
+                            <form class="form-valide" action="/peserta/surattugas/" method="POST" enctype="multipart/form-data">
+                                {{ csrf_field() }}
+                                <div class="row">
+                                    <div class="col-xl-9">
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="surattugas_pembina">Surat Tugas</label>
+                                            <div class="col-lg-6">
+                                                <input type="file" class="form-control" id="surattugas_pembina" name="surattugas_pembina" value="..and confirm it!">
+                                                <input type="text" class="form-control" id="id_peserta" name="id_peserta" value="{{$peserta->id_peserta}}" hidden>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-2">
+                                        <div class="form-group row">
+                                            <div class="col-lg-7">
+                                                <button type="submit" class="btn btn-primary">Upload</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Update Password</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-validation">
+                            <form class="form-valide" action="/peserta/password/" method="POST" enctype="multipart/form-data">
+                                {{ csrf_field() }}
+                                <div class="row">
+                                    <div class="col-xl-9">
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="surattugas_pembina">Update Password</label>
+                                            <div class="col-lg-6">
+                                                <input type="password" class="form-control" id="password" name="password">
+                                                <input type="text" class="form-control" id="user_id" name="user_id" value="{{$peserta->user_id}}" hidden>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-2">
+                                        <div class="form-group row">
+                                            <div class="col-lg-12">
+                                                <button type="submit" class="btn btn-info">Update</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </form>
                         </div>
