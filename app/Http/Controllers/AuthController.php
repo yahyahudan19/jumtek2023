@@ -13,7 +13,9 @@ use Illuminate\Support\Str;
 use App\Models\User;
 use App\Models\Peserta;
 use App\Models\Unit;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class AuthController extends Controller
@@ -68,10 +70,15 @@ class AuthController extends Controller
         }else{
             if($request->hasFile('foto_peserta')) {
 
-                $request->validate([
-                    'foto_peserta' => 'required|max:2048|mimes:png,jpg,jpg,jpeg'
+                $validator = Validator::make($request->all(), [
+                    'foto_peserta' => 'required|max:2048|mimes:png,jpg,jpg,jpeg',
                 ]);
-
+                
+                if ($validator->fails()) {
+                    Alert::warning('Register Gagal','Pastikan Foto Sesuai dengan Ketentuan Ya !');
+                    return redirect()->back()->withInput();;
+                }
+            
                 $extension = $request->file('foto_peserta')->getClientOriginalExtension();
                 $nama_foto = 'foto-peserta-'.$request->nama_peserta.'.'. $extension;
                 $request->file('foto_peserta')->move('file_foto/',$nama_foto);
@@ -128,7 +135,7 @@ class AuthController extends Controller
                             "mis_peserta" => $request->mis_peserta,
                             "qrcode_peserta" => $qrcode_peserta,
                             "status_peserta" => "Tidak Aktif",
-                            "foto_peserta" =>  $request->file('foto_peserta')->getClientOriginalName(),
+                            "foto_peserta" =>  $nama_foto,
                         ]);
                         Alert::success('Register Berhasil','Silahkan Login Ya ');
                         return redirect('/login');
@@ -152,7 +159,7 @@ class AuthController extends Controller
                                 "mis_peserta" => $request->mis_peserta,
                                 "qrcode_peserta" => $qrcode_peserta,
                                 "status_peserta" => "Aktif",
-                                "foto_peserta" =>  $request->file('foto_peserta')->getClientOriginalName(),
+                                "foto_peserta" =>  $nama_foto,
                                 "surattugas_pembina" =>  $request->file('surattugas_pembina')->getClientOriginalName(),
                             ]);
                         } else {
@@ -174,7 +181,7 @@ class AuthController extends Controller
                                 "mis_peserta" => $request->mis_peserta,
                                 "qrcode_peserta" => $qrcode_peserta,
                                 "status_peserta" => "Aktif",
-                                "foto_peserta" =>  $request->file('foto_peserta')->getClientOriginalName(),
+                                "foto_peserta" =>  $nama_foto,
                                 // "surattugas_pembina" =>  $request->file('surattugas_pembina')->getClientOriginalName(),
                             ]);
 
@@ -193,7 +200,7 @@ class AuthController extends Controller
     
             }else{
                 
-                Alert::error('Belum Upload Foto','Hayoo Upload Foto dulu yaa !');
+                Alert::error('Belum Upload Foto','Upload Foto dulu yaa !');
                 return redirect()->back();
                 
             }

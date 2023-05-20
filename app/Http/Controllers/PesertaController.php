@@ -7,6 +7,7 @@ use App\Models\Kegiatan_Peserta;
 use App\Models\Peserta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 use RealRashid\SweetAlert\Facades\Alert;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
@@ -20,17 +21,25 @@ class PesertaController extends Controller
 
         if($request->hasFile('foto_peserta')){
             
-            $request->validate([
-                'foto_peserta' => 'required|max:2048|mimes:png,jpg,jpg,jpeg'
+            $validator = Validator::make($request->all(), [
+                'foto_peserta' => 'required|max:2048|mimes:png,jpg,jpg,jpeg',
             ]);
+            
+            if ($validator->fails()) {
+                Alert::warning('Register Gagal','Pastikan Foto Sesuai dengan Ketentuan Ya !');
+                return redirect()->back()->withInput();;
+            }
 
-            // Delete File KTA
+            // Delete File Foto Peserta
             $foto_peserta = $data_peserta->foto_peserta;
             $file_path_foto = public_path('file_foto/' . $foto_peserta);
             unlink($file_path_foto);
 
-            //Move File KTA 
-            $request->file('foto_peserta')->move('file_foto/',$request->file('foto_peserta')->getClientOriginalName());
+            //Move File Foto Peserta 
+            $extension = $request->file('foto_peserta')->getClientOriginalExtension();
+            $nama_foto = 'foto-peserta-'.$request->nama_peserta.'.'. $extension;
+            $request->file('foto_peserta')->move('file_foto/',$nama_foto);
+            // $request->file('foto_peserta')->move('file_foto/',$request->file('foto_peserta')->getClientOriginalName());
 
              // Delete File QR Code
              $file_qr = $data_peserta->qrcode_peserta;
@@ -47,7 +56,7 @@ class PesertaController extends Controller
             $data_peserta->update([
                 "nama_peserta" => $request->nama_peserta,
                 "alamat_peserta" => $request->alamat_peserta,
-                "foto_peserta" => $request->file('foto_peserta')->getClientOriginalName(),
+                "foto_peserta" => $nama_foto,
                 "qrcode_peserta" => $qrcode_peserta
             ]);
             

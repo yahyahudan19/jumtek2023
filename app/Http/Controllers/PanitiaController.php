@@ -139,14 +139,17 @@ class PanitiaController extends Controller
             unlink($file_path_foto);
 
             //Move File Peserta
-            $request->file('foto_peserta')->move('file_foto/',$request->file('foto_peserta')->getClientOriginalName());
+            $extension = $request->file('foto_peserta')->getClientOriginalExtension();
+            $nama_foto = 'foto-peserta-'.$request->nama_peserta.'.'. $extension;
+            $request->file('foto_peserta')->move('file_foto/',$nama_foto);
+            // $request->file('foto_peserta')->move('file_foto/',$request->file('foto_peserta')->getClientOriginalName());
             
             $data_peserta->update([
                 "nama_peserta" => $request->nama_peserta,
                 "unit_id" => $request->unit_id,
                 "alamat_peserta" => $request->alamat_peserta,
                 "role_peserta" => $request->role_peserta,
-                "foto_peserta" => $request->file('foto_peserta')->getClientOriginalName()
+                "foto_peserta" => $nama_foto
             ]);
             
             Alert::success('Update Berhasil !','Peserta Berhasil Diupdate !');
