@@ -71,8 +71,11 @@ class AuthController extends Controller
                 $request->validate([
                     'foto_peserta' => 'required|max:2048|mimes:png,jpg,jpg,jpeg'
                 ]);
-    
-                $request->file('foto_peserta')->move('file_foto/',$request->file('foto_peserta')->getClientOriginalName());
+
+                $extension = $request->file('foto_peserta')->getClientOriginalExtension();
+                $nama_foto = 'foto-peserta-'.$request->nama_peserta.'.'. $extension;
+                $request->file('foto_peserta')->move('file_foto/',$nama_foto);
+                // $request->file('foto_peserta')->move('file_foto/',$request->file('foto_peserta')->getClientOriginalName());
                 
                 $token = Str::random(10);
                 
@@ -107,9 +110,17 @@ class AuthController extends Controller
                     Storage::disk('public')->put($qrcode_peserta, $image); 
 
                     if($request->role_peserta == 'Peserta'){
+
+                        $getPass = explode("@", $request->email_peserta);
+                        $generate_username = $getPass[0];
+
+                        // dd($generate_username);
+                        
                         $peserta = Peserta::create([
                             "user_id" => $userID,
                             "nama_peserta" => $request->nama_peserta,
+                            "username_peserta" => $generate_username,
+                            "pwdmdl_peserta" => "Pwd@".$generate_username."Mdl123!",
                             "alamat_peserta" => $request->alamat_peserta,
                             "role_peserta" => $request->role_peserta,
                             "jenisk_peserta" => $request->jenisk_peserta,
@@ -125,9 +136,15 @@ class AuthController extends Controller
 
                         if ($request->hasFile('surattugas_pembina')) {
                             $request->file('surattugas_pembina')->move('file_surattugas/',$request->file('surattugas_pembina')->getClientOriginalName());
+
+                            $getPass = explode("@", $request->email_peserta);
+                            $generate_username = $getPass[0];
+    
                             $peserta = Peserta::create([
                                 "user_id" => $userID,
                                 "nama_peserta" => $request->nama_peserta,
+                                "username_peserta" => $generate_username,
+                                "pwdmdl_peserta" => "Pwd@".$generate_username."Mdl123!",
                                 "alamat_peserta" => $request->alamat_peserta,
                                 "jenisk_peserta" => $request->jenisk_peserta,
                                 "role_peserta" => $request->role_peserta,
@@ -139,9 +156,17 @@ class AuthController extends Controller
                                 "surattugas_pembina" =>  $request->file('surattugas_pembina')->getClientOriginalName(),
                             ]);
                         } else {
+
+                            $getPass = explode("@", $request->email_peserta);
+                            $generate_username = $getPass[0];
+
+                            // dd($generate_username);
+                            
                             $peserta = Peserta::create([
                                 "user_id" => $userID,
                                 "nama_peserta" => $request->nama_peserta,
+                                "username_peserta" => $request->generate_username,
+                                "pwdmdl_peserta" => "Pwd@".$request->generate_username."Mdl123!",
                                 "alamat_peserta" => $request->alamat_peserta,
                                 "jenisk_peserta" => $request->jenisk_peserta,
                                 "role_peserta" => $request->role_peserta,

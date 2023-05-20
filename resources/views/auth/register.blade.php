@@ -217,7 +217,7 @@
                                     </div>
 									<div class="col-md-12">
                                         <div class="form-group">
-											<span>2. File Foto</span> <b>*Foto 4x6 dan Maksimal : 2 Mb</b><br>
+											<span>2. File Foto</span> <b>*Foto 4x6 dan Maksimal : 2 MB</b><br>
                                             <input type="file" name="foto_peserta" id="foto_peserta" class="form-control" placeholder="Upload Foto	" required>
                                         </div>
                                     </div>

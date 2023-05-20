@@ -96,8 +96,8 @@
                                                 <div class="comment-review star-rating">
 													<span class="review-text">{{$data_peserta->user->email}}</span>
 												</div>
-												<div class="d-table mb-2">
-													<p class="price float-left d-block">{{$data_peserta->mis_peserta}}</p>
+												<div class="d-table mb-1">
+													<span class="review-text"><b>{{$data_peserta->pwdmdl_peserta}}</b></span>
                                                 </div>
                                                 <div>
                                                     <a href="https://ujian.pmikabmalang.or.id/login" target="_blank"><td class="py-2 text-right"><span class="badge badge-info">Test Sekarang<span
