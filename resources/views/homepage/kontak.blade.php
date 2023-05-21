@@ -32,7 +32,7 @@
                         <div class="row align-items-center">
                             <div class="col-xl-3 col-lg-3">
                                 <div class="logo">
-                                    <a href="#"><img src="{{asset('template/dashboard/images/logojumtek_putih.png')}}"  height="80px" width="70px" alt="logo"></a>
+                                    <a href="/"><img src="{{asset('template/dashboard/images/logojumtek_putih.png')}}"  height="80px" width="70px" alt="logo"></a>
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-9">
@@ -40,7 +40,7 @@
                                 <div class="main-menu text-right text-xl-center">
                                     <nav id="mobile-menu">
                                         <ul>
-                                            <li class="active has-sub"><a href="/">Home</a>
+                                            <li class="active"><a href="/">Home</a>
 											</li>
                                             <li class="has-sub">
 												<a href="/contact">Contact</a>												
@@ -55,9 +55,6 @@
 												</ul>
 											</li>
                                             <li><a href="/persyaratan">Persyaratan</a></li>
-                                            <li class="has-sub">
-												<a href="/blog">Blog</a>												
-											</li>
                                         </ul>
                                     </nav>
                                 </div>

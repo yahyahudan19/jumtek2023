@@ -64,9 +64,10 @@
                     <!-- /social -->
                     <nav>
                         <ul class="cd-primary-nav">
-                            <li><a href="#" class="animated_link">Register Version</a></li>
-                            <li><a href="#" class="animated_link">About Us</a></li>
-                            <li><a href="#" class="animated_link">Contact Us</a></li>
+                            <li><a href="/login" class="animated_link">Login</a></li>
+                            <li><a href="/contact" class="animated_link">Contact</a></li>
+                            <li><a href="/" class="animated_link">Homepage</a></li>
+							
                         </ul>
                     </nav>
                 </div>
@@ -249,7 +250,8 @@
 		<ul>
 			{{-- <li><a href="#0" class="animated_link">Purchase this template</a></li> --}}
 			<li><a href="#0" class="animated_link">Terms and conditions</a></li>
-			<li><a href="#0" class="animated_link">Contacts</a></li>
+			<li><a href="/contact" class="animated_link">Contacts</a></li>
+			<li><a href="/login" class="animated_link">Login</a></li>
 			<li><a href="https://pmikabmalang.or.id" class="animated_link">Official Website</a></li>
 		</ul>
 	</footer>

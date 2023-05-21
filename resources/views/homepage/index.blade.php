@@ -58,6 +58,9 @@
                                             <li class="has-sub">
 												<a href="/blog">Blog</a>												
 											</li>
+                                            <li class="has-sub">
+												<a href="/login">Login</a>												
+											</li>
                                         </ul>
                                     </nav>
                                 </div>
