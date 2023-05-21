@@ -125,7 +125,9 @@ class PanitiaController extends Controller
     public function updatePeserta(Request $request){
         
         $data_peserta = Peserta::where('id_peserta',$request->id_peserta)->get()->first();
-        // dd($data_peserta);
+        // dd($request->all());
+        // dd($request->file('foto_peserta'));
+
         
         if($request->hasFile('foto_peserta')){
             

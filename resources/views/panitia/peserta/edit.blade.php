@@ -20,7 +20,7 @@
                     </div>
                     <div class="card-body">
                         <div class="form-validation">
-                            <form class="form-valide" action="/peserta/update/" method="GET" enctype="multipart/form-data">
+                            <form class="form-valide" action="/peserta/update/" method="POST" enctype="multipart/form-data">
                                 {{ csrf_field() }}
                                 <div class="row">
                                     <div class="col-xl-8">
@@ -75,7 +75,7 @@
                                             <label class="col-lg-4 col-form-label" for="foto_peserta">Foto
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="file" class="form-control" id="foto_peserta" name="foto_peserta" value="..and confirm it!">
+                                                <input type="file" class="form-control" id="foto_peserta" name="foto_peserta" placeholder="Upload Dulu!">
                                             </div>
                                         </div>
                                         <div class="form-group row">

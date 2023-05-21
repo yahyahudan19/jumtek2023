@@ -53,7 +53,7 @@ class AuthController extends Controller
     //Register Process
     public function doregister(Request $request){
 
-        // dd($request->all());    
+        dd($request->all());    
 
         $cekPeserta = User::where([
             ['email', '=', $request->email_peserta]
