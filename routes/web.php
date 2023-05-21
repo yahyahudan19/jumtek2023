@@ -27,7 +27,7 @@ Route::middleware(['auth','checkRole:Peserta,Panitia,Pembina'])->group(function 
     Route::get('/dashboard','\App\Http\Controllers\PanitiaController@index');
     Route::get('/dashboard/profile','\App\Http\Controllers\PanitiaController@profile');
     //UPDATE Peserta
-    Route::post('/profile/update','\App\Http\Controllers\PesertaController@updatePeserta');
+    Route::POST('/profile/update','\App\Http\Controllers\PesertaController@updatePeserta');
     //GET Kegiatan Page
     Route::get('/dashboard/kegiatan/peserta','\App\Http\Controllers\PesertaController@kegiatan');
     //POST Kegiatan Peserta
