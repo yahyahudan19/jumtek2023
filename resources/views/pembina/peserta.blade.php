@@ -9,6 +9,9 @@
                 <li class="breadcrumb-item" ><a href="/dashboard/"><td class="py-2 text-right"><span class="badge badge-warning">Kembali<span
                     class="ml-1 fa fa-arrow-left"></span></span></a>
                 </td></li>
+                <li class="breadcrumb-item" ><a href="/dashboard/unit/print" target="_blank"><td class="py-2 text-right"><span class="badge badge-success">Cetak<span
+                    class="ml-1 fa fa-print"></span></span></a>
+                </td></li>
             </ol>
             
         </div>
@@ -37,11 +40,10 @@
                                 <div>
                                     <p class="fs-14 mb-1">Pembina Kontingen</p>
                                     @if ($data_pembina == NULL)
-                                        <span class="fs-20 text-black font-w600">Pembina Belum Terdaftar !
+                                        <span class="badge badge-warning">Pembina Belum Terdaftar <span class="ml-1 fa fa-exclamation"></span></span>
                                     @else
-                                        <span class="fs-20 text-black font-w600">{{$data_pembina->nama_peserta}}
+                                        <span class="badge badge-success">{{$data_pembina->nama_peserta}}</span>
                                     @endif
-                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -54,11 +56,10 @@
                                 <div>
                                     <p class="fs-14 mb-1">Pimpinan Kontingen</p>
                                     @if ($data_pimpinan == NULL)
-                                        <span class="fs-20 text-black font-w600">Pembina Belum Terdaftar !
+                                    <span class="badge badge-warning">Pimpinan Belum Terdaftar <span class="ml-1 fa fa-exclamation"></span></span>
                                     @else
-                                        <span class="fs-20 text-black font-w600">{{$data_pimpinan->nama_peserta}}
+                                        <span class="badge badge-info">{{$data_pimpinan->nama_peserta}}</span>
                                     @endif
-                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -86,7 +87,13 @@
                                     <tbody>
                                         @foreach ($data_peserta as $peserta)
                                         <tr>
-                                            <td>{{$peserta->mis_peserta}}</td>
+                                            <td>
+                                                @if ($peserta->mis_peserta == NULL)
+                                                    MIS Tidak Tersedia
+                                                @else
+                                                    {{$peserta->mis_peserta}}
+                                                @endif
+                                            </td>
                                             <td>{{$peserta->user->email}}</td>
                                             <td>{{$peserta->nama_peserta}}</td>
                                             {{-- <td><a href="/file_kta/{{$peserta->kta_peserta}}" target="_blank"><span class="badge badge-info"><i class="fa fa-eye color-info"></i></span></a></td> --}}

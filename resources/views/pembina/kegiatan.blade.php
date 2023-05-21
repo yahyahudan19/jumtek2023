@@ -1,7 +1,19 @@
 @extends('layouts.master')
 @section('content')
 <div class="content-body">
-    <div class="container-fluid"> 
+    <div class="container-fluid">
+        <div class="page-titles">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Kegiatan</a></li>
+                <li class="breadcrumb-item" ><a href="/dashboard"><td class="py-2 text-right"><span class="badge badge-warning">Kembali<span
+                    class="ml-1 fa fa-arrow-left"></span></span></a>
+                </td></li>
+                <li class="breadcrumb-item" ><a href="/dashboard/kegiatan/print" target="_blank"><td class="py-2 text-right"><span class="badge badge-success">Cetak<span
+                    class="ml-1 fa fa-print"></span></span></a>
+                </td></li>
+            </ol>
+            
+        </div> 
         <div class="col-xl-12 col-xxl-12">
             <div class="row">
                 <div class="col-xl-4 col-xxl-4 col-lg-4 col-sm-6">

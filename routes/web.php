@@ -32,8 +32,7 @@ Route::middleware(['auth','checkRole:Peserta,Panitia,Pembina'])->group(function 
     Route::get('/dashboard/kegiatan/peserta','\App\Http\Controllers\PesertaController@kegiatan');
     //POST Kegiatan Peserta
     Route::post('/kegiatan/peserta/tambah','\App\Http\Controllers\PesertaController@tambahKegiatan');
-    //UPDATE Surat Tugas
-    Route::post('/pembina/surattugas','\App\Http\Controllers\PembinaController@updateSuratTugas');
+   
 
 });
 
@@ -46,6 +45,12 @@ Route::middleware(['auth','checkRole:Pembina'])->group(function () {
     Route::get('/dashboard/pembina/kegiatan','\App\Http\Controllers\PembinaController@kegiatan');
     //Get Detail Kegiatan
     Route::get('/dashboard/pembina/kegiatan/{id}','\App\Http\Controllers\PembinaController@detailKegiatan');
+     //UPDATE Surat Tugas
+     Route::post('/pembina/surattugas','\App\Http\Controllers\PembinaController@updateSuratTugas');
+     //Print Peserta by Unit
+     Route::get('/dashboard/unit/print','\App\Http\Controllers\PembinaController@printUnit');
+     //Print Kegiatan by Unit
+     Route::get('/dashboard/kegiatan/print','\App\Http\Controllers\PembinaController@printKegiatan');
 });
 
 // PANITIA ROUTES

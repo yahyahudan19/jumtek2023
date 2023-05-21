@@ -84,4 +84,44 @@ class PembinaController extends Controller
 
    
     }
+    //Print Peserta by Unit
+    public function printUnit(){
+        
+        $data_unit = Unit::where('id_unit',auth()->user()->peserta->unit->id_unit)->get()->first();
+        $data_peserta = Peserta::where('unit_id',auth()->user()->peserta->unit->id_unit)->get();
+        $jumlah_peserta = Peserta::where('unit_id',auth()->user()->peserta->unit->id_unit)->count();
+
+        $data_pembina = Peserta::where([
+            'unit_id' => auth()->user()->peserta->unit->id_unit,
+            'role_peserta' => 'Pembina'
+        ])->get()->first();
+
+        $data_pimpinan = Peserta::where([
+            'unit_id' => auth()->user()->peserta->unit->id_unit,
+            'role_peserta' => 'Pimpinan'
+        ])->get()->first();
+
+        return view('panitia.unit.print',compact('data_peserta','jumlah_peserta','data_unit','data_pembina','data_pimpinan'));
+    }
+    //Print Kegiatan by Unit
+    public function printKegiatan(){
+
+        $data_kegiatan_peserta = Kegiatan_Peserta::where('unit_id',auth()->user()->peserta->unit->id_unit)->orderBy('kegiatan_id')->get()->all();
+        $jumlah_kegiatan_peserta = Kegiatan_Peserta::where('unit_id',auth()->user()->peserta->unit->id_unit)->get()->count();
+        $data_unit = Unit::where('id_unit',auth()->user()->peserta->unit->id_unit)->get()->first();
+        $jumlah_peserta = Peserta::where('unit_id',auth()->user()->peserta->unit->id_unit)->count();
+
+        $data_pembina = Peserta::where([
+            'unit_id' => auth()->user()->peserta->unit->id_unit,
+            'role_peserta' => 'Pembina'
+        ])->get()->first();
+
+        $data_pimpinan = Peserta::where([
+            'unit_id' => auth()->user()->peserta->unit->id_unit,
+            'role_peserta' => 'Pimpinan'
+        ])->get()->first();
+
+        return view('pembina.kegiatan_print',compact('data_kegiatan_peserta','jumlah_kegiatan_peserta','jumlah_peserta','data_unit','data_pembina','data_pimpinan'));
+
+    }
 }

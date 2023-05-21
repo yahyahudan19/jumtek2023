@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
-                <div class="card-header"> Cetak Data<strong>Kontingen : {{$data_unit->nama_unit}}</strong> {{ \Carbon\Carbon::now()->locale('id_ID')->isoFormat('dddd, D MMMM Y') }} </div>
+                <div class="card-header"> Cetak Kegiatan<strong>Kontingen : {{$data_unit->nama_unit}}</strong> {{ \Carbon\Carbon::now()->locale('id_ID')->isoFormat('dddd, D MMMM Y') }} </div>
                 <div class="card-body">
                     <div class="row mb-5">
                         <div class="mt-4 col-xl-3 col-lg-3 col-md-6 col-sm-12">
@@ -46,29 +46,17 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>MIS PMI</th>
-                                    <th>Email</th>
                                     <th>Nama</th>
-                                    <th>Jenis Kelamin</th>
-                                    <th>Alamat</th>
-                                    <th>Sebagai</th>
+                                    <th>Kegiatan</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($data_peserta as $peserta)
+                                @foreach ($data_kegiatan_peserta as $peserta)
                                      <tr> 
-                                        <td>
-                                            @if ($peserta->mis_peserta == NULL)
-                                                MIS Tidak Tersedia
-                                            @else
-                                                {{$peserta->mis_peserta}}
-                                            @endif
+                                        dif
                                         </td>
                                         <td>{{$peserta->user->email}}</td>
-                                        <td>{{$peserta->nama_peserta}}</td>
-                                        <td>{{$peserta->jenisk_peserta}}</td>
                                         <td>{{$peserta->alamat_peserta}}</td>
-                                        <td>{{$peserta->role_peserta}}</td>
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -87,10 +75,10 @@
                                         <td class="left"><strong>Discount (20%)</strong></td>
                                         <td class="right">$1,699,40</td>
                                     </tr>
-                                    <tr>
-                                        <td class="left"><strong>VAT (10%)</strong></td>
-                                        <td class="right">$679,76</td>
-                                    </tr> --}}
+                                    <tr> --}}
+                                        <td class="left"><strong>Total Kegiatan : </strong></td>
+                                        <td class="right">{{$jumlah_kegiatan_peserta}}</td>
+                                    </tr>
                                     <tr>
                                         <td class="left"><strong>Total Peserta : </strong></td>
                                         <td class="right"><strong>{{$jumlah_peserta}}</strong><br>
@@ -104,9 +92,9 @@
             </div>
         </div>
     </div>
-    <script>
+    {{-- <script>
         window.onload = function() {
             window.print(); // Memicu pencetakan halaman saat halaman dimuat
         };
-    </script>
+    </script> --}}
 @stop
