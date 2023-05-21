@@ -29,6 +29,9 @@ class ExportPesertas implements FromCollection,WithMapping, WithHeadings
             $data_peserta->alamat_peserta,    
             $data_peserta->jenisk_peserta,    
             $data_peserta->unit->nama_unit,    
+            $data_peserta->role_peserta,    
+            $data_peserta->foto_peserta,    
+            $data_peserta->qrcode_peserta,    
         ];
     }
     public function headings(): array
@@ -43,6 +46,9 @@ class ExportPesertas implements FromCollection,WithMapping, WithHeadings
             'Alamat',
             'Jenis Kelamin',
             'Kontingen',
+            'Sebagai',
+            'Foto Peserta',
+            'QR Peserta',
         ];
     }
 }

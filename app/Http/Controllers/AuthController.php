@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Maatwebsite\Excel\Facades\Excel;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use ZipArchive;
 
 class AuthController extends Controller
 {
@@ -241,6 +242,36 @@ class AuthController extends Controller
     public function exportExcel(){
         // return Excel::download(new ExportUsers, 'users.xlsx');
         return Excel::download(new ExportPesertas, 'data_peserta.xlsx');
+    }
+    // Export Foto
+    public function exportFoto(){
+
+        $zip = new ZipArchive;
+        $publicDirectory = public_path('file_foto');
+        $zipFileName = 'file-fotopeserta.zip';
+        $zipPath = public_path($zipFileName);
+
+        // Membuka file ZIP baru
+        if ($zip->open($zipPath, ZipArchive::CREATE) === true) {
+            // Menambahkan file foto ke dalam ZIP
+            $files = scandir($publicDirectory);
+            foreach ($files as $file) {
+                if (in_array($file, ['.', '..'])) {
+                    continue;
+                }
+
+                $filePath = $publicDirectory . '/' . $file;
+                $zip->addFile($filePath, $file);
+            }
+
+            $zip->close();
+
+            // Mengarahkan pengguna untuk mengunduh file ZIP
+            return response()->download($zipPath)->deleteFileAfterSend(true);
+        } else {
+            // Jika gagal membuat file ZIP
+            return response()->json(['error' => 'Failed to create ZIP file.']);
+        }
     }
 
 }

@@ -470,6 +470,25 @@ class PanitiaController extends Controller
 
         return view('panitia.unit.detail',compact('data_peserta','jumlah_peserta','data_unit','data_pembina','data_pimpinan'));
     }
+    //Print Peserta by Unit
+    public function printUnit($id_unit){
+        
+        $data_unit = Unit::where('id_unit',$id_unit)->get()->first();
+        $data_peserta = Peserta::where('unit_id',$id_unit)->get();
+        $jumlah_peserta = Peserta::where('unit_id',$id_unit)->count();
+
+        $data_pembina = Peserta::where([
+            'unit_id' => $id_unit,
+            'role_peserta' => 'Pembina'
+        ])->get()->first();
+
+        $data_pimpinan = Peserta::where([
+            'unit_id' => $id_unit,
+            'role_peserta' => 'Pimpinan'
+        ])->get()->first();
+
+        return view('panitia.unit.print',compact('data_peserta','jumlah_peserta','data_unit','data_pembina','data_pimpinan'));
+    }
 
     // Profile page ================================================================
     public function profile()

@@ -63,6 +63,8 @@ Route::get('/unit/hapus/{id_unit}','\App\Http\Controllers\PanitiaController@hapu
 Route::post('/unit/import','\App\Http\Controllers\PanitiaController@importUnit');
 //DETAIL Unit
 Route::get('/dashboard/unit/{id_unit}','\App\Http\Controllers\PanitiaController@detailUnit');
+//Print Peserta by Unit
+Route::get('/dashboard/unit/print/{id_unit}','\App\Http\Controllers\PanitiaController@printUnit');
 
 
 //GET Peserta
@@ -117,5 +119,6 @@ Route::get('/unit/getUnitByStatusUnits/{status_units}','\App\Http\Controllers\Au
 
 Route::get('/qrgenerator','\App\Http\Controllers\AuthController@qrgenerator');
 Route::get('/exportExcel','\App\Http\Controllers\AuthController@exportExcel');
+Route::get('/exportFoto','\App\Http\Controllers\AuthController@exportFoto');
 
 

@@ -8,6 +8,9 @@
                     <li class="breadcrumb-item" ><a href="/dashboard/unit"><td class="py-2 text-right"><span class="badge badge-warning">Kembali<span
                         class="ml-1 fa fa-arrow-left"></span></span></a>
                     </td></li>
+                    <li class="breadcrumb-item" ><a href="/dashboard/unit/print/{{$data_unit->id_unit}}" target="_blank"><td class="py-2 text-right"><span class="badge badge-success">Cetak<span
+                        class="ml-1 fa fa-print"></span></span></a>
+                    </td></li>
                 </ol>
                 
             </div>
