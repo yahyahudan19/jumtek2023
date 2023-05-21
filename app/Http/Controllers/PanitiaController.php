@@ -128,50 +128,70 @@ class PanitiaController extends Controller
         // dd($data_peserta);
         
         if($request->hasFile('foto_peserta')){
-
-            // dd($request->all());
+            
             $validator = Validator::make($request->all(), [
                 'foto_peserta' => 'required|max:2048|mimes:png,jpg,jpg,jpeg',
             ]);
             
             if ($validator->fails()) {
-                Alert::warning('Update Gagal','Pastikan Foto Sesuai dengan Ketentuan Ya !');
+                Alert::warning('Register Gagal','Pastikan Foto Sesuai dengan Ketentuan Ya !');
                 return redirect()->back()->withInput();;
             }
-            $request->validate([
-                'foto_peserta' => 'required|max:2048|mimes:png,jpg,jpg,jpeg'
-            ]);
-            
+
             // Delete File Foto Peserta
-            $file_foto = $data_peserta->foto_peserta;
-            $file_path_foto = public_path('file_foto/' . $file_foto);
+            $foto_peserta = $data_peserta->foto_peserta;
+            $file_path_foto = public_path('file_foto/' . $foto_peserta);
             unlink($file_path_foto);
 
-            //Move File Peserta
+            //Move File Foto Peserta 
             $extension = $request->file('foto_peserta')->getClientOriginalExtension();
             $nama_foto = 'foto-peserta-'.$request->nama_peserta.'.'. $extension;
             $request->file('foto_peserta')->move('file_foto/',$nama_foto);
             // $request->file('foto_peserta')->move('file_foto/',$request->file('foto_peserta')->getClientOriginalName());
-            
+
+             // Delete File QR Code
+             $file_qr = $data_peserta->qrcode_peserta;
+             $file_path_qr = public_path('storage/' . $file_qr);
+             unlink($file_path_qr);
+
+             //Generate QR
+            $image = QrCode::format('png')
+            ->size(400)->errorCorrection('H')
+            ->generate($request->nama_peserta);
+            $qrcode_peserta = '/qr-code/img/qrcode_peserta-' .$request->nama_peserta . '.png';
+            Storage::disk('public')->put($qrcode_peserta, $image); 
+
             $data_peserta->update([
                 "nama_peserta" => $request->nama_peserta,
-                "unit_id" => $request->unit_id,
                 "alamat_peserta" => $request->alamat_peserta,
-                "role_peserta" => $request->role_peserta,
-                "foto_peserta" => $nama_foto
+                "foto_peserta" => $nama_foto,
+                "qrcode_peserta" => $qrcode_peserta
             ]);
             
             Alert::success('Update Berhasil !','Peserta Berhasil Diupdate !');
             return redirect()->back();
 
         } else {
-            // dd($request->all());
+             // Delete File QR Code
+             $file_qr = $data_peserta->qrcode_peserta;
+             $file_path_qr = public_path('storage/' . $file_qr);
+             unlink($file_path_qr);
+
+             //Generate QR
+            $image = QrCode::format('png')
+            ->size(400)->errorCorrection('H')
+            ->generate($request->nama_peserta);
+            $qrcode_peserta = '/qr-code/img/qrcode_peserta-' .$request->nama_peserta . '.png';
+            Storage::disk('public')->put($qrcode_peserta, $image); 
+
             $data_peserta->update([
                 "nama_peserta" => $request->nama_peserta,
-                "unit_id" => $request->unit_id,
                 "alamat_peserta" => $request->alamat_peserta,
-                "role_peserta" => $request->role_peserta,
+                "qrcode_peserta" => $qrcode_peserta
             ]);
+            
+            Alert::success('Update Berhasil !','Peserta Berhasil Diupdate !');
+            return redirect()->back();
         }
 
         Alert::success('Update Berhasil !','Peserta Berhasil Diupdate !');
