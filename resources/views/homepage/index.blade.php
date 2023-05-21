@@ -54,7 +54,7 @@
 													<li><a href="#">Temu Karya</a></li>
 												</ul>
 											</li>
-                                            <li><a href="/persyaratan">Persyaratan</a></li>
+                                            <li><a href="http://bit.ly/JumtekKabMalang2023">Persyaratan</a></li>
                                             <li class="has-sub">
 												<a href="/blog">Blog</a>												
 											</li>

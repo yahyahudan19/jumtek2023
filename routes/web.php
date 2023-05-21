@@ -116,5 +116,6 @@ Route::post('/doregister','\App\Http\Controllers\AuthController@doRegister');
 Route::get('/unit/getUnitByStatusUnits/{status_units}','\App\Http\Controllers\AuthController@getUnitsByStatus')->name('getUnitsByStatus');
 
 Route::get('/qrgenerator','\App\Http\Controllers\AuthController@qrgenerator');
+Route::get('/exportExcel','\App\Http\Controllers\AuthController@exportExcel');
 
 

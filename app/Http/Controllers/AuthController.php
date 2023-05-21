@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ExportPesertas;
+use App\Exports\ExportUsers;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Auth;
@@ -16,6 +18,7 @@ use App\Models\Unit;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use Maatwebsite\Excel\Facades\Excel;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class AuthController extends Controller
@@ -218,6 +221,9 @@ class AuthController extends Controller
     // QR Generator 
     public function qrgenerator(){
 
+        $buatpassword = Hash::make("PwdAdminJumtek@2013!Resmi");
+        dd($buatpassword);
+
         $colorBlue = '#007bff';
         // Warna hijau
         $colorGreen = '#28a745';
@@ -227,9 +233,14 @@ class AuthController extends Controller
             ->backgroundColor(0,0,0)
             ->color(255, 245, 88)
             ->generate('Contoh QR Code');   
-       
             
         return view('auth.qr',compact('qrCode'));
+    }
+
+    // Export Excel
+    public function exportExcel(){
+        // return Excel::download(new ExportUsers, 'users.xlsx');
+        return Excel::download(new ExportPesertas, 'data_peserta.xlsx');
     }
 
 }
