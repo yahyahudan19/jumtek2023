@@ -107,7 +107,7 @@
                     </div>
                     <div class="card-body">
                         <div class="form-validation">
-                            <form class="form-valide" action="/pembina/surattugas/" method="POST" enctype="multipart/form-data">
+                            <form class="form-valide" action="/pembina/surattugas" method="POST" enctype="multipart/form-data">
                                 {{ csrf_field() }}
                                 <div class="row">
                                     <div class="col-xl-9">
