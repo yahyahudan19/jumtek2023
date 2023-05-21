@@ -447,7 +447,7 @@ class PanitiaController extends Controller
     {   
         $data_unit = Unit::where('status_units',auth()->user()->peserta->unit->status_units)->get()->all();
         $peserta = Peserta::where('id_peserta',auth()->user()->peserta->id_peserta)->get()->first();
-        return view('panitia.profile_ku',compact('data_unit','peserta'));
+        return view('panitia.profile',compact('data_unit','peserta'));
     }
     
 }
