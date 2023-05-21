@@ -166,7 +166,12 @@ class PanitiaController extends Controller
 
         } else {
             // dd($request->all());
-            $data_peserta->update($request->all());
+            $data_peserta->update([
+                "nama_peserta" => $request->nama_peserta,
+                "unit_id" => $request->unit_id,
+                "alamat_peserta" => $request->alamat_peserta,
+                "role_peserta" => $request->role_peserta,
+            ]);
         }
 
         Alert::success('Update Berhasil !','Peserta Berhasil Diupdate !');
