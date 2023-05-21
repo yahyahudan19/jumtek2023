@@ -46,17 +46,18 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
+                                    <th>No</th>
                                     <th>Nama</th>
                                     <th>Kegiatan</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @php $no = 1; @endphp
                                 @foreach ($data_kegiatan_peserta as $peserta)
-                                     <tr> 
-                                        dif
-                                        </td>
-                                        <td>{{$peserta->user->email}}</td>
-                                        <td>{{$peserta->alamat_peserta}}</td>
+                                     <tr>
+                                        <td>{{ $no++ }}</td>
+                                        <td>{{$peserta->peserta->nama_peserta}}</td>
+                                        <td>{{$peserta->kegiatan->nama_kegiatan}}</td>
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -84,6 +85,10 @@
                                         <td class="right"><strong>{{$jumlah_peserta}}</strong><br>
                                             {{-- <strong>0.15050000 BTC</strong></td> --}}
                                     </tr>
+                                    <tr>
+                                        <td class="right">Mengetahui Pembina : <br><b>{{$data_unit->nama_unit}}</b><br><br><br><br><br>  <strong>{{$data_pembina->nama_peserta}} </td>
+                                        <td class="left"></td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -92,9 +97,9 @@
             </div>
         </div>
     </div>
-    {{-- <script>
+    <script>
         window.onload = function() {
             window.print(); // Memicu pencetakan halaman saat halaman dimuat
         };
-    </script> --}}
+    </script>
 @stop

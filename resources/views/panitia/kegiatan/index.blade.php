@@ -251,6 +251,7 @@
                                 <table id="example3" class="display min-w850">
                                     <thead>
                                         <tr>
+                                            <th></th>
                                             <th>Nama</th>
                                             <th>Tanggal</th>
                                             <th>Waktu</th>
@@ -259,8 +260,10 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @php $no = 1; @endphp
                                         @foreach ($data_kegiatan_jumbara as $kegiatan)
                                         <tr>
+                                            <td>{{ $no++ }}</td>
                                             <td>{{$kegiatan->nama_kegiatan}}</a></td>
                                             <td>{{ \Carbon\Carbon::parse($kegiatan->tanggal_kegiatan)->format('d M Y') }}</td>
                                             <td>{{ \Carbon\Carbon::parse($kegiatan->waktu_kegiatan)->format('H:i')}} WIB</td>
@@ -296,6 +299,7 @@
                                 <table id="example3" class="display min-w850">
                                     <thead>
                                         <tr>
+                                            <th>#</th>
                                             <th>Nama</th>
                                             <th>Tanggal</th>
                                             <th>Waktu</th>
@@ -304,8 +308,10 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @php $no = 1; @endphp
                                         @foreach ($data_kegiatan_temu_karya as $kegiatan)
                                         <tr>
+                                            <td>{{ $no++ }}</td>
                                             <td>{{$kegiatan->nama_kegiatan}}</a></td>
                                             <td>{{ \Carbon\Carbon::parse($kegiatan->tanggal_kegiatan)->format('d M Y') }}</td>
                                             <td>{{ \Carbon\Carbon::parse($kegiatan->waktu_kegiatan)->format('H:i')}} WIB</td>

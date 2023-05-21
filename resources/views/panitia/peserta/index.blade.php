@@ -151,6 +151,7 @@
                                     <table id="example3" class="display min-w850">
                                         <thead>
                                             <tr>
+                                                <th>No</th>
                                                 <th>Email</th>
                                                 <th>MIS PMI</th>
                                                 <th>Nama</th>
@@ -163,8 +164,10 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @php $no = 1; @endphp
                                             @foreach ($data_peserta as $peserta)
                                             <tr>
+                                                <td>{{ $no++ }}</td>
                                                 <td>{{$peserta->user->email}}</td>
                                                 <td>
                                                     @if ($peserta->mis_peserta == NULL)

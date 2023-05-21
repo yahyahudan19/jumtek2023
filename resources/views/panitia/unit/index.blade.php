@@ -162,13 +162,16 @@
                                     <table id="example3" class="display min-w850">
                                         <thead>
                                             <tr>
+                                                <th>#</th>
                                                 <th>Nama Unit</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @php $no = 1; @endphp
                                             @foreach ($data_unit_ksr as $unit)
                                             <tr>
+                                                <td>{{ $no++ }}</td>
                                                 <td>{{$unit->nama_unit}}</a></td>
                                                 <td>
 													<div class="d-flex">
@@ -195,13 +198,16 @@
                                     <table id="example3" class="display min-w850">
                                         <thead>
                                             <tr>
+                                                <th>#</th>
                                                 <th>Nama Unit</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @php $no = 1; @endphp
                                             @foreach ($data_unit_mula as $unit)
                                             <tr>
+                                                <td>{{ $no++ }}</td>
                                                 <td>{{$unit->nama_unit}}</a></td>
                                                 <td>
 													<div class="d-flex">					
@@ -228,13 +234,16 @@
                                     <table id="example3" class="display min-w850">
                                         <thead>
                                             <tr>
+                                                <th>#</th>
                                                 <th>Nama Unit</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @php $no = 1; @endphp
                                             @foreach ($data_unit_madya as $unit)
                                             <tr>
+                                                <td>{{ $no++ }}</td>
                                                 <td>{{$unit->nama_unit}}</a></td>
                                                 <td>
 													<div class="d-flex">
@@ -261,13 +270,16 @@
                                     <table id="example3" class="display min-w850">
                                         <thead>
                                             <tr>
+                                                <th>#</th>
                                                 <th>Nama Unit</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @php $no = 1; @endphp
                                             @foreach ($data_unit_wira as $unit)
                                             <tr>
+                                                <td>{{ $no++ }}</td>
                                                 <td>{{$unit->nama_unit}}</a></td>
                                                 <td>
 													<div class="d-flex">
