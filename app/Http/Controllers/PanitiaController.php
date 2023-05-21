@@ -12,6 +12,7 @@ use App\Models\Unit;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class PanitiaController extends Controller
@@ -127,8 +128,16 @@ class PanitiaController extends Controller
         // dd($data_peserta);
         
         if($request->hasFile('foto_peserta')){
+
             // dd($request->all());
+            $validator = Validator::make($request->all(), [
+                'foto_peserta' => 'required|max:2048|mimes:png,jpg,jpg,jpeg',
+            ]);
             
+            if ($validator->fails()) {
+                Alert::warning('Update Gagal','Pastikan Foto Sesuai dengan Ketentuan Ya !');
+                return redirect()->back()->withInput();;
+            }
             $request->validate([
                 'foto_peserta' => 'required|max:2048|mimes:png,jpg,jpg,jpeg'
             ]);
@@ -438,7 +447,7 @@ class PanitiaController extends Controller
     {   
         $data_unit = Unit::where('status_units',auth()->user()->peserta->unit->status_units)->get()->all();
         $peserta = Peserta::where('id_peserta',auth()->user()->peserta->id_peserta)->get()->first();
-        return view('panitia.profile',compact('data_unit','peserta'));
+        return view('panitia.profile_ku',compact('data_unit','peserta'));
     }
     
 }
