@@ -2,7 +2,7 @@
 @section('content')
 
 @if(auth()->user()->role == 'Peserta')
-<div class="content-body">
+<div class="content-body">  
     <!-- row -->
     <div class="container-fluid">
         <!-- Add Order -->
@@ -38,23 +38,19 @@
         </div>
         <div class="row">
             @if ($data_peserta->status_peserta == 'Aktif')
-                <div class="col-lg-6">
+                {{-- <div class="col-lg-6">
                     <div class="card">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-xl-3 col-lg-6  col-md-6 col-xxl-5 ">
-                                    <!-- Tab panes -->
                                     <div class="tab-content">
                                         <div role="tabpanel" class="tab-pane fade show active" id="first">
                                             <img class="img-fluid" src="/storage{{$data_peserta->qrcode_peserta}}" alt="">
                                         </div>
                                     </div>
                                 </div>
-                                <!--Tab slider End-->
                                 <div class="col-xl-9 col-lg-6  col-md-6 col-xxl-7 col-sm-12">
                                     <div class="product-detail-content">
-                                        <!--Product details-->
-                                        {{-- <br> --}}
                                         <div class="new-arrival-content pr">
                                             <h4>{{$data_peserta->nama_peserta}} </h4>
                                             <div class="comment-review star-rating">
@@ -66,7 +62,7 @@
                                             <div>
                                                 <a href="/storage{{$data_peserta->qrcode_peserta}}" download="">
                                                     <td class="py-2 text-right">
-                                                        <span class="badge badge-success">Download QR<span class="ml-1 fa fa-download"> </span> </span>
+                                                        <span class="badge badge-success">Download QR<span class="c"> </span> </span>
                                                     </td>
                                                 </a>
                                             </div>
@@ -93,13 +89,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!--Tab slider End-->
                                 <div class="col-xl-9 col-lg-6  col-md-6 col-xxl-7 col-sm-12">
                                     <div class="product-detail-content">
                                         <div class="new-arrival-content pr">
                                             <h4>Login Moodle : </h4>
                                             <h6>Email : <b>{{$data_peserta->user->email}}</b></h6>
-                                         
                                             <h6>Password : <b>{{$data_peserta->pwdmdl_peserta}}</b> </h6>
                                         </div>
                                         <div>
@@ -118,7 +112,69 @@
                             </td>
                         </div>
                     </div>
+                </div> --}}
+                <div class="col-xl-4 col-lg-12 col-sm-12">
+                    <div class="card overflow-hidden">
+                        <div class="text-center p-3 overlay-box " style="background-image: url({{asset('template/dashboard/images/big/img1.jpg')}}  );">
+                            <div class="profile-photo">
+                                <img src="/storage{{$data_peserta->qrcode_peserta}}" width="150" class="img-fluid rounded" alt="">
+                            </div>
+                            <h4 class="mt-3 mb-1 text-white">Informasi QR Code :</h4>
+                            <p class="text-white mb-0">Digunakan Saat Absensi Kegiatan </p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                             <center><li class="list-group-item d-flex justify-content-between"><strong class="text-muted">QR Code Berupa Nama Lengkap</strong></li></center>
+                             <center><li class="list-group-item d-flex justify-content-between"><strong class="text-muted">Pastikan Nama Sudah Benar !	</strong></li></center>
+                        </ul>
+                        <div class="card-footer border-0 mt-0">								
+                            <a href="/storage{{$data_peserta->qrcode_peserta}}" download="" class="btn btn-info btn-lg btn-block">
+                                <i class="ml-1 fa fa-download"></i> Download QR							
+                            </a>		
+                        </div>
+                    </div>
                 </div>
+                <div class="col-xl-4 col-lg-12 col-sm-12">
+                    <div class="card overflow-hidden">
+                        <div class="text-center p-3 overlay-box " style="background-image: url({{asset('template/dashboard/images/big/img1.jpg')}}  );">
+                            <div class="profile-photo">
+                                <img src="/file_foto/{{$data_peserta->foto_peserta}}" width="150" he class="img-fluid rounded" alt="">
+                            </div>
+                            <h3 class="mt-3 mb-1 text-white">Profile Peserta</h3>
+                            <p class="text-white mb-0">Jumtek 2023</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between"><span class="mb-0"><span class="mb-0">Nama : <br></span><strong class="text-muted">{{$data_peserta->nama_peserta}}	</strong></li>
+                            <li class="list-group-item d-flex justify-content-between"><span class="mb-0"><span class="mb-0">Kontingen :  <br></span><strong class="text-muted">{{$data_peserta->unit->nama_unit}}</strong></li>
+                        </ul>
+                        {{-- <div class="card-footer border-0 mt-0">								
+                            <button class="btn btn-primary btn-lg btn-block">
+                                <i class="fa fa-bell-o"></i> Reminder Alarm							
+                            </button>		
+                        </div> --}}
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-12 col-sm-12">
+                    <div class="card overflow-hidden">
+                        <div class="text-center p-3 overlay-box " style="background-image: url({{asset('template/dashboard/images/big/img1.jpg')}}  );">
+                            <div class="profile-photo">
+                                <img src="{{asset('/template/dashboard/images/exam.png')}}" width="150" class="img-fluid rounded" alt="">
+                            </div>
+                            <h4 class="mt-3 mb-1 text-white">Informasi Login Moodle :</h4>
+                            <p class="text-white mb-0">Digunakan Saat Ujian Saja !</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between"><span class="mb-0">Email</span> <strong class="text-muted">{{$data_peserta->user->email}}	</strong></li>
+                            <li class="list-group-item d-flex justify-content-between"><span class="mb-0">Password </span> <strong class="text-muted">{{$data_peserta->pwdmdl_peserta}}	</strong></li>
+                        </ul>
+                        <div class="card-footer border-0 mt-0">								
+                            <a href="https://ujian.pmikabmalang.or.id/login" target="_blank" class="btn btn-success btn-lg btn-block">
+                                <i class="ml-1 fa fa-pencil-square-o"></i> Test Sekarang !							
+                            </a>		
+                        </div>
+                    </div>
+                </div>
+               
+                
             @endif
         </div>
         @if ($data_peserta->status_peserta == 'Aktif')
@@ -234,69 +290,65 @@
             </div>
             <div class="col-xl-12 col-xxl-12">
                 <div class="row">
-                    <div class="col-xl-3 col-xxl-3 col-lg-3 col-sm-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex align-items-end">
-                                    <div>
-                                        <p class="fs-14 mb-1">Jumlah Kegiatan</p>
-                                        <span class="fs-35 text-black font-w600">{{$jumlah_kegiatan}}
-                                            <svg class="ml-1" width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M2.00401 11.1924C0.222201 11.1924 -0.670134 9.0381 0.589795 7.77817L7.78218 0.585786C8.56323 -0.195262 9.82956 -0.195262 10.6106 0.585786L17.803 7.77817C19.0629 9.0381 18.1706 11.1924 16.3888 11.1924H2.00401Z" fill="#33C25B"/>
-                                            </svg>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-xl-3 col-lg-6 col-sm-6">
+						<div class="widget-stat card bg-secondary">
+							<div class="card-body  p-4">
+								<div class="media">
+									<span class="mr-3">
+										<i class="flaticon-381-user-1"></i>
+									</span>
+									<div class="media-body text-white text-right">
+										<p class="mb-1">Kegiatan</p>
+										<h3 class="text-white">{{$jumlah_kegiatan}}</h3>
+									</div>
+								</div>
+							</div>
+						</div>
                     </div>
-                    <div class="col-xl-3 col-xxl-3 col-lg-3 col-sm-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="fs-14 mb-1">Jumlah Peserta</p>
-                                        <span class="fs-35 text-black font-w600">{{$jumlah_peserta}}
-                                            <svg class="ml-1" width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M2.00401 11.1924C0.222201 11.1924 -0.670134 9.0381 0.589795 7.77817L7.78218 0.585786C8.56323 -0.195262 9.82956 -0.195262 10.6106 0.585786L17.803 7.77817C19.0629 9.0381 18.1706 11.1924 16.3888 11.1924H2.00401Z" fill="#33C25B"/>
-                                            </svg>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-xl-3 col-lg-6 col-sm-6">
+						<div class="widget-stat card bg-info">
+							<div class="card-body  p-4">
+								<div class="media">
+									<span class="mr-3">
+										<i class="flaticon-381-user-2"></i>
+									</span>
+									<div class="media-body text-white text-right">
+										<p class="mb-1">Peserta</p>
+										<h3 class="text-white">{{$jumlah_peserta}}</h3>
+									</div>
+								</div>
+							</div>
+						</div>
                     </div>
-                    <div class="col-xl-3 col-xxl-3 col-lg-3 col-sm-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="fs-14 mb-1">Jumlah KSR</p>
-                                        <span class="fs-35 text-black font-w600">{{$jumlah_ksr}}
-                                            <svg class="ml-1" width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M2.00401 11.1924C0.222201 11.1924 -0.670134 9.0381 0.589795 7.77817L7.78218 0.585786C8.56323 -0.195262 9.82956 -0.195262 10.6106 0.585786L17.803 7.77817C19.0629 9.0381 18.1706 11.1924 16.3888 11.1924H2.00401Z" fill="#33C25B"/>
-                                            </svg>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-xl-3 col-lg-6 col-sm-6">
+						<div class="widget-stat card bg-warning">
+							<div class="card-body  p-4">
+								<div class="media">
+									<span class="mr-3">
+										<i class="flaticon-381-wifi-2"></i>
+									</span>
+									<div class="media-body text-white text-right">
+										<p class="mb-1">Jumlah KSR</p>
+										<h3 class="text-white">{{$jumlah_ksr}}</h3>
+									</div>
+								</div>
+							</div>
+						</div>
                     </div>
-                    <div class="col-xl-3 col-xxl-3 col-lg-3 col-sm-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="fs-14 mb-1">Jumlah PMR</p>
-                                        <span class="fs-35 text-black font-w600">{{$jumlah_pmr}}
-                                            <svg class="ml-1" width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M2.00401 11.1924C0.222201 11.1924 -0.670134 9.0381 0.589795 7.77817L7.78218 0.585786C8.56323 -0.195262 9.82956 -0.195262 10.6106 0.585786L17.803 7.77817C19.0629 9.0381 18.1706 11.1924 16.3888 11.1924H2.00401Z" fill="#33C25B"/>
-                                            </svg>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-xl-3 col-lg-6 col-sm-6">
+						<div class="widget-stat card bg-success">
+							<div class="card-body  p-4">
+								<div class="media">
+									<span class="mr-3">
+										<i class="flaticon-381-plus"></i>
+									</span>
+									<div class="media-body text-white text-right">
+										<p class="mb-1">Jumlah PMR</p>
+										<h3 class="text-white">{{$jumlah_pmr}}</h3>
+									</div>
+								</div>
+							</div>
+						</div>
                     </div>
                     <div class="col-xl-12">
                         <div class="card">
