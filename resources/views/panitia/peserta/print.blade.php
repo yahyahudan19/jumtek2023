@@ -92,9 +92,9 @@
             </div>
         </div>
     </div>
-    {{-- <script>
+    <script>
         window.onload = function() {
             window.print(); // Memicu pencetakan halaman saat halaman dimuat
         };
-    </script> --}}
+    </script>
 @stop
