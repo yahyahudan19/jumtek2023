@@ -119,7 +119,7 @@ class PanitiaController extends Controller
     public function detailPeserta($id_peserta){
         $data_unit = Unit::all()->all();
         $peserta = Peserta::where('id_peserta',$id_peserta)->get()->first();
-
+        
         return view('panitia.peserta.edit',compact('peserta','data_unit'));
     }
 
@@ -254,6 +254,13 @@ class PanitiaController extends Controller
             return redirect()->back(); 
         }
         
+    }
+    // Print Peserta
+    public function printPeserta(){
+        $data_peserta = Peserta::all()->orderBy('unit_id');
+        $jumlah_peserta = Peserta::all()->count();
+
+        return view('panitia.peserta.print',compact('data_peserta','jumlah_peserta'));
     }
 
     // Kegiatan page ==================================================================

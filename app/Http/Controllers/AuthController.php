@@ -250,7 +250,7 @@ class AuthController extends Controller
         $publicDirectory = public_path('file_foto');
         $zipFileName = 'file-fotopeserta.zip';
         $zipPath = public_path($zipFileName);
-
+        
         // Membuka file ZIP baru
         if ($zip->open($zipPath, ZipArchive::CREATE) === true) {
             // Menambahkan file foto ke dalam ZIP
@@ -265,9 +265,13 @@ class AuthController extends Controller
             }
 
             $zip->close();
-
-            // Mengarahkan pengguna untuk mengunduh file ZIP
-            return response()->download($zipPath)->deleteFileAfterSend(true);
+            try {
+                // Mengarahkan pengguna untuk mengunduh file ZIP
+                return response()->download($zipPath)->deleteFileAfterSend(true);
+            } catch (\Throwable $th) {
+                Alert::error('Gagal Download Foto','Foto Masih Kosong Gaes !');
+                return redirect()->back();
+            }
         } else {
             // Jika gagal membuat file ZIP
             return response()->json(['error' => 'Failed to create ZIP file.']);

@@ -36,22 +36,23 @@
                             </div>
                         </div>
                     </div>
-                    {{-- <div class="col-xl-3 col-xxl-3 col-lg-3 col-sm-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="fs-14 mb-1">Jumlah Pembina</p>
-                                        <span class="fs-35 text-black font-w600">{{$jumlah_unit}}
-                                            <svg class="ml-1" width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M2.00401 11.1924C0.222201 11.1924 -0.670134 9.0381 0.589795 7.77817L7.78218 0.585786C8.56323 -0.195262 9.82956 -0.195262 10.6106 0.585786L17.803 7.77817C19.0629 9.0381 18.1706 11.1924 16.3888 11.1924H2.00401Z" fill="#33C25B"/>
-                                            </svg>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
+                    
+                    <div class="col-xl-3 col-xxl-3 col-lg-3 col-sm-6">
+                        <div class="d-flex mb-3">
+                            <a href="/exportPeserta" class="btn btn-success text-nowrap"><i class="fa fa-file-excel-o scale5 mr-3" aria-hidden="true"></i>Export Data Excel</a>
                         </div>
-                    </div> --}}
+                        <div class="d-flex mb-3">
+                            <a href="/exportFoto" class="btn btn-info text-nowrap"><i class="fa fa-picture-o scale5 mr-3" aria-hidden="true"></i>Download Foto  </a>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-xxl-3 col-lg-3 col-sm-6">
+                        <div class="d-flex mb-3">
+                            <a href="/dashboard/peserta/print" target="_blank" class="btn btn-danger text-nowrap"><i class="fa fa-file-text scale5 mr-3" aria-hidden="true"></i>Generate Laporan</a>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <a href="/register" target="_blank" class="btn btn-warning text-nowrap"><i class="fa fa-plus scale5 mr-3" aria-hidden="true"></i>Tambah Peserta</a>
+                        </div>
+                    </div>
                     {{-- <div class="col-xl-3 col-xxl-3 col-lg-3 col-sm-6">
                         <div class="card">
                             <div class="card-body">

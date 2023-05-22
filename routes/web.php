@@ -88,7 +88,12 @@ Route::POST('/peserta/update','\App\Http\Controllers\PanitiaController@updatePes
 Route::post('/peserta/surattugas','\App\Http\Controllers\PanitiaController@updateSuratTugas');
 // UPDATE Password User
 Route::post('/peserta/password','\App\Http\Controllers\PanitiaController@updatePassword');
-
+//EXPORT Peserta
+Route::get('/exportPeserta','\App\Http\Controllers\AuthController@exportExcel');
+//EXPORT Foto Peserta
+Route::get('/exportFoto','\App\Http\Controllers\AuthController@exportFoto');
+//Print Peserta
+Route::get('/peserta/cetak','\App\Http\Controllers\PanitiaController@printPeserta');
 
 //GET Kegiatan
 Route::get('/dashboard/kegiatan','\App\Http\Controllers\PanitiaController@kegiatan');
@@ -123,7 +128,7 @@ Route::post('/doregister','\App\Http\Controllers\AuthController@doRegister');
 Route::get('/unit/getUnitByStatusUnits/{status_units}','\App\Http\Controllers\AuthController@getUnitsByStatus')->name('getUnitsByStatus');
 
 Route::get('/qrgenerator','\App\Http\Controllers\AuthController@qrgenerator');
-Route::get('/exportExcel','\App\Http\Controllers\AuthController@exportExcel');
-Route::get('/exportFoto','\App\Http\Controllers\AuthController@exportFoto');
+
+
 
 
