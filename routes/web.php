@@ -93,7 +93,7 @@ Route::get('/exportPeserta','\App\Http\Controllers\AuthController@exportExcel');
 //EXPORT Foto Peserta
 Route::get('/exportFoto','\App\Http\Controllers\AuthController@exportFoto');
 //Print Peserta
-Route::get('/peserta/cetak','\App\Http\Controllers\PanitiaController@printPeserta');
+Route::get('/peserta/print','\App\Http\Controllers\PanitiaController@printPeserta');
 
 //GET Kegiatan
 Route::get('/dashboard/kegiatan','\App\Http\Controllers\PanitiaController@kegiatan');
