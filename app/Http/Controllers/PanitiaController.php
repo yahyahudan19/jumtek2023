@@ -257,7 +257,7 @@ class PanitiaController extends Controller
     }
     // Print Peserta
     public function printPeserta(){
-        $data_peserta = Peserta::all()->orderBy('unit_id');
+        $data_peserta = Peserta::all()->sortBy('unit_id');
         $jumlah_peserta = Peserta::all()->count();
 
         return view('panitia.peserta.print',compact('data_peserta','jumlah_peserta'));
