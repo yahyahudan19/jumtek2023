@@ -47,7 +47,7 @@
                     </div>
                     <div class="col-xl-3 col-xxl-3 col-lg-3 col-sm-6">
                         <div class="d-flex mb-3">
-                            <a href="/dashboard/peserta/print" target="_blank" class="btn btn-danger text-nowrap"><i class="fa fa-file-text scale5 mr-3" aria-hidden="true"></i>Generate Laporan</a>
+                            <a href="/peserta/print" target="_blank" class="btn btn-danger text-nowrap"><i class="fa fa-file-text scale5 mr-3" aria-hidden="true"></i>Generate Laporan</a>
                         </div>
                         <div class="d-flex mb-3">
                             <a href="/register" target="_blank" class="btn btn-warning text-nowrap"><i class="fa fa-plus scale5 mr-3" aria-hidden="true"></i>Tambah Peserta</a>
