@@ -417,6 +417,8 @@ class PanitiaController extends Controller
     }
     // Tambah Unit 
     public function tambahUnit(Request $request){
+        // dd($request->all());
+
         $cek_unit = Unit::where([
             ['nama_unit','=', $request->nama_unit],
             ['status_unit','=', $request->status_unit],
@@ -427,10 +429,11 @@ class PanitiaController extends Controller
             Alert::error('Tambah Unit Gagal!','Unit Sudah Terdaftar !');
             return redirect()->back();
         }else{
+
             $unit = Unit::create([
                 "nama_unit" => $request->nama_unit,
                 "status_unit" => $request->status_unit,
-                "status_units   " => $request->status_units,
+                "status_units" => $request->status_units,
             ]);
 
             if($unit){
