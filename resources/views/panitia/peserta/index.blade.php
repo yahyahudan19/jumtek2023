@@ -50,7 +50,8 @@
                             <a href="/peserta/print" target="_blank" class="btn btn-danger text-nowrap"><i class="fa fa-file-text scale5 mr-3" aria-hidden="true"></i>Generate Laporan</a>
                         </div>
                         <div class="d-flex mb-3">
-                            <a href="/register" target="_blank" class="btn btn-warning text-nowrap"><i class="fa fa-plus scale5 mr-3" aria-hidden="true"></i>Tambah Peserta</a>
+                            {{-- <a href="/register" target="_blank" class="btn btn-warning text-nowrap"><i class="fa fa-plus scale5 mr-3" aria-hidden="true"></i>Tambah Peserta</a> --}}
+                            <a href="/peserta/hapus" class="btn btn-warning text-nowrap"><i class="fa fa-plus scale5 mr-3" aria-hidden="true"></i>Tambah Peserta</a>
                         </div>
                     </div>
                     {{-- <div class="col-xl-3 col-xxl-3 col-lg-3 col-sm-6">
@@ -207,7 +208,13 @@
                                                     @else
                                                         <div class="d-flex">
                                                             <a href="/dashboard/peserta/{{$peserta->id_peserta}}" class="btn btn-info shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-                                                            <a href="/peserta/delete/{{$peserta->id_peserta}}" class="btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-trash"></i></a>
+                                                            
+                                                            <form action="/peserta/delete/{{$peserta->id_peserta}}" method="POST" id="hapus-peserta">
+                                                                {{ csrf_field() }}
+                                                                @method('DELETE')
+                                                                <a href="#" class="btn btn-danger shadow btn-xs sharp mr-1" onclick="confirmDelete()"><i class="fa fa-trash"></i></a>
+                                                            </form>
+
                                                             @if ($peserta->status_peserta == 'Tidak Aktif')
                                                             <a href="/peserta/validasi/{{$peserta->id_peserta}}" class="btn btn-success shadow btn-xs sharp"><i class="fa fa-check-circle-o"></i></a>
                                                             @else 
@@ -224,6 +231,31 @@
                             </div>
                         </div>
                     </div>
+                    {{-- <div class="col-12">
+                        <form action="/peserta/hapus" method="POST" id="hapus-peserta-ges">
+                            {{ csrf_field() }}
+                            @method('DELETE')
+                            <a href="#" class="btn btn-danger" onclick="confirmDelete()">Hapus</a>
+                        </form>
+                    </div> --}}
+                    <script>
+                        function confirmDelete() {
+                            event.preventDefault(); 
+                            swal.fire({
+                                title: 'Konfirmasi',
+                                text: 'Anda yakin ingin menghapus Peserta ini?',
+                                icon: 'question',
+                                showCancelButton: true,
+                                confirmButtonText: 'Ya, Hapus!',
+                                cancelButtonText: 'Batal'
+                            }).then((result) => {
+                                if (result.value) {
+                                    // Jika pengguna menekan tombol "Ya, Hapus!"
+                                    document.getElementById('hapus-peserta').submit();
+                                }
+                            });
+                        }
+                    </script>
                 </div>
             </div>
         </div>

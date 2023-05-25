@@ -26,6 +26,9 @@
     <!-- Material color picker -->
     <link href="{{asset('template/dashboard/vendor/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css')}}" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- Sweet Alert -->
+    <link href="{{asset('template/dashboard/vendor/sweetalert2/dist/sweetalert2.min.css')}}" rel="stylesheet">
+
 
 </head>
 <body>
@@ -724,5 +727,8 @@
 		});
 	</script>
 	@include('sweetalert::alert')
+	<script src="{{asset('template/dashboard/vendor/sweetalert2/dist/sweetalert2.min.js')}}"></script>
+    <script src="{{asset('template/dashboard/js/plugins-init/sweetalert.init.js')}}"></script>
+	
 </body>
 </html>

@@ -57,6 +57,9 @@ class PanitiaController extends Controller
     }
     // Hapus Peserta //
     public function hapusPeserta($id_peserta){
+
+        // dd("ASHIAP");
+
         $data_peserta = Peserta::where('id_peserta',$id_peserta)->get()->first();
         $data_user = User::where('id',$data_peserta->user_id)->get()->first();
 
@@ -261,6 +264,14 @@ class PanitiaController extends Controller
         $jumlah_peserta = Peserta::all()->count();
 
         return view('panitia.peserta.print',compact('data_peserta','jumlah_peserta'));
+    }
+
+    //Hapus Peserta dengan Alert
+    public function delPeserta(){
+        dd("Ashiap");
+        // Redirect kembali ke halaman sebelumnya setelah peringatan ditampilkan
+        // return redirect()->back();
+
     }
 
     // Kegiatan page ==================================================================

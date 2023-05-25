@@ -75,7 +75,7 @@ Route::get('/dashboard/unit/print/{id_unit}','\App\Http\Controllers\PanitiaContr
 //GET Peserta
 Route::get('/dashboard/peserta','\App\Http\Controllers\PanitiaController@peserta');
 //DELETE Peserta
-Route::get('/peserta/delete/{id_peserta}','\App\Http\Controllers\PanitiaController@hapusPeserta');
+Route::delete('/peserta/delete/{id_peserta}','\App\Http\Controllers\PanitiaController@hapusPeserta');
 //VALIDASI Peserta
 Route::get('/peserta/validasi/{id_peserta}','\App\Http\Controllers\PanitiaController@validasiPeserta');
 //UNVALIDASI Peserta
@@ -94,6 +94,8 @@ Route::get('/exportPeserta','\App\Http\Controllers\AuthController@exportExcel');
 Route::get('/exportFoto','\App\Http\Controllers\AuthController@exportFoto');
 //Print Peserta
 Route::get('/peserta/print','\App\Http\Controllers\PanitiaController@printPeserta');
+//Hapus Peserta with Alert
+Route::delete('/peserta/hapus','\App\Http\Controllers\PanitiaController@delPeserta');
 
 //GET Kegiatan
 Route::get('/dashboard/kegiatan','\App\Http\Controllers\PanitiaController@kegiatan');
