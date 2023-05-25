@@ -103,6 +103,25 @@ class PesertaController extends Controller
     // POST Kegiatan Peserta
     public function tambahKegiatan(Request $request){
 
+        // dd($request->all());
+
+        // $selectedKegiatans = $request->input('id_kegiatan');
+
+        // foreach ($selectedKegiatans as $kegiatan) {
+
+        //     $tambahkegiatan = Kegiatan_Peserta::firstOrCreate([
+        //         'peserta_id' => auth()->user()->peserta->id_peserta,
+        //         'kegiatan_id' => $kegiatan,
+        //         'unit_id' => auth()->user()->peserta->unit->id_unit
+        //     ]);
+
+        //     if ($tambahkegiatan->wasRecentlyCreated) {
+        //         Alert::success('Yeay Berhasil !','Kegiatan Berhasil Ditambahkan !');
+        //     } else {
+        //         Alert::warning('Waah Gagal !','Kamu sudah mengikuti kegiatan itu');
+        //     }
+        // }
+
         $cek = Kegiatan_Peserta::where([
             'peserta_id' => auth()->user()->peserta->id_peserta,
             'kegiatan_id' => $request->id_kegiatan
@@ -115,7 +134,6 @@ class PesertaController extends Controller
                 'kegiatan_id' => $request->id_kegiatan,
                 'unit_id' => auth()->user()->peserta->unit->id_unit
             ]);
-
             Alert::success('Yeay Berhasil !','Kegiatan Berhasil Ditambahkan !');
             return redirect()->back();  
         } else {

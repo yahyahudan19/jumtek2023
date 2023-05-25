@@ -28,6 +28,8 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!-- Sweet Alert -->
     <link href="{{asset('template/dashboard/vendor/sweetalert2/dist/sweetalert2.min.css')}}" rel="stylesheet">
+	<!-- Select u2 -->
+    <link href="{{asset('template/dashboard/vendor/select2/css/select2.min.css')}}" rel="stylesheet">
 
 
 </head>
@@ -682,7 +684,10 @@
     <script src="{{asset('template/dashboard/js/plugins-init/material-date-picker-init.js')}}"></script>
     <!-- Pickdate -->
     <script src="{{asset('template/dashboard/js/plugins-init/pickadate-init.js')}}"></script>
-	
+	<!-- Select U2 -->
+    <script src="{{asset('template/dashboard/vendor/select2/js/select2.full.min.js')}}"></script>
+    <script src="{{asset('template/dashboard/js/plugins-init/select2-init.js')}}"></script>
+	<!-- Carousel Photos -->
 	<script>
 		function carouselReview(){
 			/*  event-bx one function by = owl.carousel.js */

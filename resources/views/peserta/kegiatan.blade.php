@@ -61,6 +61,9 @@
                                     <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                                     </button>
                                 </div>
+
+                                <!-- Versi Lama -->
+
                                 <div class="card-body">
                                     <div class="basic-form">
                                             <div class="form-row">
@@ -75,6 +78,22 @@
                                             </div>
                                     </div>
                                 </div>
+
+                                <!-- Versi Baru -->
+
+                                {{-- <div class="card">
+                                    <div class="card-body">
+                                        <div class="mb-4">
+                                            <p>Silahkan Pilih Kegiatan <mark class="text-primary">yang Akan Diikuti</mark>.</p>
+                                        </div>
+                                        <select class="multi-select" name="id_kegiatan[]" id="id_kegiatan" multiple="multiple">
+                                            @foreach ($data_kegiatan as $kegiatan)
+                                                <option value="{{$kegiatan->id_kegiatan}}">{{$kegiatan->nama_kegiatan}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div> --}}
+
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-danger light" data-dismiss="modal">Close</button>
                                     <button type="submit" class="btn btn-primary">Tambah</button>

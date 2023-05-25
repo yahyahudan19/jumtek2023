@@ -33,6 +33,8 @@
 
 	<script src="{{asset('template/form/js/modernizr.js')}}"></script>
 	<!-- Modernizr -->
+	<!-- Sweet Alert -->
+    <link href="{{asset('template/dashboard/vendor/sweetalert2/dist/sweetalert2.min.css')}}" rel="stylesheet">
 
 </head>
 
@@ -95,7 +97,7 @@
 							<div id="progressbar"></div>
 						</div>
 						<!-- /top-wizard -->
-						<form method="POST" action="/doregister" enctype="multipart/form-data">
+						<form method="POST" action="/doregister" enctype="multipart/form-data" id="do-register">
 							{{ csrf_field() }}
 							<input id="website" name="website" type="text" value="">
 							<!-- Leave for security protection, read docs for details -->
@@ -219,7 +221,7 @@
 									<div class="col-md-12">
                                         <div class="form-group">
 											<span>2. File Foto</span> <b>*Foto 4x6 dan Maksimal : 2 MB</b><br>
-                                            <input type="file" name="foto_peserta" id="foto_peserta" class="form-control" placeholder="Upload Foto	" required>
+                                            <input type="file" name="foto_peserta" id="foto_peserta" class="form-control" placeholder="Upload Foto" required>
                                         </div>
                                     </div>
 									<div class="form-group terms">
@@ -234,7 +236,7 @@
 							<div id="bottom-wizard">
 								<button type="button" name="backward" class="backward">Backward </button>
 								<button type="button" name="forward" class="forward">Forward</button>
-								<button type="submit" class="submit">Submit</button>
+								<button type="submit" class="submit" onclick="confirmRegister()">Submit</button>
 							</div>
 							<!-- /bottom-wizard -->
 						</form>
@@ -244,6 +246,7 @@
 			</div><!-- /Row -->
 		</div><!-- /Form_container -->
 	</main>
+	
 	
 	<footer id="home" class="clearfix">
 		<p>© 2023 PMI Kab. Malang</p>
@@ -329,7 +332,30 @@
 	<!-- Theme script -->
 	<script src="{{asset('template/form/js/functions.js')}}"></script>
 	<!-- Sweet Alert script -->
+	<script src="{{asset('template/dashboard/vendor/sweetalert2/dist/sweetalert2.min.js')}}"></script>
+    <script src="{{asset('template/dashboard/js/plugins-init/sweetalert.init.js')}}"></script>
 	@include('sweetalert::alert')
+
+	<!-- Alert Yakin ? -->
+	<script>
+		function confirmRegister() {
+			event.preventDefault(); 
+			swal.fire({
+				title: 'Konfirmasi Pendaftaran !',
+				text: 'Sudah Yakin dengan data yang Anda Inputkan ?',
+				type: 'question',
+				cancelButtonColor: "#DD6B55",
+				showCancelButton: true,
+				confirmButtonText: 'Sudah, Daftar Sekarang !',
+				cancelButtonText: 'Belum'
+			}).then((result) => {
+				if (result.value) {
+					// Jika pengguna menekan tombol "Ya, Hapus!"
+					document.getElementById('do-register').submit();
+				}
+			});
+		}
+	</script>
 	<!-- JS Select Unit -->
 	<script>
 		$("select#status_unit").change(function(event){

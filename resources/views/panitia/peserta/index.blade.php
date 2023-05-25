@@ -51,7 +51,7 @@
                         </div>
                         <div class="d-flex mb-3">
                             {{-- <a href="/register" target="_blank" class="btn btn-warning text-nowrap"><i class="fa fa-plus scale5 mr-3" aria-hidden="true"></i>Tambah Peserta</a> --}}
-                            <a href="/peserta/hapus" class="btn btn-warning text-nowrap"><i class="fa fa-plus scale5 mr-3" aria-hidden="true"></i>Tambah Peserta</a>
+                            <a href="/exportQR" class="btn btn-warning text-nowrap"><i class="fa fa-qrcode scale5 mr-3" aria-hidden="true"></i>Download QR</a>
                         </div>
                     </div>
                     {{-- <div class="col-xl-3 col-xxl-3 col-lg-3 col-sm-6">
@@ -231,20 +231,14 @@
                             </div>
                         </div>
                     </div>
-                    {{-- <div class="col-12">
-                        <form action="/peserta/hapus" method="POST" id="hapus-peserta-ges">
-                            {{ csrf_field() }}
-                            @method('DELETE')
-                            <a href="#" class="btn btn-danger" onclick="confirmDelete()">Hapus</a>
-                        </form>
-                    </div> --}}
+                  
                     <script>
                         function confirmDelete() {
                             event.preventDefault(); 
                             swal.fire({
                                 title: 'Konfirmasi',
                                 text: 'Anda yakin ingin menghapus Peserta ini?',
-                                icon: 'question',
+                                type: 'question',
                                 showCancelButton: true,
                                 confirmButtonText: 'Ya, Hapus!',
                                 cancelButtonText: 'Batal'

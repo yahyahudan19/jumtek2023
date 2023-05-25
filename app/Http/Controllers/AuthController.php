@@ -278,4 +278,38 @@ class AuthController extends Controller
         }
     }
 
+    // Export QR
+    public function exportQR(){
+
+        $zip = new ZipArchive;
+        $publicDirectory = public_path('storage/qr-code/img');
+        $zipFileName = 'file-QRpeserta.zip';
+        $zipPath = public_path($zipFileName);
+        
+        // Membuka file ZIP baru
+        if ($zip->open($zipPath, ZipArchive::CREATE) === true) {
+            // Menambahkan file QR ke dalam ZIP
+            $files = scandir($publicDirectory);
+            foreach ($files as $file) {
+                if (in_array($file, ['.', '..'])) {
+                    continue;
+                }
+
+                $filePath = $publicDirectory . '/' . $file;
+                $zip->addFile($filePath, $file);
+            }
+
+            $zip->close();
+            try {
+                // Mengarahkan pengguna untuk mengunduh file ZIP
+                return response()->download($zipPath)->deleteFileAfterSend(true);
+            } catch (\Throwable $th) {
+                Alert::error('Gagal Download QR','QR Masih Kosong Gaes !');
+                return redirect()->back();
+            }
+        } else {
+            // Jika gagal membuat file ZIP
+            return response()->json(['error' => 'Failed to create ZIP file.']);
+        }
+    }
 }

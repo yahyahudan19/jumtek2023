@@ -51,8 +51,8 @@ class PanitiaController extends Controller
     public function peserta()
     {
         $jumlah_peserta = Peserta::all()->count();
-        $data_peserta = Peserta::all();
         $jumlah_unit = Unit::all()->count();
+        $data_peserta = Peserta::all();
         return view('panitia.peserta.index',compact(['data_peserta','jumlah_peserta','jumlah_unit']));
     }
     // Hapus Peserta //
@@ -478,6 +478,7 @@ class PanitiaController extends Controller
         $data_unit = Unit::where('id_unit',$id_unit)->get()->first();
         $data_peserta = Peserta::where('unit_id',$id_unit)->get();
         $jumlah_peserta = Peserta::where('unit_id',$id_unit)->count();
+        $kegiatan_peserta = Kegiatan_Peserta::where('unit_id',$id_unit)->get()->all();
 
         $data_pembina = Peserta::where([
             'unit_id' => $id_unit,
@@ -489,7 +490,7 @@ class PanitiaController extends Controller
             'role_peserta' => 'Pimpinan'
         ])->get()->first();
 
-        return view('panitia.unit.detail',compact('data_peserta','jumlah_peserta','data_unit','data_pembina','data_pimpinan'));
+        return view('panitia.unit.detail',compact('data_peserta','jumlah_peserta','data_unit','data_pembina','data_pimpinan','kegiatan_peserta'));
     }
     //Print Peserta by Unit
     public function printUnit($id_unit){

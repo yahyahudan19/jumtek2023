@@ -91,17 +91,20 @@
                                     <table id="example3" class="display min-w850">
                                         <thead>
                                             <tr>
+                                                <th>#</th>
                                                 <th>MIS PMI</th>
                                                 <th>Email</th>
                                                 <th>Nama</th>
-                                                <th>Surat Sehat</th>
+                                                <th>Foto</th>
                                                 <th>QR Code</th>
                                                 <th>Status</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @php $no = 1; @endphp
                                             @foreach ($data_peserta as $peserta)
                                             <tr> 
+                                                <td>{{ $no++ }}</td>
                                                 <td>
                                                     @if ($peserta->mis_peserta == NULL)
                                                         MIS Tidak Tersedia
@@ -123,6 +126,40 @@
                                                     class="ml-1 fa fa-times"></span></span>
                                                 </td>
                                                 @endif
+                                            </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Kegiatan yang diikuti : </h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table id="example3" class="display min-w850">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Nama Peserta</th>
+                                                <th>Kegiatan</th>
+                                                <th>Tanggal</th>
+                                                <th>Waktu</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @php $no = 1; @endphp
+                                            @foreach ($kegiatan_peserta as $kegiatan)
+                                            <tr>
+                                                <td>{{ $no++ }}</td>
+                                                <td>{{$kegiatan->peserta->nama_peserta}}</a></td>
+                                                <td>{{$kegiatan->kegiatan->nama_kegiatan}}</a></td>
+                                                <td>{{ \Carbon\Carbon::parse($kegiatan->tanggal_kegiatan)->format('d M Y') }}</td>
+                                                <td>{{ \Carbon\Carbon::parse($kegiatan->waktu_kegiatan)->format('H:i')}} WIB</td>
                                             </tr>
                                             @endforeach
                                         </tbody>

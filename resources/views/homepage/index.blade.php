@@ -22,6 +22,10 @@
         <link rel="stylesheet" href="{{asset('template/homepage/css/default.css')}}">
         <link rel="stylesheet" href="{{asset('template/homepage/css/style.css')}}">
         <link rel="stylesheet" href="{{asset('template/homepage/css/responsive.css')}}">
+
+        <!-- Google Index -->
+        <meta name="google-site-verification" content="uGgQthprOG6Bw8XkIpWMn4zJKrg-cjOyaKpSlT0a_0Y" />
+        
     </head>
     <body>
         <!-- header -->
