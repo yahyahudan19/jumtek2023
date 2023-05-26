@@ -5,7 +5,7 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>Jumtek <?php echo date("Y");?> - PMI Kabupaten Malang Official Website</title>
 
-        <meta name="description" content="Halo PMR dan Relawan Kabupaten Malang !,Jangan Lupa ikut Jumbara dan Temu Karya Relawan PMI Kabupaten Malang 2023 yaa ! Pendaftaran mulai 20 Mei - 10 Juni loh, Jangan Sampai Ketinggalan ! Siamo Tutti Fratelli !">
+        <meta name="description" content="Halo PMR dan Relawan Kabupaten Malang ! Jangan Lupa ikut Jumbara dan Temu Karya Relawan PMI Kabupaten Malang 2023 yaa ! Pendaftaran mulai 20 Mei - 10 Juni loh, Jangan Sampai Ketinggalan ! Siamo Tutti Fratelli !">
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="shortcut icon" type="image/x-icon" href="{{asset('template/dashboard/images/logopng.png')}}">
