@@ -61,18 +61,23 @@ class AuthController extends Controller
 
         $cekPeserta = User::where([
             ['email', '=', $request->email_peserta]
-            // ['name', '=', $request->nama_peserta],
         ])->first();
-
-        // $cekMIS = Peserta::where([
-        //     ['mis_peserta','=',$request->mis_peserta]
-        // ])->first();
 
         if($cekPeserta){
             Alert::error('Register Gagal !','Email Kamu Sudah terdaftar, Gunakan Email Lain !');
             return redirect()->back();
         }else{
             if($request->hasFile('foto_peserta')) {
+
+                
+                $cekPesertaLagi = User::where([
+                    ['name', '=', $request->nama_peserta]
+                ])->first();
+                
+                if($cekPesertaLagi){
+                    Alert::error('Register Gagal !','Nama Kamu Sudah terdaftar');
+                    return redirect()->back();
+                }
 
                 $validator = Validator::make($request->all(), [
                     'foto_peserta' => 'required|max:2048|mimes:png,jpg,jpg,jpeg',

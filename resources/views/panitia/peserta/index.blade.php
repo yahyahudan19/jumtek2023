@@ -163,6 +163,7 @@
                                                 <th>Status</th>
                                                 <th>Role</th>
                                                 <th>Action</th>
+                                                <th>Validasi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -213,16 +214,18 @@
                                                                 {{ csrf_field() }}
                                                                 @method('DELETE')
                                                                 <a href="#" class="btn btn-danger shadow btn-xs sharp mr-1" onclick="confirmDelete()"><i class="fa fa-trash"></i></a>
+                                                                {{-- <a href="#" class="btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-trash"></i></a> --}}
                                                             </form>
-
-                                                            @if ($peserta->status_peserta == 'Tidak Aktif')
-                                                            <a href="/peserta/validasi/{{$peserta->id_peserta}}" class="btn btn-success shadow btn-xs sharp"><i class="fa fa-check-circle-o"></i></a>
-                                                            @else 
-                                                            <a href="/peserta/unvalidasi/{{$peserta->id_peserta}}" class="btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-times"></i></a>
-                                                            @endif
                                                         </div>												
                                                     @endif
-												</td>												
+												</td>
+                                                <td>
+                                                    @if ($peserta->status_peserta == 'Tidak Aktif')
+                                                    <a href="/peserta/validasi/{{$peserta->id_peserta}}" class="btn btn-success shadow btn-xs sharp"><i class="fa fa-check-circle-o"></i></a>
+                                                    @else 
+                                                    <a href="/peserta/unvalidasi/{{$peserta->id_peserta}}" class="btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-times"></i></a>
+                                                    @endif
+                                                </td>												
                                             </tr>
                                             @endforeach
                                         </tbody>
