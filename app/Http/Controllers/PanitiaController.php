@@ -171,6 +171,7 @@ class PanitiaController extends Controller
             $data_peserta->update([
                 "nama_peserta" => $request->nama_peserta,
                 "alamat_peserta" => $request->alamat_peserta,
+                "unit_id" => $request->unit_id,
                 "foto_peserta" => $nama_foto,
                 "qrcode_peserta" => $qrcode_peserta
             ]);
@@ -193,6 +194,7 @@ class PanitiaController extends Controller
 
             $data_peserta->update([
                 "nama_peserta" => $request->nama_peserta,
+                "unit_id" => $request->unit_id,
                 "alamat_peserta" => $request->alamat_peserta,
                 "qrcode_peserta" => $qrcode_peserta
             ]);
