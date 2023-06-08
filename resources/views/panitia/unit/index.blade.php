@@ -70,6 +70,63 @@
                         </div>
                         
                     </div>
+                    <div class="col-xl-3 col-lg-6 col-sm-6">
+						<div class="widget-stat card bg-danger">
+							<div class="card-body  p-4">
+								<div class="media">
+									<span class="mr-3">
+										<i class="flaticon-381-user-1"></i>
+									</span>
+									<div class="media-body text-white text-right">
+										<p class="mb-1"> KSR Terdaftar :</p>
+										<h3 class="text-white">{{$ksr_daftar}}</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+                    </div><div class="col-xl-3 col-lg-6 col-sm-6">
+						<div class="widget-stat card bg-warning">
+							<div class="card-body  p-4">
+								<div class="media">
+									<span class="mr-3">
+										<i class="flaticon-381-user-1"></i>
+									</span>
+									<div class="media-body text-white text-right">
+										<p class="mb-1"> PMR Wira Terdaftar :</p>
+										<h3 class="text-white">{{$wira_daftar}}</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+                    </div><div class="col-xl-3 col-lg-6 col-sm-6">
+						<div class="widget-stat card bg-info">
+							<div class="card-body  p-4">
+								<div class="media">
+									<span class="mr-3">
+										<i class="flaticon-381-user-1"></i>
+									</span>
+									<div class="media-body text-white text-right">
+										<p class="mb-1"> PMR Madya Terdaftar :</p>
+										<h3 class="text-white">{{$madya_daftar}}</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+                    </div><div class="col-xl-3 col-lg-6 col-sm-6">
+						<div class="widget-stat card bg-success">
+							<div class="card-body  p-4">
+								<div class="media">
+									<span class="mr-3">
+										<i class="flaticon-381-user-1"></i>
+									</span>
+									<div class="media-body text-white text-right">
+										<p class="mb-1"> PMR Mula Terdaftar :</p>
+										<h3 class="text-white">{{$mula_daftar}}</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+                    </div>
                     {{-- Modal Tambah Unit  --}}
                     <div class="modal fade" id="tambahModalPeserta">
                         <div class="modal-dialog modal-dialog-centered" role="document">

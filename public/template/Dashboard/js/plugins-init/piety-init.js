@@ -49,8 +49,8 @@ var dzPiety = function(){
     var handlePietyDonut = function(){
 		if(jQuery('span.donut').length > 0 ){
 			$("span.donut").peity("donut", {
-				width: "100",
-				height: "100"
+				width: "100%",
+				height: "100%"
 			});
 		}
 	}

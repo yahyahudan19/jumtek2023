@@ -28,6 +28,18 @@ class PanitiaController extends Controller
         $jumlah_pmr = Unit::where(['status_unit' => 'PMR'])->count();
         $jumlah_kegiatan = Kegiatan::all()->count();
         
+        $ksr_daftar = Peserta::whereHas('Unit', function ($query) {
+            $query->where('status_units', 'KSR');
+        })->get()->count();
+        $wira_daftar = Peserta::whereHas('Unit', function ($query) {
+            $query->where('status_units', 'WIRA');
+        })->get()->count();
+        $madya_daftar = Peserta::whereHas('Unit', function ($query) {
+            $query->where('status_units', 'MADYA');
+        })->get()->count();
+        $mula_daftar = Peserta::whereHas('Unit', function ($query) {
+            $query->where('status_units', 'MULA');
+        })->get()->count();
 
         $data_kegiatan = Kegiatan::all();
         $data_kegiatan_ksr = Kegiatan::where(['tingkat_kegiatan' => 'KSR'])->get();
@@ -42,7 +54,7 @@ class PanitiaController extends Controller
 
         return view('panitia.index',compact([
             'data_peserta','jumlah_peserta','jumlah_unit','jumlah_ksr','jumlah_pmr','jumlah_kegiatan','data_kegiatan_ksr',
-            'data_kegiatan_pmr','data_kegiatan','jumlah_kegiatan_ksr','jumlah_kegiatan_pmr',
+            'data_kegiatan_pmr','data_kegiatan','jumlah_kegiatan_ksr','jumlah_kegiatan_pmr','ksr_daftar','wira_daftar','mula_daftar','madya_daftar'
             // 'jumlah_peserta_kontingen'
         ]));
     }
@@ -435,7 +447,21 @@ class PanitiaController extends Controller
     // Unit page ==================================================================
     public function unit()
     {
-        // dd();
+        $ksr_daftar = Peserta::whereHas('Unit', function ($query) {
+            $query->where('status_units', 'KSR');
+        })->get()->count();
+        $wira_daftar = Peserta::whereHas('Unit', function ($query) {
+            $query->where('status_units', 'WIRA');
+        })->get()->count();
+        $madya_daftar = Peserta::whereHas('Unit', function ($query) {
+            $query->where('status_units', 'MADYA');
+        })->get()->count();
+        $mula_daftar = Peserta::whereHas('Unit', function ($query) {
+            $query->where('status_units', 'MULA');
+        })->get()->count();
+
+        
+
         $data_unit_ksr = Unit::where(['status_unit' =>'KSR'])->get()->all();
 
         $data_unit_mula = Unit::where(['status_units' =>'MULA'])->get()->all();
@@ -453,7 +479,11 @@ class PanitiaController extends Controller
         $jumlah_peserta = Peserta::all()->count();
         
         // return view('panitia.unit.index');
-        return view('panitia.unit.index',compact('data_unit_ksr','data_unit_mula','data_unit_madya','data_unit_wira','jumlah_unit','jumlah_peserta','jumlah_ksr','jumlah_pmr'));
+        return view('panitia.unit.index',compact(
+            'data_unit_ksr','data_unit_mula','data_unit_madya','data_unit_wira',
+            'jumlah_unit','jumlah_peserta','jumlah_ksr','jumlah_pmr',
+            'ksr_daftar','wira_daftar','mula_daftar','madya_daftar'
+        ));
     }
     // Tambah Unit 
     public function tambahUnit(Request $request){

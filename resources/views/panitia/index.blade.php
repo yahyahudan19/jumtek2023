@@ -288,9 +288,68 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-12 col-xxl-12">
+            <div class="col-xl-5 col-xxl-4">
                 <div class="row">
-                    <div class="col-xl-3 col-lg-6 col-sm-6">
+                    <div class="col-xl-12 col-md-12">
+                        <div class="card">
+                            <div class="card-header border-0 pb-0">
+                                <h4 class="fs-20"><b>Unit/Kontingen Pendaftar</b></h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="">
+                                    <center>
+                                    <span class="donut"
+                                        data-peity='{ 
+                                            "fill": [
+                                                "rgb(255, 87, 51)", 
+                                                "rgb(255, 195, 40)", 
+                                                "rgb(52, 152, 219)", 
+                                                "rgb(40, 180, 99)"
+                                                ]}'
+                                        
+                                        >{{$ksr_daftar}},{{$wira_daftar}},{{$madya_daftar}},{{$mula_daftar}} {{-- Angka e Ges--}}
+                                    </span>
+                                    
+                                     </center>
+                                    <div class="d-flex justify-content-between mt-4">
+                                        <div class="pr-2">
+                                            <svg width="20" height="8" viewBox="0 0 20 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect width="20" height="8" rx="4" fill="#FF5733"/>
+                                            </svg>
+                                            <h4 class="fs-18 text-black mb-1 font-w600">{{$ksr_daftar}}</h4>
+                                            <span class="fs-14">KSR</span>
+                                        </div>
+                                        <div class="pr-2">
+                                            <svg width="20" height="8" viewBox="0 0 20 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect width="20" height="8" rx="4" fill="#F4D03F"/>
+                                            </svg>
+                                            <h4 class="fs-18 text-black mb-1 font-w600">{{$wira_daftar}}</h4>
+                                            <span class="fs-14">PMR Wira</span>
+                                        </div>
+                                        <div class="">
+                                            <svg width="20" height="8" viewBox="0 0 20 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect width="20" height="8" rx="4" fill="#214BB8"/>
+                                            </svg>
+                                            <h4 class="fs-18 text-black mb-1 font-w600">{{$mula_daftar}}</h4>
+                                            <span class="fs-14">PMR Madya</span>
+                                        </div>
+                                        <div class="pr-2">
+                                            <svg width="20" height="8" viewBox="0 0 20 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect width="20" height="8" rx="4" fill="#28B463"/>
+                                            </svg>
+                                            <h4 class="fs-18 text-black mb-1 font-w600">{{$madya_daftar}}</h4>
+                                            <span class="fs-14">PMR Mula</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-7 col-xxl-8">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-sm-6">
 						<div class="widget-stat card bg-secondary">
 							<div class="card-body  p-4">
 								<div class="media">
@@ -305,7 +364,7 @@
 							</div>
 						</div>
                     </div>
-                    <div class="col-xl-3 col-lg-6 col-sm-6">
+                    <div class="col-xl-6 col-lg-6 col-sm-6">
 						<div class="widget-stat card bg-info">
 							<div class="card-body  p-4">
 								<div class="media">
@@ -319,8 +378,10 @@
 								</div>
 							</div>
 						</div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-sm-6">
+                    </div>                    
+                </div>
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-sm-6">
 						<div class="widget-stat card bg-warning">
 							<div class="card-body  p-4">
 								<div class="media">
@@ -335,7 +396,7 @@
 							</div>
 						</div>
                     </div>
-                    <div class="col-xl-3 col-lg-6 col-sm-6">
+                    <div class="col-xl-6 col-lg-6 col-sm-6">
 						<div class="widget-stat card bg-success">
 							<div class="card-body  p-4">
 								<div class="media">
@@ -350,6 +411,10 @@
 							</div>
 						</div>
                     </div>
+                </div>
+            </div>
+            <div class="col-xl-12 col-xxl-12">
+                <div class="row">                    
                     <div class="col-xl-12">
                         <div class="card">
                             <div class="card-header border-0 pb-sm-0 pb-5">
