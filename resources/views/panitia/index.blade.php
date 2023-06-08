@@ -342,7 +342,7 @@
 										<i class="flaticon-381-user-1"></i>
 									</span>
 									<div class="media-body text-white text-right">
-										<p class="mb-1">Kegiatan</p>
+										<p class="mb-1">Total Kegiatan </p>
 										<h3 class="text-white">{{$jumlah_kegiatan}}</h3>
 									</div>
 								</div>
@@ -357,7 +357,7 @@
 										<i class="flaticon-381-user-2"></i>
 									</span>
 									<div class="media-body text-white text-right">
-										<p class="mb-1">Peserta</p>
+										<p class="mb-1">Total Peserta </p>
 										<h3 class="text-white">{{$jumlah_peserta}}</h3>
 									</div>
 								</div>
@@ -374,7 +374,7 @@
 										<i class="flaticon-381-wifi-2"></i>
 									</span>
 									<div class="media-body text-white text-right">
-										<p class="mb-1">Jumlah KSR</p>
+										<p class="mb-1">Jumlah KSR </p>
 										<h3 class="text-white">{{$jumlah_ksr}}</h3>
 									</div>
 								</div>
@@ -673,7 +673,7 @@
              dataLabels: {
                  formatter(val, opts) {
                    const name = opts.w.globals.labels[opts.seriesIndex]
-                   return [ val.toFixed()]
+                   return [ val.toFixed() + '%']
                  },
                  dropShadow: {
                    enabled: false
