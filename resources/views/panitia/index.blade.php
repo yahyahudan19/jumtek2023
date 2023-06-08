@@ -293,7 +293,7 @@
                     <div class="col-xl-12 col-md-12">
                         <div class="card">
                             <div class="card-header border-0 pb-0">
-                                <h4 class="fs-20"><b>Unit/Kontingen Pendaftar</b></h4>
+                                <h4 class="fs-20"><b>Jumlah Pendaftar :</b></h4>
                             </div>
                             <div class="card-body">
                                 <div class="">
