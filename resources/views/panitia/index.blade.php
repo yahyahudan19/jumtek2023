@@ -290,56 +290,41 @@
             </div>
             <div class="col-xl-5 col-xxl-4">
                 <div class="row">
-                    <div class="col-xl-12 col-md-12">
+                    <div class="col-xl-12 col-md-6">
                         <div class="card">
                             <div class="card-header border-0 pb-0">
-                                <h4 class="fs-20"><b>Jumlah Pendaftar :</b></h4>
+                                <h4 class="fs-20"><b>Peserta Pendaftar : </b></h4>
                             </div>
                             <div class="card-body">
-                                <div class="">
-                                    <center>
-                                    <span class="donut"
-                                        data-peity='{ 
-                                            "fill": [
-                                                "rgb(255, 87, 51)", 
-                                                "rgb(255, 195, 40)", 
-                                                "rgb(52, 152, 219)", 
-                                                "rgb(40, 180, 99)"
-                                                ]}'
-                                        
-                                        >{{$ksr_daftar}},{{$wira_daftar}},{{$madya_daftar}},{{$mula_daftar}} {{-- Angka e Ges--}}
-                                    </span>
-                                    
-                                     </center>
-                                    <div class="d-flex justify-content-between mt-4">
-                                        <div class="pr-2">
-                                            <svg width="20" height="8" viewBox="0 0 20 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <rect width="20" height="8" rx="4" fill="#FF5733"/>
-                                            </svg>
-                                            <h4 class="fs-18 text-black mb-1 font-w600">{{$ksr_daftar}}</h4>
-                                            <span class="fs-14">KSR</span>
-                                        </div>
-                                        <div class="pr-2">
-                                            <svg width="20" height="8" viewBox="0 0 20 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <rect width="20" height="8" rx="4" fill="#F4D03F"/>
-                                            </svg>
-                                            <h4 class="fs-18 text-black mb-1 font-w600">{{$wira_daftar}}</h4>
-                                            <span class="fs-14">PMR Wira</span>
-                                        </div>
-                                        <div class="">
-                                            <svg width="20" height="8" viewBox="0 0 20 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <rect width="20" height="8" rx="4" fill="#214BB8"/>
-                                            </svg>
-                                            <h4 class="fs-18 text-black mb-1 font-w600">{{$mula_daftar}}</h4>
-                                            <span class="fs-14">PMR Madya</span>
-                                        </div>
-                                        <div class="pr-2">
-                                            <svg width="20" height="8" viewBox="0 0 20 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <rect width="20" height="8" rx="4" fill="#28B463"/>
-                                            </svg>
-                                            <h4 class="fs-18 text-black mb-1 font-w600">{{$madya_daftar}}</h4>
-                                            <span class="fs-14">PMR Mula</span>
-                                        </div>
+                                <div id="donutChartPeserta"></div>
+                                <div class="d-flex justify-content-between mt-4">
+                                    <div class="pr-2">
+                                        <svg width="20" height="8" viewBox="0 0 20 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="20" height="8" rx="4" fill="#FF5733"/>
+                                        </svg>
+                                        <h4 class="fs-18 text-black mb-1 font-w600">{{$ksr_daftar}}</h4>
+                                        <span class="fs-14">KSR</span>
+                                    </div>
+                                    <div class="pr-2">
+                                        <svg width="20" height="8" viewBox="0 0 20 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="20" height="8" rx="4" fill="#F4D03F"/>
+                                        </svg>
+                                        <h4 class="fs-18 text-black mb-1 font-w600">{{$wira_daftar}}</h4>
+                                        <span class="fs-14">PMR Wira</span>
+                                    </div>
+                                    <div class="">
+                                        <svg width="20" height="8" viewBox="0 0 20 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="20" height="8" rx="4" fill="#214BB8"/>
+                                        </svg>
+                                        <h4 class="fs-18 text-black mb-1 font-w600">{{$mula_daftar}}</h4>
+                                        <span class="fs-14">PMR Madya</span>
+                                    </div>
+                                    <div class="">
+                                        <svg width="20" height="8" viewBox="0 0 20 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="20" height="8" rx="4" fill="#28B463"/>
+                                        </svg>
+                                        <h4 class="fs-18 text-black mb-1 font-w600">{{$madya_daftar}}</h4>
+                                        <span class="fs-14">PMR Mula</span>
                                     </div>
                                 </div>
                             </div>
@@ -658,5 +643,97 @@
     </div>
 </div>
 @endif
+@stop
+@section('js_or_somting')
+<script>
 
+    var dzChartlist = function(){
+       let draw = Chart.controllers.line.__super__.draw; //draw shadow
+       var screenWidth = $(window).width();
+       var donutChart = function(){
+           var options = {
+             series: [{{$ksr_daftar}}, {{$wira_daftar}}, {{$madya_daftar}} ,{{$mula_daftar}}],
+             chart: {
+             type: 'donut',
+           },
+             legend:{
+               show:false  
+             },
+             plotOptions: {
+                pie: {
+                   startAngle: -86,
+                   donut: {
+                        size: '40%',
+                   }
+                },
+             },
+             stroke:{
+               width:'10'  
+             },
+             dataLabels: {
+                 formatter(val, opts) {
+                   const name = opts.w.globals.labels[opts.seriesIndex]
+                   return [ val.toFixed()]
+                 },
+                 dropShadow: {
+                   enabled: false
+                 },
+                 style: {
+                   fontSize: '15px',
+                   colors: ["#fff"],
+                 }
+               },
+             colors:['#FF5733','#F4D03F','#214BB8','#28B463']
+           /* responsive: [{
+             breakpoint: 480,
+             options: {
+               chart: {
+                 width: 200
+               },
+               legend: {
+                   show:false,
+                 position: 'bottom'
+               }
+             }
+           }] */
+           };
+   
+           var chart = new ApexCharts(document.querySelector("#donutChartPeserta"), options);
+           chart.render();
+       }
+       
+       
+       /* Function ============ */
+           return {
+               init:function(){
+               },
+               
+               
+               load:function(){
+                   donutChart();
+               },
+               
+               resize:function(){
+                   
+               }
+           }
+       
+       }();
+   
+       jQuery(document).ready(function(){
+       });
+           
+       jQuery(window).on('load',function(){
+           setTimeout(function(){
+               dzChartlist.load();
+           }, 1000); 
+           
+       });
+   
+       jQuery(window).on('resize',function(){
+           
+           
+       });     
+   
+   </script>
 @stop

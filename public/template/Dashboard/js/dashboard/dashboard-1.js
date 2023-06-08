@@ -7,7 +7,7 @@
 	var screenWidth = $(window).width();
 	var donutChart = function(){
 		var options = {
-          series: [45, 30, 25],
+          series: [20, 30, 25 ,25],
           chart: {
           type: 'donut',
         },
