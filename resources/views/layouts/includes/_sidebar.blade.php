@@ -36,6 +36,11 @@
                     <span class="nav-text">Kegiatan</span>
                 </a>
             </li>
+            <li><a href="/dashboard/user" class="ai-icon" aria-expanded="false">
+                    <i class="flaticon-381-user"></i>
+                    <span class="nav-text">User</span>
+                </a>
+            </li>
             @endif
 
             @if(auth()->user()->role == 'Peserta')

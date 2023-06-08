@@ -116,6 +116,10 @@ Route::get('/kegiatan/nonaktif/{id}','\App\Http\Controllers\PanitiaController@no
 //Hapus Peserta Kegiatan
 Route::get('/kegiatan/hapus/peserta/{id_peserta}','\App\Http\Controllers\PanitiaController@hapusPesertaKegiatan');
 
+//GET User
+Route::get('/dashboard/user','\App\Http\Controllers\PanitiaController@user');
+//Delete User
+Route::delete('/user/delete/{id}','\App\Http\Controllers\PanitiaController@hapusUser');
 });
 
 

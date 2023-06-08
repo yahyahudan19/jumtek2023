@@ -46,7 +46,34 @@ class PanitiaController extends Controller
             // 'jumlah_peserta_kontingen'
         ]));
     }
-    
+    // User Page    ================================================================
+
+    // Get Data User
+    public function user(){
+        $user_exception = ['admin@pmikabmalang.or.id'];
+
+        $data_user = User::whereNotIn('email',$user_exception)->orderBy('id')->get()->all();
+        $data_user_gagal = User::whereDoesntHave('Peserta')->whereNotIn('email',$user_exception)->get();
+        $jumlah_peserta = Peserta::all()->count();
+        $jumlah_user = User::all()->count();
+        $jmlhusr = $jumlah_user - 1;
+
+        return view('panitia.user.index',compact(['data_user','jmlhusr','jumlah_peserta','data_user_gagal']));
+    }
+    //Hapus User
+    public function hapusUser($id){
+        $data_user = User::where('id',$id)->get()->first();
+        try {
+            $data_user->delete($data_user);
+            Alert::success('Yeay Berhasil !', 'User Berhasil dihapus !');
+            return redirect()->back();
+            
+        } catch (QueryException $e) {
+            Alert::error('Yaah Gagal', 'User Gagal dihapus !');
+            return redirect()->back();
+        }
+    }
+
     // Peserta page ================================================================
     public function peserta()
     {
