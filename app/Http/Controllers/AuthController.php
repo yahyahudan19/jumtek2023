@@ -131,8 +131,6 @@ class AuthController extends Controller
                         $getPass = explode("@", $request->email_peserta);
                         $generate_username = $getPass[0];
 
-                        // dd($generate_username);
-                        
                         $peserta = Peserta::create([
                             "user_id" => $userID->id,
                             "nama_peserta" => $request->nama_peserta,
@@ -147,8 +145,7 @@ class AuthController extends Controller
                             "status_peserta" => "Tidak Aktif",
                             "foto_peserta" =>  $nama_foto,
                         ]);
-                        Alert::success('Register Berhasil','Silahkan Login Ya ');
-                        return redirect('/login');
+                        
                     }else{
 
                         if ($request->hasFile('surattugas_pembina')) {
@@ -172,6 +169,7 @@ class AuthController extends Controller
                                 "foto_peserta" =>  $nama_foto,
                                 "surattugas_pembina" =>  $request->file('surattugas_pembina')->getClientOriginalName(),
                             ]);
+
                         } else {
 
                             $getPass = explode("@", $request->email_peserta);
@@ -196,15 +194,20 @@ class AuthController extends Controller
                             ]);
 
                         }
-                        
+                    }
+
+                    // Validasi Sebelum Create Peserta !
+                    
+                    if($peserta){
                         Alert::success('Register Berhasil','Silahkan Login Ya ');
                         return redirect('/login');
+                    }else{
+                        DB::rollback();
+                        Alert::error('Register Gagal','Pastikan Data Lengkap Ya !');
+                        return redirect()->back();
                     }
-                    // dd($peserta);
-                    Alert::success('Register Berhasil','Silahkan Login Ya ');
-                    return redirect('/login');
-                }else{
 
+                }else{
                     DB::rollback();
                     Alert::error('Register Gagal','Pastikan Data Lengkap Ya !');
                     return redirect()->back();
