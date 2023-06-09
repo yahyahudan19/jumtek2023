@@ -117,7 +117,8 @@ class AuthController extends Controller
     
                 if($user){
 
-                    $userID = DB::getPdo()->lastInsertId();
+                    // $userID = DB::getPdo()->lastInsertId();
+                    $userID = User::where('email',$request->email_peserta)->get()->first();
                     
                     $image = QrCode::format('png')
                         ->size(400)->errorCorrection('H')
@@ -133,7 +134,7 @@ class AuthController extends Controller
                         // dd($generate_username);
                         
                         $peserta = Peserta::create([
-                            "user_id" => $userID,
+                            "user_id" => $userID->id,
                             "nama_peserta" => $request->nama_peserta,
                             "username_peserta" => $generate_username,
                             "pwdmdl_peserta" => "Pwd@".$generate_username."Mdl123!",
@@ -157,7 +158,7 @@ class AuthController extends Controller
                             $generate_username = $getPass[0];
     
                             $peserta = Peserta::create([
-                                "user_id" => $userID,
+                                "user_id" => $userID->id,
                                 "nama_peserta" => $request->nama_peserta,
                                 "username_peserta" => $generate_username,
                                 "pwdmdl_peserta" => "Pwd@".$generate_username."Mdl123!",
@@ -179,7 +180,7 @@ class AuthController extends Controller
                             // dd($generate_username);
                             
                             $peserta = Peserta::create([
-                                "user_id" => $userID,
+                                "user_id" => $userID->id,
                                 "nama_peserta" => $request->nama_peserta,
                                 "username_peserta" => $generate_username,
                                 "pwdmdl_peserta" => "Pwd@".$request->generate_username."Mdl123!",
@@ -203,12 +204,15 @@ class AuthController extends Controller
                     Alert::success('Register Berhasil','Silahkan Login Ya ');
                     return redirect('/login');
                 }else{
+
+                    DB::rollback();
                     Alert::error('Register Gagal','Pastikan Data Lengkap Ya !');
                     return redirect()->back();
                 }
     
             }else{
-                
+
+                DB::rollback();
                 Alert::error('Belum Upload Foto','Upload Foto dulu yaa !');
                 return redirect()->back();
                 
