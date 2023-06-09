@@ -55,259 +55,259 @@ class AuthController extends Controller
     }
 
     //Register Process
-    // public function doregister(Request $request){
+    public function doregister(Request $request){
 
-    //     // dd($request->all());    
+        // dd($request->all());    
 
-    //     $cekPeserta = User::where([
-    //         ['email', '=', $request->email_peserta]
-    //     ])->first();
+        $cekPeserta = User::where([
+            ['email', '=', $request->email_peserta]
+        ])->first();
 
-    //     if($cekPeserta){
-    //         Alert::error('Register Gagal !','Email Kamu Sudah terdaftar, Gunakan Email Lain !');
-    //         return redirect()->back();
-    //     }else{
+        if($cekPeserta){
+            Alert::error('Register Gagal !','Email Kamu Sudah terdaftar, Gunakan Email Lain !');
+            return redirect()->back();
+        }else{
 
-    //         if($request->hasFile('foto_peserta')) {
+            if($request->hasFile('foto_peserta')) {
                 
-    //             // Cek Nama Peserta // =======
-    //             $cekPesertaLagi = User::where([
-    //                 ['name', '=', $request->nama_peserta]
-    //             ])->first();
+                // Cek Nama Peserta // =======
+                $cekPesertaLagi = User::where([
+                    ['name', '=', $request->nama_peserta]
+                ])->first();
                 
-    //             if($cekPesertaLagi){
-    //                 Alert::error('Register Gagal !','Nama Kamu Sudah terdaftar');
-    //                 return redirect()->back();
-    //             }
-    //             // Validasi File Foto // ======
-    //             $validator = Validator::make($request->all(), [
-    //                 'foto_peserta' => 'required|max:2048|mimes:png,jpg,jpg,jpeg',
-    //             ]);
+                if($cekPesertaLagi){
+                    Alert::error('Register Gagal !','Nama Kamu Sudah terdaftar');
+                    return redirect()->back();
+                }
+                // Validasi File Foto // ======
+                $validator = Validator::make($request->all(), [
+                    'foto_peserta' => 'required|max:2048|mimes:png,jpg,jpg,jpeg',
+                ]);
                 
-    //             if ($validator->fails()) {
-    //                 Alert::warning('Register Gagal','Pastikan Foto Sesuai dengan Ketentuan Ya !');
-    //                 return redirect()->back()->withInput();;
-    //             }
+                if ($validator->fails()) {
+                    Alert::warning('Register Gagal','Pastikan Foto Sesuai dengan Ketentuan Ya !');
+                    return redirect()->back()->withInput();;
+                }
                 
-    //             // Input File Foto // =======
-    //             $extension = $request->file('foto_peserta')->getClientOriginalExtension();
-    //             $nama_foto = 'foto-peserta-'.$request->nama_peserta.'.'. $extension;
-    //             $request->file('foto_peserta')->move('file_foto/',$nama_foto);
+                // Input File Foto // =======
+                $extension = $request->file('foto_peserta')->getClientOriginalExtension();
+                $nama_foto = 'foto-peserta-'.$request->nama_peserta.'.'. $extension;
+                $request->file('foto_peserta')->move('file_foto/',$nama_foto);
                 
-    //             $token = Str::random(10);
+                $token = Str::random(10);
                 
-    //             // Cek Role Pimpinan
-    //             if($request->role_peserta == 'Pimpinan'){
+                // Cek Role Pimpinan
+                if($request->role_peserta == 'Pimpinan'){
                     
-    //                 $user = User::create([
-    //                     "role" => 'Pembina',
-    //                     "name" => $request->nama_peserta,
-    //                     "email" => $request->email_peserta,
-    //                     "remember_token" => $token,
-    //                     "password" => Hash::make($request->password),
-    //                 ]);
-    //             }else {
+                    $user = User::create([
+                        "role" => 'Pembina',
+                        "name" => $request->nama_peserta,
+                        "email" => $request->email_peserta,
+                        "remember_token" => $token,
+                        "password" => Hash::make($request->password),
+                    ]);
+                }else {
 
-    //                 $user = User::create([
-    //                     "role" => $request->role_peserta,
-    //                     "name" => $request->nama_peserta,
-    //                     "email" => $request->email_peserta,
-    //                     "remember_token" => $token,
-    //                     "password" => Hash::make($request->password),
-    //                 ]);
-    //             }
+                    $user = User::create([
+                        "role" => $request->role_peserta,
+                        "name" => $request->nama_peserta,
+                        "email" => $request->email_peserta,
+                        "remember_token" => $token,
+                        "password" => Hash::make($request->password),
+                    ]);
+                }
     
-    //             if($user){
+                if($user){
 
-    //                 // $userID = DB::getPdo()->lastInsertId();
-    //                 $userID = User::where('email',$request->email_peserta)->get()->first();
+                    // $userID = DB::getPdo()->lastInsertId();
+                    $userID = User::where('email',$request->email_peserta)->get()->first();
                     
-    //                 $image = QrCode::format('png')
-    //                     ->size(400)->errorCorrection('H')
-    //                     ->generate($request->nama_peserta);
-    //                 $qrcode_peserta = '/qr-code/img/qrcode_peserta-' .$request->nama_peserta . '.png';
-    //                 Storage::disk('public')->put($qrcode_peserta, $image); 
+                    $image = QrCode::format('png')
+                        ->size(400)->errorCorrection('H')
+                        ->generate($request->nama_peserta);
+                    $qrcode_peserta = '/qr-code/img/qrcode_peserta-' .$request->nama_peserta . '.png';
+                    Storage::disk('public')->put($qrcode_peserta, $image); 
                     
-    //                 // Cek Role Jika Peserta ! // ======= 
-    //                 if($request->role_peserta == 'Peserta'){
+                    // Cek Role Jika Peserta ! // ======= 
+                    if($request->role_peserta == 'Peserta'){
 
-    //                     $getPass = explode("@", $request->email_peserta);
-    //                     $generate_username = $getPass[0];
+                        $getPass = explode("@", $request->email_peserta);
+                        $generate_username = $getPass[0];
 
-    //                     $peserta = Peserta::create([
-    //                         "user_id" => $userID->id,
-    //                         "nama_peserta" => $request->nama_peserta,
-    //                         "username_peserta" => $generate_username,
-    //                         "pwdmdl_peserta" => "Pwd@".$generate_username."Mdl123!",
-    //                         "alamat_peserta" => $request->alamat_peserta,
-    //                         "role_peserta" => $request->role_peserta,
-    //                         "jenisk_peserta" => $request->jenisk_peserta,
-    //                         "unit_id" => $request->unit_id,
-    //                         "mis_peserta" => $request->mis_peserta,
-    //                         "qrcode_peserta" => $qrcode_peserta,
-    //                         "status_peserta" => "Tidak Aktif",
-    //                         "foto_peserta" =>  $nama_foto,
-    //                     ]);
+                        $peserta = Peserta::create([
+                            "user_id" => $userID->id,
+                            "nama_peserta" => $request->nama_peserta,
+                            "username_peserta" => $generate_username,
+                            "pwdmdl_peserta" => "Pwd@".$generate_username."Mdl123!",
+                            "alamat_peserta" => $request->alamat_peserta,
+                            "role_peserta" => $request->role_peserta,
+                            "jenisk_peserta" => $request->jenisk_peserta,
+                            "unit_id" => $request->unit_id,
+                            "mis_peserta" => $request->mis_peserta,
+                            "qrcode_peserta" => $qrcode_peserta,
+                            "status_peserta" => "Tidak Aktif",
+                            "foto_peserta" =>  $nama_foto,
+                        ]);
                         
-    //                 }else{
+                    }else{
 
-    //                     if ($request->hasFile('surattugas_pembina')) {
-    //                         $request->file('surattugas_pembina')->move('file_surattugas/',$request->file('surattugas_pembina')->getClientOriginalName());
+                        if ($request->hasFile('surattugas_pembina')) {
+                            $request->file('surattugas_pembina')->move('file_surattugas/',$request->file('surattugas_pembina')->getClientOriginalName());
 
-    //                         $getPass = explode("@", $request->email_peserta);
-    //                         $generate_username = $getPass[0];
+                            $getPass = explode("@", $request->email_peserta);
+                            $generate_username = $getPass[0];
     
-    //                         $peserta = Peserta::create([
-    //                             "user_id" => $userID->id,
-    //                             "nama_peserta" => $request->nama_peserta,
-    //                             "username_peserta" => $generate_username,
-    //                             "pwdmdl_peserta" => "Pwd@".$generate_username."Mdl123!",
-    //                             "alamat_peserta" => $request->alamat_peserta,
-    //                             "jenisk_peserta" => $request->jenisk_peserta,
-    //                             "role_peserta" => $request->role_peserta,
-    //                             "unit_id" => $request->unit_id,
-    //                             "mis_peserta" => $request->mis_peserta,
-    //                             "qrcode_peserta" => $qrcode_peserta,
-    //                             "status_peserta" => "Aktif",
-    //                             "foto_peserta" =>  $nama_foto,
-    //                             "surattugas_pembina" =>  $request->file('surattugas_pembina')->getClientOriginalName(),
-    //                         ]);
+                            $peserta = Peserta::create([
+                                "user_id" => $userID->id,
+                                "nama_peserta" => $request->nama_peserta,
+                                "username_peserta" => $generate_username,
+                                "pwdmdl_peserta" => "Pwd@".$generate_username."Mdl123!",
+                                "alamat_peserta" => $request->alamat_peserta,
+                                "jenisk_peserta" => $request->jenisk_peserta,
+                                "role_peserta" => $request->role_peserta,
+                                "unit_id" => $request->unit_id,
+                                "mis_peserta" => $request->mis_peserta,
+                                "qrcode_peserta" => $qrcode_peserta,
+                                "status_peserta" => "Aktif",
+                                "foto_peserta" =>  $nama_foto,
+                                "surattugas_pembina" =>  $request->file('surattugas_pembina')->getClientOriginalName(),
+                            ]);
 
-    //                     } else {
+                        } else {
 
-    //                         $getPass = explode("@", $request->email_peserta);
-    //                         $generate_username = $getPass[0];
+                            $getPass = explode("@", $request->email_peserta);
+                            $generate_username = $getPass[0];
                             
-    //                         $peserta = Peserta::create([
-    //                             "user_id" => $userID->id,
-    //                             "nama_peserta" => $request->nama_peserta,
-    //                             "username_peserta" => $generate_username,
-    //                             "pwdmdl_peserta" => "Pwd@".$generate_username."Mdl123!",
-    //                             "alamat_peserta" => $request->alamat_peserta,
-    //                             "jenisk_peserta" => $request->jenisk_peserta,
-    //                             "role_peserta" => $request->role_peserta,
-    //                             "unit_id" => $request->unit_id,     
-    //                             "mis_peserta" => $request->mis_peserta,
-    //                             "qrcode_peserta" => $qrcode_peserta,
-    //                             "status_peserta" => "Aktif",
-    //                             "foto_peserta" =>  $nama_foto,
-    //                             // "surattugas_pembina" =>  $request->file('surattugas_pembina')->getClientOriginalName(),
-    //                         ]);
+                            $peserta = Peserta::create([
+                                "user_id" => $userID->id,
+                                "nama_peserta" => $request->nama_peserta,
+                                "username_peserta" => $generate_username,
+                                "pwdmdl_peserta" => "Pwd@".$generate_username."Mdl123!",
+                                "alamat_peserta" => $request->alamat_peserta,
+                                "jenisk_peserta" => $request->jenisk_peserta,
+                                "role_peserta" => $request->role_peserta,
+                                "unit_id" => $request->unit_id,     
+                                "mis_peserta" => $request->mis_peserta,
+                                "qrcode_peserta" => $qrcode_peserta,
+                                "status_peserta" => "Aktif",
+                                "foto_peserta" =>  $nama_foto,
+                                // "surattugas_pembina" =>  $request->file('surattugas_pembina')->getClientOriginalName(),
+                            ]);
 
-    //                     }
-    //                 }
+                        }
+                    }
 
-    //                 // Validasi Sebelum Create Peserta !
+                    // Validasi Sebelum Create Peserta !
                     
-    //                 if($peserta){
-    //                     Alert::success('Register Berhasil','Silahkan Login Ya ');
-    //                     return redirect('/login');
-    //                 }else{
-    //                     DB::rollback();
-    //                     Alert::error('Register Gagal','Pastikan Data Lengkap Ya !');
-    //                     return redirect()->back();
-    //                 }
+                    if($peserta){
+                        Alert::success('Register Berhasil','Silahkan Login Ya ');
+                        return redirect('/login');
+                    }else{
+                        DB::rollback();
+                        Alert::error('Register Gagal','Pastikan Data Lengkap Ya !');
+                        return redirect()->back();
+                    }
 
-    //             }else{
-    //                 DB::rollback();
-    //                 Alert::error('Register Gagal','Pastikan Data Lengkap Ya !');
-    //                 return redirect()->back();
-    //             }
+                }else{
+                    DB::rollback();
+                    Alert::error('Register Gagal','Pastikan Data Lengkap Ya !');
+                    return redirect()->back();
+                }
     
-    //         }else{
+            }else{
 
-    //             DB::rollback();
-    //             Alert::error('Belum Upload Foto','Upload Foto dulu yaa !');
-    //             return redirect()->back();
+                DB::rollback();
+                Alert::error('Belum Upload Foto','Upload Foto dulu yaa !');
+                return redirect()->back();
                 
-    //         }
-    //     }
+            }
+        }
 
         
-    // }
+    }
 
     //New Register Process
-    public function doregister(Request $request)
-    {
-        $cekPeserta = User::where('email', $request->email_peserta)->first();
+    // public function doregister(Request $request)
+    // {
+    //     $cekPeserta = User::where('email', $request->email_peserta)->first();
 
-        if ($cekPeserta) {
-            Alert::error('Register Gagal!', 'Email Kamu Sudah terdaftar, Gunakan Email Lain!');
-            return redirect()->back();
-        }
+    //     if ($cekPeserta) {
+    //         Alert::error('Register Gagal!', 'Email Kamu Sudah terdaftar, Gunakan Email Lain!');
+    //         return redirect()->back();
+    //     }
 
-        $validator = Validator::make($request->all(), [
-            'foto_peserta' => 'required|max:2048|mimes:png,jpg,jpeg',
-        ]);
+    //     $validator = Validator::make($request->all(), [
+    //         'foto_peserta' => 'required|max:2048|mimes:png,jpg,jpeg',
+    //     ]);
 
-        if ($validator->fails()) {
-            Alert::warning('Register Gagal', 'Pastikan Foto Sesuai dengan Ketentuan Ya!');
-            return redirect()->back()->withInput();
-        }
+    //     if ($validator->fails()) {
+    //         Alert::warning('Register Gagal', 'Pastikan Foto Sesuai dengan Ketentuan Ya!');
+    //         return redirect()->back()->withInput();
+    //     }
 
-        if ($request->hasFile('foto_peserta')) {
-            $extension = $request->file('foto_peserta')->getClientOriginalExtension();
-            $nama_foto = 'foto-peserta-' . $request->nama_peserta . '.' . $extension;
-            $request->file('foto_peserta')->move('file_foto/', $nama_foto);
-        } else {
-            Alert::error('Belum Upload Foto', 'Upload Foto dulu yaa!');
-            return redirect()->back();
-        }
+    //     if ($request->hasFile('foto_peserta')) {
+    //         $extension = $request->file('foto_peserta')->getClientOriginalExtension();
+    //         $nama_foto = 'foto-peserta-' . $request->nama_peserta . '.' . $extension;
+    //         $request->file('foto_peserta')->move('file_foto/', $nama_foto);
+    //     } else {
+    //         Alert::error('Belum Upload Foto', 'Upload Foto dulu yaa!');
+    //         return redirect()->back();
+    //     }
 
-        $token = Str::random(10);
-        $role = ($request->role_peserta == 'Pimpinan') ? 'Pembina' : $request->role_peserta;
+    //     $token = Str::random(10);
+    //     $role = ($request->role_peserta == 'Pimpinan') ? 'Pembina' : $request->role_peserta;
 
-        $user = User::create([
-            'role' => $role,
-            'name' => $request->nama_peserta,
-            'email' => $request->email_peserta,
-            'remember_token' => $token,
-            'password' => Hash::make($request->password),
-        ]);
+    //     $user = User::create([
+    //         'role' => $role,
+    //         'name' => $request->nama_peserta,
+    //         'email' => $request->email_peserta,
+    //         'remember_token' => $token,
+    //         'password' => Hash::make($request->password),
+    //     ]);
 
-        if (!$user) {
-            Alert::error('Register Gagal', 'Pastikan Data Lengkap Ya!');
-            return redirect()->back();
-        }
+    //     if (!$user) {
+    //         Alert::error('Register Gagal', 'Pastikan Data Lengkap Ya!');
+    //         return redirect()->back();
+    //     }
 
-        $userID = $user->id;
-        $image = QrCode::format('png')->size(400)->errorCorrection('H')->generate($request->nama_peserta);
-        $qrcode_peserta = '/qr-code/img/qrcode_peserta-' . $request->nama_peserta . '.png';
-        Storage::disk('public')->put($qrcode_peserta, $image);
+    //     $userID = $user->id;
+    //     $image = QrCode::format('png')->size(400)->errorCorrection('H')->generate($request->nama_peserta);
+    //     $qrcode_peserta = '/qr-code/img/qrcode_peserta-' . $request->nama_peserta . '.png';
+    //     Storage::disk('public')->put($qrcode_peserta, $image);
 
-        $getPass = explode("@", $request->email_peserta);
-        $generate_username = $getPass[0];
+    //     $getPass = explode("@", $request->email_peserta);
+    //     $generate_username = $getPass[0];
 
-        $pesertaData = [
-            'user_id' => $userID,
-            'nama_peserta' => $request->nama_peserta,
-            'username_peserta' => $generate_username,
-            'pwdmdl_peserta' => "Pwd@" . $generate_username . "Mdl123!",
-            'alamat_peserta' => $request->alamat_peserta,
-            'role_peserta' => $request->role_peserta,
-            'jenisk_peserta' => $request->jenisk_peserta,
-            'unit_id' => $request->unit_id,
-            'mis_peserta' => $request->mis_peserta,
-            'qrcode_peserta' => $qrcode_peserta,
-            'status_peserta' => ($request->role_peserta == 'Peserta') ? 'Tidak Aktif' : 'Aktif',
-            'foto_peserta' => $nama_foto,
-        ];
+    //     $pesertaData = [
+    //         'user_id' => $userID,
+    //         'nama_peserta' => $request->nama_peserta,
+    //         'username_peserta' => $generate_username,
+    //         'pwdmdl_peserta' => "Pwd@" . $generate_username . "Mdl123!",
+    //         'alamat_peserta' => $request->alamat_peserta,
+    //         'role_peserta' => $request->role_peserta,
+    //         'jenisk_peserta' => $request->jenisk_peserta,
+    //         'unit_id' => $request->unit_id,
+    //         'mis_peserta' => $request->mis_peserta,
+    //         'qrcode_peserta' => $qrcode_peserta,
+    //         'status_peserta' => ($request->role_peserta == 'Peserta') ? 'Tidak Aktif' : 'Aktif',
+    //         'foto_peserta' => $nama_foto,
+    //     ];
 
-        if ($request->role_peserta != 'Peserta' && $request->hasFile('surattugas_pembina')) {
-            $request->file('surattugas_pembina')->move('file_surattugas/', $request->file('surattugas_pembina')->getClientOriginalName());
-            $pesertaData['surattugas_pembina'] = $request->file('surattugas_pembina')->getClientOriginalName();
-        }
+    //     if ($request->role_peserta != 'Peserta' && $request->hasFile('surattugas_pembina')) {
+    //         $request->file('surattugas_pembina')->move('file_surattugas/', $request->file('surattugas_pembina')->getClientOriginalName());
+    //         $pesertaData['surattugas_pembina'] = $request->file('surattugas_pembina')->getClientOriginalName();
+    //     }
 
-        $peserta = Peserta::create($pesertaData);
+    //     $peserta = Peserta::create($pesertaData);
 
-        if ($peserta) {
-            Alert::success('Register Berhasil', 'Silahkan Login Ya');
-            return redirect('/login');
-        } else {
-            Alert::error('Register Gagal', 'Pastikan Data Lengkap Ya!');
-            return redirect()->back();
-        }
-    }
+    //     if ($peserta) {
+    //         Alert::success('Register Berhasil', 'Silahkan Login Ya');
+    //         return redirect('/login');
+    //     } else {
+    //         Alert::error('Register Gagal', 'Pastikan Data Lengkap Ya!');
+    //         return redirect()->back();
+    //     }
+    // }
 
     
     // GET Units by Status Units

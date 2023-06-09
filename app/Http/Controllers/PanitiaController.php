@@ -42,7 +42,7 @@ class PanitiaController extends Controller
             $query->where('status_units', 'MULA');
         })->get()->count();
 
-        $unit_daftar = Peserta::whereHas('Unit')->select('unit_id')->distinct()->get()->all();
+        $unit_daftar = Peserta::select('unit_id')->withCount('unit as jumlah_unit')->whereHas('Unit')->distinct()->get()->all();
         // dd($jml_ksr_daftar);
 
         $data_kegiatan = Kegiatan::all();
