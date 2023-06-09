@@ -15,7 +15,7 @@ class Unit extends Model
     
     public function peserta()
     {
-        return $this->hasMany(Peserta::class);
+        return $this->hasMany(Peserta::class,'unit_id');
     }
     public function unit()
     {

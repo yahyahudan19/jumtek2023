@@ -401,7 +401,7 @@
                     
                 </div>
             </div>
-            <div class="col-xl-12 col-xxl-12">
+            {{-- <div class="col-xl-12 col-xxl-12">
                 <div class="row">                    
                     <div class="col-xl-12">
                         <div class="card">
@@ -496,6 +496,40 @@
                                     </div>
                                     @endforeach
                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> --}}
+            <div class="col-xl-12 col-xxl-12">
+                <div class="row">                    
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Daftar Unit/Kontingen Pendaftar</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table id="example3" class="display min-w850">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Nama Unit</th>
+                                                <th>Jumlah Pendaftar</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @php $no = 1; @endphp
+                                            @foreach ($unit_daftar as $data)
+                                            <tr>
+                                                <td>{{ $no++ }}</td>
+                                                <td>{{$data->unit->nama_unit}}</a></td>
+                                                <td><span class="badge badge-success">Masih Dikerjakan ! Sabar ya kak :)</span></td>									
+                                            </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
