@@ -102,11 +102,16 @@ class PanitiaController extends Controller
     // Hapus Peserta //
     public function hapusPeserta($id_peserta){
 
-        // dd("ASHIAP");
-
         $data_peserta = Peserta::where('id_peserta',$id_peserta)->get()->first();
         $data_user = User::where('id',$data_peserta->user_id)->get()->first();
+        $data_kegiatan = Kegiatan_Peserta::where('peserta_id',$id_peserta)->get()->first();
 
+        if($data_kegiatan){
+
+            Alert::error('Yaah Gagal', 'Peserta Gagal dihapus ! cek data Kegiatan ya');
+            return redirect()->back();
+
+        }
 
         try{
             // Delete File Foto
@@ -166,8 +171,9 @@ class PanitiaController extends Controller
     public function detailPeserta($id_peserta){
         $data_unit = Unit::all()->all();
         $peserta = Peserta::where('id_peserta',$id_peserta)->get()->first();
+        $kegiatan_peserta = Kegiatan_Peserta::where('peserta_id',$id_peserta)->get()->all();
         
-        return view('panitia.peserta.edit',compact('peserta','data_unit'));
+        return view('panitia.peserta.edit',compact('peserta','data_unit','kegiatan_peserta'));
     }
 
     // Update Peserta
@@ -435,8 +441,8 @@ class PanitiaController extends Controller
         }
     }
     //Hapus Peserta Kegiatan
-    public function hapusPesertaKegiatan($id_peserta){
-        $data_peserta_kegiatan = Kegiatan_Peserta::where('peserta_id',$id_peserta)->get()->first();
+    public function hapusPesertaKegiatan($id_kegiatan_peserta){
+        $data_peserta_kegiatan = Kegiatan_Peserta::where('id_kegiatan_peserta',$id_kegiatan_peserta)->get()->first();
         // dd($data_peserta_kegiatan);
         
         try {

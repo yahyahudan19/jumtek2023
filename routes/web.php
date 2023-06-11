@@ -114,7 +114,7 @@ Route::get('/kegiatan/aktif/{id}','\App\Http\Controllers\PanitiaController@aktif
 //Non Aktif Kegiatan
 Route::get('/kegiatan/nonaktif/{id}','\App\Http\Controllers\PanitiaController@nonaktifKegiatan');
 //Hapus Peserta Kegiatan
-Route::get('/kegiatan/hapus/peserta/{id_peserta}','\App\Http\Controllers\PanitiaController@hapusPesertaKegiatan');
+Route::get('/kegiatan/hapus/peserta/{id_kegiatan_peserta}','\App\Http\Controllers\PanitiaController@hapusPesertaKegiatan');
 
 //GET User
 Route::get('/dashboard/user','\App\Http\Controllers\PanitiaController@user');

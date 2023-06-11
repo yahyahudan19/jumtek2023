@@ -111,6 +111,38 @@
             </div>
         </div>
         @if ($peserta->role_peserta == 'Peserta')
+            <div class="row">                    
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title"><b>Kegiatan Yang Diikuti : </b></h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table id="example3" class="display min-w850">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Nama Kegiatan</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @php $no = 1; @endphp
+                                        @foreach ($kegiatan_peserta as $kegiatan)
+                                        <tr>
+                                            <td>{{ $no++ }}</td>
+                                            <td>{{$kegiatan->kegiatan->nama_kegiatan}}</a></td>
+                                            <td><a href="/kegiatan/hapus/peserta/{{$kegiatan->id_kegiatan_peserta}}" class="btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-trash"></i></a></td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         @else
         <div class="row">
             <div class="col-lg-12">

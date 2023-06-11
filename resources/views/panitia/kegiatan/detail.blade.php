@@ -135,7 +135,7 @@
                                                 <td>{{$peserta->peserta->nama_peserta}}</td>
                                                 <td>{{$peserta->peserta->unit->nama_unit}}</td>
                                                 <td>
-                                                    <a href="/kegiatan/hapus/peserta/{{$peserta->peserta_id}}" class="btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-trash"></i></a>
+                                                    <a href="/kegiatan/hapus/peserta/{{$peserta->id_kegiatan_peserta}}" class="btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-trash"></i></a>
                                                 </td>
                                             </tr>
                                             @endforeach
