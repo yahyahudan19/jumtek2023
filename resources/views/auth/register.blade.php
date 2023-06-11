@@ -236,7 +236,7 @@
 							<div id="bottom-wizard">
 								<button type="button" name="backward" class="backward">Backward </button>
 								<button type="button" name="forward" class="forward">Forward</button>
-								{{-- <button type="submit" class="submit" onclick="confirmRegister()">Submit</button> --}}
+								<button type="submit" class="submit" onclick="confirmRegister()">Submit</button>
 							</div>
 							<!-- /bottom-wizard -->
 						</form>
