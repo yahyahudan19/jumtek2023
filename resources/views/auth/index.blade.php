@@ -36,7 +36,7 @@
                             <input class="form-control" type="email" name="email" placeholder="E-mail Address" required>
                             <input class="form-control" type="password" name="password" placeholder="Password" required>
                             <div class="form-button">
-                                <button type="submit" class="ibtn">Login</button><a href="#">Lupa Password?</a>
+                                <button type="submit" class="ibtn" >Login</button><a href="#" id="showAlert">Lupa Password?</a>
                             </div>
                         </form>
                         <div class="other-links">
@@ -54,5 +54,17 @@
 <script src="{{asset('template/login/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('template/login/js/main.js')}}"></script>
 @include('sweetalert::alert')
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    document.getElementById('showAlert').addEventListener('click', function(e) {
+        e.preventDefault();
+        Swal.fire({
+            icon: 'warning',
+            title: 'Peringatan',
+            html: 'Segera Lapor ke Panitia! Kunjungi <a href="https://wa.me/6285755889388" target="_blank">WhatsApp</a> untuk informasi lebih lanjut.'
+        });
+    });
+</script>
+
 </body>
 </html>

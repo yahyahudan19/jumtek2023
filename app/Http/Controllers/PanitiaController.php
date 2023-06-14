@@ -96,9 +96,10 @@ class PanitiaController extends Controller
     public function peserta()
     {
         $jumlah_peserta = Peserta::all()->count();
-        $jumlah_unit = Unit::all()->count();
         $data_peserta = Peserta::all();
-        return view('panitia.peserta.index',compact(['data_peserta','jumlah_peserta','jumlah_unit']));
+        $unit_daftar_jumlah = Peserta::select('unit_id')->withCount('unit as jumlah_unit')->whereHas('Unit')->distinct()->get()->count();
+
+        return view('panitia.peserta.index',compact(['data_peserta','jumlah_peserta','unit_daftar_jumlah']));
     }
     // Hapus Peserta //
     public function hapusPeserta($id_peserta){
