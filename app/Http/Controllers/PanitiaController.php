@@ -183,7 +183,6 @@ class PanitiaController extends Controller
         // dd($request->all());
         // dd($request->file('foto_peserta'));
 
-        
         if($request->hasFile('foto_peserta')){
             
             $validator = Validator::make($request->all(), [

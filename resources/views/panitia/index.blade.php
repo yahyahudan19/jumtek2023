@@ -316,14 +316,14 @@
                                         <svg width="20" height="8" viewBox="0 0 20 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <rect width="20" height="8" rx="4" fill="#214BB8"/>
                                         </svg>
-                                        <h4 class="fs-18 text-black mb-1 font-w600">{{$mula_daftar}}</h4>
+                                        <h4 class="fs-18 text-black mb-1 font-w600">{{$madya_daftar}}</h4>
                                         <span class="fs-14">PMR Madya</span>
                                     </div>
                                     <div class="">
                                         <svg width="20" height="8" viewBox="0 0 20 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <rect width="20" height="8" rx="4" fill="#28B463"/>
                                         </svg>
-                                        <h4 class="fs-18 text-black mb-1 font-w600">{{$madya_daftar}}</h4>
+                                        <h4 class="fs-18 text-black mb-1 font-w600">{{$mula_daftar}}</h4>
                                         <span class="fs-14">PMR Mula</span>
                                     </div>
                                 </div>
@@ -690,7 +690,7 @@
        var screenWidth = $(window).width();
        var donutChart = function(){
            var options = {
-             series: [{{$ksr_daftar}}, {{$wira_daftar}},{{$mula_daftar}},{{$madya_daftar}} ],
+             series: [{{$ksr_daftar}}, {{$wira_daftar}},{{$madya_daftar}},{{$mula_daftar}} ],
              chart: {
              type: 'donut',
            },
