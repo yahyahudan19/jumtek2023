@@ -61,7 +61,7 @@ class PanitiaController extends Controller
             'data_peserta','jumlah_peserta','jumlah_unit','jumlah_ksr','jumlah_pmr','jumlah_kegiatan','data_kegiatan_ksr',
             'data_kegiatan_pmr','data_kegiatan','jumlah_kegiatan_ksr','jumlah_kegiatan_pmr','ksr_daftar','wira_daftar','mula_daftar','madya_daftar'
             // 'jumlah_peserta_kontingen',
-            ,'unit_daftar'
+            ,'unit_daftar','unit_daftar_jumlah'
         ]));
     }
     // User Page    ================================================================
