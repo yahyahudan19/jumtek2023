@@ -107,7 +107,11 @@
                                         <tbody>
                                             @foreach ($data_peserta as $peserta)
                                             <tr>
-                                                <td>{{$peserta->peserta->mis_peserta}}</a></td>
+                                                @if ({{$peserta->peserta->mis_peserta}})
+                                                    <td>{{$peserta->peserta->mis_peserta}}<td>
+                                                @else
+                                                    <td>MIS Tidak Tersedia</td>
+                                                @endif
                                                 <td>{{$peserta->peserta->nama_peserta}}</td>
                                             </tr>
                                             @endforeach
