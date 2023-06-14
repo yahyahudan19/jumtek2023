@@ -407,7 +407,7 @@
 									</span>
 									<div class="media-body text-white text-right">
 										<p class="mb-1">Total Kontingen Pendaftar : </p>
-										<h3 class="text-white">{{$jumlah_pmr}}</h3>
+										<h3 class="text-white">{{$unit_daftar_jumlah}}</h3>
 									</div>
 								</div>
 							</div>

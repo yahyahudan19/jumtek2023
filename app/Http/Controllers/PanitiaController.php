@@ -43,6 +43,7 @@ class PanitiaController extends Controller
         })->get()->count();
 
         $unit_daftar = Peserta::select('unit_id')->withCount('unit as jumlah_unit')->whereHas('Unit')->distinct()->get()->all();
+        $unit_daftar_jumlah = Peserta::select('unit_id')->withCount('unit as jumlah_unit')->whereHas('Unit')->distinct()->get()->count();
         // dd($jml_ksr_daftar);
 
         $data_kegiatan = Kegiatan::all();
