@@ -36,9 +36,18 @@ class PembinaController extends Controller
         return view('pembina.kegiatan',compact('data_kegiatan','jumlah_kegiatan'));
     }
     public function detailKegiatan($id_kegiatan){
+
         $data_kegiatan = Kegiatan::where('id_kegiatan',$id_kegiatan)->get()->first();
-        $data_peserta = Kegiatan_Peserta::where('kegiatan_id',$id_kegiatan)->get()->all();
-        $jumlah_peserta = Kegiatan_Peserta::where('kegiatan_id',$id_kegiatan)->count();
+
+        $data_peserta = Kegiatan_Peserta::where([
+            'kegiatan_id' => $id_kegiatan,
+            'unit_id' => auth()->user()->peserta->unit->id_unit
+        ])->get()->all();
+        
+        $jumlah_peserta = Kegiatan_Peserta::where([
+            'kegiatan_id' => $id_kegiatan,
+            'unit_id' => auth()->user()->peserta->unit->id_unit
+        ])->count();
         
         if($data_kegiatan){
             return view('pembina.detail',compact('data_kegiatan','data_peserta','jumlah_peserta'));
