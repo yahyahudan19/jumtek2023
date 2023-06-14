@@ -333,22 +333,7 @@
                 </div>
             </div>
             <div class="col-xl-7 col-xxl-8">
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6 col-sm-6">
-						<div class="widget-stat card bg-secondary">
-							<div class="card-body  p-4">
-								<div class="media">
-									<span class="mr-3">
-										<i class="flaticon-381-user-1"></i>
-									</span>
-									<div class="media-body text-white text-right">
-										<p class="mb-1">Total Kegiatan </p>
-										<h3 class="text-white">{{$jumlah_kegiatan}}</h3>
-									</div>
-								</div>
-							</div>
-						</div>
-                    </div>
+                <div class="row">                  
                     <div class="col-xl-6 col-lg-6 col-sm-6">
 						<div class="widget-stat card bg-info">
 							<div class="card-body  p-4">
@@ -363,7 +348,22 @@
 								</div>
 							</div>
 						</div>
-                    </div>                    
+                    </div>            
+                    <div class="col-xl-6 col-lg-6 col-sm-6">
+						<div class="widget-stat card bg-secondary">
+							<div class="card-body  p-4">
+								<div class="media">
+									<span class="mr-3">
+										<i class="flaticon-381-user-1"></i>
+									</span>
+									<div class="media-body text-white text-right">
+										<p class="mb-1">Total Kegiatan </p>
+										<h3 class="text-white">{{$jumlah_kegiatan}}</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+                    </div>        
                 </div>
                 <div class="row">
                     <div class="col-xl-6 col-lg-6 col-sm-6">
