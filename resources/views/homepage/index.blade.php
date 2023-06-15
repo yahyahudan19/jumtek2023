@@ -102,7 +102,7 @@
                                         <ul data-animation="fadeInUp animated" data-delay=".2s">
 											<li><i class="fas fa-map-marker-alt"></i> Selorejo, Ngantang</li>
 											<li><i class="far fa-clock"></i>  24 - 27 Juni 2023, </li>
-											<li><i class="far fa-bell"></i><b>Pendaftaran : 20 Mei - 10 Juni 2023</b></li>
+											<li><i class="far fa-bell"></i><b>Pendaftaran Sudah Ditutup !</b></li>
 											{{-- <li><p><a href="#" class="btn mt-10"><b>Pendaftaran : 20 Mei - 10 Juni 2023</b></a></p></li> --}}
 										</ul>
                                         <h2 data-animation="fadeInUp animated" data-delay=".4s">Jumbara dan Temu Karya <span>2023</span></h2> 
@@ -183,7 +183,7 @@
 								<div class="wow fadeInDown animated" data-animation="fadeInUp animated" data-delay=".2s">
 									<p>Menjalin silaturahmi antar anggota PMR serta mendidik generasi PMR menjadi relawan yang berkarakter.</p>
 									 <p>Memberikan wadah bagi generasi PMR Kabupaten Malang dalam meningkatkan skill/kompetensi di bidang 7 materi dasar PMR.</p>
-								   <a href="/register" class="btn mt-20"><i class="far fa-ticket-alt"></i> Daftar Sekarang !</a>
+								   <a href="/register" id="showAlert" class="btn mt-20"><i class="far fa-ticket-alt"></i> Daftar Sekarang !</a>
 							   </div>
                             </div>
                         </div>
@@ -391,21 +391,21 @@
                         <div class="col-lg-6 col-sm-6">
 						 <div class="single-counter text-center mb-30 cr1">
                                 <div class="counter p-relative">
-                                    <span class="count">10</span>
+                                    <span class="count">30</span>
                                     <small>+</small>
                                 </div>
                                 <p>Kegiatan</p>
                             </div>
                             <div class="single-counter text-center mb-30 cr2">
                                 <div class="counter p-relative">
-                                    <span class="count">100</span>
+                                    <span class="count">800</span>
                                     <small>+</small>
                                 </div>
                                 <p>Kontingen PMR</p>
                             </div>
 							<div class="single-counter text-center mb-30 cr3">
                                 <div class="counter p-relative">
-                                    <span class="count">10</span>
+                                    <span class="count">200</span>
                                     <small>+</small>
                                 </div>
                                 <p>Kontingen KSR</p>
@@ -898,7 +898,7 @@
 							<div class="content">
 								<h5>Register Website</h5>
 								{{-- <p>jumtek.pmikabmalang.or.id</p> --}}
-                                <p><a href="https://jumtek.pmikabmalang.or.id/register  " class="btn mt-10" target="_blank">jumtek.pmikabmalang.or.id</a></p>
+                                <p><a href="https://jumtek.pmikabmalang.or.id/register" class="btn mt-10" target="_blank" id="showAlert" >jumtek.pmikabmalang.or.id</a></p>
 							</div>
 						 </div>
 						
@@ -929,7 +929,7 @@
                             </div>
                         </div>
 						<div class="col-xl-4 col-lg-4 text-right">
-                            <a href="/register" class="btn wow fadeInUp animated" data-animation="fadeInUp animated" data-delay=".2s"><i class="far fa-ticket-alt"></i> Daftar Sekarang !</a>
+                            <a href="/register" id="showAlert" class="btn wow fadeInUp animated" data-animation="fadeInUp animated" data-delay=".2s"><i class="far fa-ticket-alt"></i> Daftar Sekarang !</a>
                         </div>
                     </div>
                     <div class="row">
@@ -1136,5 +1136,17 @@
 		<script src="{{asset('template/homepage/js/isotope.pkgd.min.js')}}"></script>
         <script src="{{asset('template/homepage/js/imagesloaded.pkgd.min.js')}}"></script>
         <script src="{{asset('template/homepage/js/main.js')}}"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            document.getElementById('showAlert').addEventListener('click', function(e) {
+                e.preventDefault();
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Pendaftaran Ditutup! ',
+                    html: 'Hubungi panitia jika diperlukan <a href="https://wa.me/6285755889388" target="_blank">di sini</a>.'
+                });
+            });
+        </script>
     </body>
 </html>

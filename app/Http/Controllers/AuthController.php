@@ -27,11 +27,21 @@ class AuthController extends Controller
     // View Login Page
     public function index()
     {
+
         return view('auth.index');
     }
 
     // View Register Page
     public function register(){
+
+        Alert::toast('Pendaftaran Ditutup! <br> Hubungi panitia jika diperlukan <a href="https://wa.me/6285755889388" target="_blank">di sini</a>.', 'error');
+    
+        return redirect()->back();
+
+    }
+
+    // View Register Page
+    public function daftar(){
 
         $data_unit = Unit::all();
         return view('auth.register',compact('data_unit'));

@@ -58,6 +58,10 @@ Route::middleware(['auth','checkRole:Panitia'])->group(function () {
 // DASHBOARD ROUTES //
 Route::get('/dashboard/lomba','\App\Http\Controllers\PanitiaController@lomba');
 
+// REGISTER
+Route::get('/panitia/daftar','\App\Http\Controllers\AuthController@daftar');
+Route::post('/doregister','\App\Http\Controllers\AuthController@doRegister');
+
 //GET Unit
 Route::get('/dashboard/unit','\App\Http\Controllers\PanitiaController@unit');
 //TAMBAH Unit
@@ -129,7 +133,7 @@ Route::get('/login','\App\Http\Controllers\AuthController@index')->name('login')
 Route::get('/logout','\App\Http\Controllers\AuthController@logout')->name('logout');
 Route::post('/auth','\App\Http\Controllers\AuthController@login');
 Route::get('/register','\App\Http\Controllers\AuthController@register');
-Route::post('/doregister','\App\Http\Controllers\AuthController@doRegister');
+// Route::post('/doregister','\App\Http\Controllers\AuthController@doRegister');
 
 
 //GET Unit by StatusUnis
