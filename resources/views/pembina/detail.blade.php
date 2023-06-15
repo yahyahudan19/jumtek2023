@@ -108,11 +108,11 @@
                                         <tbody>
                                             @foreach ($data_peserta as $peserta)
                                             <tr>
-                                                @if ($peserta->peserta->mis_peserta == NULL)
+                                                {{-- @if ($peserta->peserta->mis_peserta == NULL)
                                                     <td>MIS Tidak Tersedia</td>
-                                                @else
-                                                    <td>{{$peserta->peserta->mis_peserta}}<td>
-                                                @endif
+                                                @else --}}
+                                                <td>{{$peserta->peserta->mis_peserta}}<td>
+                                                {{-- @endif --}}
                                                 <td>{{$peserta->peserta->nama_peserta}}</td>
                                                 <td><a href="/hapus/peserta/{{$peserta->id_kegiatan_peserta}}" class="btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-trash"></i></a></td>
                                             </tr>
