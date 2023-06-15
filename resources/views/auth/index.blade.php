@@ -61,7 +61,7 @@
         Swal.fire({
             icon: 'warning',
             title: 'Peringatan',
-            html: 'Segera Lapor ke Panitia! Kunjungi <a href="https://wa.me/6285755889388" target="_blank">WhatsApp</a> untuk informasi lebih lanjut.'
+            html: 'Segera Lapor ke Panitia! Hubungi <a href="https://wa.me/6285755889388" target="_blank">WhatsApp Kami</a> untuk informasi lebih lanjut.'
         });
     });
 </script>
