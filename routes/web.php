@@ -51,6 +51,8 @@ Route::middleware(['auth','checkRole:Pembina'])->group(function () {
      Route::get('/dashboard/unit/print','\App\Http\Controllers\PembinaController@printUnit');
      //Print Kegiatan by Unit
      Route::get('/dashboard/kegiatan/print','\App\Http\Controllers\PembinaController@printKegiatan');
+     //Hapus Peserta Kegiatan
+     Route::get('/hapus/peserta/{id_kegiatan_peserta}','\App\Http\Controllers\PembinaController@hapusPesertaKegiatan');
 });
 
 // PANITIA ROUTES

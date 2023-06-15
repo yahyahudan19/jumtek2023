@@ -102,6 +102,7 @@
                                             <tr>
                                                 <th>MIS PMI</th>
                                                 <th>Nama</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -113,6 +114,7 @@
                                                     <td>MIS Tidak Tersedia</td>
                                                 @endif
                                                 <td>{{$peserta->peserta->nama_peserta}}</td>
+                                                <td><a href="/hapus/peserta/{{$peserta->id_kegiatan_peserta}}" class="btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-trash"></i></a></td>
                                             </tr>
                                             @endforeach
                                         </tbody>

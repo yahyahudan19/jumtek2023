@@ -222,6 +222,7 @@ class PanitiaController extends Controller
             $data_peserta->update([
                 "nama_peserta" => $request->nama_peserta,
                 "alamat_peserta" => $request->alamat_peserta,
+                "role_peserta" => $request->role_peserta,
                 "unit_id" => $request->unit_id,
                 "foto_peserta" => $nama_foto,
                 "qrcode_peserta" => $qrcode_peserta
@@ -246,6 +247,7 @@ class PanitiaController extends Controller
             $data_peserta->update([
                 "nama_peserta" => $request->nama_peserta,
                 "unit_id" => $request->unit_id,
+                "role_peserta" => $request->role_peserta,
                 "alamat_peserta" => $request->alamat_peserta,
                 "qrcode_peserta" => $qrcode_peserta
             ]);
@@ -448,10 +450,10 @@ class PanitiaController extends Controller
         
         try {
             $data_peserta_kegiatan->delete($data_peserta_kegiatan);
-            Alert::success('Yeay Berhasil !', 'Kegiatan Berhasil dihapus !');
+            Alert::success('Yeay Berhasil !', 'Peserta Berhasil dihapus !');
             return redirect()->back();
         } catch (QueryException $e) {
-            Alert::error('Yaah Gagal', 'Kegiatan Gagal dihapus !');
+            Alert::error('Yaah Gagal', 'Peserta Gagal dihapus !');
             return redirect()->back();
         }
     }

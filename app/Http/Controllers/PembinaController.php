@@ -6,6 +6,7 @@ use App\Models\Kegiatan;
 use App\Models\Kegiatan_Peserta;
 use App\Models\Peserta;
 use App\Models\Unit;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -132,5 +133,20 @@ class PembinaController extends Controller
 
         return view('pembina.kegiatan_print',compact('data_kegiatan_peserta','jumlah_kegiatan_peserta','jumlah_peserta','data_unit','data_pembina','data_pimpinan'));
 
+    }
+     //Hapus Peserta Kegiatan
+     public function hapusPesertaKegiatan($id_kegiatan_peserta){
+
+        $data_peserta_kegiatan = Kegiatan_Peserta::where('id_kegiatan_peserta',$id_kegiatan_peserta)->get()->first();
+        // dd($data_peserta_kegiatan);
+        
+        try {
+            $data_peserta_kegiatan->delete($data_peserta_kegiatan);
+            Alert::success('Yeay Berhasil !', 'Peserta Berhasil dihapus !');
+            return redirect()->back();
+        } catch (QueryException $e) {
+            Alert::error('Yaah Gagal', 'Peserta Gagal dihapus !');
+            return redirect()->back();
+        }
     }
 }
