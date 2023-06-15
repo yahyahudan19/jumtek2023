@@ -32,7 +32,8 @@ Route::middleware(['auth','checkRole:Peserta,Panitia,Pembina'])->group(function 
     Route::get('/dashboard/kegiatan/peserta','\App\Http\Controllers\PesertaController@kegiatan');
     //POST Kegiatan Peserta
     Route::post('/kegiatan/peserta/tambah','\App\Http\Controllers\PesertaController@tambahKegiatan');
-   
+    //Hapus Peserta Kegiatan
+    Route::get('/delete/kegiatan/{id_kegiatan_peserta}','\App\Http\Controllers\PesertaController@hapusPesertaKegiatan');
 
 });
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Kegiatan;
 use App\Models\Kegiatan_Peserta;
 use App\Models\Peserta;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
@@ -142,4 +143,20 @@ class PesertaController extends Controller
         }
         
     }
+
+    //Hapus Peserta Kegiatan
+    public function hapusPesertaKegiatan($id_kegiatan_peserta){
+
+        $data_peserta_kegiatan = Kegiatan_Peserta::where('id_kegiatan_peserta',$id_kegiatan_peserta)->get()->first();
+        // dd($data_peserta_kegiatan);
+        
+        try {
+            $data_peserta_kegiatan->delete($data_peserta_kegiatan);
+            Alert::success('Yeay Berhasil !', 'Kegiatan Berhasil dihapus !');
+            return redirect()->back();
+        } catch (QueryException $e) {
+            Alert::error('Yaah Gagal', 'Kegiatan Gagal dihapus !');
+            return redirect()->back();
+        }
+    }         
 }

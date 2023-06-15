@@ -116,6 +116,7 @@
                                             <th>Nama</th>
                                             <th>Tanggal</th>
                                             <th>Waktu</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -124,6 +125,7 @@
                                             <td>{{$kegiatan->kegiatan->nama_kegiatan}}</a></td>
                                             <td>{{ \Carbon\Carbon::parse($kegiatan->kegiatan->tanggal_kegiatan)->format('d M Y') }}</td>
                                             <td>{{ \Carbon\Carbon::parse($kegiatan->kegiatan->waktu_kegiatan)->format('H:i')}} WIB</td>
+                                            <td><a href="/delete/kegiatan/{{$kegiatan->id_kegiatan_peserta}}" class="btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-trash"></i></a></td>
                                         </tr>
                                         @endforeach
                                     </tbody>
