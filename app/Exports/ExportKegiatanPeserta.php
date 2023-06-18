@@ -12,7 +12,7 @@ class ExportKegiatanPeserta implements FromCollection
     */
     public function collection()
     {
-        return Kegiatan_Peserta::all();
+        return Kegiatan_Peserta::all()->sortBy('unit_id');
     }
     public function map($data_kegiatan_peserta): array
     {
