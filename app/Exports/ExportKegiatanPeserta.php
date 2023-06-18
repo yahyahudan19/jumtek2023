@@ -4,8 +4,10 @@ namespace App\Exports;
 
 use App\Models\Kegiatan_Peserta;
 use Maatwebsite\Excel\Concerns\FromCollection;
+use Maatwebsite\Excel\Concerns\WithMapping;
+use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class ExportKegiatanPeserta implements FromCollection
+class ExportKegiatanPeserta implements FromCollection,WithMapping, WithHeadings
 {
     /**
     * @return \Illuminate\Support\Collection

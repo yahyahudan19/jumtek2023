@@ -348,12 +348,10 @@ class AuthController extends Controller
 
     // Export Excel Peserta
     public function exportExcel(){
-        // return Excel::download(new ExportUsers, 'users.xlsx');
         return Excel::download(new ExportPesertas, 'data_peserta.xlsx');
     }
     // Export Excel Kegiatan
     public function exportExcelKegiatan(){
-        // return Excel::download(new ExportUsers, 'users.xlsx');
         return Excel::download(new ExportKegiatanPeserta, 'data_kegiatan_peserta.xlsx');
     }
     // Export Foto
