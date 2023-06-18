@@ -14,7 +14,7 @@ class ExportPesertas implements FromCollection,WithMapping, WithHeadings
     */
     public function collection()
     {
-        return Peserta::all();
+        return Peserta::all()->sortBy('unit_id');
         
     }
     public function map($data_peserta): array
