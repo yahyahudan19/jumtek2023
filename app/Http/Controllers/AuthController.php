@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ExportKegiatanPeserta;
 use App\Exports\ExportPesertas;
 use App\Exports\ExportUsers;
 use Illuminate\Http\Request;
@@ -345,10 +346,15 @@ class AuthController extends Controller
         return view('auth.qr',compact('qrCode'));
     }
 
-    // Export Excel
+    // Export Excel Peserta
     public function exportExcel(){
         // return Excel::download(new ExportUsers, 'users.xlsx');
         return Excel::download(new ExportPesertas, 'data_peserta.xlsx');
+    }
+    // Export Excel Kegiatan
+    public function exportExcelKegiatan(){
+        // return Excel::download(new ExportUsers, 'users.xlsx');
+        return Excel::download(new ExportKegiatanPeserta, 'data_kegiatan_peserta.xlsx');
     }
     // Export Foto
     public function exportFoto(){

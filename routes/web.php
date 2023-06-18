@@ -97,6 +97,8 @@ Route::post('/peserta/surattugas','\App\Http\Controllers\PanitiaController@updat
 Route::post('/peserta/password','\App\Http\Controllers\PanitiaController@updatePassword');
 //EXPORT Peserta
 Route::get('/exportPeserta','\App\Http\Controllers\AuthController@exportExcel');
+//EXPORT Kegiatan Peserta
+Route::get('/export/KegiatanPeserta','\App\Http\Controllers\AuthController@exportExcelKegiatan');
 //EXPORT Foto Peserta
 Route::get('/exportFoto','\App\Http\Controllers\AuthController@exportFoto');
 //EXPORT QR Peserta
