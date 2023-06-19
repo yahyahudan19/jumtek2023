@@ -22,7 +22,7 @@ class ExportPesertas implements FromCollection,WithMapping, WithHeadings
         return [
             $data_peserta->nama_peserta,
             $data_peserta->username_peserta,
-            $data_peserta->unit->nama_unit,    
+            $data_peserta->unit->status_units,    
             $data_peserta->username_peserta,
             $data_peserta->user->email,
             $data_peserta->pwdmdl_peserta,    

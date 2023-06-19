@@ -163,8 +163,8 @@
                             <p class="text-white mb-0">Digunakan Saat Ujian Saja !</p>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item d-flex justify-content-between"><span class="mb-0">Email</span> <strong class="text-muted">{{$data_peserta->user->email}}	</strong></li>
-                            <li class="list-group-item d-flex justify-content-between"><span class="mb-0">Password </span> <strong class="text-muted">{{$data_peserta->pwdmdl_peserta}}	</strong></li>
+                            <li class="list-group-item d-flex justify-content-between"><span class="mb-0">Unser</span> <strong class="text-muted">{{$data_peserta->username_peserta}}	</strong></li>
+                            <li class="list-group-item d-flex justify-content-between"><span class="mb-0">Pass </span> <strong class="text-muted">{{$data_peserta->pwdmdl_peserta}}	</strong></li>
                         </ul>
                         <div class="card-footer border-0 mt-0">								
                             <a href="https://ujian.pmikabmalang.or.id/login" target="_blank" class="btn btn-success btn-lg btn-block">
