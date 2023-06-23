@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KegiatanBackup;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -146,6 +147,8 @@ Route::get('/unit/getUnitByStatusUnits/{status_units}','\App\Http\Controllers\Au
 
 Route::get('/qrgenerator','\App\Http\Controllers\AuthController@qrgenerator');
 
-
-
-
+// BACKUP 
+Route::get('/daftar-ulang',[KegiatanBackup::class,'index']);
+Route::get('/kegiatan-ulang',[KegiatanBackup::class,'cekKegiatan']);
+Route::post('/tambahKegiatan',[KegiatanBackup::class,'tambahKegiatan']);
+Route::get('/hapusKegiatan/{id_kegiatan_backup}',[KegiatanBackup::class,'hapusKegiatan']);
