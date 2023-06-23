@@ -24,6 +24,13 @@
                 @endif
             </div>
             <div class="col-xl-6 col-xxl-6">
+                @if ($data_peserta->registrasiulang_peserta == NULL)
+                <div class="card text-white bg-danger">
+                    <div class="card-body mb-0">
+                        <p class="card-text"></p>Segera Daftar Ulang !  <a href="/registrasi-ulang" class="btn btn-danger light btn-card"> <i class="ml-1 fa fa-exclamation-triangle "></i> Daftar Ulang Sekarang !</a>
+                    </div>
+                </div>
+                @else
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
@@ -34,6 +41,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
             </div>
         </div>
         <div class="row">
@@ -357,8 +365,8 @@
 										<i class="flaticon-381-user-1"></i>
 									</span>
 									<div class="media-body text-white text-right">
-										<p class="mb-1">Total Kegiatan </p>
-										<h3 class="text-white">{{$jumlah_kegiatan}}</h3>
+										<p class="mb-1">Peserta Registrasi :  </p>
+										<h3 class="text-white">{{$jumlah_peserta_registrasi}}</h3>
 									</div>
 								</div>
 							</div>
@@ -572,17 +580,24 @@
                 </div>
             </div>
             <div class="col-xl-6 col-xxl-6">
+                @if ($data_peserta->registrasiulang_peserta == NULL)
+                <div class="card text-white bg-danger">
+                    <div class="card-body mb-0">
+                        <p class="card-text"></p>Segera Daftar Ulang !  <a href="/registrasi-ulang" class="btn btn-danger light btn-card"> <i class="ml-1 fa fa-exclamation-triangle "></i> Daftar Ulang Sekarang !</a>
+                    </div>
+                </div>
+                @else
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <p class="fs-14 mb-1">Informasi Kontingen</p>
-                                <span class="fs-20 text-black font-w600">{{$data_peserta->unit->nama_unit}}
-                                </span>
+                                <p class="fs-14 mb-1">Nama Kontingen</p>
+                                <span class="fs-20 text-black font-w600">{{$data_peserta->unit->nama_unit}}</span>
                             </div>
                         </div>
                     </div>
                 </div>
+                @endif
             </div>
             <div class="col-xl-12 col-xxl-12">
                 <div class="row">

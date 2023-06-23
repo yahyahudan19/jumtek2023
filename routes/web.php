@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\KegiatanBackup;
+use App\Http\Controllers\PesertaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,6 +36,8 @@ Route::middleware(['auth','checkRole:Peserta,Panitia,Pembina'])->group(function 
     Route::post('/kegiatan/peserta/tambah','\App\Http\Controllers\PesertaController@tambahKegiatan');
     //Hapus Peserta Kegiatan
     Route::get('/delete/kegiatan/{id_kegiatan_peserta}','\App\Http\Controllers\PesertaController@hapusPesertaKegiatan');
+    //Registrasi Ulang Peserta
+    Route::get('/registrasi-ulang',[PesertaController::class,'registrasiUlang']);
 
 });
 

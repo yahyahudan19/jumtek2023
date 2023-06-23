@@ -11,7 +11,7 @@ class Peserta extends Model
 
     protected $table = 'pesertas';
     protected $primaryKey = 'id_peserta';
-    protected $fillable = ['user_id','unit_id','nama_peserta','alamat_peserta','username_peserta','pwdmdl_peserta','jenisk_peserta','role_peserta','unit_peserta','mis_peserta','foto_peserta','surattugas_pembina','qrcode_peserta','status_peserta'];
+    protected $fillable = ['user_id','unit_id','nama_peserta','alamat_peserta','username_peserta','pwdmdl_peserta','jenisk_peserta','role_peserta','unit_peserta','mis_peserta','foto_peserta','surattugas_pembina','qrcode_peserta','status_peserta','registrasiulang_peserta'];
 
     public function user()
     {

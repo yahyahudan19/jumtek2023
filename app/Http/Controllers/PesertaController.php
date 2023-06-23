@@ -159,4 +159,25 @@ class PesertaController extends Controller
             return redirect()->back();
         }
     }         
+
+    // Registrasi Ulang
+    public function registrasiUlang(){
+        
+        $data_peserta = Peserta::where('id_peserta',auth()->user()->peserta->id_peserta)->get()->first();
+
+        if($data_peserta->registrasiulang_peserta == NULL){
+            // dd('ashiap');
+            $data_peserta->update([
+                'registrasiulang_peserta' => 'Sudah'
+            ]);
+
+            Alert::success('Yeay Berhasil !', 'Kamu Berhasil Registrasi Ulang !');
+            return redirect('/dashboard/kegiatan/peserta');
+            
+        }else{
+
+            Alert::error('Yaah Gagal', 'Kegiatan Sudah Registrasi Ulang !');
+            return redirect()->back();
+        }
+    }
 }
