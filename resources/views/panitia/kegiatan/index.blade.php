@@ -244,6 +244,41 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
+                            <h4 class="card-title">Data Kegiatan Peserta</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table id="example3" class="display min-w850">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Nama</th>
+                                            <th>Tingkat</th>
+                                            <th>Kontingen</th>
+                                            <th>Lomba/Kegiatan</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @php $no = 1; @endphp
+                                        @foreach ($data_kegiatan_peserta as $kegiatan_peserta)
+                                        <tr>
+                                            <td>{{ $no++ }}</td>
+                                            <td>{{$kegiatan_peserta->peserta->nama_peserta}}</a></td>
+                                            <td>{{$kegiatan_peserta->unit->status_units}}</a></td>
+                                            <td>{{$kegiatan_peserta->unit->nama_unit}}</a></td>
+                                            <td>{{$kegiatan_peserta->kegiatan->nama_kegiatan}}</a></td>
+                                            </td>												
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
                             <h4 class="card-title">Data Kegiatan Jumbara</h4>
                         </div>
                         <div class="card-body">
