@@ -138,6 +138,7 @@ Route::delete('/user/delete/{id}','\App\Http\Controllers\PanitiaController@hapus
 
 //GET Registrasi Ualang
 Route::get('/dashboard/registrasi-ulang',[PanitiaController::class,'registrasiUlang']);
+Route::get('/registrasi/null/{id}',[PanitiaController::class,'unregistrasiUlang']);
 });
 
 

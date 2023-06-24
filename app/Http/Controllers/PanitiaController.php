@@ -73,6 +73,17 @@ class PanitiaController extends Controller
         
     return view('panitia.registrasi-ulang',compact('data_peserta_registrasi','jumlah_peserta_registrasi'));
     }
+    // Un Registrasi Ulang
+    public function unregistrasiUlang($id_peserta){
+        $peseta = Peserta::find($id_peserta);
+
+        $peseta->update([
+            "registrasiulang_peserta" => NULL
+        ]);
+
+        Alert::success('Berhasil !','Peserta Berhasil di Unregistrasi !');
+        return redirect()->back();
+    }
     // User Page    ================================================================
 
     // Get Data User

@@ -54,6 +54,7 @@
                                                 <th>Status</th>
                                                 <th>Role</th>
                                                 <th>Waktu Registrasi Ulang</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -82,7 +83,8 @@
                                                 @else
                                                 <td class="py-2 text-right"><span class="badge badge-info">Panitia</span></td>
                                                 @endif
-                                                <td>{{ \Carbon\Carbon::parse($peserta->updated_at)->format('d M Y h:i') }}</td>
+                                                <td>{{ \Carbon\Carbon::parse($peserta->updated_at)->format('d M Y h:i') WIB}}</td>
+                                                <td><a href="/registrasi/null/{{$peserta->id_peserta}}" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-times"></i></a></td>
                                             </tr>
                                             @endforeach
                                         </tbody>
