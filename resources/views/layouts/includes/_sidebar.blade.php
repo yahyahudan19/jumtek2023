@@ -41,6 +41,11 @@
                     <span class="nav-text">User</span>
                 </a>
             </li>
+            <li><a href="/dashboard/registrasi-ulang" class="ai-icon" aria-expanded="false">
+                    <i class="flaticon-381-repeat-1"></i>
+                    <span class="nav-text">Registrasi Ulang</span>
+                </a>
+            </li>
             @endif
 
             @if(auth()->user()->role == 'Peserta')

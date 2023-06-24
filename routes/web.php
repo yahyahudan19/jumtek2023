@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\KegiatanBackup;
+use App\Http\Controllers\PanitiaController;
 use App\Http\Controllers\PesertaController;
 use Illuminate\Support\Facades\Route;
 
@@ -133,6 +135,9 @@ Route::get('/kegiatan/hapus/peserta/{id_kegiatan_peserta}','\App\Http\Controller
 Route::get('/dashboard/user','\App\Http\Controllers\PanitiaController@user');
 //Delete User
 Route::delete('/user/delete/{id}','\App\Http\Controllers\PanitiaController@hapusUser');
+
+//GET Registrasi Ualang
+Route::get('/dashboard/registrasi-ulang',[PanitiaController::class,'registrasiUlang']);
 });
 
 

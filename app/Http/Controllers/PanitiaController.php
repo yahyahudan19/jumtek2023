@@ -66,6 +66,13 @@ class PanitiaController extends Controller
             ,'unit_daftar','unit_daftar_jumlah','jumlah_peserta_registrasi'
         ]));
     }
+    // Registrasi Ulang 
+    public function registrasiUlang(){
+        $data_peserta_registrasi = Peserta::where('registrasiulang_peserta','Sudah')->get()->all();
+        $jumlah_peserta_registrasi = Peserta::where('registrasiulang_peserta','Sudah')->get()->count();
+        
+    return view('panitia.registrasi-ulang',compact('data_peserta_registrasi','jumlah_peserta_registrasi'));
+    }
     // User Page    ================================================================
 
     // Get Data User
