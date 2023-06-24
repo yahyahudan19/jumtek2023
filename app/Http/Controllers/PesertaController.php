@@ -172,7 +172,8 @@ class PesertaController extends Controller
             ]);
 
             Alert::success('Yeay Berhasil !', 'Kamu Berhasil Registrasi Ulang !');
-            return redirect('/dashboard/kegiatan/peserta');
+            // return redirect('/dashboard/kegiatan/peserta');
+            return redirect()->back();
             
         }else{
 
