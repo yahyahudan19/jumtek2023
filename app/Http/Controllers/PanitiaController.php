@@ -204,6 +204,7 @@ class PanitiaController extends Controller
     public function updatePeserta(Request $request){
         
         $data_peserta = Peserta::where('id_peserta',$request->id_peserta)->get()->first();
+        $data_user = User::where('id',$data_peserta->user_id)->get()->first();
         // dd($request->all());
         // dd($request->file('foto_peserta'));
 
@@ -248,6 +249,10 @@ class PanitiaController extends Controller
                 "unit_id" => $request->unit_id,
                 "foto_peserta" => $nama_foto,
                 "qrcode_peserta" => $qrcode_peserta
+            ]);
+            
+            $data_user->update([
+                "role" =>  $request->role_peserta
             ]);
             
             Alert::success('Update Berhasil !','Peserta Berhasil Diupdate !');
