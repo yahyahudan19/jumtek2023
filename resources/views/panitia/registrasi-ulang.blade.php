@@ -82,7 +82,7 @@
                                                 @else
                                                 <td class="py-2 text-right"><span class="badge badge-info">Panitia</span></td>
                                                 @endif
-                                                <td>{{ \Carbon\Carbon::parse($peserta->updated_at)->format('d M Y h:I') }}</td>
+                                                <td>{{ \Carbon\Carbon::parse($peserta->updated_at)->format('d M Y h:i') }}</td>
                                             </tr>
                                             @endforeach
                                         </tbody>
