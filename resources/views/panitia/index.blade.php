@@ -383,7 +383,7 @@
 									</span>
 									<div class="media-body text-white text-right">
 										<p class="mb-1">Peserta Registrasi Kegiatan : </p>
-										<h3 class="text-white">{{$unit_daftar_jumlah}}</h3>
+										<h3 class="text-white">{{$jumlah_peseta_kegiatan}}</h3>
 									</div>
 								</div>
 							</div>
