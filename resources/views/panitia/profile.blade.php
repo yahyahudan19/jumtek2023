@@ -65,11 +65,11 @@
                                                 <input type="file" class="form-control" id="foto_peserta" name="foto_peserta" value="..and confirm it!">
                                             </div>
                                         </div>
-                                        <div class="form-group row">
+                                        {{-- <div class="form-group row">
                                             <div class="col-lg-8 ml-auto">
                                                 <button type="submit" class="btn btn-primary">Update</button>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                     <div class="col-xl-4">
                                         <div class="form-group row">
