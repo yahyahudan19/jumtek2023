@@ -350,7 +350,7 @@
 										<i class="flaticon-381-user-2"></i>
 									</span>
 									<div class="media-body text-white text-right">
-										<p class="mb-1">Total Peserta </p>
+										<p class="mb-1">Total Peserta Keseluruhan : </p>
 										<h3 class="text-white">{{$jumlah_peserta}}</h3>
 									</div>
 								</div>
@@ -365,13 +365,45 @@
 										<i class="flaticon-381-user-1"></i>
 									</span>
 									<div class="media-body text-white text-right">
-										<p class="mb-1">Peserta Registrasi :  </p>
+										<p class="mb-1">Peserta Sudah Registrasi :  </p>
 										<h3 class="text-white">{{$jumlah_peserta_registrasi}}</h3>
 									</div>
 								</div>
 							</div>
 						</div>
                     </div>        
+                </div>
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-sm-6">
+						<div class="widget-stat card bg-dark">
+							<div class="card-body  p-4">
+								<div class="media">
+									<span class="mr-3">
+										<i class="flaticon-381-user-2"></i>
+									</span>
+									<div class="media-body text-white text-right">
+										<p class="mb-1">Peserta Registrasi Kegiatan : </p>
+										<h3 class="text-white">{{$unit_daftar_jumlah}}</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-sm-6">
+						<div class="widget-stat card bg-danger">
+							<div class="card-body  p-4">
+								<div class="media">
+									<span class="mr-3">
+										<i class="flaticon-381-home"></i>
+									</span>
+									<div class="media-body text-white text-right">
+										<p class="mb-1">Total Kontingen Pendaftar : </p>
+										<h3 class="text-white">{{$unit_daftar_jumlah}}</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-xl-6 col-lg-6 col-sm-6">
@@ -405,23 +437,7 @@
 						</div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6 col-sm-6">
-						<div class="widget-stat card bg-danger">
-							<div class="card-body  p-4">
-								<div class="media">
-									<span class="mr-3">
-										<i class="flaticon-381-home"></i>
-									</span>
-									<div class="media-body text-white text-right">
-										<p class="mb-1">Total Kontingen Pendaftar : </p>
-										<h3 class="text-white">{{$unit_daftar_jumlah}}</h3>
-									</div>
-								</div>
-							</div>
-						</div>
-                    </div>
-                </div>
+               
             </div>
             {{-- <div class="col-xl-12 col-xxl-12">
                 <div class="row">                    
@@ -583,7 +599,7 @@
                 @if ($data_peserta->registrasiulang_peserta == NULL)
                 <div class="card text-white bg-danger">
                     <div class="card-body mb-0">
-                        <p class="card-text"></p>Lakukan Registrasi Ulang Saat di Lokasi !  <a href="/registrasi-ulang" class="btn btn-danger light btn-card"> <i class="ml-1 fa fa-exclamation-triangle "></i> Daftar Ulang Sekarang !</a>
+                        <p class="card-text"></p>Lakukan Registrasi Ulang Saat di Lokasi!  <a href="/registrasi-ulang" class="btn btn-danger light btn-card"> <i class="ml-1 fa fa-exclamation-triangle "></i> Daftar Ulang Sekarang !</a>
                     </div>
                 </div>
                 @else

@@ -361,9 +361,9 @@ class PanitiaController extends Controller
 
         $jumlah_kegiatan_jumbara = Kegiatan::where(['jenis_kegiatan' => 'Jumbara'])->count();
         $jumlah_kegiatan_temu_karya = Kegiatan::where(['jenis_kegiatan' => 'Temu Karya'])->count();
-        $jumlah_kegiatan_semua = Kegiatan::all()->count();
+        $jumlah_peseta_kegiatan = Kegiatan_Peserta::all()->count();
 
-        return view('panitia.kegiatan.index',compact('data_kegiatan_jumbara','data_kegiatan_temu_karya','jumlah_kegiatan_semua','jumlah_kegiatan_jumbara','jumlah_kegiatan_temu_karya'));
+        return view('panitia.kegiatan.index',compact('data_kegiatan_jumbara','data_kegiatan_temu_karya','jumlah_peseta_kegiatan','jumlah_kegiatan_jumbara','jumlah_kegiatan_temu_karya'));
     }
     // Update Aktif Kegiatan
     public function aktifKegiatan($id_kegiatan){

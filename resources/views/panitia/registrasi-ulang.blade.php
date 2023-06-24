@@ -52,7 +52,7 @@
                                                 <th>Nama</th>
                                                 <th>Unit PMI</th>
                                                 <th>Status</th>
-                                                <th>Role</th>
+                                                <th>Sebagai</th>
                                                 <th>Waktu Registrasi Ulang</th>
                                                 <th>Action</th>
                                             </tr>
