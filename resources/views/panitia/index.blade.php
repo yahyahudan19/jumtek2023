@@ -24,13 +24,13 @@
                 @endif
             </div>
             <div class="col-xl-6 col-xxl-6">
-                @if ($data_peserta->registrasiulang_peserta == NULL)
+                {{-- @if ($data_peserta->registrasiulang_peserta == NULL)
                 <div class="card text-white bg-danger">
                     <div class="card-body mb-0">
                         <p class="card-text"></p>Segera Daftar Ulang !  <a href="/registrasi-ulang" class="btn btn-danger light btn-card"> <i class="ml-1 fa fa-exclamation-triangle "></i> Daftar Ulang Sekarang !</a>
                     </div>
                 </div>
-                @else
+                @else --}}
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
@@ -41,7 +41,7 @@
                         </div>
                     </div>
                 </div>
-                @endif
+                {{-- @endif --}}
             </div>
         </div>
         <div class="row">
@@ -580,13 +580,13 @@
                 </div>
             </div>
             <div class="col-xl-6 col-xxl-6">
-                @if ($data_peserta->registrasiulang_peserta == NULL)
+                {{-- @if ($data_peserta->registrasiulang_peserta == NULL)
                 <div class="card text-white bg-danger">
                     <div class="card-body mb-0">
                         <p class="card-text"></p>Segera Daftar Ulang !  <a href="/registrasi-ulang" class="btn btn-danger light btn-card"> <i class="ml-1 fa fa-exclamation-triangle "></i> Daftar Ulang Sekarang !</a>
                     </div>
                 </div>
-                @else
+                @else --}}
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
@@ -597,7 +597,7 @@
                         </div>
                     </div>
                 </div>
-                @endif
+                {{-- @endif --}}
             </div>
             <div class="col-xl-12 col-xxl-12">
                 <div class="row">
