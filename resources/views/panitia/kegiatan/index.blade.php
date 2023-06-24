@@ -73,14 +73,11 @@
                         <div class="card-body">
                             <div class="d-flex justify-content-center align-items-center">
                                 <div class="d-flex justify-content-center align-items-center">
-                                    <button type="button" class="btn btn-rounded btn-info" data-toggle="modal" data-target="#tambahModalPeserta"><span
-                                        class="btn-icon-left text-info"><i class="fa fa-plus color-info"></i>
-                                    </span>Tambah</button>
-                                    <br><br>
-                                    {{-- <button type="button" class="btn btn-rounded btn-success" data-toggle="modal" data-target="#importModalPeserta"><span
-                                        class="btn-icon-left text-success"><i class="fa fa-cloud-upload color-success"></i>
-                                    </span>Import</button> --}}
+                                    <button type="button" class="btn btn btn-info btn-sm" data-toggle="modal" data-target="#tambahModalPeserta"><span></span>Tambah Data Ini !</button>
                                 </div>
+                            </div>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a href="/export/KegiatanPeserta" class="btn btn btn-success btn-sm"><span> </span>Export Data Ini !</a>
                             </div>
                         </div>
                     </div>
