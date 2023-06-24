@@ -33,9 +33,9 @@ Route::middleware(['auth','checkRole:Peserta,Panitia,Pembina'])->group(function 
     //UPDATE Peserta
     Route::POST('/profile/update','\App\Http\Controllers\PesertaController@updatePeserta');
     //GET Kegiatan Page
-    Route::get('/dashboard/kegiatan/peserta','\App\Http\Controllers\PesertaController@kegiatan');
+    // Route::get('/dashboard/kegiatan/peserta','\App\Http\Controllers\PesertaController@kegiatan');
     //POST Kegiatan Peserta
-    Route::post('/kegiatan/peserta/tambah','\App\Http\Controllers\PesertaController@tambahKegiatan');
+    // Route::post('/kegiatan/peserta/tambah','\App\Http\Controllers\PesertaController@tambahKegiatan');
     //Hapus Peserta Kegiatan
     Route::get('/delete/kegiatan/{id_kegiatan_peserta}','\App\Http\Controllers\PesertaController@hapusPesertaKegiatan');
     //Registrasi Ulang Peserta

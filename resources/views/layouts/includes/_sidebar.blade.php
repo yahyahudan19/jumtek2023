@@ -60,11 +60,11 @@
             </a>
             </li>
             @if (auth()->user()->peserta->status_peserta == 'Aktif')
-            <li><a href="/dashboard/kegiatan/peserta" class="ai-icon" aria-expanded="false">
+            {{-- <li><a href="/dashboard/kegiatan/peserta" class="ai-icon" aria-expanded="false">
                     <i class="flaticon-381-blueprint"></i>
                     <span class="nav-text">Kegiatan</span>
                 </a>
-            </li>
+            </li> --}}
             @endif
             @endif
 
@@ -80,11 +80,11 @@
                     <span class="nav-text">Peserta</span>
                 </a>
             </li>
-            <li><a href="/dashboard/pembina/kegiatan" class="ai-icon" aria-expanded="false">
+            {{-- <li><a href="/dashboard/pembina/kegiatan" class="ai-icon" aria-expanded="false">
                     <i class="flaticon-381-blueprint"></i>
                     <span class="nav-text">Kegiatan Peserta</span>
                 </a>
-            </li>
+            </li> --}}
             <li><a href="/dashboard/kegiatan/peserta" class="ai-icon" aria-expanded="false">
                 <i class="flaticon-381-add"></i>
                 <span class="nav-text">Kegiatan-ku</span>
