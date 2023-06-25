@@ -36,20 +36,20 @@
                         </div>
                     </div>
                 </div> --}}
-                <div class="col-xl-6 col-xxl-6 col-lg-6 col-sm-6">
+                {{-- <div class="col-xl-6 col-xxl-6 col-lg-6 col-sm-6">
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex justify-content-center align-items-center">
                                 <div class="d-flex justify-content-center align-items-center">
                                     {{-- <button type="button" class="btn btn-rounded btn-info" data-toggle="modal" data-target="#tambahModalPeserta"><span
                                         class="btn-icon-left text-info"><i class="fa fa-plus color-info"></i>
-                                    </span>Tambah</button> --}}
+                                    </span>Tambah</button>
                                     <br><br>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
                 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" id="tambahModalPeserta">
                     <div class="modal-dialog modal-lg">
@@ -116,7 +116,7 @@
                                             <th>Nama</th>
                                             <th>Tanggal</th>
                                             <th>Waktu</th>
-                                            <th>Action</th>
+                                            {{-- <th>Action</th> --}}
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -125,7 +125,7 @@
                                             <td>{{$kegiatan->kegiatan->nama_kegiatan}}</a></td>
                                             <td>{{ \Carbon\Carbon::parse($kegiatan->kegiatan->tanggal_kegiatan)->format('d M Y') }}</td>
                                             <td>{{ \Carbon\Carbon::parse($kegiatan->kegiatan->waktu_kegiatan)->format('H:i')}} WIB</td>
-                                            <td><a href="/delete/kegiatan/{{$kegiatan->id_kegiatan_peserta}}" class="btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-trash"></i></a></td>
+                                            {{-- <td><a href="/delete/kegiatan/{{$kegiatan->id_kegiatan_peserta}}" class="btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-trash"></i></a></td> --}}
                                         </tr>
                                         @endforeach
                                     </tbody>
