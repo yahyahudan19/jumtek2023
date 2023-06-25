@@ -60,7 +60,7 @@ Route::middleware(['auth','checkRole:Pembina'])->group(function () {
      //Print Kegiatan by Unit
      Route::get('/dashboard/kegiatan/print','\App\Http\Controllers\PembinaController@printKegiatan');
      //Hapus Peserta Kegiatan
-     Route::get('/hapus/peserta/{id_kegiatan_peserta}','\App\Http\Controllers\PembinaController@hapusPesertaKegiatan');
+    //  Route::get('/hapus/peserta/{id_kegiatan_peserta}','\App\Http\Controllers\PembinaController@hapusPesertaKegiatan');
 });
 
 // PANITIA ROUTES
