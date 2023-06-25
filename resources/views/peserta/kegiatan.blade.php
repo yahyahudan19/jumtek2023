@@ -41,9 +41,9 @@
                         <div class="card-body">
                             <div class="d-flex justify-content-center align-items-center">
                                 <div class="d-flex justify-content-center align-items-center">
-                                    <button type="button" class="btn btn-rounded btn-info" data-toggle="modal" data-target="#tambahModalPeserta"><span
+                                    {{-- <button type="button" class="btn btn-rounded btn-info" data-toggle="modal" data-target="#tambahModalPeserta"><span
                                         class="btn-icon-left text-info"><i class="fa fa-plus color-info"></i>
-                                    {{-- </span>Tambah</button> --}}
+                                    </span>Tambah</button> --}}
                                     <br><br>
                                 </div>
                             </div>
