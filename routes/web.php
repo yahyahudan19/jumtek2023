@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\KegiatanBackup;
 use App\Http\Controllers\PanitiaController;
 use App\Http\Controllers\PesertaController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -130,6 +131,8 @@ Route::get('/kegiatan/aktif/{id}','\App\Http\Controllers\PanitiaController@aktif
 Route::get('/kegiatan/nonaktif/{id}','\App\Http\Controllers\PanitiaController@nonaktifKegiatan');
 //Hapus Peserta Kegiatan
 Route::get('/kegiatan/hapus/peserta/{id_kegiatan_peserta}','\App\Http\Controllers\PanitiaController@hapusPesertaKegiatan');
+// Export Nama Kegiatan
+Route::get('/export/data_kegiatan',[AuthController::class,'exportKegiatan']);
 
 //GET User
 Route::get('/dashboard/user','\App\Http\Controllers\PanitiaController@user');
