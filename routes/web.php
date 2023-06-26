@@ -84,6 +84,8 @@ Route::post('/unit/import','\App\Http\Controllers\PanitiaController@importUnit')
 Route::get('/dashboard/unit/{id_unit}','\App\Http\Controllers\PanitiaController@detailUnit');
 //Print Peserta by Unit
 Route::get('/dashboard/unit/print/{id_unit}','\App\Http\Controllers\PanitiaController@printUnit');
+// Export Unit by User
+Route::get('/export/data-unit',[AuthController::class,'exportUnit']);
 
 
 //GET Peserta

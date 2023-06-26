@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Exports\ExportKegiatanPeserta;
 use App\Exports\ExportNamaKegiatan;
 use App\Exports\ExportPesertas;
+use App\Exports\ExportUnitDaftar;
 use App\Exports\ExportUsers;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -358,6 +359,10 @@ class AuthController extends Controller
     // Export Excel Kegiatan
     public function exportExcelKegiatan(){
         return Excel::download(new ExportKegiatanPeserta, 'data_kegiatan_peserta.xlsx');
+    }
+    // Export Excel Kegiatan
+    public function exportUnit(){
+        return Excel::download(new ExportUnitDaftar, 'data_unit_registrasi.xlsx');
     }
     // Export Foto
     public function exportFoto(){
