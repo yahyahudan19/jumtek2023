@@ -14,12 +14,12 @@ class ExportUnitDaftar implements FromCollection,WithMapping,WithHeadings
     */
     public function collection()
     {
-        $unit_daftar = Peserta::select('unit_id')->withCount('unit as jumlah_unit')->whereHas('Unit')->distinct()->get()->all();
+       Peserta::select('unit_id')->withCount('unit as jumlah_unit')->whereHas('Unit')->distinct()->get()->all();
     }
-    public function map($unit_daftar): array 
+    public function map($daftar_unit): array 
     {
         return [
-            $unit_daftar->nama_unit,
+            $daftar_unit->nama_unit,
         ];
     }
     public function headings(): array 
